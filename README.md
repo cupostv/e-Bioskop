@@ -1,5 +1,5 @@
 # e-Bioskop
 
-Authors:
-	Mladen Stupar
-	Saša Mihajlica
+* Authors:
+	* Mladen Stupar
+	* Saša Mihajlica
