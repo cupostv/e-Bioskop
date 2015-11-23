@@ -1,4 +1,4 @@
 # e-Bioskop
 
 Authors:
-	- Mladen Stupar
+	* Mladen Stupar
