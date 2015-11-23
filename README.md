@@ -3,3 +3,4 @@
 * Authors:
 	* Mladen Stupar
 	* Saša Mihajlica
+	* Branka Pekez
