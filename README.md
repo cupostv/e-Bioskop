@@ -2,3 +2,4 @@
 
 Authors:
 	Mladen Stupar
+	Saša Mihajlica
