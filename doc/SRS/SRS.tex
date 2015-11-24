@@ -1,0 +1,74 @@
+\documentclass[12pt]{scrreprt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{fancyhdr}
+%\usepackage{titlesec}
+ 
+\newcommand{\naziv}{e-Bioskop }
+%\renewcommand{\cleardoublepage}{}
+\renewcommand\contentsname{Sadržaj:}
+\renewcommand\chaptername{}
+\pagestyle{fancy}
+\lhead{Informacioni sistem}
+\chead{\naziv}
+\rhead{\leftmark}
+\rfoot{}
+\cfoot{\thepage}
+\lfoot{}
+\title{SRS IS }
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+
+\usepackage[bookmarks=true]{hyperref}
+%\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry}
+
+\hypersetup{
+        % show bookmarks bar?
+    pdftitle={Specificikacija softverskih zahtjeva},    % title
+    pdfauthor={Informacioni sistemi 2015, grupa 3},                     % author
+    pdfsubject={SRS},                        % subject of the document
+    pdfkeywords={SRS,IS}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=black,       % color of internal links
+    citecolor=red,       % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=blue,        % color of external links
+    linktoc=all            % only page is linked
+}
+\usepackage{multicol}
+\usepackage{indentfirst}
+
+\begin{document}
+\pagenumbering{roman}
+\input{titlepage.tex}
+\input{Uvod.tex}
+\input{Opis.tex}
+\input{SpecZah.tex}
+\tableofcontents
+\end{document}

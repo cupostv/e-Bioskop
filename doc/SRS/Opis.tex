@@ -1,0 +1,117 @@
+\chapter{Opis}
+% This section of the SRS should describe the general factors that affect the product and its requirements. This
+% section does not state speciÞc requirements. Instead, it provides a background for those requirements, which
+% are deÞned in detail in Section 3 of the SRS, and makes them easier to understand.
+U ovom poglavlju će biti opisani generalni faktori koji mogu uticati na softverski proizvod i njegove zahtjeve. 
+Ovo poglavlje ne sadrži specifične zahtjeve, detaljniji zahtjevi će biti prikazani u poglavlju \ref{poglavlje3}
+\section{Perspektiva sistema}
+% This subsection of the SRS should put the product into perspective with other related products. If the product
+% is independent and totally self-contained, it should be so stated here. If the SRS deÞnes a product that is a
+% component of a larger system, as frequently occurs, then this subsection should relate the requirements of
+% that larger system to functionality of the software and should identify interfaces between that system and the
+% software.
+% A block diagram showing the major components of the larger system, interconnections, and external inter-
+% faces can be helpful.
+
+Kao najvažniji ciljevi ovog sistema mogu se izdvojiti:
+\begin{itemize}
+  \item prilagodljivost sistema različitim bioskopima;
+  \item mogućnost pravljenja izvještaja po raznim kriterijumima;
+\end{itemize}
+
+Ideja je da se napravi informacioni sistem koji će odgovarati potrebama što većeg broja bioskopa.
+
+\subsection{Sistemski interfejsi}
+% This should list each system interface and identify the functionality of the software to accomplish the system
+% requirement and the interface description to match the system.
+
+Softver bi trebao da bude napravljen tako da se ne izdvaja iz postojećeg sistemskog softvera i da prati standardne procedure korištenja nekih uobičajenih funkcija u softverskom proizvodu koje su standardne za dati sistemski softver koji koristi bioskop - Windows operativni sistem. 
+
+
+
+\subsection{Korisnički interfejsi}
+% This should specify the following:
+% a) The logical characteristics of each interface between the software product and its users. This
+% includes those conÞguration characteristics (e.g., required screen formats, page or window layouts,
+% content of any reports or menus, or availability of programmable function keys) necessary to accom-
+% plish the software requirements.
+% b) All the aspects of optimizing the interface with the person who must use the system. This may simply
+% comprise a list of doÕs and donÕts on how the system will appear to the user. One example may be a
+% requirement for the option of long or short error messages. Like all others, these requirements
+% should be veriÞable, e.g., Òa clerk typist grade 4 can do function X in Z min after 1 h of trainingÓ
+% rather than Òa typist can do function X. Ó (This may also be speciÞed in the Software System
+% Attributes under a section titled Ease of Use.)
+\subsubsection{Logičke karakteristike}
+Ovaj softver bi trebao da bude korišten kroz grafički korisnički interfejs (GUI). Korisnički interfejs bi trebao da bude projektovan u skladu sa heuristikama interakcije čovjek-računar.
+\subsubsection{Aspekti optimizovanja interfejsa}
+Ovaj softver trebao bi imati kratke i razumljive poruke o greškama, praćene kratkim zvučnim signalom. Trebao bi da podrži mogućnost \textit{undo} operacije u slučaju manje greške.
+\subsection{Hardverski interfejsi}
+% This should specify the logical characteristics of each interface between the software product and the hard-
+% ware components of the system. This includes conÞguration characteristics (number of ports, instruction
+% sets, etc.). It also covers such matters as what devices are to be supported, how they are to be supported, and
+% protocols. For example, terminal support may specify full-screen support as opposed to line-by-line support
+Za pravilan rad ovakvog softverskog proizvoda od hardverskih uređaja potrebne su standardne periferijske jedinice (tastatura, miš,štampač, ...). Računar na kom će raditi softver ne treba zadovoljavati visoke kriterijume na primjer, to može da bude:
+\begin{itemize}
+  \item CPU: Intel Pentium Core2Duo 
+  \item RAM: 1024MB
+  \item HDD: 120GB
+\end{itemize}
+\subsection{Softverski interfejsi}
+% This should specify the use of other required software products (e.g., a data management system, an operat-
+% ing system, or a mathematical package), and interfaces with other application systems (e.g., the linkage
+% between an accounts receivable system and a general ledger system).
+Ovaj softver bi trebao da koristi \textit{mySQL} bazu podataka, za čuvanje podataka o predhodno izdanim kartama, arhivi filmova itd. Ovaj softver je namjenjen za najzastupljeniju platformu Microsoft  Windows.
+
+\subsection{Komunikacioni interfejsi} 
+% This should specify the various interfaces to communications such as local network protocols, etc.
+Za ovaj sistem je neophodna računarska mreža zbog pristupa bazi podataka.
+
+\subsection{Ograničenja memorije}
+% This should specify any applicable characteristics and limits on primary and secondary memory.
+Za ispravan rad softvera, s obzirom na dinamičnu promjenu baze, potrebno je obezbjediti dovoljnu količinu sekundarne memorije.
+
+\subsection{Operacije}
+% This should specify the normal and special operations required by the user such as
+% The various modes of operations in the user organization (e.g., user-initiated operations);
+% Periods of interactive operations and periods of unattended operations;
+% Data processing support functions;
+% Backup and recovery operations.
+Zahtjevan je rad sa bazom podataka, kako bi se
+mogli čuvati podaci o studentima i predmetima, pa su potrebne operacije
+koje se vrše nad podacima u bazi, kao što su: upisivanje u bazu,
+ažuriranje podataka i čitanje iz baze, kao i neke backup operacije, koje bi
+štitile od nepredviđenih situacija, kao što su: kvar na hard disku, pokušaj
+“upada” u bazu i sl.
+
+\section{Funkcije proizvoda}
+% This subsection of the SRS should provide a summary of the major functions that the software will perform.
+% For example, an SRS for an accounting program may use this part to address customer account maintenance,
+% customer statement, and invoice preparation without mentioning the vast amount of detail that each of those
+% functions requires.
+% Sometimes the function summary that is necessary for this part can be taken directly from the section of the
+% higher-level speciÞcation (if one exists) that allocates particular functions to the software product. Note that
+% for the sake of clarity
+Ovaj softverski proizvod bi trebao da omogućava sledeće funkcije:
+\begin{itemize}
+  \item vođenje evidencije o rezervacijama i prodajama karata (ulaznica)
+  \item vođenje podataka o projekcijama, prisustvu na pojedinim projekcijama
+  \item vođenje podataka o filmovima, arhivi filmova, nabavci filmova itd.
+  \item generisanje  izvještaja
+  \item administraciju korisnika  
+\end{itemize}
+
+\section{Karakteristike korisnika}
+% This subsection of the SRS should describe those general characteristics of the intended users of the product
+% including educational level, experience, and technical expertise. It should not be used to state speciÞc
+% requirements, but rather should provide the reasons why certain speciÞc requirements are later speciÞed in
+% Section 3 of the SRS.
+
+\section{Ograničenja}
+% This subsection of the SRS should provide a general description of any other items that will limit the devel-
+% operÕs options.
+\section{Predpostavke i zavisnosti}
+% This subsection of the SRS should list each of the factors that affect the requirements stated in the SRS.
+% These factors are not design constraints on the software but are, rather, any changes to them that can affect
+% the requirements in the SRS. For example, an assumption may be that a speciÞc operating system will be
+% available on the hardware designated for the software product. If, in fact, the operating system is not avail-
+% able, the SRS would then have to change accordingly.
