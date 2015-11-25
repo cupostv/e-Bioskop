@@ -4,8 +4,10 @@
 
 Run
 ``` sudo apt-get install texlive ```
-Then make shure that you are pwd in e-Bioskop/doc/SRS . While there run
-```  pdflatex srs.tex ```
+Then make sure that you are pwd in e-Bioskop/doc/SRS . While there run
+``` 
+pdflatex srs.tex 
+```
 
 For more details visit http://stackoverflow.com/questions/1017055/get-started-with-latex-on-linux
 
