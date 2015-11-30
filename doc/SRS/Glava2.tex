@@ -3,7 +3,8 @@
 % section does not state speciÞc requirements. Instead, it provides a background for those requirements, which
 % are deÞned in detail in Section 3 of the SRS, and makes them easier to understand.
 U ovom poglavlju će biti opisani generalni faktori koji mogu uticati na softverski proizvod i njegove zahtjeve. 
-Ovo poglavlje ne sadrži specifične zahtjeve, detaljniji zahtjevi će biti prikazani u poglavlju \ref{poglavlje3}
+Ovo poglavlje ne sadrži specifične zahtjeve, detaljniji zahtjevi će biti prikazani u poglavlju \ref{poglavlje3} .
+
 \section{Perspektiva sistema}
 % This subsection of the SRS should put the product into perspective with other related products. If the product
 % is independent and totally self-contained, it should be so stated here. If the SRS deÞnes a product that is a
@@ -28,7 +29,6 @@ Ideja je da se napravi informacioni sistem koji će odgovarati potrebama što ve
 Softver bi trebao da bude napravljen tako da se ne izdvaja iz postojećeg sistemskog softvera i da prati standardne procedure korištenja nekih uobičajenih funkcija u softverskom proizvodu koje su standardne za dati sistemski softver koji koristi bioskop - Windows operativni sistem. 
 
 
-
 \subsection{Korisnički interfejsi}
 % This should specify the following:
 % a) The logical characteristics of each interface between the software product and its users. This
@@ -43,8 +43,10 @@ Softver bi trebao da bude napravljen tako da se ne izdvaja iz postojećeg sistem
 % Attributes under a section titled Ease of Use.)
 \subsubsection{Logičke karakteristike}
 Ovaj softver bi trebao da bude korišten kroz grafički korisnički interfejs (GUI). Korisnički interfejs bi trebao da bude projektovan u skladu sa heuristikama interakcije čovjek-računar.
+
 \subsubsection{Aspekti optimizovanja interfejsa}
 Ovaj softver trebao bi imati kratke i razumljive poruke o greškama, praćene kratkim zvučnim signalom. Trebao bi da podrži mogućnost \textit{undo} operacije u slučaju manje greške.
+
 \subsection{Hardverski interfejsi}
 % This should specify the logical characteristics of each interface between the software product and the hard-
 % ware components of the system. This includes conÞguration characteristics (number of ports, instruction
@@ -64,7 +66,7 @@ Ovaj softver bi trebao da koristi \textit{mySQL} bazu podataka, za čuvanje poda
 
 \subsection{Komunikacioni interfejsi} 
 % This should specify the various interfaces to communications such as local network protocols, etc.
-Za ovaj sistem je neophodna računarska mreža zbog pristupa bazi podataka.
+Za ovaj sistem je neophodna računarska mreža zbog mogućeg udaljenog pristupa bazi podataka.
 
 \subsection{Ograničenja memorije}
 % This should specify any applicable characteristics and limits on primary and secondary memory.
@@ -76,12 +78,11 @@ Za ispravan rad softvera, s obzirom na dinamičnu promjenu baze, potrebno je obe
 % Periods of interactive operations and periods of unattended operations;
 % Data processing support functions;
 % Backup and recovery operations.
-Zahtjevan je rad sa bazom podataka, kako bi se
-mogli čuvati podaci o studentima i predmetima, pa su potrebne operacije
+Zahtjevan je rad sa bazom podataka, pa su potrebne operacije
 koje se vrše nad podacima u bazi, kao što su: upisivanje u bazu,
-ažuriranje podataka i čitanje iz baze, kao i neke backup operacije, koje bi
-štitile od nepredviđenih situacija, kao što su: kvar na hard disku, pokušaj
-“upada” u bazu i sl.
+ažuriranje podataka i čitanje iz baze, kao i neke \textit{backup} operacije, koje bi
+štitile od nepredviđenih situacija, kao što je na primjer kvar na hard disku.
+
 
 \section{Funkcije proizvoda}
 % This subsection of the SRS should provide a summary of the major functions that the software will perform.
@@ -106,12 +107,18 @@ Ovaj softverski proizvod bi trebao da omogućava sledeće funkcije:
 % requirements, but rather should provide the reasons why certain speciÞc requirements are later speciÞed in
 % Section 3 of the SRS.
 
+Korisnici ovog sistema su zaposleni u bioskopu. Najčešće te osobe nisu napredni korisnici računara. Takođe, potreban je jedan administrator sistema, tj. osoba sa dovoljnim tehničkim znanjem da može da vrši održavanje sistema.
+
+
 \section{Ograničenja}
 % This subsection of the SRS should provide a general description of any other items that will limit the devel-
 % operÕs options.
-\section{Predpostavke i zavisnosti}
+
+\section{Pretpostavke i zavisnosti}
 % This subsection of the SRS should list each of the factors that affect the requirements stated in the SRS.
 % These factors are not design constraints on the software but are, rather, any changes to them that can affect
 % the requirements in the SRS. For example, an assumption may be that a speciÞc operating system will be
 % available on the hardware designated for the software product. If, in fact, the operating system is not avail-
 % able, the SRS would then have to change accordingly.
+
+
