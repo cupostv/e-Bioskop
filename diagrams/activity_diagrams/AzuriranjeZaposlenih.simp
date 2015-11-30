@@ -51,7 +51,7 @@
       </counter>
       <counter>
         <item-type stereotype="" type="AbstractElementGroup" />
-        <value>12</value>
+        <value>13</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -103,7 +103,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-activity" id="pad198ed9611b4251abb230630b8ed878_473270258" name="AžuriranjeZaposlenih" order-index="1" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="0,-37">
+      <diagram type="uml-activity" id="pad198ed9611b4251abb230630b8ed878_473270258" name="AžuriranjeZaposlenih" order-index="1" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="0,143">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -219,7 +219,7 @@
             <style class="default" />
             <control-flow guard="" />
           </item>
-          <item id="di810315968817390878" cid="ACT012" type="action" name="Aktiviranje naloga" style-class="" visibility="package" change-tracking-state="added" creator="P8168020712e44c2eae79f9441d5d2d41" creation-date="11/29/2015 15:44:02">
+          <item id="di810315968817390878" cid="ACT012" type="action" name="Čuvanje podataka" style-class="" visibility="package" change-tracking-state="added" creator="P8168020712e44c2eae79f9441d5d2d41" creation-date="11/29/2015 15:44:02">
             <style class="default" />
           </item>
           <item id="di220432945462470684" cid="ELEM009" type="control-flow" name="Validno" style-class="" visibility="package" change-tracking-state="added" creator="P8168020712e44c2eae79f9441d5d2d41" creation-date="11/29/2015 15:45:17">

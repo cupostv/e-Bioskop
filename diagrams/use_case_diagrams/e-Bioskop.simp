@@ -51,7 +51,7 @@
       </counter>
       <counter>
         <item-type stereotype="" type="AbstractElementGroup" />
-        <value>3</value>
+        <value>4</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -166,17 +166,6 @@
         <end-role id="" name="" navigability="" association-type="association" visibility="private" />
       </relation>
     </item>
-    <item id="di176795524578409043" cid="UC009" type="use-case" name="Pružanje informacija" style-class="" visibility="package" creator="P67a86e58478348cca6eba339882e2164" creation-date="11/23/2015 20:02:40">
-      <style class="default" />
-      <use-case />
-    </item>
-    <item id="di509297515577218248" cid="REL008" type="relationship" name="" style-class="" visibility="package" creator="P67a86e58478348cca6eba339882e2164" creation-date="11/23/2015 20:02:40">
-      <style class="default" />
-      <relation from="di176795524578409043" to="di892273586903640929">
-        <start-role id="" name="" navigability="" association-type="association" visibility="private" />
-        <end-role id="" name="" navigability="" association-type="association" visibility="private" />
-      </relation>
-    </item>
     <item id="di977974229113462574" cid="UC012" type="use-case" name="Upravljanje projekcijama" style-class="" visibility="package" creator="P67a86e58478348cca6eba339882e2164" creation-date="11/23/2015 20:44:59">
       <style class="default" />
       <use-case />
@@ -255,7 +244,7 @@
           </authors>
           <description />
           <creation-date>11/23/2015 19:35:18</creation-date>
-          <change-date>11/29/2015 14:49:43</change-date>
+          <change-date>11/30/2015 12:11:54</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -405,19 +394,6 @@
               </points>
             </layout>
             <relation from="di846818059896457321" from-iid="de210b532a174165a059fee8c2ab4ea2" to="di892273586903640929" to-iid="bbad39d7ec5a4cdea619b85b9be0b4a0" />
-          </item>
-          <item id="di176795524578409043" iid="8574acff0e1445c684b78c50b15479fa" creation-date="11/23/2015 20:02:40" order-index="17" type="entity">
-            <layout ax="93.75" ay="-263" awidth="111" aheight="69" x="93.75" y="-263" width="111" height="69" angle="0" />
-            <use-case />
-          </item>
-          <item id="di509297515577218248" iid="98beef3184754fce8809008a7d351901" creation-date="11/23/2015 20:02:40" order-index="18" type="relation">
-            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="116" y1="-256" x2="59" y2="-324" start-border-pos="0.0507351815163552" end-border-pos="0.441847839355469" name-position="10,-10">
-              <points>
-                <point x="116" y="-256" />
-                <point x="59" y="-324" />
-              </points>
-            </layout>
-            <relation from="di176795524578409043" from-iid="8574acff0e1445c684b78c50b15479fa" to="di892273586903640929" to-iid="bbad39d7ec5a4cdea619b85b9be0b4a0" />
           </item>
           <item id="di363904228624133042" iid="bbde9bd8343f421c908e3c919a39a0f0" creation-date="11/28/2015 12:24:27" order-index="32" type="entity">
             <layout ax="1060" ay="-417" awidth="134" aheight="84" x="1060" y="-417" width="134" height="84" angle="0" />
