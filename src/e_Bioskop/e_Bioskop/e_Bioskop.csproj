@@ -46,10 +46,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dto\DistributerDTO.cs" />
-    <Compile Include="dto\FilmDTO.cs" />
-    <Compile Include="dto\ZanrDTO.cs" />
-    <Compile Include="dto\ZaposleniDTO.cs" />
+    <Compile Include="data\dao\DAOFactory.cs" />
+    <Compile Include="data\dao\DistributerDAO.cs" />
+    <Compile Include="data\dao\FilmDAO.cs" />
+    <Compile Include="data\dao\KartaDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlDAOFactory.cs" />
+    <Compile Include="data\dao\mysql\MySqlDistributerDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlFilmDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlKartaDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlProjekcijaDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlRadnoMjestoDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlRezervacijaDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlSalaDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlSjedisteDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlStatusFilmDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlStatusKartaDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlZaposleniDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlZaposleniRadnoMjestoDAO.cs" />
+    <Compile Include="data\dao\ProjekcijaDAO.cs" />
+    <Compile Include="data\dao\RadnoMjestoDAO.cs" />
+    <Compile Include="data\dao\RezervacijaDAO.cs" />
+    <Compile Include="data\dao\SalaDAO.cs" />
+    <Compile Include="data\dao\SjedisteDAO.cs" />
+    <Compile Include="data\dao\StatusFilmDAO.cs" />
+    <Compile Include="data\dao\StatusKartaDAO.cs" />
+    <Compile Include="data\dao\ZaposleniDAO.cs" />
+    <Compile Include="data\dao\ZaposleniRadnoMjestoDAO.cs" />
+    <Compile Include="data\dto\DistributerDTO.cs" />
+    <Compile Include="data\dto\FilmDTO.cs" />
+    <Compile Include="data\dto\FilmStatusDTO.cs" />
+    <Compile Include="data\dto\KartaDTO.cs" />
+    <Compile Include="data\dto\ProjekcijaDTO.cs" />
+    <Compile Include="data\dto\RadnoMjestoDTO.cs" />
+    <Compile Include="data\dto\RezervacijaDTO.cs" />
+    <Compile Include="data\dto\SalaDTO.cs" />
+    <Compile Include="data\dto\SjedisteDTO.cs" />
+    <Compile Include="data\dto\StatusKarteDTO.cs" />
+    <Compile Include="data\dto\ZanrDTO.cs" />
+    <Compile Include="data\dto\ZaposleniDTO.cs" />
+    <Compile Include="data\dto\ZaposleniRadnoMjestoDTO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

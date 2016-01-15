@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace e_Bioskop.dto
+namespace e_Bioskop.data.dto
 {
-    class FilmStatusDTO
+    public class ZanrDTO
     {
         private int id;
 
