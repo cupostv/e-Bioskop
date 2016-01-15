@@ -5,7 +5,7 @@ using System.Text;
 
 namespace e_Bioskop.dto
 {
-    public class ZanrDTO
+    class FilmStatusDTO
     {
         private int id;
 

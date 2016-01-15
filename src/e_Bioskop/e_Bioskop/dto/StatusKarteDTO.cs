@@ -5,7 +5,7 @@ using System.Text;
 
 namespace e_Bioskop.dto
 {
-    public class ZanrDTO
+    public class StatusKarteDTO
     {
         private int id;
 
@@ -21,5 +21,6 @@ namespace e_Bioskop.dto
             get { return naziv; }
             set { naziv = value; }
         }
+
     }
 }
