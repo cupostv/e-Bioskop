@@ -7,5 +7,6 @@ namespace e_Bioskop.dto
 {
     class ZanrDTO
     {
+
     }
 }
