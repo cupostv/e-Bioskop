@@ -17,9 +17,6 @@ namespace e_Bioskop
         public Form1()
         {
             InitializeComponent();
-            DAOFactory factory = new MySqlDAOFactory();
-            FilmDTO film=factory.getFilmDAO().getById(1);
-            Console.Out.WriteLine(film.Id + " " + film.Naziv + " " + film.Opis);
         }
     }
 }
