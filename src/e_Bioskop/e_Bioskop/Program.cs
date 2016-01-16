@@ -15,7 +15,7 @@ namespace e_Bioskop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DistributerDodajForm());
+            Application.Run(new PrijavaForm());
         }
     }
 }

@@ -97,10 +97,19 @@
     <Compile Include="DistributerDodajForm.Designer.cs">
       <DependentUpon>DistributerDodajForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrijavaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrijavaForm.Designer.cs">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DistributerDodajForm.resx">
       <DependentUpon>DistributerDodajForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrijavaForm.resx">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

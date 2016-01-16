@@ -43,10 +43,10 @@
             // lblDodajNaslov
             // 
             this.lblDodajNaslov.AutoSize = true;
-            this.lblDodajNaslov.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDodajNaslov.Location = new System.Drawing.Point(12, 9);
+            this.lblDodajNaslov.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDodajNaslov.Location = new System.Drawing.Point(11, 9);
             this.lblDodajNaslov.Name = "lblDodajNaslov";
-            this.lblDodajNaslov.Size = new System.Drawing.Size(329, 25);
+            this.lblDodajNaslov.Size = new System.Drawing.Size(258, 24);
             this.lblDodajNaslov.TabIndex = 0;
             this.lblDodajNaslov.Text = "Unesite podatke o distributeru";
             // 
@@ -88,7 +88,9 @@
             // 
             // tbxNaziv
             // 
-            this.tbxNaziv.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tbxNaziv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxNaziv.Location = new System.Drawing.Point(88, 56);
             this.tbxNaziv.Name = "tbxNaziv";
             this.tbxNaziv.Size = new System.Drawing.Size(253, 20);
@@ -97,7 +99,9 @@
             // 
             // tbxAdresa
             // 
-            this.tbxAdresa.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tbxAdresa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxAdresa.Location = new System.Drawing.Point(88, 96);
             this.tbxAdresa.Name = "tbxAdresa";
             this.tbxAdresa.Size = new System.Drawing.Size(253, 20);
@@ -107,7 +111,9 @@
             // 
             // tbxBrojTelefona
             // 
-            this.tbxBrojTelefona.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tbxBrojTelefona.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxBrojTelefona.Location = new System.Drawing.Point(88, 136);
             this.tbxBrojTelefona.Name = "tbxBrojTelefona";
             this.tbxBrojTelefona.Size = new System.Drawing.Size(253, 20);
@@ -115,7 +121,9 @@
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tbxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxEmail.Location = new System.Drawing.Point(88, 176);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(253, 20);
