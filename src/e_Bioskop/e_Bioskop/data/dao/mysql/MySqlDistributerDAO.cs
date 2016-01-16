@@ -12,7 +12,7 @@ namespace e_Bioskop.data.dao.mysql
         private string getByIdQuerry = "SELECT idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer FROM e_bioskop.distributer where idDistributer=?id;";
 
         private string insertQuerry = "INSERT INTO `e_bioskop`.`distributer` (`nazivDistributer`, `adresaDistributer`, `telefonDistributer`, `e_mailDistributer`) VALUES (?naziv, ?adresa, ?telefon,?eMail);";
-        private string getAllQuerry = "SELECT idDistributer,naziv,adresa,telefon,e_mail FROM e_bioskop.distributer";
+        private string getAllQuerry = "SELECT idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer FROM e_bioskop.distributer";
 
         public DistributerDTO getById(int id)
         {
