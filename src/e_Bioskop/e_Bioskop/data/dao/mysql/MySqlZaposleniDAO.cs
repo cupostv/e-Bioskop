@@ -11,6 +11,9 @@ namespace e_Bioskop.data.dao.mysql
     {
         private string getByIdQuerry = "SELECT idZaposleni,ime,prezime,datumRodjenja,korisnickoIme,e_mail,aktivan,lozinka,telefon FROM e_bioskop.zaposleni where idZaposleni=?id;";
         private string insertQuerry = "INSERT INTO `e_bioskop`.`zaposleni` (`ime`, `prezime`, `datumRodjenja`, `korisnickoIme`, `e_mail`, `aktivan`, `lozinka`) VALUES (?ime, ?prezime, ?datumRodjenja, ?korisnickoIme, ?eMail, ?aktivan, ?lozinka);";
+
+        private string getByUsernameQuerry = "SELECT idZaposleni,ime,prezime,datumRodjenja,korisnickoIme,e_mail,aktivan,lozinka,telefon FROM e_bioskop.zaposleni where korisnickoIme=?korisnickoIme;";
+        private string updateQuerry = "UPDATE zaposleni SET ime=?ime,prezime=?prezime,korisnickoIme=?korisnickoIme,e_mail=?eMail,aktivan=?aktivan,lozinka=?lozinka,telefon=?telefon,datumRodjenja=?datumRodjenja WHERE idZaposleni=?id;";
         public ZaposleniDTO getById(int id)
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();
@@ -60,6 +63,40 @@ namespace e_Bioskop.data.dao.mysql
             long id = command.LastInsertedId;
             ConnectionPool.checkInConnection(connection);
             return id;
+        }
+
+        public long update(ZaposleniDTO zaposleni)
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = updateQuerry;
+            command.Parameters.AddWithValue("ime", zaposleni.Ime);
+            command.Parameters.AddWithValue("prezime", zaposleni.Prezime);
+            command.Parameters.AddWithValue("korisnickoIme", zaposleni.KorisnickoIme);
+            command.Parameters.AddWithValue("lozinka", zaposleni.Lozinka);
+            command.Parameters.AddWithValue("telefon", zaposleni.Telefon);
+            command.Parameters.AddWithValue("aktivan", zaposleni.Aktivan);
+            command.Parameters.AddWithValue("id", zaposleni.Id);
+            int result=command.ExecuteNonQuery();
+            ConnectionPool.checkInConnection(connection);
+            return result;
+        }
+
+        public ZaposleniDTO getByUsername(string korisnickoIme)
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = getByUsernameQuerry;
+            command.Parameters.AddWithValue("korisnickoIme", korisnickoIme);
+            MySqlDataReader reader = command.ExecuteReader();
+            ZaposleniDTO zaposleni = null;
+            if (reader.Read())
+            {
+                zaposleni = readerToZaposleni(reader);
+            }
+            reader.Close();
+            ConnectionPool.checkInConnection(connection);
+            return zaposleni;
         }
         
     }

@@ -10,5 +10,7 @@ namespace e_Bioskop.data.dao
     {
         ZaposleniDTO getById(int id);
         long insert(ZaposleniDTO zaposleni);
+        long update(ZaposleniDTO zaposleni);
+        ZaposleniDTO getByUsername(string korisnickoIme);
     }
 }
