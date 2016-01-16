@@ -10,7 +10,7 @@ namespace e_Bioskop.data.dao.mysql
     public class MySqlFilmDAO : FilmDAO
     {
         private string getByIdQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where idFilm=?id;";
-
+        private string getAllQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr ;";
         private string insertQuerry = "INSERT INTO `e_bioskop`.`film` (`trajanje`, `idDistributer`, `nazivFilm`, `idStatusFilm`, `opisFilm`, `idZanr`) VALUES (?trajanje, ?idDistributer, ?naziv, ?idStatus, ?opis, ?idZanr);";
         public FilmDTO getById(int id)
         {
@@ -34,6 +34,22 @@ namespace e_Bioskop.data.dao.mysql
             }
         }
 
+        public List<FilmDTO> getAll()
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = getAllQuerry;
+            MySqlDataReader reader = command.ExecuteReader();
+            List<FilmDTO> lista = new List<FilmDTO>();
+            while (reader.Read())
+            {
+                lista.Add(readerToFilmDTO(reader));
+            }
+            reader.Close();
+            ConnectionPool.checkInConnection(connection);
+            return lista;
+        }
+
         public static FilmDTO readerToFilmDTO(MySqlDataReader reader)
         {
             FilmDTO film = new FilmDTO();
@@ -46,10 +62,10 @@ namespace e_Bioskop.data.dao.mysql
             return film;
         }
 
-        public bool insert(FilmDTO film)
+        public int insert(FilmDTO film)
         {
             if (film == null)
-                return false;
+                return 0;
             MySqlConnection connection = ConnectionPool.checkOutConnection();
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = insertQuerry;
@@ -58,7 +74,12 @@ namespace e_Bioskop.data.dao.mysql
             command.Parameters.AddWithValue("idDistributer", film.Distributer.Id);
             command.Parameters.AddWithValue("idZanr", film.Zanr.Id);
             command.Parameters.AddWithValue("opis", film.Opis);
-            return true;
+            command.ExecuteNonQuery();
+            int id =(int) command.LastInsertedId;
+            ConnectionPool.checkInConnection(connection);
+            return id;
         }
+
+
     }
 }

@@ -9,5 +9,7 @@ namespace e_Bioskop.data.dao
     public interface FilmDAO
     {
         FilmDTO getById(int id);
+        List<FilmDTO> getAll();
+        int insert(FilmDTO film);
     }
 }
