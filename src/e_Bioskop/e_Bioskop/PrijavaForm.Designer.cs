@@ -63,7 +63,7 @@
             this.tbxKorisnickoIme.Location = new System.Drawing.Point(128, 74);
             this.tbxKorisnickoIme.Name = "tbxKorisnickoIme";
             this.tbxKorisnickoIme.Size = new System.Drawing.Size(222, 20);
-            this.tbxKorisnickoIme.TabIndex = 2;
+            this.tbxKorisnickoIme.TabIndex = 1;
             // 
             // tbxLozinka
             // 
@@ -74,7 +74,7 @@
             this.tbxLozinka.Name = "tbxLozinka";
             this.tbxLozinka.PasswordChar = '*';
             this.tbxLozinka.Size = new System.Drawing.Size(222, 20);
-            this.tbxLozinka.TabIndex = 3;
+            this.tbxLozinka.TabIndex = 2;
             // 
             // btnPrijava
             // 
@@ -82,18 +82,20 @@
             this.btnPrijava.Location = new System.Drawing.Point(275, 172);
             this.btnPrijava.Name = "btnPrijava";
             this.btnPrijava.Size = new System.Drawing.Size(75, 23);
-            this.btnPrijava.TabIndex = 4;
+            this.btnPrijava.TabIndex = 3;
             this.btnPrijava.Text = "Prijava";
             this.btnPrijava.UseVisualStyleBackColor = true;
+            this.btnPrijava.Click += new System.EventHandler(this.btnPrijava_Click);
             // 
             // lblGreska
             // 
             this.lblGreska.AutoSize = true;
+            this.lblGreska.ForeColor = System.Drawing.Color.Red;
             this.lblGreska.Location = new System.Drawing.Point(125, 58);
             this.lblGreska.Name = "lblGreska";
-            this.lblGreska.Size = new System.Drawing.Size(35, 13);
+            this.lblGreska.Size = new System.Drawing.Size(174, 13);
             this.lblGreska.TabIndex = 5;
-            this.lblGreska.Text = "label3";
+            this.lblGreska.Text = "Pogrešno korisničko ime i/ili lozinka";
             // 
             // lblNaslov
             // 
@@ -118,6 +120,7 @@
             this.Controls.Add(this.lblLozinka);
             this.Controls.Add(this.lblKorisnickoIme);
             this.Name = "PrijavaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prijava";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using e_Bioskop.data.dto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,41 @@ namespace e_Bioskop
         public PrijavaForm()
         {
             InitializeComponent();
+            lblGreska.Visible = false;
         }
+
+        private void btnPrijava_Click(object sender, EventArgs e)
+        {
+            if (validate())
+            {
+
+            }
+            else
+            {
+                lblGreska.Visible = true;
+            }
+        }
+
+        private bool validate()
+        {
+            if (string.IsNullOrEmpty(tbxKorisnickoIme.Text) || string.IsNullOrEmpty(tbxLozinka.Text))
+            {
+                return false;
+            }
+
+            ZaposleniDTO zaposleni = BioskopUtil.getDAOFactory().getZaposleniDAO().getByUsername(tbxKorisnickoIme.Text);
+            if (zaposleni == null)
+            {
+                return false;
+            }
+
+            if (BioskopUtil.sha256(tbxLozinka.Text) != zaposleni.Lozinka)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
     }
 }
