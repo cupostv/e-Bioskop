@@ -62,7 +62,7 @@
             // lblAdresa
             // 
             this.lblAdresa.AutoSize = true;
-            this.lblAdresa.Location = new System.Drawing.Point(12, 89);
+            this.lblAdresa.Location = new System.Drawing.Point(12, 99);
             this.lblAdresa.Name = "lblAdresa";
             this.lblAdresa.Size = new System.Drawing.Size(40, 13);
             this.lblAdresa.TabIndex = 2;
@@ -71,7 +71,7 @@
             // lblBrojTelefona
             // 
             this.lblBrojTelefona.AutoSize = true;
-            this.lblBrojTelefona.Location = new System.Drawing.Point(12, 119);
+            this.lblBrojTelefona.Location = new System.Drawing.Point(12, 139);
             this.lblBrojTelefona.Name = "lblBrojTelefona";
             this.lblBrojTelefona.Size = new System.Drawing.Size(66, 13);
             this.lblBrojTelefona.TabIndex = 3;
@@ -80,7 +80,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(12, 149);
+            this.lblEmail.Location = new System.Drawing.Point(12, 179);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 4;
@@ -88,47 +88,55 @@
             // 
             // tbxNaziv
             // 
+            this.tbxNaziv.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.tbxNaziv.Location = new System.Drawing.Point(88, 56);
             this.tbxNaziv.Name = "tbxNaziv";
-            this.tbxNaziv.Size = new System.Drawing.Size(247, 20);
-            this.tbxNaziv.TabIndex = 5;
+            this.tbxNaziv.Size = new System.Drawing.Size(253, 20);
+            this.tbxNaziv.TabIndex = 1;
+            this.tbxNaziv.TextChanged += new System.EventHandler(this.tbxNaziv_TextChanged);
             // 
             // tbxAdresa
             // 
-            this.tbxAdresa.Location = new System.Drawing.Point(88, 86);
+            this.tbxAdresa.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tbxAdresa.Location = new System.Drawing.Point(88, 96);
             this.tbxAdresa.Name = "tbxAdresa";
-            this.tbxAdresa.Size = new System.Drawing.Size(247, 20);
-            this.tbxAdresa.TabIndex = 6;
+            this.tbxAdresa.Size = new System.Drawing.Size(253, 20);
+            this.tbxAdresa.TabIndex = 2;
+            this.tbxAdresa.Enter += new System.EventHandler(this.tbxAdresa_Enter);
+            this.tbxAdresa.Leave += new System.EventHandler(this.tbxAdresa_Leave);
             // 
             // tbxBrojTelefona
             // 
-            this.tbxBrojTelefona.Location = new System.Drawing.Point(88, 116);
+            this.tbxBrojTelefona.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tbxBrojTelefona.Location = new System.Drawing.Point(88, 136);
             this.tbxBrojTelefona.Name = "tbxBrojTelefona";
-            this.tbxBrojTelefona.Size = new System.Drawing.Size(247, 20);
-            this.tbxBrojTelefona.TabIndex = 7;
+            this.tbxBrojTelefona.Size = new System.Drawing.Size(253, 20);
+            this.tbxBrojTelefona.TabIndex = 3;
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Location = new System.Drawing.Point(88, 146);
+            this.tbxEmail.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tbxEmail.Location = new System.Drawing.Point(88, 176);
             this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(247, 20);
-            this.tbxEmail.TabIndex = 8;
+            this.tbxEmail.Size = new System.Drawing.Size(253, 20);
+            this.tbxEmail.TabIndex = 4;
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(260, 187);
+            this.btnDodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDodaj.Location = new System.Drawing.Point(266, 227);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(75, 23);
-            this.btnDodaj.TabIndex = 9;
+            this.btnDodaj.TabIndex = 5;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
-            // Form1
+            // DistributerDodajForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 222);
+            this.ClientSize = new System.Drawing.Size(352, 262);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.tbxEmail);
             this.Controls.Add(this.tbxBrojTelefona);
@@ -139,7 +147,8 @@
             this.Controls.Add(this.lblAdresa);
             this.Controls.Add(this.lblNaziv);
             this.Controls.Add(this.lblDodajNaslov);
-            this.Name = "Form1";
+            this.Name = "DistributerDodajForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodavanje distributera";
             this.ResumeLayout(false);
             this.PerformLayout();

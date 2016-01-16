@@ -14,9 +14,24 @@ namespace e_Bioskop
 {
     public partial class DistributerDodajForm : Form
     {
+        private string opciono = "Opciono";
+
         public DistributerDodajForm()
         {
             InitializeComponent();
+
+            btnDodaj.Enabled = false;
+
+            tbxEmail.Enter += new EventHandler(tbxAdresa_Enter);
+            tbxEmail.Leave += new EventHandler(tbxAdresa_Leave);
+
+            tbxBrojTelefona.TextChanged += new EventHandler(tbxNaziv_TextChanged);
+
+            tbxAdresa.Text = opciono;
+            tbxEmail.Text = opciono;
+
+            tbxAdresa.ForeColor = SystemColors.GrayText;
+            tbxEmail.ForeColor = SystemColors.GrayText;
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -37,7 +52,8 @@ namespace e_Bioskop
 
         private bool validate()
         {
-            return true;
+            return !string.IsNullOrWhiteSpace(tbxNaziv.Text) &&
+                !string.IsNullOrWhiteSpace(tbxBrojTelefona.Text);
         }
 
         private void insertDistributer()
@@ -45,6 +61,40 @@ namespace e_Bioskop
             if (validate())
             {
                 BioskopUtil.getDAOFactory().getDistributerDAO().insert(controlsToDistributer());
+            }
+        }
+
+        private void tbxNaziv_TextChanged(object sender, EventArgs e)
+        {
+            if (validate())
+            {
+                btnDodaj.Enabled = true;
+            }
+            else
+            {
+                btnDodaj.Enabled = false;
+            }
+        }
+
+        private void tbxAdresa_Enter(object sender, EventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            if (tb.ForeColor != SystemColors.GrayText)
+            {
+                return;
+            }
+            tb.Text = "";
+            tb.ForeColor = SystemColors.WindowText;
+        }
+
+        private void tbxAdresa_Leave(object sender, EventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            string name = tb.Name;
+            if (tb.Text == "")
+            {
+                tb.Text = opciono;
+                tb.ForeColor = SystemColors.GrayText;
             }
         }
     }
