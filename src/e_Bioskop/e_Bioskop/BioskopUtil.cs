@@ -1,5 +1,6 @@
 ﻿using e_Bioskop.data.dao;
 using e_Bioskop.data.dao.mysql;
+using e_Bioskop.data.dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,10 @@ namespace e_Bioskop
 {
     public class BioskopUtil
     {
-        private static DAOFactory daoFactory=null;
+        private static DAOFactory daoFactory = null;
+
+        private static ZaposleniDTO prijavljeniZaposleni = null;
+
         public static DAOFactory getDAOFactory()
         {
             if (daoFactory == null)
@@ -17,6 +21,16 @@ namespace e_Bioskop
                 daoFactory = new MySqlDAOFactory();
             }
             return daoFactory;
+        }
+
+        public static void prijavaZaposleni(ZaposleniDTO zaposleni)
+        {
+            prijavljeniZaposleni = zaposleni;
+        }
+
+        public static void odjavaZaposleni()
+        {
+            prijavljeniZaposleni = null;
         }
 
         public static string sha256(string password)

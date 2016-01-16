@@ -122,6 +122,7 @@
             this.Name = "PrijavaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prijava";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PrijavaForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

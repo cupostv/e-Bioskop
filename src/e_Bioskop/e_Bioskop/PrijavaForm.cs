@@ -22,7 +22,10 @@ namespace e_Bioskop
         {
             if (validate())
             {
-
+                AdministratorForm administrator = new AdministratorForm();
+                //Odluka koja forma se otvara
+                new AdministratorForm().Show();
+                this.Hide();
             }
             else
             {
@@ -47,7 +50,15 @@ namespace e_Bioskop
             {
                 return false;
             }
+
+            BioskopUtil.prijavaZaposleni(zaposleni);
+            
             return true;
+        }
+
+        private void PrijavaForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
 
