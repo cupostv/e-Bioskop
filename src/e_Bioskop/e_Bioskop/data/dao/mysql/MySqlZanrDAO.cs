@@ -15,6 +15,7 @@ namespace e_Bioskop.data.dao.mysql
             MySqlConnection connection = ConnectionPool.checkOutConnection();
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = getByIdQuerry;
+            command.Parameters.AddWithValue("id", id);
             MySqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {

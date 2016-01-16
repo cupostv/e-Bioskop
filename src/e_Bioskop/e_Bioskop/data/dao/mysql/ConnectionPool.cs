@@ -12,7 +12,7 @@ namespace e_Bioskop.data.dao.mysql
     {
         private static ArrayList connections;
         private static int connectionNumber = 10;
-        private static string connectionString = "Server=127.0.0.1;Database=ddk;Uid=bioskop;Pwd=bioskop;";
+        private static string connectionString = "Server=127.0.0.1;Database=e_bioskop;Uid=bioskop;Pwd=bioskop;";
 
         static ConnectionPool()
         {
