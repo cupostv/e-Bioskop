@@ -9,9 +9,9 @@ namespace e_Bioskop.data.dao.mysql
 {
     public class MySqlDistributerDAO : DistributerDAO
     {
-        private string getByIdQuerry = "SELECT idDistributer,naziv,adresa,telefon,e_mail FROM e_bioskop.distributer where idDistributer=?id;";
+        private string getByIdQuerry = "SELECT idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer FROM e_bioskop.distributer where idDistributer=?id;";
 
-        private string insertQuerry = "INSERT INTO `e_bioskop`.`distributer` (`naziv`, `adresa`, `telefon`, `e_mail`) VALUES (?naziv, ?adresa, ?telefon,?eMail);";
+        private string insertQuerry = "INSERT INTO `e_bioskop`.`distributer` (`nazivDistributer`, `adresaDistributer`, `telefonDistributer`, `e_mailDistributer`) VALUES (?naziv, ?adresa, ?telefon,?eMail);";
         private string getAllQuerry = "SELECT idDistributer,naziv,adresa,telefon,e_mail FROM e_bioskop.distributer";
 
         public DistributerDTO getById(int id)
@@ -31,14 +31,14 @@ namespace e_Bioskop.data.dao.mysql
             return distributer;
         
         }
-        public DistributerDTO readerToDistributer(MySqlDataReader reader)
+        public static DistributerDTO readerToDistributer(MySqlDataReader reader)
         {
             DistributerDTO distributer = new DistributerDTO();
             distributer.Id = reader.GetInt32("idDistributer");
-            distributer.Naziv = reader["naziv"].ToString();
-            distributer.Adresa = reader["adresa"].ToString();
-            distributer.Telefon = reader["telefon"].ToString();
-            distributer.Email = reader["e_mail"].ToString();
+            distributer.Naziv = reader["nazivDistributer"].ToString();
+            distributer.Adresa = reader["adresaDistributer"].ToString();
+            distributer.Telefon = reader["telefonDistributer"].ToString();
+            distributer.Email = reader["e_mailDistributer"].ToString();
             return distributer;
         }
 

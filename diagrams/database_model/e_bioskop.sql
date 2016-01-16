@@ -2,16 +2,18 @@ drop schema if exists e_bioskop;
 create schema e_bioskop collate utf8_unicode_ci;
 use e_bioskop;
 
-CREATE USER 'bioskop'@'%' IDENTIFIED BY 'bioskop';
-GRANT ALL PRIVILEGES ON e_bioskop.* TO 'bioskop'@'%' WITH GRANT OPTION;
+-- CREATE USER 'bioskop'@'%' IDENTIFIED BY 'bioskop';
+-- GRANT ALL PRIVILEGES ON e_bioskop.* TO 'bioskop'@'%' WITH GRANT OPTION;
+
+
 
 CREATE TABLE DISTRIBUTER
 (
 	idDistributer         INTEGER NOT NULL auto_increment,
-	naziv                 VARCHAR(50) NOT NULL,
-	adresa                VARCHAR(200) NULL,
-	telefon               CHAR(64) NULL,
-	e_mail                VARCHAR(70) NULL,
+	nazivDistributer      VARCHAR(50) NOT NULL,
+	adresaDistributer     VARCHAR(200) NULL,
+	telefonDistributer    CHAR(64) NULL,
+	e_mailDistributer     VARCHAR(70) NULL,
 	 PRIMARY KEY (idDistributer)
 )
 ;
@@ -20,12 +22,12 @@ CREATE TABLE DISTRIBUTER
 
 CREATE TABLE FILM
 (
-	trajanje              INTEGER NULL,
+	trajanjeFilm          INTEGER NULL,
 	idDistributer         INTEGER NOT NULL,
 	idFilm                INTEGER NOT NULL auto_increment,
-	naziv                 VARCHAR(50) NOT NULL,
-	idStatus              INTEGER NOT NULL,
-	opis                  VARCHAR(70) NULL,
+	nazivFilm             VARCHAR(50) NOT NULL,
+	idStatusFilm          INTEGER NOT NULL,
+	opisFilm              VARCHAR(70) NULL,
 	idZanr                INTEGER NULL,
 	 PRIMARY KEY (idFilm)
 )
@@ -35,15 +37,15 @@ CREATE TABLE FILM
 
 CREATE TABLE KARTA
 (
-	cijena                INTEGER NOT NULL,
+	cijenaKarta           INTEGER NOT NULL,
 	datumProdaje          DATE NULL,
 	idZaposleni           INTEGER NOT NULL,
 	idSjediste            INTEGER NOT NULL,
 	idProjekcija          INTEGER NOT NULL,
-	idKarte               INTEGER NOT NULL auto_increment,
-	idRezervacije         INTEGER NULL,
-	idStatus              INTEGER NOT NULL,
-	 PRIMARY KEY (idKarte)
+	idKarta               INTEGER NOT NULL auto_increment,
+	idRezervacija         INTEGER NULL,
+	idStatusKarta         INTEGER NOT NULL,
+	 PRIMARY KEY (idKarta)
 )
 ;
 
@@ -51,11 +53,11 @@ CREATE TABLE KARTA
 
 CREATE TABLE PROJEKCIJA
 (
-	vrijeme               DATE NOT NULL,
+	vrijemeProjekcija     DATE NOT NULL,
 	idFilm                INTEGER NOT NULL,
 	idSala                INTEGER NOT NULL,
 	idProjekcija          INTEGER NOT NULL auto_increment,
-	cijena                FLOAT NOT NULL,
+	cijenaProjekcija      FLOAT NOT NULL,
 	 PRIMARY KEY (idProjekcija)
 )
 ;
@@ -65,8 +67,8 @@ CREATE TABLE PROJEKCIJA
 CREATE TABLE RADNO_MJESTO
 (
 	idRadnoMjesto         INTEGER NOT NULL auto_increment,
-	naziv                 VARCHAR(100) NOT NULL,
-	opis                  VARCHAR(200) NOT NULL,
+	nazivRadnoMjesto      VARCHAR(100) NOT NULL,
+	opisRadnoMjesto       VARCHAR(200) NOT NULL,
 	 PRIMARY KEY (idRadnoMjesto)
 )
 ;
@@ -75,11 +77,11 @@ CREATE TABLE RADNO_MJESTO
 
 CREATE TABLE REZERVACIJA
 (
-	vrijemeRezervacije    DATE NULL,
+	vrijemeRezervacija    DATE NULL,
 	idZaposleni           INTEGER NOT NULL,
-	opisRezervacije       VARCHAR(70) NULL,
-	idRezervacije         INTEGER NOT NULL auto_increment,
-	 PRIMARY KEY (idRezervacije)
+	opisRezervacija       VARCHAR(70) NULL,
+	idRezervacija         INTEGER NOT NULL auto_increment,
+	 PRIMARY KEY (idRezervacija)
 )
 ;
 
@@ -89,7 +91,7 @@ CREATE TABLE SALA
 (
 	aktivna               INTEGER NOT NULL,
 	idSala                INTEGER NOT NULL auto_increment,
-	naziv                 VARCHAR(40) NOT NULL,
+	nazivSala             VARCHAR(40) NOT NULL,
 	 PRIMARY KEY (idSala)
 )
 ;
@@ -98,8 +100,8 @@ CREATE TABLE SALA
 
 CREATE TABLE SJEDISTE
 (
-	red                   INTEGER NOT NULL,
-	broj                  INTEGER NOT NULL,
+	redSjediste           INTEGER NOT NULL,
+	brojSjediste          INTEGER NOT NULL,
 	idSala                INTEGER NOT NULL,
 	idSjediste            INTEGER NOT NULL auto_increment,
 	 PRIMARY KEY (idSjediste)
@@ -110,9 +112,9 @@ CREATE TABLE SJEDISTE
 
 CREATE TABLE STATUS_FILM
 (
-	idStatus              INTEGER NOT NULL auto_increment,
-	naziv                 VARCHAR(40) NOT NULL,
-	 PRIMARY KEY (idStatus)
+	idStatusFilm          INTEGER NOT NULL auto_increment,
+	nazivStatusFilm       VARCHAR(40) NOT NULL,
+	 PRIMARY KEY (idStatusFilm)
 )
 ;
 
@@ -120,9 +122,9 @@ CREATE TABLE STATUS_FILM
 
 CREATE TABLE STATUS_KARTA
 (
-	idStatus              INTEGER NOT NULL auto_increment,
-	Naziv                 CHAR(64) NOT NULL,
-	 PRIMARY KEY (idStatus)
+	idStatusKarta         INTEGER NOT NULL auto_increment,
+	NazivStatusKarta      CHAR(64) NOT NULL,
+	 PRIMARY KEY (idStatusKarta)
 )
 ;
 
@@ -131,8 +133,8 @@ CREATE TABLE STATUS_KARTA
 CREATE TABLE Zanr
 (
 	idZanr                INTEGER NOT NULL auto_increment,
-	naziv                 CHAR(64) NOT NULL,
-	opis                  CHAR(18) NULL,
+	nazivZanr             CHAR(64) NOT NULL,
+	opisZanr              CHAR(18) NULL,
 	 PRIMARY KEY (idZanr)
 )
 ;
@@ -174,7 +176,7 @@ ALTER TABLE FILM
 
 
 ALTER TABLE FILM
-	ADD FOREIGN KEY R_5 (idStatus) REFERENCES STATUS_FILM(idStatus)
+	ADD FOREIGN KEY R_5 (idStatusFilm) REFERENCES STATUS_FILM(idStatusFilm)
 ;
 
 
@@ -200,12 +202,12 @@ ALTER TABLE KARTA
 
 
 ALTER TABLE KARTA
-	ADD FOREIGN KEY R_17 (idRezervacije) REFERENCES REZERVACIJA(idRezervacije)
+	ADD FOREIGN KEY R_17 (idRezervacija) REFERENCES REZERVACIJA(idRezervacija)
 ;
 
 
 ALTER TABLE KARTA
-	ADD FOREIGN KEY R_19 (idStatus) REFERENCES STATUS_KARTA(idStatus)
+	ADD FOREIGN KEY R_19 (idStatusKarta) REFERENCES STATUS_KARTA(idStatusKarta)
 ;
 
 

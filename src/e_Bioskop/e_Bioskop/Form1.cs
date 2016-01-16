@@ -17,7 +17,8 @@ namespace e_Bioskop
         public Form1()
         {
             InitializeComponent();
-          
+            ZanrDTO zanr=BioskopUtil.getDAOFactory().getZanrDAO().getById(1);
+            FilmDTO film = BioskopUtil.getDAOFactory().getFilmDAO().getById(1);
         }
     }
 }

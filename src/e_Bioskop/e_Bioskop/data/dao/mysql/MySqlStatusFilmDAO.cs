@@ -9,7 +9,7 @@ namespace e_Bioskop.data.dao.mysql
 {
     class MySqlStatusFilmDAO : StatusFilmDAO
     {
-        private static string getByIdQuerry="select idStatus,naziv from status_film where idStatus=?id";
+        private static string getByIdQuerry="select idStatusFilm,nazivStatusFilm from status_film where idStatus=?id";
         public StatusFilmDTO getById(int id)
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();
@@ -27,11 +27,11 @@ namespace e_Bioskop.data.dao.mysql
             return status;
         }
 
-        public StatusFilmDTO readerToStatusFilmDTO(MySqlDataReader reader)
+        public static StatusFilmDTO readerToStatusFilmDTO(MySqlDataReader reader)
         {
             StatusFilmDTO status = new StatusFilmDTO();
-            status.Id = reader.GetInt32("idStatus");
-            status.Naziv = reader["naziv"].ToString();
+            status.Id = reader.GetInt32("idStatusFilm");
+            status.Naziv = reader["nazivStatusFilm"].ToString();
             return status;
         }
     }

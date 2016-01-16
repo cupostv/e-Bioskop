@@ -9,5 +9,6 @@ namespace e_Bioskop.data.dao
     public interface ZanrDAO
     {
         ZanrDTO getById(int id);
+        int insert(ZanrDTO zanr);
     }
 }

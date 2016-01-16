@@ -9,9 +9,8 @@ namespace e_Bioskop.data.dao.mysql
 {
     public class MySqlFilmDAO : FilmDAO
     {
-        private string getByIdQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where idFilm=?id;";
-
-        private string insertQuerry = "INSERT INTO `e_bioskop`.`film` (`trajanje`, `idDistributer`, `nazivFilm`, `idStatusFilm`, `opisFilm`, `idZanr`) VALUES (?trajanje, ?idDistributer, ?naziv, ?idStatus, ?opis, ?idZanr);";
+        private string getByIdQuerry = "SELECT * FROM e_bioskop.film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on sf.idStatus=f.idStatus;";
+        private string insertQuerry = "INSERT INTO `e_bioskop`.`film` (`trajanje`, `idDistributer`, `naziv`, `idStatus`, `opis`, `idZanr`) VALUES (?trajanje, ?idDistributer, ?naziv, ?idStatus, ?opis, ?idZanr);";
         public FilmDTO getById(int id)
         {
             MySqlConnection connection=ConnectionPool.checkOutConnection();
@@ -38,11 +37,11 @@ namespace e_Bioskop.data.dao.mysql
         {
             FilmDTO film = new FilmDTO();
             film.Id = reader.GetInt32("idFilm");
-            film.Naziv = reader["nazivFilm"].ToString();
-            film.Opis = reader["opisFilm"].ToString();
-            film.Zanr = MySqlZanrDAO.readerToZanrDTO(reader);
-            film.Status = MySqlStatusFilmDAO.readerToStatusFilmDTO(reader);
-            film.Distributer = MySqlDistributerDAO.readerToDistributer(reader);
+            film.Naziv = reader["naziv"].ToString();
+            film.Opis = reader["opis"].ToString();
+            MySqlDAOFactory factory=new MySqlDAOFactory();
+            film.Zanr = factory.getZanrDAO().getById(reader.GetInt32("idZanr"));
+            film.Status = factory.getStatusFilmDAO().getById(reader.GetInt32("idStatus"));
             return film;
         }
 
