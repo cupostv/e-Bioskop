@@ -12,6 +12,8 @@ namespace e_Bioskop.data.dao.mysql
         private string getByIdQuerry = "SELECT idDistributer,naziv,adresa,telefon,e_mail FROM e_bioskop.distributer where idDistributer=?id;";
 
         private string insertQuerry = "INSERT INTO `e_bioskop`.`distributer` (`naziv`, `adresa`, `telefon`, `e_mail`) VALUES (?naziv, ?adresa, ?telefon,?eMail);";
+        private string getAllQuerry = "SELECT idDistributer,naziv,adresa,telefon,e_mail FROM e_bioskop.distributer";
+
         public DistributerDTO getById(int id)
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();
@@ -57,6 +59,22 @@ namespace e_Bioskop.data.dao.mysql
             int id=(int)command.LastInsertedId;
             ConnectionPool.checkInConnection(connection);
             return id;
+        }
+
+        public List<DistributerDTO> getAll()
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = getAllQuerry;
+            MySqlDataReader reader=command.ExecuteReader();
+            List<DistributerDTO> lista = new List<DistributerDTO>();
+            while (reader.Read())
+            {
+                lista.Add(readerToDistributer(reader));
+            }
+            reader.Close();
+            ConnectionPool.checkInConnection(connection);
+            return lista;
         }
     }
 }

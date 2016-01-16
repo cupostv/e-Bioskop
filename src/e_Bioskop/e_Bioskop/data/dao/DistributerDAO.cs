@@ -10,5 +10,6 @@ namespace e_Bioskop.data.dao
     {
         DistributerDTO getById(int id);
         int insert(DistributerDTO distributer);
+        List<DistributerDTO> getAll();
     }
 }

@@ -17,6 +17,7 @@ namespace e_Bioskop
         public Form1()
         {
             InitializeComponent();
+          
         }
     }
 }
