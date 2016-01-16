@@ -19,5 +19,6 @@ namespace e_Bioskop.data.dao
         public abstract StatusKartaDAO getStatusKartaDAO();
         public abstract SjedisteDAO getSjedisteDAO();
         public abstract RezervacijaDAO getRezervacijaDAO();
+        public abstract ZanrDAO getZanrDAO();
     }
 }

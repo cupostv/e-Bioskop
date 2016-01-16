@@ -6,7 +6,7 @@ using System.Text;
 using MySql.Data.MySqlClient;
 using System.Data;
 
-namespace Dobrovoljni_davaoci_krvi.dto
+namespace e_Bioskop.data.dao.mysql
 {
     public class ConnectionPool
     {

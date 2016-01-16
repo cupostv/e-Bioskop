@@ -1,7 +1,0 @@
-G:\My Documents\e-Bioskop\e-Bioskop\src\e_Bioskop\e_Bioskop\bin\Debug\e_Bioskop.exe
-G:\My Documents\e-Bioskop\e-Bioskop\src\e_Bioskop\e_Bioskop\bin\Debug\e_Bioskop.pdb
-G:\My Documents\e-Bioskop\e-Bioskop\src\e_Bioskop\e_Bioskop\obj\x86\Debug\e_Bioskop.csprojResolveAssemblyReference.cache
-G:\My Documents\e-Bioskop\e-Bioskop\src\e_Bioskop\e_Bioskop\obj\x86\Debug\e_Bioskop.Properties.Resources.resources
-G:\My Documents\e-Bioskop\e-Bioskop\src\e_Bioskop\e_Bioskop\obj\x86\Debug\e_Bioskop.csproj.GenerateResource.Cache
-G:\My Documents\e-Bioskop\e-Bioskop\src\e_Bioskop\e_Bioskop\obj\x86\Debug\e_Bioskop.exe
-G:\My Documents\e-Bioskop\e-Bioskop\src\e_Bioskop\e_Bioskop\obj\x86\Debug\e_Bioskop.pdb

@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +51,8 @@
     <Compile Include="data\dao\DistributerDAO.cs" />
     <Compile Include="data\dao\FilmDAO.cs" />
     <Compile Include="data\dao\KartaDAO.cs" />
+    <Compile Include="data\dao\mysql\ConnectionPool.cs" />
+    <Compile Include="data\dao\mysql\MySqlDAOException.cs" />
     <Compile Include="data\dao\mysql\MySqlDAOFactory.cs" />
     <Compile Include="data\dao\mysql\MySqlDistributerDAO.cs" />
     <Compile Include="data\dao\mysql\MySqlFilmDAO.cs" />
@@ -61,6 +64,7 @@
     <Compile Include="data\dao\mysql\MySqlSjedisteDAO.cs" />
     <Compile Include="data\dao\mysql\MySqlStatusFilmDAO.cs" />
     <Compile Include="data\dao\mysql\MySqlStatusKartaDAO.cs" />
+    <Compile Include="data\dao\mysql\MySqlZanrDAO.cs" />
     <Compile Include="data\dao\mysql\MySqlZaposleniDAO.cs" />
     <Compile Include="data\dao\mysql\MySqlZaposleniRadnoMjestoDAO.cs" />
     <Compile Include="data\dao\ProjekcijaDAO.cs" />
@@ -70,11 +74,12 @@
     <Compile Include="data\dao\SjedisteDAO.cs" />
     <Compile Include="data\dao\StatusFilmDAO.cs" />
     <Compile Include="data\dao\StatusKartaDAO.cs" />
+    <Compile Include="data\dao\ZanrDAO.cs" />
     <Compile Include="data\dao\ZaposleniDAO.cs" />
     <Compile Include="data\dao\ZaposleniRadnoMjestoDAO.cs" />
     <Compile Include="data\dto\DistributerDTO.cs" />
     <Compile Include="data\dto\FilmDTO.cs" />
-    <Compile Include="data\dto\FilmStatusDTO.cs" />
+    <Compile Include="data\dto\StatusFilmDTO.cs" />
     <Compile Include="data\dto\KartaDTO.cs" />
     <Compile Include="data\dto\ProjekcijaDTO.cs" />
     <Compile Include="data\dto\RadnoMjestoDTO.cs" />

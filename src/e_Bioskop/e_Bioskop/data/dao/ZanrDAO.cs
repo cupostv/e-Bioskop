@@ -6,8 +6,8 @@ using System.Text;
 
 namespace e_Bioskop.data.dao
 {
-    public interface FilmDAO
+    public interface ZanrDAO
     {
-        FilmDTO getById(int id);
+        ZanrDTO getById(int id);
     }
 }

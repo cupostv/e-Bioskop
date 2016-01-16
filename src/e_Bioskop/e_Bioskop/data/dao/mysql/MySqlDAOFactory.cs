@@ -66,5 +66,9 @@ namespace e_Bioskop.data.dao.mysql
         {
             return new MySqlStatusKartaDAO();
         }
+        public override ZanrDAO getZanrDAO()
+        {
+            return new MySqlZanrDAO();
+        }
     }
 }

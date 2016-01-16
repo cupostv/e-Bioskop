@@ -5,7 +5,7 @@ using System.Text;
 
 namespace e_Bioskop.data.dto
 {
-    class FilmDTO
+    public class FilmDTO
     {
         private int id;
 
@@ -35,9 +35,9 @@ namespace e_Bioskop.data.dto
             get { return trajanje; }
             set { trajanje = value; }
         }
-        private FilmStatusDTO status;
+        private StatusFilmDTO status;
 
-        internal FilmStatusDTO Status
+        internal StatusFilmDTO Status
         {
             get { return status; }
             set { status = value; }
