@@ -91,14 +91,17 @@
     <Compile Include="data\dto\ZanrDTO.cs" />
     <Compile Include="data\dto\ZaposleniDTO.cs" />
     <Compile Include="data\dto\ZaposleniRadnoMjestoDTO.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="DistributerDodajForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="DistributerDodajForm.Designer.cs">
+      <DependentUpon>DistributerDodajForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DistributerDodajForm.resx">
+      <DependentUpon>DistributerDodajForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
