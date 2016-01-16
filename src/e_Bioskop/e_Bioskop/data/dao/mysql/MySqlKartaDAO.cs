@@ -5,7 +5,8 @@ using System.Text;
 
 namespace e_Bioskop.data.dao.mysql
 {
-    class MySqlKartaDAO : KartaDAO
+    public class MySqlKartaDAO : KartaDAO
     {
+
     }
 }
