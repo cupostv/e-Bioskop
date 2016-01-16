@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BioskopUtil.cs" />
     <Compile Include="data\dao\DAOFactory.cs" />
     <Compile Include="data\dao\DistributerDAO.cs" />
     <Compile Include="data\dao\FilmDAO.cs" />

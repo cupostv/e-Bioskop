@@ -10,6 +10,7 @@ namespace e_Bioskop.data.dao.mysql
     public class MySqlFilmDAO : FilmDAO
     {
         private string getByIdQuerry = "select idFilm,trajanje,idDistributer,naziv,idZanr,idStatus,opis from film where idFilm=?id";
+        private string insertQuerry = "INSERT INTO `e_bioskop`.`film` (`trajanje`, `idDistributer`, `naziv`, `idStatus`, `opis`, `idZanr`) VALUES (?trajanje, ?idDistributer, ?naziv, ?idStatus, ?opis, ?idZanr);";
         public FilmDTO getById(int id)
         {
             MySqlConnection connection=ConnectionPool.checkOutConnection();
@@ -42,6 +43,21 @@ namespace e_Bioskop.data.dao.mysql
             film.Zanr = factory.getZanrDAO().getById(reader.GetInt32("idZanr"));
             film.Status = factory.getStatusFilmDAO().getById(reader.GetInt32("idStatus"));
             return film;
+        }
+
+        public bool insert(FilmDTO film)
+        {
+            if (film == null)
+                return false;
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = insertQuerry;
+            command.Parameters.AddWithValue("naziv", film.Naziv);
+            command.Parameters.AddWithValue("trajanje", film.Trajanje);
+            command.Parameters.AddWithValue("idDistributer", film.Distributer.Id);
+            command.Parameters.AddWithValue("idZanr", film.Zanr.Id);
+            command.Parameters.AddWithValue("opis", film.Opis);
+            return true;
         }
     }
 }
