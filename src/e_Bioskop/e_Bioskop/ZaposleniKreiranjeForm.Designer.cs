@@ -51,7 +51,7 @@
             this.btnOdustani = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtpDatumZaposlenja = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboxRadnoMjesto = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -64,7 +64,7 @@
             this.txbKorisnickoIme.Location = new System.Drawing.Point(124, 17);
             this.txbKorisnickoIme.Name = "txbKorisnickoIme";
             this.txbKorisnickoIme.Size = new System.Drawing.Size(232, 20);
-            this.txbKorisnickoIme.TabIndex = 0;
+            this.txbKorisnickoIme.TabIndex = 7;
             // 
             // groupBox1
             // 
@@ -77,7 +77,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 201);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(372, 107);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Podaci o korisničkom nalogu";
             // 
@@ -94,8 +94,9 @@
             // 
             this.txbLozinka1.Location = new System.Drawing.Point(124, 74);
             this.txbLozinka1.Name = "txbLozinka1";
+            this.txbLozinka1.PasswordChar = '*';
             this.txbLozinka1.Size = new System.Drawing.Size(232, 20);
-            this.txbLozinka1.TabIndex = 4;
+            this.txbLozinka1.TabIndex = 9;
             // 
             // label2
             // 
@@ -121,7 +122,7 @@
             this.txbLozinka.Name = "txbLozinka";
             this.txbLozinka.PasswordChar = '*';
             this.txbLozinka.Size = new System.Drawing.Size(232, 20);
-            this.txbLozinka.TabIndex = 1;
+            this.txbLozinka.TabIndex = 8;
             // 
             // groupBox2
             // 
@@ -139,7 +140,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(372, 182);
-            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Podaci o zaposlenom";
             // 
@@ -151,7 +152,7 @@
             this.cbAktivan.Location = new System.Drawing.Point(124, 157);
             this.cbAktivan.Name = "cbAktivan";
             this.cbAktivan.Size = new System.Drawing.Size(62, 17);
-            this.cbAktivan.TabIndex = 11;
+            this.cbAktivan.TabIndex = 6;
             this.cbAktivan.Text = "Aktivan";
             this.cbAktivan.UseVisualStyleBackColor = true;
             // 
@@ -160,7 +161,7 @@
             this.txbEmail.Location = new System.Drawing.Point(124, 127);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(232, 20);
-            this.txbEmail.TabIndex = 10;
+            this.txbEmail.TabIndex = 5;
             this.txbEmail.Enter += new System.EventHandler(this.txbEmail_Enter);
             this.txbEmail.Leave += new System.EventHandler(this.txbEmail_Leave);
             // 
@@ -196,7 +197,7 @@
             this.dtpDatumRodjenja.Location = new System.Drawing.Point(124, 73);
             this.dtpDatumRodjenja.Name = "dtpDatumRodjenja";
             this.dtpDatumRodjenja.Size = new System.Drawing.Size(232, 20);
-            this.dtpDatumRodjenja.TabIndex = 0;
+            this.dtpDatumRodjenja.TabIndex = 3;
             // 
             // label4
             // 
@@ -221,7 +222,7 @@
             this.txbBrojTelefona.Location = new System.Drawing.Point(124, 100);
             this.txbBrojTelefona.Name = "txbBrojTelefona";
             this.txbBrojTelefona.Size = new System.Drawing.Size(232, 20);
-            this.txbBrojTelefona.TabIndex = 3;
+            this.txbBrojTelefona.TabIndex = 4;
             // 
             // txbPrezime
             // 
@@ -242,7 +243,7 @@
             this.btnSacuvaj.Location = new System.Drawing.Point(309, 417);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(75, 23);
-            this.btnSacuvaj.TabIndex = 3;
+            this.btnSacuvaj.TabIndex = 4;
             this.btnSacuvaj.Text = "Sačuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
             this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
@@ -252,7 +253,7 @@
             this.btnOdustani.Location = new System.Drawing.Point(228, 417);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
-            this.btnOdustani.TabIndex = 4;
+            this.btnOdustani.TabIndex = 5;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
@@ -260,13 +261,13 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dtpDatumZaposlenja);
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.cboxRadnoMjesto);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Location = new System.Drawing.Point(13, 314);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(371, 80);
-            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Podaci o zaposlenju";
             // 
@@ -275,15 +276,16 @@
             this.dtpDatumZaposlenja.Location = new System.Drawing.Point(123, 44);
             this.dtpDatumZaposlenja.Name = "dtpDatumZaposlenja";
             this.dtpDatumZaposlenja.Size = new System.Drawing.Size(232, 20);
-            this.dtpDatumZaposlenja.TabIndex = 4;
+            this.dtpDatumZaposlenja.TabIndex = 11;
             // 
-            // comboBox1
+            // cboxRadnoMjesto
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(123, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(232, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cboxRadnoMjesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxRadnoMjesto.FormattingEnabled = true;
+            this.cboxRadnoMjesto.Location = new System.Drawing.Point(123, 16);
+            this.cboxRadnoMjesto.Name = "cboxRadnoMjesto";
+            this.cboxRadnoMjesto.Size = new System.Drawing.Size(232, 21);
+            this.cboxRadnoMjesto.TabIndex = 10;
             // 
             // label9
             // 
@@ -300,7 +302,7 @@
             this.label8.Location = new System.Drawing.Point(15, 20);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 13);
-            this.label8.TabIndex = 0;
+            this.label8.TabIndex = 3;
             this.label8.Text = "Radno mjesto:";
             // 
             // ZaposleniKreiranjeForm
@@ -350,7 +352,7 @@
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DateTimePicker dtpDatumZaposlenja;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboxRadnoMjesto;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
     }

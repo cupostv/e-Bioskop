@@ -11,7 +11,7 @@ namespace e_Bioskop.data.dao.mysql
     {
         private string getByIdQuerry = "SELECT idZaposleni,ime,prezime,datumRodjenja,korisnickoIme,e_mail,aktivan,lozinka,telefon FROM e_bioskop.zaposleni where idZaposleni=?id;";
         private string getAllQuerry = "SELECT idZaposleni,ime,prezime,datumRodjenja,korisnickoIme,e_mail,aktivan,lozinka,telefon FROM e_bioskop.zaposleni";
-        private string insertQuerry = "INSERT INTO `e_bioskop`.`zaposleni` (`ime`, `prezime`, `datumRodjenja`, `korisnickoIme`, `e_mail`, `aktivan`, `lozinka`) VALUES (?ime, ?prezime, ?datumRodjenja, ?korisnickoIme, ?eMail, ?aktivan, ?lozinka);";
+        private string insertQuerry = "INSERT INTO `e_bioskop`.`zaposleni` (`ime`, `prezime`, `datumRodjenja`, `korisnickoIme`, `e_mail`, `aktivan`, `lozinka`, `telefon`) VALUES (?ime, ?prezime, ?datumRodjenja, ?korisnickoIme, ?eMail, ?aktivan, ?lozinka, ?telefon);";
 
         private string getByUsernameQuerry = "SELECT idZaposleni,ime,prezime,datumRodjenja,korisnickoIme,e_mail,aktivan,lozinka,telefon FROM e_bioskop.zaposleni where korisnickoIme=?korisnickoIme;";
 
@@ -80,6 +80,7 @@ namespace e_Bioskop.data.dao.mysql
             command.Parameters.AddWithValue("eMail", zaposleni.Email);
             command.Parameters.AddWithValue("aktivan", zaposleni.Aktivan);
             command.Parameters.AddWithValue("lozinka", zaposleni.Lozinka);
+            command.Parameters.AddWithValue("telefon", zaposleni.Telefon);
             command.ExecuteNonQuery();
             long id = command.LastInsertedId;
             ConnectionPool.checkInConnection(connection);

@@ -19,6 +19,7 @@ namespace e_Bioskop
             InitializeComponent();
             txbEmail.Text = opciono;
             txbEmail.ForeColor = SystemColors.GrayText;
+            BioskopUtil.initRadnoMjestoComboBox(cboxRadnoMjesto, -1);
         }
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
@@ -32,9 +33,26 @@ namespace e_Bioskop
 
         private bool validate()
         {
-            if (string.IsNullOrWhiteSpace(txbLozinka.Text))
-                return false;
-            if (string.IsNullOrWhiteSpace(txbKorisnickoIme.Text))
+            bool valid = true;
+            if (string.IsNullOrEmpty(txbIme.Text))
+            {
+                txbIme.BackColor = Color.Red;
+                valid = false;
+            }
+
+            if (string.IsNullOrEmpty(txbBrojTelefona.Text))
+            {
+                txbBrojTelefona.BackColor = Color.Red;
+                valid = false;
+            }
+
+            if (string.IsNullOrEmpty(txbPrezime.Text))
+            {
+                txbPrezime.BackColor = Color.Red;
+                valid = false;
+            }
+
+            if (string.IsNullOrEmpty(txbKorisnickoIme.Text))
                 return false;
             if (txbLozinka.Text.Equals(txbLozinka.Text))
             {
@@ -46,7 +64,7 @@ namespace e_Bioskop
             }
         }
 
-        private ZaposleniDTO controlsToZaposleni()
+        private ZaposleniRadnoMjestoDTO controlsToZaposleni()
         {
             ZaposleniDTO zaposleni = new ZaposleniDTO();
             zaposleni.Ime = txbIme.Text;
@@ -55,18 +73,29 @@ namespace e_Bioskop
             zaposleni.Telefon = txbBrojTelefona.Text;
             zaposleni.KorisnickoIme = txbKorisnickoIme.Text;
             zaposleni.DatumRodjenja = dtpDatumRodjenja.Value;
-            zaposleni.Email = txbEmail.Text;
-            return zaposleni;
+            zaposleni.Email = txbEmail.ForeColor == SystemColors.GrayText ? "" : txbEmail.Text;
+            zaposleni.Aktivan = cbAktivan.Checked ? 1 : 0;
+            ZaposleniRadnoMjestoDTO zaposleniRadnoMjesto = new ZaposleniRadnoMjestoDTO();
+
+            zaposleniRadnoMjesto.RadnoMjesto = BioskopUtil.getRadnoMjestoFromComboBox(cboxRadnoMjesto);
+            zaposleniRadnoMjesto.Zaposleni = zaposleni;
+            zaposleniRadnoMjesto.DatumZaposlenja = dtpDatumZaposlenja.Value;
+            zaposleniRadnoMjesto.DatumOtkaza = dtpDatumZaposlenja.Value;
+
+            return zaposleniRadnoMjesto;
         }
 
         private bool insertZaposleni()
         {
             if (validate())
             {
-                ZaposleniDTO zaposleni = controlsToZaposleni();
-                long id=BioskopUtil.getDAOFactory().getZaposleniDAO().insert(zaposleni);
+                ZaposleniRadnoMjestoDTO zaposleniRadnoMjesto = controlsToZaposleni();
+                long id=BioskopUtil.getDAOFactory().getZaposleniDAO().insert(zaposleniRadnoMjesto.Zaposleni);
                 if (id > 0)
-                    return true;
+                {
+                    zaposleniRadnoMjesto.Zaposleni.Id = (int)id;
+                    return BioskopUtil.getDAOFactory().getZaposleniRadnoMjestoDAO().insert(zaposleniRadnoMjesto);
+                }
             }
            return false;
         }
