@@ -373,6 +373,7 @@
             this.btnDodajFilm.Name = "btnDodajFilm";
             this.btnDodajFilm.Size = new System.Drawing.Size(82, 22);
             this.btnDodajFilm.Text = "Dodaj film";
+            this.btnDodajFilm.Click += new System.EventHandler(this.btnDodajFilm_Click);
             // 
             // picAktivan
             // 

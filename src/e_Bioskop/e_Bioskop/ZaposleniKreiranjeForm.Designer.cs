@@ -50,10 +50,8 @@
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -239,7 +237,7 @@
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(309, 315);
+            this.btnSacuvaj.Location = new System.Drawing.Point(309, 417);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(75, 23);
             this.btnSacuvaj.TabIndex = 3;
@@ -249,7 +247,7 @@
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(228, 315);
+            this.btnOdustani.Location = new System.Drawing.Point(228, 417);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
             this.btnOdustani.TabIndex = 4;
@@ -259,26 +257,16 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dateTimePicker2);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Location = new System.Drawing.Point(13, 375);
+            this.groupBox3.Location = new System.Drawing.Point(13, 314);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(371, 129);
+            this.groupBox3.Size = new System.Drawing.Size(371, 80);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Podaci o zaposlenju";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(123, 77);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(232, 20);
-            this.dateTimePicker2.TabIndex = 5;
-            this.dateTimePicker2.Visible = false;
             // 
             // dateTimePicker1
             // 
@@ -294,16 +282,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(232, 21);
             this.comboBox1.TabIndex = 3;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 83);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Datum otkaza:";
-            this.label10.Visible = false;
             // 
             // label9
             // 
@@ -327,7 +305,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 516);
+            this.ClientSize = new System.Drawing.Size(397, 452);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSacuvaj);
@@ -371,9 +349,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

@@ -64,6 +64,12 @@ namespace e_Bioskop
             return (ddf.ShowDialog() == DialogResult.OK);
         }
 
+        private bool dodajFilm()
+        {
+            FilmDodajForm f = new FilmDodajForm();
+            return (f.ShowDialog() == DialogResult.OK);
+        }
+
         private void prikaziDetalje(ZaposleniDTO zaposleni)
         {
             lblIme.Text = zaposleni.Ime;
@@ -105,6 +111,11 @@ namespace e_Bioskop
                 return;
             }
             prikaziDetalje (listaOsoba[lvZaposleni.FocusedItem.Index]);
+        }
+
+        private void btnDodajFilm_Click(object sender, EventArgs e)
+        {
+            dodajFilm();
         }
 
     }
