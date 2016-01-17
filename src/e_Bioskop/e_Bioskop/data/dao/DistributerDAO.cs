@@ -11,5 +11,6 @@ namespace e_Bioskop.data.dao
         DistributerDTO getById(int id);
         long insert(DistributerDTO distributer);
         List<DistributerDTO> getAll();
+        DistributerDTO getByNaziv(string naziv);
     }
 }

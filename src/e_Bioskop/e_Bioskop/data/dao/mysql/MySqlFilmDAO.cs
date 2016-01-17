@@ -11,7 +11,7 @@ namespace e_Bioskop.data.dao.mysql
     {
         private string getByIdQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where idFilm=?id;";
         private string getAllQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr ;";
-        private string insertQuerry = "INSERT INTO `e_bioskop`.`film` (`trajanje`, `idDistributer`, `nazivFilm`, `idStatusFilm`, `opisFilm`, `idZanr`) VALUES (?trajanje, ?idDistributer, ?naziv, ?idStatus, ?opis, ?idZanr);";
+        private string insertQuerry = "INSERT INTO `e_bioskop`.`film` (`trajanjeFilm`, `idDistributer`, `nazivFilm`, `idStatusFilm`, `opisFilm`, `idZanr`) VALUES (?trajanje, ?idDistributer, ?naziv, ?idStatus, ?opis, ?idZanr);";
 
         private string getByDistributerQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where f.idDistributer=?idDistributer;";
         private string getByStatusQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where f.idStatusFilm=?idStatus;";
@@ -132,6 +132,7 @@ namespace e_Bioskop.data.dao.mysql
             film.Id = reader.GetInt32("idFilm");
             film.Naziv = reader["nazivFilm"].ToString();
             film.Opis = reader["opisFilm"].ToString();
+            film.Trajanje = reader.GetInt32("trajanjeFilm");
             film.Zanr = MySqlZanrDAO.readerToZanrDTO(reader);
             film.Status = MySqlStatusFilmDAO.readerToStatusFilmDTO(reader);
             film.Distributer = MySqlDistributerDAO.readerToDistributer(reader);
@@ -150,6 +151,7 @@ namespace e_Bioskop.data.dao.mysql
             command.Parameters.AddWithValue("idDistributer", film.Distributer.Id);
             command.Parameters.AddWithValue("idZanr", film.Zanr.Id);
             command.Parameters.AddWithValue("opis", film.Opis);
+            command.Parameters.AddWithValue("idStatus", film.Status.Id);
             command.ExecuteNonQuery();
             int id =(int) command.LastInsertedId;
             ConnectionPool.checkInConnection(connection);

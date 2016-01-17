@@ -10,5 +10,9 @@ namespace e_Bioskop.data.dao
     {
         ZanrDTO getById(int id);
         int insert(ZanrDTO zanr);
+
+        List<ZanrDTO> getAll();
+
+        ZanrDTO getByNaziv(string naziv);
     }
 }

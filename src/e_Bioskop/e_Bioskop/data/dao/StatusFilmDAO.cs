@@ -10,5 +10,9 @@ namespace e_Bioskop.data.dao
     {
         StatusFilmDTO getById(int id);
 
+
+        List<StatusFilmDTO> getAll();
+
+        StatusFilmDTO getByNaziv(string naziv);
     }
 }

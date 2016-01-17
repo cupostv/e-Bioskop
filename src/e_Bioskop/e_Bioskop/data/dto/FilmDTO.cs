@@ -28,9 +28,9 @@ namespace e_Bioskop.data.dto
             get { return zanr; }
             set { zanr = value; }
         }
-        private DateTime trajanje;
+        private int trajanje;
 
-        public DateTime Trajanje
+        public int Trajanje
         {
             get { return trajanje; }
             set { trajanje = value; }

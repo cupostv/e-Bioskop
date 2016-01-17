@@ -69,5 +69,62 @@ namespace e_Bioskop
             string naziv= comboBox.Items[comboBox.SelectedIndex].ToString();
             return getDAOFactory().getRadnoMjestoDAO().getByNaziv(naziv);
         }
+
+        public static void initDistributerComboBox(ComboBox comboBox,int id)
+        {
+            List<DistributerDTO> lista = getDAOFactory().getDistributerDAO().getAll();
+            foreach (DistributerDTO distributer in lista)
+            {
+                comboBox.Items.Add(distributer.Naziv);
+                if (distributer.Id == id)
+                {
+                    comboBox.SelectedIndex = comboBox.Items.Count - 1;
+                }
+            }
+        }
+
+        public static DistributerDTO getDistributerDTOFromComboBox(ComboBox comboBox)
+        {
+            string naziv = comboBox.Items[comboBox.SelectedIndex].ToString();
+            return getDAOFactory().getDistributerDAO().getByNaziv(naziv);
+
+        }
+
+        public static void initStatusFilmComboBox(ComboBox comboBox, int id)
+        {
+            List<StatusFilmDTO> list = getDAOFactory().getStatusFilmDAO().getAll();
+            foreach (StatusFilmDTO status in list)
+            {
+                comboBox.Items.Add(status.Naziv);
+                if (status.Id == id)
+                {
+                    comboBox.SelectedIndex = comboBox.Items.Count - 1;
+                }
+            }
+        }
+        public static StatusFilmDTO getStatusFilmDTOfromComboBox(ComboBox comboBox)
+        {
+            string naziv = comboBox.Items[comboBox.SelectedIndex].ToString();
+            return getDAOFactory().getStatusFilmDAO().getByNaziv(naziv);
+        }
+
+        public static void initZanrComboBox(ComboBox comboBox, int id)
+        {
+            List<ZanrDTO> lista = getDAOFactory().getZanrDAO().getAll();
+            foreach (ZanrDTO zanr in lista)
+            {
+                comboBox.Items.Add(zanr.Naziv);
+                if (zanr.Id == id)
+                {
+                    comboBox.SelectedIndex = comboBox.Items.Count - 1;
+                }
+            }
+        }
+
+        public static ZanrDTO getZanrDTOFromComboBox(ComboBox comboBox)
+        {
+            string naziv = comboBox.Items[comboBox.SelectedIndex].ToString();
+            return getDAOFactory().getZanrDAO().getByNaziv(naziv);
+        }
     }
 }

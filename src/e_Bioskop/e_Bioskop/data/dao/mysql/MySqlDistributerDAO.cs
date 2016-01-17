@@ -14,6 +14,8 @@ namespace e_Bioskop.data.dao.mysql
         private string insertQuerry = "INSERT INTO `e_bioskop`.`distributer` (`nazivDistributer`, `adresaDistributer`, `telefonDistributer`, `e_mailDistributer`) VALUES (?naziv, ?adresa, ?telefon,?eMail);";
         private string getAllQuerry = "SELECT idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer FROM e_bioskop.distributer";
 
+        private string getByNazivQuerry = "SELECT idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer FROM e_bioskop.distributer where nazivDistributer=?naziv;";
+
         public DistributerDTO getById(int id)
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();
@@ -75,6 +77,23 @@ namespace e_Bioskop.data.dao.mysql
             reader.Close();
             ConnectionPool.checkInConnection(connection);
             return lista;
+        }
+
+        public DistributerDTO getByNaziv(string naziv)
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = getByNazivQuerry;
+            command.Parameters.AddWithValue("naziv", naziv);
+            MySqlDataReader reader = command.ExecuteReader();
+            DistributerDTO distributer = null;
+            if (reader.Read())
+            {
+                distributer = readerToDistributer(reader);
+            }
+            reader.Close();
+            ConnectionPool.checkInConnection(connection);
+            return distributer;
         }
     }
 }
