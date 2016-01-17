@@ -69,5 +69,6 @@ namespace e_Bioskop.data.dto
             get { return aktivan; }
             set { aktivan = value; }
         }
+
     }
 }
