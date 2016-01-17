@@ -14,9 +14,9 @@ namespace e_Bioskop.data.dto
             get { return id; }
             set { id = value; }
         }
-        private string aktivna;
+        private int aktivna;
 
-        public string Aktivna
+        public int Aktivna
         {
             get { return aktivna; }
             set { aktivna = value; }

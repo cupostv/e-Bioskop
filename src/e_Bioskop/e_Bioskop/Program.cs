@@ -16,7 +16,6 @@ namespace e_Bioskop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           
             PrijavaForm prijava = new PrijavaForm();
             prijava.Show();
             
