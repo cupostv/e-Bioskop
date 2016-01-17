@@ -60,7 +60,9 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(3, 3);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -77,18 +79,16 @@
             // 
             // lvZaposleni
             // 
-            this.lvZaposleni.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvZaposleni.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colKorisnickoIme,
             this.colIme,
             this.colPrezime});
+            this.lvZaposleni.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvZaposleni.FullRowSelect = true;
             this.lvZaposleni.GridLines = true;
-            this.lvZaposleni.Location = new System.Drawing.Point(5, 3);
+            this.lvZaposleni.Location = new System.Drawing.Point(0, 0);
             this.lvZaposleni.Name = "lvZaposleni";
-            this.lvZaposleni.Size = new System.Drawing.Size(286, 430);
+            this.lvZaposleni.Size = new System.Drawing.Size(318, 501);
             this.lvZaposleni.TabIndex = 0;
             this.lvZaposleni.UseCompatibleStateImageBehavior = false;
             this.lvZaposleni.View = System.Windows.Forms.View.Details;
@@ -159,10 +159,12 @@
             // 
             // tabControl2
             // 
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl2.Location = new System.Drawing.Point(0, 28);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
