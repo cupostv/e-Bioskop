@@ -10,10 +10,13 @@ namespace e_Bioskop.data.dao.mysql
     public class MySqlZaposleniDAO : ZaposleniDAO
     {
         private string getByIdQuerry = "SELECT idZaposleni,ime,prezime,datumRodjenja,korisnickoIme,e_mail,aktivan,lozinka,telefon FROM e_bioskop.zaposleni where idZaposleni=?id;";
+        private string getAllQuerry = "SELECT idZaposleni,ime,prezime,datumRodjenja,korisnickoIme,e_mail,aktivan,lozinka,telefon FROM e_bioskop.zaposleni";
         private string insertQuerry = "INSERT INTO `e_bioskop`.`zaposleni` (`ime`, `prezime`, `datumRodjenja`, `korisnickoIme`, `e_mail`, `aktivan`, `lozinka`) VALUES (?ime, ?prezime, ?datumRodjenja, ?korisnickoIme, ?eMail, ?aktivan, ?lozinka);";
 
         private string getByUsernameQuerry = "SELECT idZaposleni,ime,prezime,datumRodjenja,korisnickoIme,e_mail,aktivan,lozinka,telefon FROM e_bioskop.zaposleni where korisnickoIme=?korisnickoIme;";
+
         private string updateQuerry = "UPDATE zaposleni SET ime=?ime,prezime=?prezime,korisnickoIme=?korisnickoIme,e_mail=?eMail,aktivan=?aktivan,lozinka=?lozinka,telefon=?telefon,datumRodjenja=?datumRodjenja WHERE idZaposleni=?id;";
+
         public ZaposleniDTO getById(int id)
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();
@@ -30,6 +33,23 @@ namespace e_Bioskop.data.dao.mysql
             ConnectionPool.checkInConnection(connection);
             return zaposleni;
         }
+
+        public List<ZaposleniDTO> getAll()
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = getAllQuerry;
+            MySqlDataReader reader = command.ExecuteReader();
+            List<ZaposleniDTO> zaposleniList = new List<ZaposleniDTO>();
+            while (reader.Read())
+            {
+                zaposleniList.Add(readerToZaposleni(reader));
+            }
+            reader.Close();
+            ConnectionPool.checkInConnection(connection);
+            return zaposleniList;
+        }
+
 
         public static ZaposleniDTO readerToZaposleni(MySqlDataReader reader)
         {

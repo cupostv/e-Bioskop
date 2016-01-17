@@ -5,7 +5,7 @@ using System.Text;
 
 namespace e_Bioskop.data.dao.mysql
 {
-    class MySqlZaposleniRadnoMjestoDAO : ZaposleniRadnoMjestoDAO
+    public class MySqlZaposleniRadnoMjestoDAO : ZaposleniRadnoMjestoDAO
     {
     }
 }

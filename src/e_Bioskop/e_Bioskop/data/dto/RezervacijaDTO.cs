@@ -8,6 +8,11 @@ namespace e_Bioskop.data.dto
     public class RezervacijaDTO
     {
         private int id;
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
         private DateTime vrijemeRezervacije;
 
         public DateTime VrijemeRezervacije

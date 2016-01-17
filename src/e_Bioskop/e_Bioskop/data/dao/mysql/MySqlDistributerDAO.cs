@@ -42,7 +42,7 @@ namespace e_Bioskop.data.dao.mysql
             return distributer;
         }
 
-        public int insert(DistributerDTO distributer)
+        public long insert(DistributerDTO distributer)
         {
             if (distributer == null)
             {
@@ -56,7 +56,7 @@ namespace e_Bioskop.data.dao.mysql
             command.Parameters.AddWithValue("telefon", distributer.Telefon);
             command.Parameters.AddWithValue("eMail", distributer.Email);
             command.ExecuteNonQuery();
-            int id=(int)command.LastInsertedId;
+            long id = command.LastInsertedId;
             ConnectionPool.checkInConnection(connection);
             return id;
         }

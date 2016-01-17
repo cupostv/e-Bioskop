@@ -36,7 +36,11 @@ namespace e_Bioskop
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            insertDistributer();
+            if (insertDistributer())
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private DistributerDTO controlsToDistributer()
@@ -46,7 +50,6 @@ namespace e_Bioskop
             distributer.Adresa = tbxAdresa.Text;
             distributer.Telefon = tbxBrojTelefona.Text;
             distributer.Email = tbxEmail.Text;
-
             return distributer;
         }
 
@@ -56,12 +59,17 @@ namespace e_Bioskop
                 !string.IsNullOrWhiteSpace(tbxBrojTelefona.Text);
         }
 
-        private void insertDistributer()
+        private bool insertDistributer()
         {
             if (validate())
             {
-                BioskopUtil.getDAOFactory().getDistributerDAO().insert(controlsToDistributer());
+               long id=BioskopUtil.getDAOFactory().getDistributerDAO().insert(controlsToDistributer());
+               if (id > 0)
+                   return true;
+               else
+                   return false;
             }
+            return false;
         }
 
         private void tbxNaziv_TextChanged(object sender, EventArgs e)

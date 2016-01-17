@@ -9,7 +9,7 @@ namespace e_Bioskop.data.dao
     public interface DistributerDAO
     {
         DistributerDTO getById(int id);
-        int insert(DistributerDTO distributer);
+        long insert(DistributerDTO distributer);
         List<DistributerDTO> getAll();
     }
 }
