@@ -59,6 +59,9 @@
             this.epPrezime = new System.Windows.Forms.ErrorProvider(this.components);
             this.epBrojTelefona = new System.Windows.Forms.ErrorProvider(this.components);
             this.epRadnoMjesto = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epKorisnickoIme = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epLozinka1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epLozinka = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -66,6 +69,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.epPrezime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epBrojTelefona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRadnoMjesto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epKorisnickoIme)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epLozinka1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epLozinka)).BeginInit();
             this.SuspendLayout();
             // 
             // txbKorisnickoIme
@@ -74,6 +80,7 @@
             this.txbKorisnickoIme.Name = "txbKorisnickoIme";
             this.txbKorisnickoIme.Size = new System.Drawing.Size(232, 20);
             this.txbKorisnickoIme.TabIndex = 7;
+            this.txbKorisnickoIme.Leave += new System.EventHandler(this.txbKorisnickoIme_Leave);
             // 
             // groupBox1
             // 
@@ -106,6 +113,7 @@
             this.txbLozinka1.PasswordChar = '*';
             this.txbLozinka1.Size = new System.Drawing.Size(232, 20);
             this.txbLozinka1.TabIndex = 9;
+            this.txbLozinka1.TextChanged += new System.EventHandler(this.txbLozinka1_TextChanged);
             // 
             // label2
             // 
@@ -336,6 +344,21 @@
             this.epRadnoMjesto.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epRadnoMjesto.ContainerControl = this;
             // 
+            // epKorisnickoIme
+            // 
+            this.epKorisnickoIme.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epKorisnickoIme.ContainerControl = this;
+            // 
+            // epLozinka1
+            // 
+            this.epLozinka1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epLozinka1.ContainerControl = this;
+            // 
+            // epLozinka
+            // 
+            this.epLozinka.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epLozinka.ContainerControl = this;
+            // 
             // ZaposleniKreiranjeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,6 +381,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.epPrezime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epBrojTelefona)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRadnoMjesto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epKorisnickoIme)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epLozinka1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epLozinka)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -394,5 +420,8 @@
         private System.Windows.Forms.ErrorProvider epPrezime;
         private System.Windows.Forms.ErrorProvider epBrojTelefona;
         private System.Windows.Forms.ErrorProvider epRadnoMjesto;
+        private System.Windows.Forms.ErrorProvider epKorisnickoIme;
+        private System.Windows.Forms.ErrorProvider epLozinka1;
+        private System.Windows.Forms.ErrorProvider epLozinka;
     }
 }

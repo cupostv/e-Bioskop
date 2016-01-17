@@ -23,9 +23,12 @@ namespace e_Bioskop
             if (validate())
             {
                 AdministratorForm administrator = new AdministratorForm();
-                //Odluka koja forma se otvara
-                new AdministratorForm().Show();
                 this.Hide();
+                if ((new AdministratorForm().ShowDialog()) == DialogResult.OK)
+                {
+                    
+                    this.Show();
+                }
             }
             else
             {

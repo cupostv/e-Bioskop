@@ -26,6 +26,7 @@ namespace e_Bioskop
 
         private void popuniListuZaposlenih()
         {
+            lvZaposleni.Items.Clear();
             listaOsoba = BioskopUtil.getDAOFactory().getZaposleniDAO().getAll();
             foreach (ZaposleniDTO zaposleni in listaOsoba)
             {
@@ -52,10 +53,13 @@ namespace e_Bioskop
             prijava.Show();
         }
 
-        private  bool dodajZaposlenog()
+        private  void dodajZaposlenog()
         {
             ZaposleniKreiranjeForm kreiranje = new ZaposleniKreiranjeForm();
-            return (kreiranje.ShowDialog() == DialogResult.OK);
+            if (kreiranje.ShowDialog() == DialogResult.OK)
+            {
+                popuniListuZaposlenih();
+            }
         }
 
         private bool dodajDistributera()
@@ -116,6 +120,13 @@ namespace e_Bioskop
         private void btnDodajFilm_Click(object sender, EventArgs e)
         {
             dodajFilm();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            BioskopUtil.odjavaZaposleni();
+            this.DialogResult = DialogResult.OK;
+            
         }
 
     }

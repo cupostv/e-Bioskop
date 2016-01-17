@@ -20,6 +20,7 @@ namespace e_Bioskop
             txbEmail.Text = opciono;
             txbEmail.ForeColor = SystemColors.GrayText;
             BioskopUtil.initRadnoMjestoComboBox(cboxRadnoMjesto, -1);
+            txbLozinka.TextChanged += new EventHandler(txbLozinka1_TextChanged);
         }
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
@@ -67,11 +68,52 @@ namespace e_Bioskop
             if (cboxRadnoMjesto.SelectedIndex == -1)
             {
                 epRadnoMjesto.SetError(cboxRadnoMjesto, "Izaberite radno mjesto");
+                valid = false;
             }
             else
             {
                 epRadnoMjesto.Clear();
             }
+            if (string.IsNullOrEmpty (txbKorisnickoIme.Text))
+            {
+                epKorisnickoIme.SetError (txbKorisnickoIme, "Unesite korisničko ime");
+                valid = false;
+            }
+            else
+            {
+                if (!validateKorisnickoIme(txbKorisnickoIme.Text))
+                {
+                    epKorisnickoIme.SetError(txbKorisnickoIme, "Korisničko ime zauzeto");
+                    valid = false;
+                }
+                else
+                {
+                    epKorisnickoIme.Clear();
+                }
+               
+            }
+            
+            if (string.IsNullOrEmpty(txbLozinka.Text))
+            {
+                epLozinka.SetError(txbLozinka, "Unesite lozinku");
+                valid = false;
+            }
+            else
+            {
+                epLozinka.Clear();
+            }
+
+            if (txbLozinka.Text != txbLozinka1.Text)
+            {
+                epLozinka1.SetError(txbLozinka1, "Lozinke se ne podudaraju");
+                valid = false;
+            }
+            else
+            {
+                epLozinka1.Clear();
+            }
+            
+
 
             return valid;
         }
@@ -134,6 +176,43 @@ namespace e_Bioskop
             {
                 txbEmail.Text = opciono;
                 txbEmail.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void txbKorisnickoIme_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbKorisnickoIme.Text))
+            {
+                return;
+            }
+            if (BioskopUtil.getDAOFactory().getZaposleniDAO().getByUsername(txbKorisnickoIme.Text) != null)
+            {
+                epKorisnickoIme.SetError(txbKorisnickoIme, "Korisničko ime zauzeto");
+            }
+            else
+            {
+                epKorisnickoIme.Clear();
+            }
+        }
+
+        private bool validateKorisnickoIme(string korisnickoIme)
+        {
+            if (BioskopUtil.getDAOFactory().getZaposleniDAO().getByUsername(korisnickoIme) != null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private void txbLozinka1_TextChanged(object sender, EventArgs e)
+        {
+            if (txbLozinka.Text != txbLozinka1.Text)
+            {
+                epLozinka1.SetError(txbLozinka1, "Lozinke se ne podudaraju");
+            }
+            else
+            {
+                epLozinka1.Clear();
             }
         }
     }
