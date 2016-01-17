@@ -36,32 +36,44 @@ namespace e_Bioskop
             bool valid = true;
             if (string.IsNullOrEmpty(txbIme.Text))
             {
-                txbIme.BackColor = Color.Red;
+                epNaziv.SetError(txbIme, "Unesite ime");
                 valid = false;
+            }
+            else
+            {
+                epNaziv.Clear();
             }
 
             if (string.IsNullOrEmpty(txbBrojTelefona.Text))
             {
-                txbBrojTelefona.BackColor = Color.Red;
+                epBrojTelefona.SetError(txbBrojTelefona, "Unesite broj telefona");
                 valid = false;
+            }
+            else
+            {
+                epBrojTelefona.Clear();
             }
 
             if (string.IsNullOrEmpty(txbPrezime.Text))
             {
-                txbPrezime.BackColor = Color.Red;
+                epPrezime.SetError(txbPrezime, "Unesite prezime");
                 valid = false;
-            }
-
-            if (string.IsNullOrEmpty(txbKorisnickoIme.Text))
-                return false;
-            if (txbLozinka.Text.Equals(txbLozinka.Text))
-            {
-                return true;
             }
             else
             {
-                return false;
+                epPrezime.Clear();
             }
+
+            if (cboxRadnoMjesto.SelectedIndex == -1)
+            {
+                epRadnoMjesto.SetError(cboxRadnoMjesto, "Izaberite radno mjesto");
+            }
+            else
+            {
+                epRadnoMjesto.Clear();
+            }
+
+            return valid;
         }
 
         private ZaposleniRadnoMjestoDTO controlsToZaposleni()

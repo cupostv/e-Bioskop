@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txbKorisnickoIme = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,9 +55,17 @@
             this.cboxRadnoMjesto = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.epNaziv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epPrezime = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epBrojTelefona = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epRadnoMjesto = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epNaziv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPrezime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epBrojTelefona)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRadnoMjesto)).BeginInit();
             this.SuspendLayout();
             // 
             // txbKorisnickoIme
@@ -76,7 +85,7 @@
             this.groupBox1.Controls.Add(this.txbKorisnickoIme);
             this.groupBox1.Location = new System.Drawing.Point(12, 201);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(372, 107);
+            this.groupBox1.Size = new System.Drawing.Size(381, 107);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Podaci o korisničkom nalogu";
@@ -139,7 +148,7 @@
             this.groupBox2.Controls.Add(this.txbIme);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(372, 182);
+            this.groupBox2.Size = new System.Drawing.Size(381, 182);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Podaci o zaposlenom";
@@ -240,7 +249,7 @@
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(309, 417);
+            this.btnSacuvaj.Location = new System.Drawing.Point(318, 417);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(75, 23);
             this.btnSacuvaj.TabIndex = 4;
@@ -250,7 +259,7 @@
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(228, 417);
+            this.btnOdustani.Location = new System.Drawing.Point(237, 417);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
             this.btnOdustani.TabIndex = 5;
@@ -266,7 +275,7 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Location = new System.Drawing.Point(13, 314);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(371, 80);
+            this.groupBox3.Size = new System.Drawing.Size(380, 80);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Podaci o zaposlenju";
@@ -280,7 +289,9 @@
             // 
             // cboxRadnoMjesto
             // 
+            this.cboxRadnoMjesto.BackColor = System.Drawing.SystemColors.Control;
             this.cboxRadnoMjesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxRadnoMjesto.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cboxRadnoMjesto.FormattingEnabled = true;
             this.cboxRadnoMjesto.Location = new System.Drawing.Point(123, 16);
             this.cboxRadnoMjesto.Name = "cboxRadnoMjesto";
@@ -305,11 +316,31 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "Radno mjesto:";
             // 
+            // epNaziv
+            // 
+            this.epNaziv.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epNaziv.ContainerControl = this;
+            // 
+            // epPrezime
+            // 
+            this.epPrezime.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epPrezime.ContainerControl = this;
+            // 
+            // epBrojTelefona
+            // 
+            this.epBrojTelefona.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epBrojTelefona.ContainerControl = this;
+            // 
+            // epRadnoMjesto
+            // 
+            this.epRadnoMjesto.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epRadnoMjesto.ContainerControl = this;
+            // 
             // ZaposleniKreiranjeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 452);
+            this.ClientSize = new System.Drawing.Size(405, 452);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSacuvaj);
@@ -323,6 +354,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epNaziv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPrezime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epBrojTelefona)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRadnoMjesto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -355,5 +390,9 @@
         private System.Windows.Forms.ComboBox cboxRadnoMjesto;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ErrorProvider epNaziv;
+        private System.Windows.Forms.ErrorProvider epPrezime;
+        private System.Windows.Forms.ErrorProvider epBrojTelefona;
+        private System.Windows.Forms.ErrorProvider epRadnoMjesto;
     }
 }
