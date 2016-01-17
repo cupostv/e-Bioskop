@@ -12,5 +12,6 @@ namespace e_Bioskop.data.dao
         List<RadnoMjestoDTO> getAll();
         long insert(RadnoMjestoDTO radnoMjesto);
         bool update(RadnoMjestoDTO radnoMjesto);
+        RadnoMjestoDTO getByNaziv(string naziv);
     }
 }

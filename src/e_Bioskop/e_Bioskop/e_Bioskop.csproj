@@ -134,6 +134,9 @@
     <EmbeddedResource Include="DistributerDodajForm.resx">
       <DependentUpon>DistributerDodajForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FilmDodajForm.resx">
+      <DependentUpon>FilmDodajForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrijavaForm.resx">
       <DependentUpon>PrijavaForm.cs</DependentUpon>
     </EmbeddedResource>
