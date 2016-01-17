@@ -11,5 +11,8 @@ namespace e_Bioskop.data.dao
         FilmDTO getById(int id);
         List<FilmDTO> getAll();
         int insert(FilmDTO film);
+        List<FilmDTO> getAllByDistributer(DistributerDTO distributer);
+        List<FilmDTO> getAllByStatusFilm(StatusFilmDTO status);
+        List<FilmDTO> getAllByZanr(ZanrDTO zanr);
     }
 }
