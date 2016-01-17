@@ -16,6 +16,7 @@ namespace e_Bioskop.data.dao.mysql
         private string getByDistributerQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where f.idDistributer=?idDistributer;";
         private string getByStatusQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where f.idStatusFilm=?idStatus;";
         private string getByZanrQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where f.idZanr=?idZanr;";
+        private string searchByNazivQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where nazivFilm like ?naziv;";
         public FilmDTO getById(int id)
         {
             MySqlConnection connection=ConnectionPool.checkOutConnection();
@@ -158,6 +159,22 @@ namespace e_Bioskop.data.dao.mysql
             return id;
         }
 
+        public List<FilmDTO> searchByNaziv(string naziv)
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = searchByNazivQuerry;
+            command.Parameters.AddWithValue("naziv", "%"+naziv+"%");
+            MySqlDataReader reader = command.ExecuteReader();
+            List<FilmDTO> lista = new List<FilmDTO>();
+            while (reader.Read())
+            {
+                lista.Add(readerToFilmDTO(reader));
+            }
+            reader.Close();
+            ConnectionPool.checkInConnection(connection);
+            return lista;
+        }
 
     }
 }

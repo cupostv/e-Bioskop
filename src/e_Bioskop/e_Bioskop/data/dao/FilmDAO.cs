@@ -14,5 +14,6 @@ namespace e_Bioskop.data.dao
         List<FilmDTO> getAllByDistributer(DistributerDTO distributer);
         List<FilmDTO> getAllByStatusFilm(StatusFilmDTO status);
         List<FilmDTO> getAllByZanr(ZanrDTO zanr);
+        List<FilmDTO> searchByNaziv(string naziv);
     }
 }
