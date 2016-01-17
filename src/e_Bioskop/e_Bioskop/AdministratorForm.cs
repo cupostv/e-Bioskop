@@ -13,12 +13,14 @@ namespace e_Bioskop
     public partial class AdministratorForm : Form
     {
         List<ZaposleniDTO> listaOsoba;
+
         public AdministratorForm()
         {
             InitializeComponent();
             popuniListuZaposlenih();
             ZaposleniDTO zaposleni = BioskopUtil.getPrijavljeniZaposleni();
             lblImePrezime.Text = zaposleni.Ime + " " + zaposleni.Prezime;
+            groupBox1.Hide();
         }
 
 
@@ -50,11 +52,6 @@ namespace e_Bioskop
             prijava.Show();
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            dodajZaposlenog();
-        }
-
         private  bool dodajZaposlenog()
         {
             ZaposleniKreiranjeForm kreiranje = new ZaposleniKreiranjeForm();
@@ -67,14 +64,47 @@ namespace e_Bioskop
             return (ddf.ShowDialog() == DialogResult.OK);
         }
 
+        private void prikaziDetalje(ZaposleniDTO zaposleni)
+        {
+            lblIme.Text = zaposleni.Ime;
+            lblPrezime.Text = zaposleni.Prezime;
+            lblEmail.Text = zaposleni.Email;
+            lblTelefon.Text = zaposleni.Telefon;
+            List<ZaposleniRadnoMjestoDTO> zaposleniRadnoMjesto = BioskopUtil.getDAOFactory().getZaposleniRadnoMjestoDAO().getRadnaMjestaZaposlenog(zaposleni);
+            foreach (ZaposleniRadnoMjestoDTO z in zaposleniRadnoMjesto)
+            {
+                lblDatumZaposlenja.Text = z.DatumZaposlenja.ToShortDateString();
+                lblRadnoMjesto.Text = z.RadnoMjesto.Naziv;
+            }
+            if (zaposleni.Aktivan == 1)
+            {
+                picAktivan.Image = Properties.Resources.zeleno;
+            }
+            else
+            {
+                picAktivan.Image = Properties.Resources.crveno;
+            }
+            groupBox1.Show();
+        }
+
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             dodajZaposlenog();
         }
 
-        private void toolStripButton2_Click_1(object sender, EventArgs e)
+        private void btnDodajDistributera_Click(object sender, EventArgs e)
         {
             dodajDistributera();
+        }
+
+        private void lvZaposleni_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvZaposleni.SelectedIndices.Count == 0)
+            {
+                groupBox1.Hide();
+                return;
+            }
+            prikaziDetalje (listaOsoba[lvZaposleni.FocusedItem.Index]);
         }
 
     }

@@ -103,6 +103,12 @@
     <Compile Include="DistributerDodajForm.Designer.cs">
       <DependentUpon>DistributerDodajForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilmDodajForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilmDodajForm.Designer.cs">
+      <DependentUpon>FilmDodajForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrijavaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\filmovi_dodaj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zeleno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crveno.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

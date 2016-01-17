@@ -54,6 +54,7 @@ namespace e_Bioskop.data.dao.mysql
         public static ZaposleniDTO readerToZaposleni(MySqlDataReader reader)
         {
             ZaposleniDTO zapoleni = new ZaposleniDTO();
+            zapoleni.Id = reader.GetInt32("idZaposleni");
             zapoleni.Ime = reader["ime"].ToString();
             zapoleni.Prezime = reader["prezime"].ToString();
             zapoleni.DatumRodjenja = reader.GetDateTime("datumRodjenja");
