@@ -50,7 +50,7 @@
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDatumZaposlenja = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -161,6 +161,8 @@
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(232, 20);
             this.txbEmail.TabIndex = 10;
+            this.txbEmail.Enter += new System.EventHandler(this.txbEmail_Enter);
+            this.txbEmail.Leave += new System.EventHandler(this.txbEmail_Leave);
             // 
             // label7
             // 
@@ -257,7 +259,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.dtpDatumZaposlenja);
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
@@ -268,12 +270,12 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Podaci o zaposlenju";
             // 
-            // dateTimePicker1
+            // dtpDatumZaposlenja
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(123, 44);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(232, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dtpDatumZaposlenja.Location = new System.Drawing.Point(123, 44);
+            this.dtpDatumZaposlenja.Name = "dtpDatumZaposlenja";
+            this.dtpDatumZaposlenja.Size = new System.Drawing.Size(232, 20);
+            this.dtpDatumZaposlenja.TabIndex = 4;
             // 
             // comboBox1
             // 
@@ -347,7 +349,7 @@
         private System.Windows.Forms.Button btnSacuvaj;
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDatumZaposlenja;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

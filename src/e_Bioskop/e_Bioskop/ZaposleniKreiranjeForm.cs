@@ -12,10 +12,13 @@ namespace e_Bioskop
 {
     public partial class ZaposleniKreiranjeForm : Form
     {
+        string opciono = "Opciono";
+
         public ZaposleniKreiranjeForm()
         {
             InitializeComponent();
-            
+            txbEmail.Text = opciono;
+            txbEmail.ForeColor = SystemColors.GrayText;
         }
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
@@ -72,6 +75,25 @@ namespace e_Bioskop
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void txbEmail_Enter(object sender, EventArgs e)
+        {
+            if (txbEmail.ForeColor != SystemColors.GrayText)
+            {
+                return;
+            }
+            txbEmail.Text = "";
+            txbEmail.ForeColor = SystemColors.WindowText;
+        }
+
+        private void txbEmail_Leave(object sender, EventArgs e)
+        {
+            if (txbEmail.Text == "")
+            {
+                txbEmail.Text = opciono;
+                txbEmail.ForeColor = SystemColors.GrayText;
+            }
         }
     }
 }
