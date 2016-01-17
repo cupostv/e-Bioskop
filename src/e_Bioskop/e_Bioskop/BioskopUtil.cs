@@ -23,6 +23,11 @@ namespace e_Bioskop
             return daoFactory;
         }
 
+        public static ZaposleniDTO getPrijavljeniZaposleni()
+        {
+            return prijavljeniZaposleni;
+        }
+
         public static void prijavaZaposleni(ZaposleniDTO zaposleni)
         {
             prijavljeniZaposleni = zaposleni;

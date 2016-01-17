@@ -17,6 +17,8 @@ namespace e_Bioskop
         {
             InitializeComponent();
             popuniListuZaposlenih();
+            ZaposleniDTO zaposleni = BioskopUtil.getPrijavljeniZaposleni();
+            lblImePrezime.Text = zaposleni.Ime + " " + zaposleni.Prezime;
         }
 
 

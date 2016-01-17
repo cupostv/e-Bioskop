@@ -121,10 +121,13 @@
   <data name="odjava" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\odjava.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="distributer_dodaj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\distributer_dodaj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="korisnik_dodaj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\korisnik_dodaj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="distributer_dodaj" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\distributer_dodaj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="filmovi_dodaj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filmovi_dodaj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
