@@ -9,7 +9,7 @@ namespace e_Bioskop.data.dao.mysql
 {
     class MySqlStatusFilmDAO : StatusFilmDAO
     {
-        private static string getByIdQuerry="select idStatusFilm,nazivStatusFilm from status_film where idStatus=?id";
+        private static string getByIdQuerry="select idStatusFilm,nazivStatusFilm from status_film where idStatusFilm=?id";
         public StatusFilmDTO getById(int id)
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();

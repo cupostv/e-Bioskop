@@ -14,7 +14,7 @@ namespace e_Bioskop.data.dao.mysql
         private string insertQuerry = "INSERT INTO `e_bioskop`.`film` (`trajanje`, `idDistributer`, `nazivFilm`, `idStatusFilm`, `opisFilm`, `idZanr`) VALUES (?trajanje, ?idDistributer, ?naziv, ?idStatus, ?opis, ?idZanr);";
 
         private string getByDistributerQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where f.idDistributer=?idDistributer;";
-        private string getByStatusQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where f.idStatus=?idStatus;";
+        private string getByStatusQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where f.idStatusFilm=?idStatus;";
         private string getByZanrQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where f.idZanr=?idZanr;";
         public FilmDTO getById(int id)
         {
@@ -54,7 +54,7 @@ namespace e_Bioskop.data.dao.mysql
             return lista;
         }
 
-        List<FilmDTO> getAllByDistributer(DistributerDTO distributer)
+        public List<FilmDTO> getAllByDistributer(DistributerDTO distributer)
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();
             MySqlCommand command = connection.CreateCommand();
@@ -71,13 +71,14 @@ namespace e_Bioskop.data.dao.mysql
                 film.Zanr = MySqlZanrDAO.readerToZanrDTO(reader);
                 film.Status = MySqlStatusFilmDAO.readerToStatusFilmDTO(reader);
                 film.Distributer = distributer;
+                lista.Add(film);
             }
             reader.Close();
             ConnectionPool.checkInConnection(connection);
             return lista;
         }
 
-        List<FilmDTO> getAllByStatusFilm(StatusFilmDTO status)
+        public List<FilmDTO> getAllByStatusFilm(StatusFilmDTO status)
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();
             MySqlCommand command = connection.CreateCommand();
@@ -94,18 +95,19 @@ namespace e_Bioskop.data.dao.mysql
                 film.Zanr = MySqlZanrDAO.readerToZanrDTO(reader);
                 film.Status = status;
                 film.Distributer = MySqlDistributerDAO.readerToDistributer(reader);
+                lista.Add(film);
             }
             reader.Close();
             ConnectionPool.checkInConnection(connection);
             return lista;
         }
 
-        List<FilmDTO> getAllByZanr(ZanrDTO zanr)
+        public List<FilmDTO> getAllByZanr(ZanrDTO zanr)
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = getByZanrQuerry;
-            command.Parameters.AddWithValue("idStatus", zanr.Id);
+            command.Parameters.AddWithValue("idZanr", zanr.Id);
             MySqlDataReader reader = command.ExecuteReader();
             List<FilmDTO> lista = new List<FilmDTO>();
             while (reader.Read())
@@ -117,6 +119,7 @@ namespace e_Bioskop.data.dao.mysql
                 film.Zanr = zanr;
                 film.Status = MySqlStatusFilmDAO.readerToStatusFilmDTO(reader); ;
                 film.Distributer = MySqlDistributerDAO.readerToDistributer(reader);
+                lista.Add(film);
             }
             reader.Close();
             ConnectionPool.checkInConnection(connection);

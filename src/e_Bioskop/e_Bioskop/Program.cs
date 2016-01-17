@@ -1,4 +1,5 @@
-﻿using System;
+﻿using e_Bioskop.data.dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -15,7 +16,6 @@ namespace e_Bioskop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             PrijavaForm prijava = new PrijavaForm();
             prijava.Show();
             
