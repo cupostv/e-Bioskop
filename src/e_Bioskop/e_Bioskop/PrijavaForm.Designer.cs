@@ -63,6 +63,7 @@
             this.tbxKorisnickoIme.Name = "tbxKorisnickoIme";
             this.tbxKorisnickoIme.Size = new System.Drawing.Size(222, 20);
             this.tbxKorisnickoIme.TabIndex = 1;
+            this.tbxKorisnickoIme.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxKorisnickoIme_KeyDown);
             // 
             // tbxLozinka
             // 

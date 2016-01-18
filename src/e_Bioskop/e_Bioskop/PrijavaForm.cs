@@ -16,6 +16,7 @@ namespace e_Bioskop
         {
             InitializeComponent();
             lblGreska.Visible = false;
+            tbxLozinka.KeyDown += new KeyEventHandler(tbxKorisnickoIme_KeyDown);
         }
 
         private void btnPrijava_Click(object sender, EventArgs e)
@@ -63,6 +64,14 @@ namespace e_Bioskop
         private void PrijavaForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void tbxKorisnickoIme_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnPrijava.PerformClick();
+            }
         }
 
 

@@ -109,6 +109,12 @@
     <Compile Include="FilmDodajForm.Designer.cs">
       <DependentUpon>FilmDodajForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilmNaruci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilmNaruci.Designer.cs">
+      <DependentUpon>FilmNaruci.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrijavaForm.cs">
       <SubType>Form</SubType>
     </Compile>
