@@ -111,8 +111,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(770, 501);
-            this.splitContainer1.SplitterDistance = 318;
+            this.splitContainer1.Size = new System.Drawing.Size(720, 402);
+            this.splitContainer1.SplitterDistance = 297;
             this.splitContainer1.TabIndex = 2;
             // 
             // lvZaposleni
@@ -126,7 +126,7 @@
             this.lvZaposleni.GridLines = true;
             this.lvZaposleni.Location = new System.Drawing.Point(0, 0);
             this.lvZaposleni.Name = "lvZaposleni";
-            this.lvZaposleni.Size = new System.Drawing.Size(318, 501);
+            this.lvZaposleni.Size = new System.Drawing.Size(297, 402);
             this.lvZaposleni.TabIndex = 0;
             this.lvZaposleni.UseCompatibleStateImageBehavior = false;
             this.lvZaposleni.View = System.Windows.Forms.View.Details;
@@ -166,18 +166,19 @@
             this.groupBox1.Controls.Add(this.lblTelefon);
             this.groupBox1.Controls.Add(this.lblEmail);
             this.groupBox1.Controls.Add(this.lblEmailStatic);
-            this.groupBox1.Location = new System.Drawing.Point(34, 3);
+            this.groupBox1.Location = new System.Drawing.Point(29, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(379, 297);
+            this.groupBox1.Size = new System.Drawing.Size(365, 281);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalji o zaposlenom";
             // 
             // picAktivan
             // 
+            this.picAktivan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.picAktivan.Image = global::e_Bioskop.Properties.Resources.crveno;
             this.picAktivan.InitialImage = global::e_Bioskop.Properties.Resources.zeleno;
-            this.picAktivan.Location = new System.Drawing.Point(361, 19);
+            this.picAktivan.Location = new System.Drawing.Point(347, 3);
             this.picAktivan.Name = "picAktivan";
             this.picAktivan.Size = new System.Drawing.Size(12, 12);
             this.picAktivan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -186,7 +187,8 @@
             // 
             // btnIzmjeniZaposleni
             // 
-            this.btnIzmjeniZaposleni.Location = new System.Drawing.Point(9, 242);
+            this.btnIzmjeniZaposleni.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnIzmjeniZaposleni.Location = new System.Drawing.Point(8, 252);
             this.btnIzmjeniZaposleni.Name = "btnIzmjeniZaposleni";
             this.btnIzmjeniZaposleni.Size = new System.Drawing.Size(75, 23);
             this.btnIzmjeniZaposleni.TabIndex = 13;
@@ -313,7 +315,7 @@
             this.lblImePrezime});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(784, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(734, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -379,7 +381,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 28);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(784, 533);
+            this.tabControl2.Size = new System.Drawing.Size(734, 434);
             this.tabControl2.TabIndex = 4;
             // 
             // tabPage3
@@ -388,7 +390,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(776, 507);
+            this.tabPage3.Size = new System.Drawing.Size(726, 408);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Zaposleni";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -399,7 +401,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(776, 507);
+            this.tabPage4.Size = new System.Drawing.Size(726, 408);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Distributeri";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -419,8 +421,8 @@
             this.splitContainer2.Panel2.Controls.Add(this.dgvFilmovi);
             this.splitContainer2.Panel2.Controls.Add(this.lblFilmoviStatic);
             this.splitContainer2.Panel2.Controls.Add(this.gboxDetaljiDistributer);
-            this.splitContainer2.Size = new System.Drawing.Size(770, 501);
-            this.splitContainer2.SplitterDistance = 276;
+            this.splitContainer2.Size = new System.Drawing.Size(720, 402);
+            this.splitContainer2.SplitterDistance = 258;
             this.splitContainer2.TabIndex = 0;
             // 
             // lvDistributeri
@@ -428,12 +430,13 @@
             this.lvDistributeri.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.lvDistributeri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvDistributeri.FullRowSelect = true;
             this.lvDistributeri.GridLines = true;
             this.lvDistributeri.LabelWrap = false;
             this.lvDistributeri.Location = new System.Drawing.Point(0, 0);
             this.lvDistributeri.MultiSelect = false;
             this.lvDistributeri.Name = "lvDistributeri";
-            this.lvDistributeri.Size = new System.Drawing.Size(276, 501);
+            this.lvDistributeri.Size = new System.Drawing.Size(258, 402);
             this.lvDistributeri.TabIndex = 1;
             this.lvDistributeri.UseCompatibleStateImageBehavior = false;
             this.lvDistributeri.View = System.Windows.Forms.View.Details;
@@ -447,7 +450,7 @@
             // lblFilmoviStatic
             // 
             this.lblFilmoviStatic.AutoSize = true;
-            this.lblFilmoviStatic.Location = new System.Drawing.Point(29, 191);
+            this.lblFilmoviStatic.Location = new System.Drawing.Point(29, 166);
             this.lblFilmoviStatic.Name = "lblFilmoviStatic";
             this.lblFilmoviStatic.Size = new System.Drawing.Size(39, 13);
             this.lblFilmoviStatic.TabIndex = 2;
@@ -562,13 +565,13 @@
             this.trajanje,
             this.Status});
             this.dgvFilmovi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvFilmovi.Location = new System.Drawing.Point(32, 207);
+            this.dgvFilmovi.Location = new System.Drawing.Point(32, 182);
             this.dgvFilmovi.Name = "dgvFilmovi";
             this.dgvFilmovi.ReadOnly = true;
             this.dgvFilmovi.RowHeadersVisible = false;
             this.dgvFilmovi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvFilmovi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFilmovi.Size = new System.Drawing.Size(403, 234);
+            this.dgvFilmovi.Size = new System.Drawing.Size(403, 215);
             this.dgvFilmovi.TabIndex = 3;
             // 
             // naziv
@@ -599,7 +602,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(734, 462);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabControl2);
             this.Name = "AdministratorForm";
