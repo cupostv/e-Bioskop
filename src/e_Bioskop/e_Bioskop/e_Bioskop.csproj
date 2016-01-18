@@ -109,11 +109,11 @@
     <Compile Include="FilmDodajForm.Designer.cs">
       <DependentUpon>FilmDodajForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FilmNaruci.cs">
+    <Compile Include="UpravnikForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FilmNaruci.Designer.cs">
-      <DependentUpon>FilmNaruci.cs</DependentUpon>
+    <Compile Include="UpravnikForm.Designer.cs">
+      <DependentUpon>UpravnikForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PrijavaForm.cs">
       <SubType>Form</SubType>
@@ -151,6 +151,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpravnikForm.resx">
+      <DependentUpon>UpravnikForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ZaposleniKreiranjeForm.resx">
       <DependentUpon>ZaposleniKreiranjeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +183,8 @@
     <None Include="Resources\crveno.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\korisnik.png" />
+    <None Include="Resources\lozinka.png" />
     <Content Include="Resources\ok.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -14,6 +14,7 @@ namespace e_Bioskop
     {
         List<ZaposleniDTO> listaOsoba;
         List<DistributerDTO> listaDistributera;
+        List<FilmDTO> listaFilmova;
 
         public AdministratorForm()
         {
@@ -21,6 +22,7 @@ namespace e_Bioskop
 
             popuniListuZaposlenih();
             popuniListuDistributera();
+            popuniListuFilmova();
             
             ZaposleniDTO zaposleni = BioskopUtil.getPrijavljeniZaposleni();
             lblImePrezime.Text = zaposleni.Ime + " " + zaposleni.Prezime;
@@ -71,6 +73,20 @@ namespace e_Bioskop
                 lvi.Text = distributer.Naziv;
 
                 lvDistributeri.Items.Add(lvi);
+            }
+        }
+
+        private void popuniListuFilmova()
+        {
+            lvFilmovi.Items.Clear();
+            listaFilmova = BioskopUtil.getDAOFactory().getFilmDAO().getAll();
+            foreach (FilmDTO film in listaFilmova)
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.Name = film.Id.ToString();
+                lvi.Text = film.Naziv;
+
+                lvFilmovi.Items.Add(lvi);
             }
         }
 
