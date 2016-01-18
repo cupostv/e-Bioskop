@@ -5,7 +5,7 @@ using System.Text;
 
 namespace e_Bioskop.data.dto
 {
-    public class StatusKarteDTO
+    public class StatusKartaDTO
     {
         private int id;
 

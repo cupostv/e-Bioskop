@@ -49,9 +49,9 @@ namespace e_Bioskop.data.dto
             get { return rezervacija; }
             set { rezervacija = value; }
         }
-        private StatusKarteDTO status;
+        private StatusKartaDTO status;
 
-        internal StatusKarteDTO Status
+        internal StatusKartaDTO Status
         {
             get { return status; }
             set { status = value; }

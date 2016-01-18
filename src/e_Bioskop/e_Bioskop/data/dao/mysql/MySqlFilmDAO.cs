@@ -27,6 +27,9 @@ namespace e_Bioskop.data.dao.mysql
             if (reader.Read())
             {
                 FilmDTO film = readerToFilmDTO(reader);
+                film.Zanr = MySqlZanrDAO.readerToZanrDTO(reader);
+                film.Status = MySqlStatusFilmDAO.readerToStatusFilmDTO(reader);
+                film.Distributer = MySqlDistributerDAO.readerToDistributer(reader);
                 reader.Close();
                 ConnectionPool.checkInConnection(connection);
                 return film;
@@ -48,7 +51,11 @@ namespace e_Bioskop.data.dao.mysql
             List<FilmDTO> lista = new List<FilmDTO>();
             while (reader.Read())
             {
-                lista.Add(readerToFilmDTO(reader));
+                FilmDTO film = readerToFilmDTO(reader);
+                film.Zanr = MySqlZanrDAO.readerToZanrDTO(reader);
+                film.Status = MySqlStatusFilmDAO.readerToStatusFilmDTO(reader);
+                film.Distributer = MySqlDistributerDAO.readerToDistributer(reader);
+                lista.Add(film);
             }
             reader.Close();
             ConnectionPool.checkInConnection(connection);
@@ -65,10 +72,7 @@ namespace e_Bioskop.data.dao.mysql
             List<FilmDTO> lista = new List<FilmDTO>();
             while(reader.Read())
             {
-                FilmDTO film = new FilmDTO();
-                film.Id = reader.GetInt32("idFilm");
-                film.Naziv = reader["nazivFilm"].ToString();
-                film.Opis = reader["opisFilm"].ToString();
+                FilmDTO film = readerToFilmDTO(reader);
                 film.Zanr = MySqlZanrDAO.readerToZanrDTO(reader);
                 film.Status = MySqlStatusFilmDAO.readerToStatusFilmDTO(reader);
                 film.Distributer = distributer;
@@ -89,13 +93,11 @@ namespace e_Bioskop.data.dao.mysql
             List<FilmDTO> lista = new List<FilmDTO>();
             while (reader.Read())
             {
-                FilmDTO film = new FilmDTO();
-                film.Id = reader.GetInt32("idFilm");
-                film.Naziv = reader["nazivFilm"].ToString();
-                film.Opis = reader["opisFilm"].ToString();
+                FilmDTO film = readerToFilmDTO(reader);
                 film.Zanr = MySqlZanrDAO.readerToZanrDTO(reader);
                 film.Status = status;
                 film.Distributer = MySqlDistributerDAO.readerToDistributer(reader);
+
                 lista.Add(film);
             }
             reader.Close();
@@ -113,10 +115,7 @@ namespace e_Bioskop.data.dao.mysql
             List<FilmDTO> lista = new List<FilmDTO>();
             while (reader.Read())
             {
-                FilmDTO film = new FilmDTO();
-                film.Id = reader.GetInt32("idFilm");
-                film.Naziv = reader["nazivFilm"].ToString();
-                film.Opis = reader["opisFilm"].ToString();
+                FilmDTO film = readerToFilmDTO(reader);
                 film.Zanr = zanr;
                 film.Status = MySqlStatusFilmDAO.readerToStatusFilmDTO(reader); ;
                 film.Distributer = MySqlDistributerDAO.readerToDistributer(reader);
@@ -134,11 +133,9 @@ namespace e_Bioskop.data.dao.mysql
             film.Naziv = reader["nazivFilm"].ToString();
             film.Opis = reader["opisFilm"].ToString();
             film.Trajanje = reader.GetInt32("trajanjeFilm");
-            film.Zanr = MySqlZanrDAO.readerToZanrDTO(reader);
-            film.Status = MySqlStatusFilmDAO.readerToStatusFilmDTO(reader);
-            film.Distributer = MySqlDistributerDAO.readerToDistributer(reader);
             return film;
         }
+
 
         public int insert(FilmDTO film)
         {

@@ -1,11 +1,98 @@
-﻿using System;
+﻿using e_Bioskop.data.dto;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace e_Bioskop.data.dao.mysql
 {
-    class MySqlSjedisteDAO : SjedisteDAO
+    public class MySqlSjedisteDAO : SjedisteDAO
     {
+        private string getBySalaQuerry = "select idSjediste,redSjediste,brojSjediste from sjediste where idSala=?idSala;";
+        private string getByIdQuerry = "select idSjediste,redSjediste,brojSjediste, sjediste.idSala,aktivna, nazivSala from sjediste inner join sala on sjediste.idSala=sala.idSala where idSjediste=?id;";
+        private string insertQuerry = "INSERT INTO `e_bioskop`.`sjediste` (`redSjediste`, `brojSjediste`, `idSala`) VALUES (?redSjediste, ?brojSjediste, ?idSala);";
+        private string updateQuerry = "UPDATE `e_bioskop`.`sjediste` SET `redSjediste`=?redSjediste, `brojSjediste`=?brojSjediste, `idSala`=?idSala WHERE `idSjediste`=?idSjediste;";
+        public List<SjedisteDTO> getBySala(SalaDTO sala)
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = getBySalaQuerry;
+            command.Parameters.AddWithValue("idSala", sala.Id);
+            MySqlDataReader reader = command.ExecuteReader();
+            List<SjedisteDTO> lista = new List<SjedisteDTO>();
+            while (reader.Read())
+            {
+                lista.Add(readerToSjedisteDTO(reader, sala));
+            }
+            reader.Close();
+            ConnectionPool.checkInConnection(connection);
+            return lista;
+        }
+
+        public SjedisteDTO getById(int id)
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = getByIdQuerry;
+            command.Parameters.AddWithValue("id", id);
+            MySqlDataReader reader=command.ExecuteReader();
+            SjedisteDTO sjediste=null;
+            if (reader.Read())
+            {
+                sjediste = readerToSjedisteDTO(reader);
+                sjediste.Sala = MySqlSalaDAO.readerToSalaDTO(reader);
+            }
+            reader.Close();
+            ConnectionPool.checkInConnection(connection);
+            return sjediste;
+        }
+
+        public long insert(SjedisteDTO sjediste)
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = insertQuerry;
+            command.Parameters.AddWithValue("redSjediste", sjediste.Red);
+            command.Parameters.AddWithValue("brojSjediste", sjediste.Broj);
+            command.Parameters.AddWithValue("idSala", sjediste.Sala.Id);
+            int num=command.ExecuteNonQuery();
+            long id=-1;
+            if(num>0)
+             id=command.LastInsertedId;
+            ConnectionPool.checkInConnection(connection);
+            return id;
+        }
+
+        public bool update(SjedisteDTO sjediste)
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = updateQuerry;
+            command.Parameters.AddWithValue("idSjediste", sjediste.Id);
+            command.Parameters.AddWithValue("redSjediste", sjediste.Red);
+            command.Parameters.AddWithValue("brojSjediste", sjediste.Broj);
+            command.Parameters.AddWithValue("idSala", sjediste.Sala.Id);
+            int num = command.ExecuteNonQuery();
+           
+            ConnectionPool.checkInConnection(connection);
+            return num>0;
+        }
+
+        public static SjedisteDTO readerToSjedisteDTO(MySqlDataReader reader, SalaDTO sala)
+        {
+            SjedisteDTO sjediste = readerToSjedisteDTO(reader);
+            sjediste.Sala = sala;
+            return sjediste;
+        }
+
+        public static SjedisteDTO readerToSjedisteDTO(MySqlDataReader reader)
+        {
+            SjedisteDTO sjediste = new SjedisteDTO();
+            sjediste.Id = reader.GetInt32("idSjediste");
+            sjediste.Red = reader.GetInt32("redSjediste");
+            sjediste.Broj = reader.GetInt32("brojSjediste");
+            return sjediste;
+        }
     }
 }

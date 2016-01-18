@@ -93,7 +93,7 @@
     <Compile Include="data\dto\RezervacijaDTO.cs" />
     <Compile Include="data\dto\SalaDTO.cs" />
     <Compile Include="data\dto\SjedisteDTO.cs" />
-    <Compile Include="data\dto\StatusKarteDTO.cs" />
+    <Compile Include="data\dto\StatusKartaDTO.cs" />
     <Compile Include="data\dto\ZanrDTO.cs" />
     <Compile Include="data\dto\ZaposleniDTO.cs" />
     <Compile Include="data\dto\ZaposleniRadnoMjestoDTO.cs" />
