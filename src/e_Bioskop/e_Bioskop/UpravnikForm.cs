@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace e_Bioskop
 {
-    public partial class FilmNaruci : Form
+    public partial class UpravnikForm : Form
     {
-        public FilmNaruci()
+        public UpravnikForm()
         {
             InitializeComponent();
         }
