@@ -26,7 +26,8 @@ namespace e_Bioskop
                 this.Hide();
                 if ((new AdministratorForm().ShowDialog()) == DialogResult.OK)
                 {
-                    
+                    tbxKorisnickoIme.Text = "";
+                    tbxLozinka.Text = "";
                     this.Show();
                 }
             }

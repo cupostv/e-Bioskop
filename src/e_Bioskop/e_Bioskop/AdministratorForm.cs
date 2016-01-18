@@ -13,14 +13,34 @@ namespace e_Bioskop
     public partial class AdministratorForm : Form
     {
         List<ZaposleniDTO> listaOsoba;
+        List<DistributerDTO> listaDistributera;
 
         public AdministratorForm()
         {
             InitializeComponent();
+
             popuniListuZaposlenih();
+            popuniListuDistributera();
+            
             ZaposleniDTO zaposleni = BioskopUtil.getPrijavljeniZaposleni();
             lblImePrezime.Text = zaposleni.Ime + " " + zaposleni.Prezime;
+
             groupBox1.Hide();
+            hideDistributer();
+        }
+
+        private void hideDistributer()
+        {
+            gboxDetaljiDistributer.Hide();
+            dgvFilmovi.Hide();
+            lblFilmoviStatic.Hide();
+        }
+
+        private void showDistributer()
+        {
+            gboxDetaljiDistributer.Show();
+            dgvFilmovi.Show();
+            lblFilmoviStatic.Show();
         }
 
 
@@ -31,12 +51,26 @@ namespace e_Bioskop
             foreach (ZaposleniDTO zaposleni in listaOsoba)
             {
                 ListViewItem lvi=new ListViewItem();
-                lvi.Name = zaposleni.Id + "";
+                lvi.Name = zaposleni.Id.ToString();
 
                 lvi.Text = zaposleni.KorisnickoIme;
                 lvi.SubItems.Add(zaposleni.Ime);
                 lvi.SubItems.Add(zaposleni.Prezime);
                 lvZaposleni.Items.Add(lvi);
+            }
+        }
+
+        private void popuniListuDistributera()
+        {
+            lvDistributeri.Items.Clear();
+            listaDistributera = BioskopUtil.getDAOFactory().getDistributerDAO().getAll();
+            foreach (DistributerDTO distributer in listaDistributera)
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.Name = distributer.Id.ToString();
+                lvi.Text = distributer.Naziv;
+
+                lvDistributeri.Items.Add(lvi);
             }
         }
 
@@ -97,6 +131,23 @@ namespace e_Bioskop
             groupBox1.Show();
         }
 
+        private void prikaziDetalje(DistributerDTO distributer)
+        {
+            lblNazivDist.Text = distributer.Naziv;
+            lblAdresaDist.Text = distributer.Adresa;
+            lblEmailDist.Text = distributer.Email;
+            lblBrojTelefonaDist.Text = distributer.Telefon;
+            
+            List<FilmDTO> filmovi = BioskopUtil.getDAOFactory().getFilmDAO().getAllByDistributer(distributer);
+            dgvFilmovi.Rows.Clear();
+            foreach (FilmDTO film in filmovi)
+            {
+                dgvFilmovi.Rows.Add(film.Naziv, film.Zanr.Naziv, film.Trajanje, film.Status.Naziv);
+            }
+            
+            showDistributer();
+        }
+
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             dodajZaposlenog();
@@ -128,6 +179,19 @@ namespace e_Bioskop
             this.DialogResult = DialogResult.OK;
             
         }
+
+        private void lvDistributeri_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (lvDistributeri.SelectedIndices.Count == 0)
+            {
+                gboxDetaljiDistributer.Hide();
+                hideDistributer();
+                return;
+            }
+            prikaziDetalje(listaDistributera[lvDistributeri.FocusedItem.Index]);
+        }
+
 
     }
 }
