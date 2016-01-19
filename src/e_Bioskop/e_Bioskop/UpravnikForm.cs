@@ -78,6 +78,12 @@ namespace e_Bioskop
             promjeniListuFilmovaPoNazivu();
         }
 
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            BioskopUtil.odjavaZaposleni();
+            this.DialogResult = DialogResult.OK;
+        }
+
 
 
 

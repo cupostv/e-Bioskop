@@ -23,14 +23,35 @@ namespace e_Bioskop
         {
             if (validate())
             {
-                AdministratorForm administrator = new AdministratorForm();
-                this.Hide();
-                if ((new AdministratorForm().ShowDialog()) == DialogResult.OK)
+                ZaposleniDTO zaposleni = BioskopUtil.getPrijavljeniZaposleni();
+                ZaposleniRadnoMjestoDTO zaposleniRM = (BioskopUtil.getDAOFactory().getZaposleniRadnoMjestoDAO().getRadnaMjestaZaposlenog(zaposleni))[0];
+                if (zaposleniRM.RadnoMjesto.Naziv == "Upravnik")
                 {
-                    tbxKorisnickoIme.Text = "";
-                    tbxLozinka.Text = "";
-                    this.Show();
+                    UpravnikForm administrator = new UpravnikForm();
+                    this.Hide();
+                    if ((new UpravnikForm().ShowDialog()) == DialogResult.OK)
+                    {
+                        tbxKorisnickoIme.Text = "";
+                        tbxLozinka.Text = "";
+                        this.Show();
+                    }
                 }
+                else if (zaposleniRM.RadnoMjesto.Naziv == "Administrator")
+                {
+                    AdministratorForm administrator = new AdministratorForm();
+                    this.Hide();
+                    if ((new AdministratorForm().ShowDialog()) == DialogResult.OK)
+                    {
+                        tbxKorisnickoIme.Text = "";
+                        tbxLozinka.Text = "";
+                        this.Show();
+                    }
+                }
+                else
+                {
+
+                }
+
             }
             else
             {

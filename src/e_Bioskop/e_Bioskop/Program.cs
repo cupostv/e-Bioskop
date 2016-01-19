@@ -18,8 +18,6 @@ namespace e_Bioskop
             Application.SetCompatibleTextRenderingDefault(false);
             PrijavaForm prijava = new PrijavaForm();
             prijava.Show();
-            UpravnikForm upravnik = new UpravnikForm();
-            upravnik.Show();
             Application.Run();
         }
     }
