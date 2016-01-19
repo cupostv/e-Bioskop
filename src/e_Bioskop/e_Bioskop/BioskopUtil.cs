@@ -126,5 +126,22 @@ namespace e_Bioskop
             string naziv = comboBox.Items[comboBox.SelectedIndex].ToString();
             return getDAOFactory().getZanrDAO().getByNaziv(naziv);
         }
+
+        public static void initFilmDTOListView(ListView lvFilm, List<FilmDTO> listaFilmova)
+        {
+            lvFilm.Items.Clear();
+            foreach (FilmDTO film in listaFilmova)
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.Name = film.Id + "";
+                lvi.Text = film.Naziv;
+                lvi.SubItems.Add(film.Zanr.Naziv);
+                lvi.SubItems.Add(film.Trajanje + "");
+                lvFilm.Items.Add(lvi);
+            }
+        }
+
+
+
     }
 }

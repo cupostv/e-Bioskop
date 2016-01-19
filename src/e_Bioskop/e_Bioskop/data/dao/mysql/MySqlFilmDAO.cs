@@ -12,11 +12,13 @@ namespace e_Bioskop.data.dao.mysql
         private string getByIdQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where idFilm=?id;";
         private string getAllQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr ;";
         private string insertQuerry = "INSERT INTO `e_bioskop`.`film` (`trajanjeFilm`, `idDistributer`, `nazivFilm`, `idStatusFilm`, `opisFilm`, `idZanr`) VALUES (?trajanje, ?idDistributer, ?naziv, ?idStatus, ?opis, ?idZanr);";
+        private string updateQuerry = "UPDATE `e_bioskop`.`film` SET `trajanjeFilm`=?trajanje, `idDistributer`=?idDistributer,`nazivFilm`=?naziv, `idStatusFilm`=?idStatusFilm, `opisFilm`=?opis, `idZanr`=?idZanr WHERE `idFilm`=?idFilm;";
 
         private string getByDistributerQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where f.idDistributer=?idDistributer;";
         private string getByStatusQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where f.idStatusFilm=?idStatus;";
         private string getByZanrQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where f.idZanr=?idZanr;";
         private string searchByNazivQuerry = "SELECT idFilm,trajanjeFilm,nazivFilm,opisFilm,f.idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer,f.idStatusFilm,nazivStatusFilm,f.idZanr,nazivZanr from film f inner join distributer d on f.idDistributer=d.idDistributer inner join status_film sf on f.idStatusFilm=sf.idStatusFilm inner join zanr z on f.idZanr=z.idZanr where nazivFilm like ?naziv;";
+
         public FilmDTO getById(int id)
         {
             MySqlConnection connection=ConnectionPool.checkOutConnection();
@@ -156,6 +158,24 @@ namespace e_Bioskop.data.dao.mysql
             return id;
         }
 
+        public bool update(FilmDTO film)
+        {
+            if (film == null)
+                return false;
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = updateQuerry;
+            command.Parameters.AddWithValue("naziv", film.Naziv);
+            command.Parameters.AddWithValue("trajanje", film.Trajanje);
+            command.Parameters.AddWithValue("idDistributer", film.Distributer.Id);
+            command.Parameters.AddWithValue("idZanr", film.Zanr.Id);
+            command.Parameters.AddWithValue("opis", film.Opis);
+            command.Parameters.AddWithValue("idStatusFilm", film.Status.Id);
+            command.Parameters.AddWithValue("idFilm", film.Id);
+            int rows=command.ExecuteNonQuery();
+            ConnectionPool.checkInConnection(connection);
+            return rows>0;
+        }
         public List<FilmDTO> searchByNaziv(string naziv)
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();
