@@ -90,6 +90,20 @@ namespace e_Bioskop
             }
         }
 
+        private void popuniListuFilmova(string naziv)
+        {
+            lvFilmovi.Items.Clear();
+            listaFilmova = BioskopUtil.getDAOFactory().getFilmDAO().searchByNaziv(naziv);
+            foreach (FilmDTO film in listaFilmova)
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.Name = film.Id.ToString();
+                lvi.Text = film.Naziv;
+
+                lvFilmovi.Items.Add(lvi);
+            }
+        }
+
         private void btnOdjava_Click(object sender, EventArgs e)
         {
             
@@ -206,6 +220,17 @@ namespace e_Bioskop
                 return;
             }
             prikaziDetalje(listaDistributera[lvDistributeri.FocusedItem.Index]);
+        }
+
+        private void tbxPretragaFilma_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbxPretragaFilma.Text))
+            {
+                popuniListuFilmova();
+                return;
+            }
+
+            popuniListuFilmova(tbxPretragaFilma.Text);
         }
 
 
