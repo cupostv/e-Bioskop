@@ -257,17 +257,18 @@
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(318, 417);
+            this.btnSacuvaj.Location = new System.Drawing.Point(237, 417);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(75, 23);
             this.btnSacuvaj.TabIndex = 4;
-            this.btnSacuvaj.Text = "Sačuvaj";
+            this.btnSacuvaj.Text = "Potvrdi";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
             this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(237, 417);
+            this.btnOdustani.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnOdustani.Location = new System.Drawing.Point(318, 417);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
             this.btnOdustani.TabIndex = 5;
@@ -361,8 +362,10 @@
             // 
             // ZaposleniKreiranjeForm
             // 
+            this.AcceptButton = this.btnSacuvaj;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnOdustani;
             this.ClientSize = new System.Drawing.Size(405, 452);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnOdustani);

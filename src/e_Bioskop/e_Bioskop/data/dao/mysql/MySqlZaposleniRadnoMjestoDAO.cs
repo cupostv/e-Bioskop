@@ -85,7 +85,7 @@ namespace e_Bioskop.data.dao.mysql
         }
         public bool update(ZaposleniRadnoMjestoDTO zaposleniRadnoMjesto)
         {
-            return false;
+            return true;
         }
     }
 }

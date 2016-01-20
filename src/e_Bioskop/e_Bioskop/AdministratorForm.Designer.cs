@@ -203,6 +203,7 @@
             this.btnIzmjeniZaposleni.TabIndex = 13;
             this.btnIzmjeniZaposleni.Text = "Izmjeni";
             this.btnIzmjeniZaposleni.UseVisualStyleBackColor = true;
+            this.btnIzmjeniZaposleni.Click += new System.EventHandler(this.btnIzmjeniZaposleni_Click);
             // 
             // lblImeStatic
             // 
