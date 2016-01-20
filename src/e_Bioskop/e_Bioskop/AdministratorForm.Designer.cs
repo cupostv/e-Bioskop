@@ -35,6 +35,7 @@
             this.colIme = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colPrezime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnOtkaz = new System.Windows.Forms.Button();
             this.picAktivan = new System.Windows.Forms.PictureBox();
             this.btnIzmjeniZaposleni = new System.Windows.Forms.Button();
             this.lblImeStatic = new System.Windows.Forms.Label();
@@ -69,6 +70,7 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblFilmoviStatic = new System.Windows.Forms.Label();
             this.gboxDetaljiDistributer = new System.Windows.Forms.GroupBox();
+            this.btnIzmjeniDistributer = new System.Windows.Forms.Button();
             this.lblBrojTelefonaDist = new System.Windows.Forms.Label();
             this.lblEmailDist = new System.Windows.Forms.Label();
             this.lblAdresaDist = new System.Windows.Forms.Label();
@@ -82,6 +84,26 @@
             this.lvFilmovi = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbxPretragaFilma = new System.Windows.Forms.TextBox();
+            this.gboxDistributer = new System.Windows.Forms.GroupBox();
+            this.gboxFilm = new System.Windows.Forms.GroupBox();
+            this.lblOpisStatic = new System.Windows.Forms.Label();
+            this.lblStatusStatic = new System.Windows.Forms.Label();
+            this.lblTrajanjeStatic = new System.Windows.Forms.Label();
+            this.lblZanrStatic = new System.Windows.Forms.Label();
+            this.lblNazivStatic = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblFilmStatus = new System.Windows.Forms.Label();
+            this.lblFilmTrajanje = new System.Windows.Forms.Label();
+            this.lblFilmZanr = new System.Windows.Forms.Label();
+            this.lblNazivFilm = new System.Windows.Forms.Label();
+            this.lblFilmOpis = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -101,7 +123,10 @@
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            this.gboxDistributer.SuspendLayout();
+            this.gboxFilm.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -161,6 +186,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnOtkaz);
             this.groupBox1.Controls.Add(this.picAktivan);
             this.groupBox1.Controls.Add(this.btnIzmjeniZaposleni);
             this.groupBox1.Controls.Add(this.lblImeStatic);
@@ -182,6 +208,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalji o zaposlenom";
             // 
+            // btnOtkaz
+            // 
+            this.btnOtkaz.Location = new System.Drawing.Point(9, 252);
+            this.btnOtkaz.Name = "btnOtkaz";
+            this.btnOtkaz.Size = new System.Drawing.Size(75, 23);
+            this.btnOtkaz.TabIndex = 15;
+            this.btnOtkaz.Text = "Otkaz";
+            this.btnOtkaz.UseVisualStyleBackColor = true;
+            this.btnOtkaz.Click += new System.EventHandler(this.btnOtkaz_Click);
+            // 
             // picAktivan
             // 
             this.picAktivan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -197,7 +233,7 @@
             // btnIzmjeniZaposleni
             // 
             this.btnIzmjeniZaposleni.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnIzmjeniZaposleni.Location = new System.Drawing.Point(8, 252);
+            this.btnIzmjeniZaposleni.Location = new System.Drawing.Point(284, 252);
             this.btnIzmjeniZaposleni.Name = "btnIzmjeniZaposleni";
             this.btnIzmjeniZaposleni.Size = new System.Drawing.Size(75, 23);
             this.btnIzmjeniZaposleni.TabIndex = 13;
@@ -470,13 +506,13 @@
             this.Status});
             this.dgvFilmovi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvFilmovi.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvFilmovi.Location = new System.Drawing.Point(32, 182);
+            this.dgvFilmovi.Location = new System.Drawing.Point(32, 197);
             this.dgvFilmovi.Name = "dgvFilmovi";
             this.dgvFilmovi.ReadOnly = true;
             this.dgvFilmovi.RowHeadersVisible = false;
             this.dgvFilmovi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvFilmovi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFilmovi.Size = new System.Drawing.Size(403, 215);
+            this.dgvFilmovi.Size = new System.Drawing.Size(403, 200);
             this.dgvFilmovi.TabIndex = 3;
             // 
             // naziv
@@ -506,7 +542,7 @@
             // lblFilmoviStatic
             // 
             this.lblFilmoviStatic.AutoSize = true;
-            this.lblFilmoviStatic.Location = new System.Drawing.Point(29, 166);
+            this.lblFilmoviStatic.Location = new System.Drawing.Point(29, 181);
             this.lblFilmoviStatic.Name = "lblFilmoviStatic";
             this.lblFilmoviStatic.Size = new System.Drawing.Size(39, 13);
             this.lblFilmoviStatic.TabIndex = 2;
@@ -514,6 +550,7 @@
             // 
             // gboxDetaljiDistributer
             // 
+            this.gboxDetaljiDistributer.Controls.Add(this.btnIzmjeniDistributer);
             this.gboxDetaljiDistributer.Controls.Add(this.lblBrojTelefonaDist);
             this.gboxDetaljiDistributer.Controls.Add(this.lblEmailDist);
             this.gboxDetaljiDistributer.Controls.Add(this.lblAdresaDist);
@@ -524,10 +561,19 @@
             this.gboxDetaljiDistributer.Controls.Add(this.lblNazivDistStatic);
             this.gboxDetaljiDistributer.Location = new System.Drawing.Point(32, 3);
             this.gboxDetaljiDistributer.Name = "gboxDetaljiDistributer";
-            this.gboxDetaljiDistributer.Size = new System.Drawing.Size(403, 160);
+            this.gboxDetaljiDistributer.Size = new System.Drawing.Size(403, 175);
             this.gboxDetaljiDistributer.TabIndex = 0;
             this.gboxDetaljiDistributer.TabStop = false;
             this.gboxDetaljiDistributer.Text = "Detalji o distributeru";
+            // 
+            // btnIzmjeniDistributer
+            // 
+            this.btnIzmjeniDistributer.Location = new System.Drawing.Point(322, 146);
+            this.btnIzmjeniDistributer.Name = "btnIzmjeniDistributer";
+            this.btnIzmjeniDistributer.Size = new System.Drawing.Size(75, 23);
+            this.btnIzmjeniDistributer.TabIndex = 8;
+            this.btnIzmjeniDistributer.Text = "Izmjeni";
+            this.btnIzmjeniDistributer.UseVisualStyleBackColor = true;
             // 
             // lblBrojTelefonaDist
             // 
@@ -621,6 +667,11 @@
             // 
             this.splitContainer3.Panel1.Controls.Add(this.lvFilmovi);
             this.splitContainer3.Panel1.Controls.Add(this.tbxPretragaFilma);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.gboxDistributer);
+            this.splitContainer3.Panel2.Controls.Add(this.gboxFilm);
             this.splitContainer3.Size = new System.Drawing.Size(726, 408);
             this.splitContainer3.SplitterDistance = 250;
             this.splitContainer3.TabIndex = 0;
@@ -653,6 +704,205 @@
             this.tbxPretragaFilma.Size = new System.Drawing.Size(244, 20);
             this.tbxPretragaFilma.TabIndex = 0;
             this.tbxPretragaFilma.TextChanged += new System.EventHandler(this.tbxPretragaFilma_TextChanged);
+            // 
+            // gboxDistributer
+            // 
+            this.gboxDistributer.Controls.Add(this.label1);
+            this.gboxDistributer.Controls.Add(this.label2);
+            this.gboxDistributer.Controls.Add(this.label3);
+            this.gboxDistributer.Controls.Add(this.label4);
+            this.gboxDistributer.Controls.Add(this.label5);
+            this.gboxDistributer.Controls.Add(this.label6);
+            this.gboxDistributer.Controls.Add(this.label7);
+            this.gboxDistributer.Controls.Add(this.label8);
+            this.gboxDistributer.Location = new System.Drawing.Point(25, 246);
+            this.gboxDistributer.Name = "gboxDistributer";
+            this.gboxDistributer.Size = new System.Drawing.Size(425, 154);
+            this.gboxDistributer.TabIndex = 1;
+            this.gboxDistributer.TabStop = false;
+            this.gboxDistributer.Text = "Detalji o distributeru";
+            // 
+            // gboxFilm
+            // 
+            this.gboxFilm.Controls.Add(this.lblFilmOpis);
+            this.gboxFilm.Controls.Add(this.lblFilmStatus);
+            this.gboxFilm.Controls.Add(this.lblFilmTrajanje);
+            this.gboxFilm.Controls.Add(this.lblFilmZanr);
+            this.gboxFilm.Controls.Add(this.lblNazivFilm);
+            this.gboxFilm.Controls.Add(this.lblOpisStatic);
+            this.gboxFilm.Controls.Add(this.lblStatusStatic);
+            this.gboxFilm.Controls.Add(this.lblTrajanjeStatic);
+            this.gboxFilm.Controls.Add(this.lblZanrStatic);
+            this.gboxFilm.Controls.Add(this.lblNazivStatic);
+            this.gboxFilm.Location = new System.Drawing.Point(25, 29);
+            this.gboxFilm.Name = "gboxFilm";
+            this.gboxFilm.Size = new System.Drawing.Size(425, 211);
+            this.gboxFilm.TabIndex = 0;
+            this.gboxFilm.TabStop = false;
+            this.gboxFilm.Text = "Detalji o filmu";
+            // 
+            // lblOpisStatic
+            // 
+            this.lblOpisStatic.AutoSize = true;
+            this.lblOpisStatic.Location = new System.Drawing.Point(6, 149);
+            this.lblOpisStatic.Name = "lblOpisStatic";
+            this.lblOpisStatic.Size = new System.Drawing.Size(31, 13);
+            this.lblOpisStatic.TabIndex = 4;
+            this.lblOpisStatic.Text = "Opis:";
+            // 
+            // lblStatusStatic
+            // 
+            this.lblStatusStatic.AutoSize = true;
+            this.lblStatusStatic.Location = new System.Drawing.Point(6, 118);
+            this.lblStatusStatic.Name = "lblStatusStatic";
+            this.lblStatusStatic.Size = new System.Drawing.Size(37, 13);
+            this.lblStatusStatic.TabIndex = 3;
+            this.lblStatusStatic.Text = "Status";
+            // 
+            // lblTrajanjeStatic
+            // 
+            this.lblTrajanjeStatic.AutoSize = true;
+            this.lblTrajanjeStatic.Location = new System.Drawing.Point(6, 87);
+            this.lblTrajanjeStatic.Name = "lblTrajanjeStatic";
+            this.lblTrajanjeStatic.Size = new System.Drawing.Size(48, 13);
+            this.lblTrajanjeStatic.TabIndex = 2;
+            this.lblTrajanjeStatic.Text = "Trajanje:";
+            // 
+            // lblZanrStatic
+            // 
+            this.lblZanrStatic.AutoSize = true;
+            this.lblZanrStatic.Location = new System.Drawing.Point(6, 56);
+            this.lblZanrStatic.Name = "lblZanrStatic";
+            this.lblZanrStatic.Size = new System.Drawing.Size(32, 13);
+            this.lblZanrStatic.TabIndex = 1;
+            this.lblZanrStatic.Text = "Zanr:";
+            // 
+            // lblNazivStatic
+            // 
+            this.lblNazivStatic.AutoSize = true;
+            this.lblNazivStatic.Location = new System.Drawing.Point(6, 25);
+            this.lblNazivStatic.Name = "lblNazivStatic";
+            this.lblNazivStatic.Size = new System.Drawing.Size(37, 13);
+            this.lblNazivStatic.TabIndex = 0;
+            this.lblNazivStatic.Text = "Naziv:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(121, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "label4";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(121, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "label3";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(121, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "label2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(121, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "label1";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Broj telefona:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "E-mail:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Adresa:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Naziv:";
+            // 
+            // lblFilmStatus
+            // 
+            this.lblFilmStatus.AutoSize = true;
+            this.lblFilmStatus.Location = new System.Drawing.Point(121, 118);
+            this.lblFilmStatus.Name = "lblFilmStatus";
+            this.lblFilmStatus.Size = new System.Drawing.Size(35, 13);
+            this.lblFilmStatus.TabIndex = 19;
+            this.lblFilmStatus.Text = "label4";
+            // 
+            // lblFilmTrajanje
+            // 
+            this.lblFilmTrajanje.AutoSize = true;
+            this.lblFilmTrajanje.Location = new System.Drawing.Point(121, 87);
+            this.lblFilmTrajanje.Name = "lblFilmTrajanje";
+            this.lblFilmTrajanje.Size = new System.Drawing.Size(35, 13);
+            this.lblFilmTrajanje.TabIndex = 18;
+            this.lblFilmTrajanje.Text = "label3";
+            // 
+            // lblFilmZanr
+            // 
+            this.lblFilmZanr.AutoSize = true;
+            this.lblFilmZanr.Location = new System.Drawing.Point(121, 56);
+            this.lblFilmZanr.Name = "lblFilmZanr";
+            this.lblFilmZanr.Size = new System.Drawing.Size(35, 13);
+            this.lblFilmZanr.TabIndex = 17;
+            this.lblFilmZanr.Text = "label2";
+            // 
+            // lblNazivFilm
+            // 
+            this.lblNazivFilm.AutoSize = true;
+            this.lblNazivFilm.Location = new System.Drawing.Point(121, 25);
+            this.lblNazivFilm.Name = "lblNazivFilm";
+            this.lblNazivFilm.Size = new System.Drawing.Size(35, 13);
+            this.lblNazivFilm.TabIndex = 16;
+            this.lblNazivFilm.Text = "label1";
+            // 
+            // lblFilmOpis
+            // 
+            this.lblFilmOpis.AutoEllipsis = true;
+            this.lblFilmOpis.AutoSize = true;
+            this.lblFilmOpis.Location = new System.Drawing.Point(121, 149);
+            this.lblFilmOpis.Name = "lblFilmOpis";
+            this.lblFilmOpis.Size = new System.Drawing.Size(41, 13);
+            this.lblFilmOpis.TabIndex = 20;
+            this.lblFilmOpis.Text = "label13";
             // 
             // AdministratorForm
             // 
@@ -687,8 +937,13 @@
             this.tabPage5.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
+            this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            this.gboxDistributer.ResumeLayout(false);
+            this.gboxDistributer.PerformLayout();
+            this.gboxFilm.ResumeLayout(false);
+            this.gboxFilm.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -713,7 +968,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel lblImePrezime;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnIzmjeniZaposleni;
         private System.Windows.Forms.Label lblImeStatic;
         private System.Windows.Forms.Label lblRadnoMjesto;
         private System.Windows.Forms.Label lblPrezime;
@@ -726,7 +980,6 @@
         private System.Windows.Forms.Label lblTelefon;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblEmailStatic;
-        private System.Windows.Forms.PictureBox picAktivan;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ListView lvDistributeri;
@@ -749,5 +1002,29 @@
         private System.Windows.Forms.ListView lvFilmovi;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.TextBox tbxPretragaFilma;
+        private System.Windows.Forms.Button btnIzmjeniZaposleni;
+        private System.Windows.Forms.PictureBox picAktivan;
+        private System.Windows.Forms.Button btnOtkaz;
+        private System.Windows.Forms.Button btnIzmjeniDistributer;
+        private System.Windows.Forms.GroupBox gboxFilm;
+        private System.Windows.Forms.Label lblOpisStatic;
+        private System.Windows.Forms.Label lblStatusStatic;
+        private System.Windows.Forms.Label lblTrajanjeStatic;
+        private System.Windows.Forms.Label lblZanrStatic;
+        private System.Windows.Forms.Label lblNazivStatic;
+        private System.Windows.Forms.GroupBox gboxDistributer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblFilmOpis;
+        private System.Windows.Forms.Label lblFilmStatus;
+        private System.Windows.Forms.Label lblFilmTrajanje;
+        private System.Windows.Forms.Label lblFilmZanr;
+        private System.Windows.Forms.Label lblNazivFilm;
     }
 }

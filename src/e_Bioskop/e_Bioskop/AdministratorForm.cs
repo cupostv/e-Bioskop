@@ -249,6 +249,11 @@ namespace e_Bioskop
             }
         }
 
+        private void btnOtkaz_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Da li ste sigurni?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
 
     }
 }
