@@ -41,6 +41,7 @@
             this.cbDistributer = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txbTrajanje = new System.Windows.Forms.NumericUpDown();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txbTrajanje)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 56);
+            this.label2.Location = new System.Drawing.Point(12, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 1;
@@ -65,7 +66,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 86);
+            this.label3.Location = new System.Drawing.Point(12, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 2;
@@ -74,7 +75,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 110);
+            this.label4.Location = new System.Drawing.Point(12, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 3;
@@ -82,22 +83,23 @@
             // 
             // txbNaziv
             // 
-            this.txbNaziv.Location = new System.Drawing.Point(143, 22);
+            this.txbNaziv.Location = new System.Drawing.Point(95, 22);
             this.txbNaziv.Name = "txbNaziv";
-            this.txbNaziv.Size = new System.Drawing.Size(100, 20);
+            this.txbNaziv.Size = new System.Drawing.Size(193, 20);
             this.txbNaziv.TabIndex = 4;
             // 
             // txbOpis
             // 
-            this.txbOpis.Location = new System.Drawing.Point(143, 53);
+            this.txbOpis.Location = new System.Drawing.Point(95, 192);
+            this.txbOpis.Multiline = true;
             this.txbOpis.Name = "txbOpis";
-            this.txbOpis.Size = new System.Drawing.Size(100, 20);
+            this.txbOpis.Size = new System.Drawing.Size(193, 58);
             this.txbOpis.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 139);
+            this.label5.Location = new System.Drawing.Point(12, 127);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 6;
@@ -106,7 +108,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 169);
+            this.label6.Location = new System.Drawing.Point(12, 161);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 13);
             this.label6.TabIndex = 7;
@@ -114,50 +116,64 @@
             // 
             // cbZanr
             // 
+            this.cbZanr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbZanr.FormattingEnabled = true;
-            this.cbZanr.Location = new System.Drawing.Point(120, 110);
+            this.cbZanr.Location = new System.Drawing.Point(95, 90);
             this.cbZanr.Name = "cbZanr";
-            this.cbZanr.Size = new System.Drawing.Size(121, 21);
+            this.cbZanr.Size = new System.Drawing.Size(193, 21);
             this.cbZanr.TabIndex = 8;
             // 
             // cbStatus
             // 
+            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Location = new System.Drawing.Point(120, 138);
+            this.cbStatus.Location = new System.Drawing.Point(95, 124);
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(121, 21);
+            this.cbStatus.Size = new System.Drawing.Size(193, 21);
             this.cbStatus.TabIndex = 9;
             // 
             // cbDistributer
             // 
+            this.cbDistributer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDistributer.FormattingEnabled = true;
-            this.cbDistributer.Location = new System.Drawing.Point(120, 169);
+            this.cbDistributer.Location = new System.Drawing.Point(95, 158);
             this.cbDistributer.Name = "cbDistributer";
-            this.cbDistributer.Size = new System.Drawing.Size(121, 21);
+            this.cbDistributer.Size = new System.Drawing.Size(193, 21);
             this.cbDistributer.TabIndex = 10;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(158, 226);
+            this.button1.Location = new System.Drawing.Point(132, 267);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
-            this.button1.Text = "Sačuvaj";
+            this.button1.Text = "Potvrdi";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txbTrajanje
             // 
-            this.txbTrajanje.Location = new System.Drawing.Point(123, 79);
+            this.txbTrajanje.Location = new System.Drawing.Point(95, 57);
             this.txbTrajanje.Name = "txbTrajanje";
-            this.txbTrajanje.Size = new System.Drawing.Size(120, 20);
+            this.txbTrajanje.Size = new System.Drawing.Size(193, 20);
             this.txbTrajanje.TabIndex = 12;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(213, 267);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Odustani";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FilmDodajForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(312, 302);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.txbTrajanje);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbDistributer);
@@ -172,7 +188,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FilmDodajForm";
-            this.Text = "FilmDodajForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Dodaj film";
             ((System.ComponentModel.ISupportInitialize)(this.txbTrajanje)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -194,5 +211,6 @@
         private System.Windows.Forms.ComboBox cbDistributer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown txbTrajanje;
+        private System.Windows.Forms.Button button2;
     }
 }

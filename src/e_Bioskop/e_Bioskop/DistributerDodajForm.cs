@@ -14,24 +14,10 @@ namespace e_Bioskop
 {
     public partial class DistributerDodajForm : Form
     {
-        private string opciono = "Opciono";
 
         public DistributerDodajForm()
         {
             InitializeComponent();
-
-            btnDodaj.Enabled = false;
-
-            tbxEmail.Enter += new EventHandler(tbxAdresa_Enter);
-            tbxEmail.Leave += new EventHandler(tbxAdresa_Leave);
-
-            tbxBrojTelefona.TextChanged += new EventHandler(tbxNaziv_TextChanged);
-
-            tbxAdresa.Text = opciono;
-            tbxEmail.Text = opciono;
-
-            tbxAdresa.ForeColor = SystemColors.GrayText;
-            tbxEmail.ForeColor = SystemColors.GrayText;
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -55,8 +41,29 @@ namespace e_Bioskop
 
         private bool validate()
         {
-            return !string.IsNullOrWhiteSpace(tbxNaziv.Text) &&
-                !string.IsNullOrWhiteSpace(tbxBrojTelefona.Text);
+            bool valid = true;
+
+            if (string.IsNullOrEmpty(tbxNaziv.Text))
+            {
+                epNaziv.SetError(tbxNaziv, "Unesite naziv");
+                valid = false;
+            }
+            else
+            {
+                epNaziv.Clear();
+            }
+
+            if (string.IsNullOrEmpty(tbxBrojTelefona.Text))
+            {
+                epBrojTelefona.SetError(tbxBrojTelefona, "Unesite broj telefona");
+                valid = false;
+            }
+            else
+            {
+                epBrojTelefona.Clear();
+            }
+
+            return valid;
         }
 
         private bool insertDistributer()
@@ -72,38 +79,11 @@ namespace e_Bioskop
             return false;
         }
 
-        private void tbxNaziv_TextChanged(object sender, EventArgs e)
+        private void btnOdustani_Click(object sender, EventArgs e)
         {
-            if (validate())
-            {
-                btnDodaj.Enabled = true;
-            }
-            else
-            {
-                btnDodaj.Enabled = false;
-            }
+            this.Close();
         }
 
-        private void tbxAdresa_Enter(object sender, EventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            if (tb.ForeColor != SystemColors.GrayText)
-            {
-                return;
-            }
-            tb.Text = "";
-            tb.ForeColor = SystemColors.WindowText;
-        }
 
-        private void tbxAdresa_Leave(object sender, EventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            string name = tb.Name;
-            if (tb.Text == "")
-            {
-                tb.Text = opciono;
-                tb.ForeColor = SystemColors.GrayText;
-            }
-        }
     }
 }

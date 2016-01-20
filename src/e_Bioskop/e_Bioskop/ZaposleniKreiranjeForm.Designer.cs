@@ -370,6 +370,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ZaposleniKreiranjeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kreiranje naloga";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

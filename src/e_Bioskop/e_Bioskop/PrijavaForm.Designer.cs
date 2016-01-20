@@ -67,7 +67,6 @@
             this.tbxKorisnickoIme.Name = "tbxKorisnickoIme";
             this.tbxKorisnickoIme.Size = new System.Drawing.Size(222, 20);
             this.tbxKorisnickoIme.TabIndex = 1;
-            this.tbxKorisnickoIme.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxKorisnickoIme_KeyDown);
             // 
             // tbxLozinka
             // 
@@ -123,6 +122,7 @@
             // 
             // PrijavaForm
             // 
+            this.AcceptButton = this.btnPrijava;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 167);

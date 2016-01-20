@@ -41,6 +41,14 @@ namespace e_Bioskop
         {
             FilmDTO film = controlsToFIlm();
             BioskopUtil.getDAOFactory().getFilmDAO().insert(film);
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
