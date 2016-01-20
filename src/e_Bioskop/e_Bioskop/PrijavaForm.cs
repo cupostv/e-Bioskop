@@ -43,6 +43,9 @@ namespace e_Bioskop
                     {
                         tbxKorisnickoIme.Text = "";
                         tbxLozinka.Text = "";
+                        lblGreska.Hide();
+                        tbxKorisnickoIme.Focus();
+
                         this.Show();
                     }
                 }
