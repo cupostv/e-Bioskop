@@ -109,6 +109,18 @@
     <Compile Include="FilmDodajForm.Designer.cs">
       <DependentUpon>FilmDodajForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilmIzborForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilmIzborForm.Designer.cs">
+      <DependentUpon>FilmIzborForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjekcijaDodajForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjekcijaDodajForm.Designer.cs">
+      <DependentUpon>ProjekcijaDodajForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpravnikForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,8 +155,14 @@
     <EmbeddedResource Include="FilmDodajForm.resx">
       <DependentUpon>FilmDodajForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FilmIzborForm.resx">
+      <DependentUpon>FilmIzborForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrijavaForm.resx">
       <DependentUpon>PrijavaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjekcijaDodajForm.resx">
+      <DependentUpon>ProjekcijaDodajForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

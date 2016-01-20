@@ -137,6 +137,7 @@ namespace e_Bioskop
                 lvi.Text = film.Naziv;
                 lvi.SubItems.Add(film.Zanr.Naziv);
                 lvi.SubItems.Add(film.Trajanje + "");
+                lvi.SubItems.Add(film.Opis);
                 lvFilm.Items.Add(lvi);
             }
         }

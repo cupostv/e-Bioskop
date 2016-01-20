@@ -38,7 +38,14 @@ namespace e_Bioskop.data.dao.mysql
         {
             ZaposleniRadnoMjestoDTO zaposleniRadnoMjesto=new ZaposleniRadnoMjestoDTO();
             zaposleniRadnoMjesto.DatumZaposlenja=reader.GetDateTime("datumZaposlenja");
-            zaposleniRadnoMjesto.DatumOtkaza=reader.GetDateTime("datumOtkaza");
+            try
+            {
+                zaposleniRadnoMjesto.DatumOtkaza = reader.GetDateTime("datumOtkaza");
+            }
+            catch
+            {
+
+            }
             return zaposleniRadnoMjesto;
         }
 

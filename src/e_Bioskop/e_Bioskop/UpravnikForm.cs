@@ -37,6 +37,7 @@ namespace e_Bioskop
            lblNarucivanjeNazivFilma.Text= trenutniFilm.Naziv;
            lblNarucivanjeOpisFilma.Text = trenutniFilm.Opis;
            lblNarucivanjeZanrFilma.Text = trenutniFilm.Zanr.Naziv;
+           lblNarucivanjeTrajanjeFilma.Text = trenutniFilm.Trajanje + " minuta";
            lblNarucivanjeNazivDistributera.Text = trenutniFilm.Distributer.Naziv;
            lblNarucivanjeTelefonDistributera.Text = trenutniFilm.Distributer.Telefon;
            lblNarucivanjeAdresaDistributera.Text = trenutniFilm.Distributer.Adresa;
@@ -82,6 +83,12 @@ namespace e_Bioskop
         {
             BioskopUtil.odjavaZaposleni();
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnDodajProjekciju_Click(object sender, EventArgs e)
+        {
+            ProjekcijaDodajForm pdf = new ProjekcijaDodajForm();
+            pdf.Show();
         }
 
 
