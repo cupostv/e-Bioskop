@@ -56,10 +56,13 @@ namespace e_Bioskop
                     return;
                 }
             }
-            if (updateZaposleni())
+            else
             {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                if (updateZaposleni())
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
             }
         }
 

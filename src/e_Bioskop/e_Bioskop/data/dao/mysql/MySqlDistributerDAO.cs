@@ -15,6 +15,7 @@ namespace e_Bioskop.data.dao.mysql
         private string getAllQuerry = "SELECT idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer FROM e_bioskop.distributer";
 
         private string getByNazivQuerry = "SELECT idDistributer,nazivDistributer,adresaDistributer,telefonDistributer,e_mailDistributer FROM e_bioskop.distributer where nazivDistributer=?naziv;";
+        private string updateQuerry = "UPDATE `e_bioskop`.`distributer` SET `nazivDistributer`=?naziv, `adresaDistributer`=?adresa, `e_mailDistributer`=?eMail,`telefonDistributer`=?telefon WHERE `idDistributer`=?id;";
 
         public DistributerDTO getById(int id)
         {
@@ -61,6 +62,25 @@ namespace e_Bioskop.data.dao.mysql
             long id = command.LastInsertedId;
             ConnectionPool.checkInConnection(connection);
             return id;
+        }
+
+        public bool update(DistributerDTO distributer)
+        {
+            if (distributer == null)
+            {
+                throw new MySqlDAOException();
+            }
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = updateQuerry;
+            command.Parameters.AddWithValue("naziv", distributer.Naziv);
+            command.Parameters.AddWithValue("adresa", distributer.Adresa);
+            command.Parameters.AddWithValue("telefon", distributer.Telefon);
+            command.Parameters.AddWithValue("eMail", distributer.Email);
+            command.Parameters.AddWithValue("id", distributer.Id);
+            int rows=command.ExecuteNonQuery();
+            ConnectionPool.checkInConnection(connection);
+            return rows>0;
         }
 
         public List<DistributerDTO> getAll()

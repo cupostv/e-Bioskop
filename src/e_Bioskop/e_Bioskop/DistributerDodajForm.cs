@@ -30,6 +30,7 @@ namespace e_Bioskop
             tbxAdresa.Text = distributer.Adresa;
             tbxEmail.Text = distributer.Email;
             tbxBrojTelefona.Text = distributer.Telefon;
+            this.distributer = distributer;
 
         }
 
@@ -51,14 +52,12 @@ namespace e_Bioskop
             }
         }
 
-        private DistributerDTO controlsToDistributer()
+        private void controlsToDistributer(DistributerDTO distributer)
         {
-            DistributerDTO distributer = new DistributerDTO();
             distributer.Naziv = tbxNaziv.Text;
             distributer.Adresa = tbxAdresa.Text;
             distributer.Telefon = tbxBrojTelefona.Text;
             distributer.Email = tbxEmail.Text;
-            return distributer;
         }
 
         private bool validate()
@@ -92,7 +91,9 @@ namespace e_Bioskop
         {
             if (validate())
             {
-               long id=BioskopUtil.getDAOFactory().getDistributerDAO().insert(controlsToDistributer());
+                DistributerDTO distributer = new DistributerDTO();
+                controlsToDistributer(distributer);
+               long id=BioskopUtil.getDAOFactory().getDistributerDAO().insert(distributer);
                if (id > 0)
                    return true;
                else
@@ -103,6 +104,8 @@ namespace e_Bioskop
 
         private bool updateDistributer()
         {
+            controlsToDistributer(distributer);
+            BioskopUtil.getDAOFactory().getDistributerDAO().update(distributer);
             return true;
         }
 
