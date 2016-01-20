@@ -11,6 +11,6 @@ namespace e_Bioskop.data.dao
         List<ZaposleniRadnoMjestoDTO> getRadnaMjestaZaposlenog(ZaposleniDTO zaposleni);
         List<ZaposleniRadnoMjestoDTO> getZaposleniRadnoMjesto(RadnoMjestoDTO radnoMjesto);
         bool insert(ZaposleniRadnoMjestoDTO zaposleniRadnoMjesto);
-        bool update(ZaposleniRadnoMjestoDTO zaposleniRadnoMjesto);
+        bool update(ZaposleniRadnoMjestoDTO zaposleniRadnoMjesto,int idStaroRadnoMjesto);
     }
 }

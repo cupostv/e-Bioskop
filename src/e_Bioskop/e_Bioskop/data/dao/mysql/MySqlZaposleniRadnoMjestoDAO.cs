@@ -13,6 +13,8 @@ namespace e_Bioskop.data.dao.mysql
         private string getZaposleniRadnoMjestoQuerry = "SELECT z.idZaposleni,ime,prezime,datumRodjenja,korisnickoIme,e_mail,aktivan,lozinka,telefon,datumZaposlenja,datumOtkaza FROM zaposleni_radno_mjesto zrm inner join zaposleni z on  z.idZaposleni=zrm.idZaposleni where idRadnoMjesto=?idRadnoMjesto;";
         private string insertQuerry = "INSERT INTO `e_bioskop`.`zaposleni_radno_mjesto` (`idZaposleni`, `idRadnoMjesto`, `datumZaposlenja`) VALUES (?idZaposleni, ?idRadnoMjesto, ?datumZaposlenja);";
         private string insertWithDatumOtkazaQuerry = "INSERT INTO `e_bioskop`.`zaposleni_radno_mjesto` (`idZaposleni`, `idRadnoMjesto`, `datumZaposlenja`,`datumOtkaza`) VALUES (?idZaposleni, ?idRadnoMjesto, ?datumZaposlenja,?datumOtkaza);";
+        private string updateQuerry = "UPDATE `e_bioskop`.`zaposleni_radno_mjesto` SET `idZaposleni`=?idZaposleni, `idRadnoMjesto`=?idRadnoMjesto, `datumZaposlenja`=?datumZaposlenja WHERE `idZaposleni`=?idZaposleni and`idRadnoMjesto`=?idStaroRadnoMjesto;";
+        private string updateSaDatumomOtkazaQuerry = "UPDATE `e_bioskop`.`zaposleni_radno_mjesto` SET `idZaposleni`=?idZaposleni, `idRadnoMjesto`=?idRadnoMjesto, `datumZaposlenja`=?datumZaposlenja,datumOtkaza=?datumOtkaza WHERE `idZaposleni`=?idZaposleni and`idRadnoMjesto`=?idStaroRadnoMjesto;";
 
         public List<ZaposleniRadnoMjestoDTO> getRadnaMjestaZaposlenog(ZaposleniDTO zaposleni)
         {
@@ -90,9 +92,28 @@ namespace e_Bioskop.data.dao.mysql
             ConnectionPool.checkInConnection(connection);
             return num > 0;
         }
-        public bool update(ZaposleniRadnoMjestoDTO zaposleniRadnoMjesto)
+        public bool update(ZaposleniRadnoMjestoDTO zaposleniRadnoMjesto,int idStaroRadnoMjesto)
         {
-            return true;
+            if (zaposleniRadnoMjesto == null)
+                return false;
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            if (zaposleniRadnoMjesto.DatumOtkaza == null)
+            {
+                command.CommandText = updateQuerry;
+            }
+            else
+            {
+                command.CommandText = updateSaDatumomOtkazaQuerry;
+                command.Parameters.AddWithValue("datumOtkaza", zaposleniRadnoMjesto.DatumOtkaza);
+            }
+            command.Parameters.AddWithValue("idZaposleni", zaposleniRadnoMjesto.Zaposleni.Id);
+            command.Parameters.AddWithValue("idRadnoMjesto", zaposleniRadnoMjesto.RadnoMjesto.Id);
+            command.Parameters.AddWithValue("datumZaposlenja", zaposleniRadnoMjesto.DatumZaposlenja);
+            command.Parameters.AddWithValue("idStaroRadnoMjesto", idStaroRadnoMjesto);
+            int num = command.ExecuteNonQuery();
+            ConnectionPool.checkInConnection(connection);
+            return num > 0;
         }
     }
 }

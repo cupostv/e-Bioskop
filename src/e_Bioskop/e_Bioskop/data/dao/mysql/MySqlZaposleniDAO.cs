@@ -99,6 +99,8 @@ namespace e_Bioskop.data.dao.mysql
             command.Parameters.AddWithValue("telefon", zaposleni.Telefon);
             command.Parameters.AddWithValue("aktivan", zaposleni.Aktivan);
             command.Parameters.AddWithValue("id", zaposleni.Id);
+            command.Parameters.AddWithValue("eMail", zaposleni.Email);
+            command.Parameters.AddWithValue("datumRodjenja", zaposleni.DatumRodjenja);
             int result=command.ExecuteNonQuery();
             ConnectionPool.checkInConnection(connection);
             return result;
