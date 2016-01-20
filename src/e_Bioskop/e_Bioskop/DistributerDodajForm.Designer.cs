@@ -154,8 +154,10 @@
             // 
             // DistributerDodajForm
             // 
+            this.AcceptButton = this.btnPotvrdi;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnOdustani;
             this.ClientSize = new System.Drawing.Size(348, 235);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnPotvrdi);

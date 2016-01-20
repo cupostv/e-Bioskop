@@ -117,13 +117,11 @@ namespace e_Bioskop
             prijava.Show();
         }
 
-        private  void dodajZaposlenog()
+        private  bool dodajZaposlenog()
         {
             ZaposleniKreiranjeForm kreiranje = new ZaposleniKreiranjeForm();
-            if (kreiranje.ShowDialog() == DialogResult.OK)
-            {
-                popuniListuZaposlenih();
-            }
+            return (kreiranje.ShowDialog() == DialogResult.OK);
+            
         }
 
         private bool dodajDistributera()
@@ -180,12 +178,18 @@ namespace e_Bioskop
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            dodajZaposlenog();
+            if (dodajZaposlenog())
+            {
+                popuniListuZaposlenih();
+            }
         }
 
         private void btnDodajDistributera_Click(object sender, EventArgs e)
         {
-            dodajDistributera();
+            if (dodajDistributera())
+            {
+                popuniListuDistributera();
+            }
         }
 
         private void lvZaposleni_SelectedIndexChanged(object sender, EventArgs e)
@@ -200,7 +204,10 @@ namespace e_Bioskop
 
         private void btnDodajFilm_Click(object sender, EventArgs e)
         {
-            dodajFilm();
+            if (dodajFilm())
+            {
+                popuniListuFilmova();
+            }
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -231,6 +238,15 @@ namespace e_Bioskop
             }
 
             popuniListuFilmova(tbxPretragaFilma.Text);
+        }
+
+        private void btnIzmjeniZaposleni_Click(object sender, EventArgs e)
+        {
+            ZaposleniKreiranjeForm kreiranje = new ZaposleniKreiranjeForm(listaOsoba[lvZaposleni.FocusedItem.Index]);
+            if (kreiranje.ShowDialog() == DialogResult.OK)
+            {
+                popuniListuZaposlenih();
+            }
         }
 
 

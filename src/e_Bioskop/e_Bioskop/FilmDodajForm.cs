@@ -37,12 +37,72 @@ namespace e_Bioskop
             return film;
         }
 
+        private bool validate()
+        {
+            bool valid = true;
+
+            if (string.IsNullOrEmpty(txbNaziv.Text))
+            {
+                epNaziv.SetError(txbNaziv, "Unesite naziv");
+                valid = false;
+            }
+            else
+            {
+                epNaziv.Clear();
+            }
+
+            if (cbZanr.SelectedIndex < 0)
+            {
+                epZanr.SetError(cbZanr, "Izaberite zanr");
+                valid = false;
+            }
+            else
+            {
+                epZanr.Clear();
+            }
+
+            if (cbStatus.SelectedIndex < 0)
+            {
+                epStatus.SetError(cbStatus, "Izaberite status");
+                valid = false;
+            }
+            else
+            {
+                epStatus.Clear();
+            }
+
+            if (cbDistributer.SelectedIndex < 0)
+            {
+                epDistributer.SetError(cbDistributer, "Izaberite distributera");
+                valid = false;
+            }
+            else
+            {
+                epDistributer.Clear();
+            }
+
+            if (string.IsNullOrEmpty(txbOpis.Text))
+            {
+                epOpis.SetError(txbOpis, "Unesite opis");
+                valid = false;
+            }
+            else
+            {
+                epOpis.Clear();
+            }
+
+            return valid;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            FilmDTO film = controlsToFIlm();
-            BioskopUtil.getDAOFactory().getFilmDAO().insert(film);
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (validate())
+            {
+                FilmDTO film = controlsToFIlm();
+                BioskopUtil.getDAOFactory().getFilmDAO().insert(film);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

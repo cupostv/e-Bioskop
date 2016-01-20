@@ -12,7 +12,9 @@ namespace e_Bioskop
 {
     public partial class ZaposleniKreiranjeForm : Form
     {
-        string opciono = "Opciono";
+        private string opciono = "Opciono";
+        private bool izmjena;
+        private ZaposleniRadnoMjestoDTO zaposleni = null;
 
         public ZaposleniKreiranjeForm()
         {
@@ -23,9 +25,39 @@ namespace e_Bioskop
             txbLozinka.TextChanged += new EventHandler(txbLozinka1_TextChanged);
         }
 
+        public ZaposleniKreiranjeForm(ZaposleniDTO zaposleni)
+        {
+            InitializeComponent();
+
+            txbLozinka.TextChanged += new EventHandler(txbLozinka1_TextChanged);
+
+            ZaposleniRadnoMjestoDTO zaposleniRM = (BioskopUtil.getDAOFactory().getZaposleniRadnoMjestoDAO().getRadnaMjestaZaposlenog(zaposleni))[0];
+            txbIme.Text = zaposleni.Ime;
+            txbPrezime.Text = zaposleni.Prezime;
+            txbKorisnickoIme.Text = zaposleni.KorisnickoIme;
+            txbEmail.Text = zaposleni.Email;
+            txbBrojTelefona.Text = zaposleni.Telefon;
+            BioskopUtil.initRadnoMjestoComboBox(cboxRadnoMjesto, zaposleniRM.RadnoMjesto.Id);
+            cbAktivan.Checked = zaposleni.Aktivan == 1 ? true : false;
+            dtpDatumRodjenja.Value = zaposleni.DatumRodjenja;
+            dtpDatumZaposlenja.Value = zaposleniRM.DatumZaposlenja;
+            this.zaposleni = zaposleniRM;
+            this.Text = "Izmjena naloga";
+           
+        }
+
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            if (insertZaposleni())
+            if (zaposleni == null)
+            {
+                if (insertZaposleni())
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                    return;
+                }
+            }
+            if (updateZaposleni())
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -152,6 +184,16 @@ namespace e_Bioskop
                 }
             }
            return false;
+        }
+
+        private bool updateZaposleni()
+        {
+            if (validate())
+            {
+                BioskopUtil.getDAOFactory().getZaposleniRadnoMjestoDAO().update(zaposleni);
+                return true;
+            }
+            return false;
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)

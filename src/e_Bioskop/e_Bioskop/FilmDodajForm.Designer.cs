@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,7 +43,17 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txbTrajanje = new System.Windows.Forms.NumericUpDown();
             this.button2 = new System.Windows.Forms.Button();
+            this.epNaziv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epZanr = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epStatus = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epDistributer = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epOpis = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txbTrajanje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNaziv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epZanr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epDistributer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epOpis)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -154,6 +165,11 @@
             // txbTrajanje
             // 
             this.txbTrajanje.Location = new System.Drawing.Point(95, 57);
+            this.txbTrajanje.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.txbTrajanje.Name = "txbTrajanje";
             this.txbTrajanje.Size = new System.Drawing.Size(193, 20);
             this.txbTrajanje.TabIndex = 12;
@@ -168,10 +184,37 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // epNaziv
+            // 
+            this.epNaziv.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epNaziv.ContainerControl = this;
+            // 
+            // epZanr
+            // 
+            this.epZanr.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epZanr.ContainerControl = this;
+            // 
+            // epStatus
+            // 
+            this.epStatus.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epStatus.ContainerControl = this;
+            // 
+            // epDistributer
+            // 
+            this.epDistributer.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epDistributer.ContainerControl = this;
+            // 
+            // epOpis
+            // 
+            this.epOpis.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epOpis.ContainerControl = this;
+            // 
             // FilmDodajForm
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(312, 302);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txbTrajanje);
@@ -191,6 +234,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj film";
             ((System.ComponentModel.ISupportInitialize)(this.txbTrajanje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNaziv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epZanr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epDistributer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epOpis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +260,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown txbTrajanje;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ErrorProvider epNaziv;
+        private System.Windows.Forms.ErrorProvider epZanr;
+        private System.Windows.Forms.ErrorProvider epStatus;
+        private System.Windows.Forms.ErrorProvider epDistributer;
+        private System.Windows.Forms.ErrorProvider epOpis;
     }
 }
