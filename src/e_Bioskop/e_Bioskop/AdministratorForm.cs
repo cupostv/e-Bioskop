@@ -254,6 +254,15 @@ namespace e_Bioskop
             MessageBox.Show("Da li ste sigurni?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
+        private void btnIzmjeniDistributer_Click(object sender, EventArgs e)
+        {
+            DistributerDodajForm kreiranje = new DistributerDodajForm(listaDistributera[lvDistributeri.FocusedItem.Index]);
+            if (kreiranje.ShowDialog() == DialogResult.OK)
+            {
+                popuniListuDistributera();
+            }
+        }
+
 
     }
 }

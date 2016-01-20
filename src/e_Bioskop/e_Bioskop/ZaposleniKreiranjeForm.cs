@@ -13,7 +13,6 @@ namespace e_Bioskop
     public partial class ZaposleniKreiranjeForm : Form
     {
         private string opciono = "Opciono";
-        private bool izmjena;
         private ZaposleniRadnoMjestoDTO zaposleniRadnoMjesto = null;
 
         public ZaposleniKreiranjeForm()

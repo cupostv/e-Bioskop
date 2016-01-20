@@ -14,15 +14,37 @@ namespace e_Bioskop
 {
     public partial class DistributerDodajForm : Form
     {
+        private DistributerDTO distributer = null;
 
         public DistributerDodajForm()
         {
             InitializeComponent();
         }
 
+        public DistributerDodajForm(DistributerDTO distributer)
+        {
+            InitializeComponent();
+
+            this.Text = "Izmjena distributera";
+            tbxNaziv.Text = distributer.Naziv;
+            tbxAdresa.Text = distributer.Adresa;
+            tbxEmail.Text = distributer.Email;
+            tbxBrojTelefona.Text = distributer.Telefon;
+
+        }
+
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            if (insertDistributer())
+            if (distributer == null)
+            {
+                if (insertDistributer())
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                    return;
+                }
+            }
+            if (updateDistributer())
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -77,6 +99,11 @@ namespace e_Bioskop
                    return false;
             }
             return false;
+        }
+
+        private bool updateDistributer()
+        {
+            return true;
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)

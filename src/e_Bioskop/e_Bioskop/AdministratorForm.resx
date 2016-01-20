@@ -250,6 +250,21 @@
   <metadata name="Status.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="lblFilmOpis.Text" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae ipsum sapien. Morbi sit amet ex aliquam, iaculis est ac, euismod risus. Integer sollicitudin vehicula malesuada. Praesent laoreet convallis sapien, tincidunt eleifend ex commodo posuere. Fusce congue consequat ante id auctor. Donec ornare lorem aliquet erat molestie fermentum eget sit amet arcu. Nam nec neque vel nisi iaculis luctus. Phasellus velit leo, sodales eget iaculis id, pharetra in ex. Sed vel odio in tellus porta sollicitudin et facilisis nibh. Vivamus sit amet lorem et nisi ornare lobortis.</value>
+  </data>
+  <metadata name="naziv.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="zanr.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="trajanje.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Status.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
