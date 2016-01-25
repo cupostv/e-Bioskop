@@ -57,5 +57,12 @@ namespace e_Bioskop.data.dto
             set { status = value; }
         }
 
+        private double cijena;
+
+        internal double Cijena
+        {
+            get { return cijena; }
+            set { cijena = value; }
+        }
     }
 }

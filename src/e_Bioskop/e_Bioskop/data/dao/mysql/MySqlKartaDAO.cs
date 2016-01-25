@@ -11,26 +11,27 @@ namespace e_Bioskop.data.dao.mysql
     {
         private string getByProjekcijaQuerry = "select k.idKarta, datumProdaje, k.idZaposleni, korisnickoIme, lozinka, ime, prezime, "
                                        + " datumRodjenja, telefon, e_mail, aktivan, s.idSjediste, redSjediste, brojSjediste, "
-                                       +  " r.idRezervacija, vrijemeRezervacija, opisRezervacija, sk.idStatusKarta, NazivStatusKarta "
+                                       + " sk.idStatusKarta, NazivStatusKarta "
                                        + " from karta k "
                                        + " inner join zaposleni z on k.idZaposleni = z.idZaposleni "
                                        + " inner join sjediste s on k.idSjediste = s.idSjediste "
                                        + " inner join sala sl on s.idSala = sl.idSala "
                                        + " inner join projekcija p on k.idProjekcija = p.idProjekcija "
-                                       + " inner join rezervacija r on k.idRezervacija = r.idRezervacija "
                                        + " inner join status_karta sk on k.idStatusKarta = sk.idStatusKarta "
                                        + " where p.idProjekcija=?idProjekcija;";
 
         private string getByZaposleniQuerry = "select k.idKarta, datumProdaje, s.idSjediste, redSjediste, brojSjediste, "
-                                       + " r.idRezervacija, vrijemeRezervacija, opisRezervacija, sk.idStatusKarta, NazivStatusKarta "
+                                       + " sk.idStatusKarta, NazivStatusKarta p.idProjekcija, idFilm, vrijemeProjekcija, cijenaProjekcija, "
+                                       + " sl.idSala, nazivSala, aktivna,"
                                        + " from karta k "
                                        + " inner join zaposleni z on k.idZaposleni = z.idZaposleni "
                                        + " inner join sjediste s on k.idSjediste = s.idSjediste "
                                        + " inner join sala sl on s.idSala = sl.idSala "
                                        + " inner join projekcija p on k.idProjekcija = p.idProjekcija "
-                                       + " inner join rezervacija r on k.idRezervacija = r.idRezervacija "
                                        + " inner join status_karta sk on k.idStatusKarta = sk.idStatusKarta "
                                        + " where z.idZaposleni=?idZaposleni;";
+                                        // veliki broj entiteta ukljucen - POKUSATI REDUKOVATI
+        private string insertQuery = "INSERT INTO `e_bioskop`.`karta` (`cijenaKarta`, `datumProdaje`, `idZaposleni`, `idSjediste`, `idProjekcija`, `idRezervacija`, `idStatusKarta`) VALUES (?cijenaKarta, ?datumProdaje, ?idZaposleni, ?idSjediste, ?idProjekcija, ?idRezervacija, ?idStatusKarta);";
 
         public List<KartaDTO> getByProjekcija(ProjekcijaDTO projekcija)
         {
@@ -85,8 +86,20 @@ namespace e_Bioskop.data.dao.mysql
 
         public long insert(KartaDTO karta)
         {
-            long id = 0;
-
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = insertQuery;
+            command.Parameters.AddWithValue("cijenaKarta", karta.Cijena);
+            command.Parameters.AddWithValue("datumProdaje", karta.DatumProdaje);
+            command.Parameters.AddWithValue("idZaposleni", karta.Zaposleni.Id);
+            command.Parameters.AddWithValue("idSjediste", karta.Sjediste.Id);
+            command.Parameters.AddWithValue("idProjekcija", karta.Projekcija.Id);
+            command.Parameters.AddWithValue("idRezervacija", karta.Rezervacija.Id);
+            command.Parameters.AddWithValue("idStatusKarta", karta.Status.Id);
+            command.ExecuteNonQuery();
+            long id = command.LastInsertedId;
+            if (id > 0)
+                karta.Id = (int)id;
             return id;
         }
 
@@ -98,7 +111,7 @@ namespace e_Bioskop.data.dao.mysql
             karta.Zaposleni = MySqlZaposleniDAO.readerToZaposleni(reader);
             karta.Sjediste = MySqlSjedisteDAO.readerToSjedisteDTO(reader, projekcija.Sala);
             karta.Projekcija = projekcija;
-            karta.Rezervacija = MySqlRezervacijaDAO.readerToRezervacijaDTO(reader);
+            //karta.Rezervacija = MySqlRezervacijaDAO.readerToRezervacijaDTO(reader);
             karta.Status = MySqlStatusKartaDAO.readerToStatusKartaDTO(reader);
             return karta;
         }
@@ -111,7 +124,7 @@ namespace e_Bioskop.data.dao.mysql
             karta.Zaposleni = zaposleni;
             karta.Sjediste = MySqlSjedisteDAO.readerToSjedisteDTO(reader);
             karta.Projekcija = MySqlProjekcijaDAO.readerToProjekcijaDTO(reader);
-            karta.Rezervacija = MySqlRezervacijaDAO.readerToRezervacijaDTO(reader);
+            //karta.Rezervacija = MySqlRezervacijaDAO.readerToRezervacijaDTO(reader);
             karta.Status = MySqlStatusKartaDAO.readerToStatusKartaDTO(reader);
             return karta;
         }
