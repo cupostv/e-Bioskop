@@ -68,6 +68,28 @@ namespace e_Bioskop.data.dao.mysql
             return lista;
         }
 
+        public List<KartaDTO> getByStatus(StatusKartaDTO status)
+        {
+            List<KartaDTO> lista = new List<KartaDTO>();
+
+            return lista;
+            
+        }
+
+        public KartaDTO getById(int id)
+        {
+            KartaDTO karta = new KartaDTO();
+
+            return karta;
+        }
+
+        public long insert(KartaDTO karta)
+        {
+            long id = 0;
+
+            return id;
+        }
+
         public static KartaDTO readerToKartaDTO(MySqlDataReader reader, ProjekcijaDTO projekcija)
         {
             KartaDTO karta = new KartaDTO();
