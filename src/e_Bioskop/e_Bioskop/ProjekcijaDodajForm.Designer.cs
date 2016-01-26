@@ -159,9 +159,10 @@
             // 
             // dtpVrijeme
             // 
-            this.dtpVrijeme.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpVrijeme.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpVrijeme.Location = new System.Drawing.Point(170, 247);
             this.dtpVrijeme.Name = "dtpVrijeme";
+            this.dtpVrijeme.ShowUpDown = true;
             this.dtpVrijeme.Size = new System.Drawing.Size(200, 20);
             this.dtpVrijeme.TabIndex = 23;
             // 

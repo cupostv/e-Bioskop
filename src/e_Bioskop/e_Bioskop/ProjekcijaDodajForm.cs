@@ -18,13 +18,16 @@ namespace e_Bioskop
         public ProjekcijaDodajForm()
         {
             InitializeComponent();
+            dtpVrijeme.CustomFormat = "hh:mm";
             gbIzabraniFilm.Hide();
             BioskopUtil.initSalaDTOComboBox(cbSala, -1);
+            
         }
 
         public ProjekcijaDodajForm(ProjekcijaDTO projekcija)
         {
             InitializeComponent();
+            dtpVrijeme.CustomFormat = "hh:mm";
             this.film = projekcija.Film;
             showFilmData();
             projekcijaDTOToControlls(projekcija);

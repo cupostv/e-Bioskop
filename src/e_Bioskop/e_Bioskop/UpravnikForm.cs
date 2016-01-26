@@ -96,7 +96,10 @@ namespace e_Bioskop
         private void btnDodajProjekciju_Click(object sender, EventArgs e)
         {
             ProjekcijaDodajForm pdf = new ProjekcijaDodajForm();
-            pdf.Show();
+            if (pdf.ShowDialog() == DialogResult.OK)
+            {
+                popuniListuProjekcija();
+            }
         }
 
         private void lvProjekcije_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,6 +118,7 @@ namespace e_Bioskop
             lblProjekcijeTelefonDistributera.Text = trenutnaProjekcija.Film.Distributer.Telefon;
             lblProjekcijeVrijeme.Text = trenutnaProjekcija.Vrijeme.ToShortDateString() + " u " + trenutnaProjekcija.Vrijeme.ToShortTimeString() + " časova";
             lblProjekcijeSala.Text = "Sala: " + trenutnaProjekcija.Sala.Naziv;
+            lblProjekcijeAdresaDistributera.Text = trenutnaProjekcija.Film.Distributer.Adresa;
         }
 
         private void btnIzmjeniProjekciju_Click(object sender, EventArgs e)
@@ -123,6 +127,8 @@ namespace e_Bioskop
             if (pdf.ShowDialog() == DialogResult.OK)
             {
                 popuniListuProjekcija();
+                trenutnaProjekcija = listaProjekcija.Where(x => x.Id == trenutnaProjekcija.Id).First();
+                setTrenutnaProjekcijaDetails();
             }
         }
 

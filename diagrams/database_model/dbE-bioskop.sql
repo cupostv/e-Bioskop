@@ -127,7 +127,7 @@ DROP TABLE IF EXISTS `projekcija`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `projekcija` (
-  `vrijemeProjekcija` date NOT NULL,
+  `vrijemeProjekcija` datetime NOT NULL,
   `idFilm` int(11) NOT NULL,
   `idSala` int(11) NOT NULL,
   `idProjekcija` int(11) NOT NULL AUTO_INCREMENT,
