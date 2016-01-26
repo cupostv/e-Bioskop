@@ -14,12 +14,15 @@ namespace e_Bioskop
     {
         List<FilmDTO> listaFilmovaZaNarucivanje = null;
         FilmDTO trenutniFilm=null;
+        List<ProjekcijaDTO> listaProjekcija = null;
+        ProjekcijaDTO trenutnaProjekcija;
 
         public UpravnikForm()
         {
             InitializeComponent();
             popuniListuFilmovaZaNarucivanje();
             hideTrenutniFilmZaNarucivanjeDetails();
+            popuniListuProjekcija();
         }
 
         private void popuniListuFilmovaZaNarucivanje()
@@ -27,6 +30,12 @@ namespace e_Bioskop
             StatusFilmDTO status=BioskopUtil.getDAOFactory().getStatusFilmDAO().getById(1);
             listaFilmovaZaNarucivanje = BioskopUtil.getDAOFactory().getFilmDAO().getAllByStatusFilm(status);
             BioskopUtil.initFilmDTOListView(lvFilmoviNarucivanje, listaFilmovaZaNarucivanje);
+        }
+
+        private void popuniListuProjekcija()
+        {
+            listaProjekcija = BioskopUtil.getDAOFactory().getProjekcijaDAO().getAll();
+            BioskopUtil.initProjekcijaDTOListView(lvProjekcije, listaProjekcija);
         }
 
         
@@ -53,7 +62,6 @@ namespace e_Bioskop
         {
             int id=int.Parse(lvFilmoviNarucivanje.FocusedItem.Name);
             trenutniFilm=listaFilmovaZaNarucivanje.Where(x => x.Id == id).ToList().First();
-           // trenutniFilm =BioskopUtil.getDAOFactory().getFilmDAO().getById(id);
             if(trenutniFilm!=null)
             setTrenutrniFilmZaNarucivanjeDetails();
         }
@@ -89,6 +97,33 @@ namespace e_Bioskop
         {
             ProjekcijaDodajForm pdf = new ProjekcijaDodajForm();
             pdf.Show();
+        }
+
+        private void lvProjekcije_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = int.Parse(lvProjekcije.FocusedItem.Name);
+            trenutnaProjekcija = listaProjekcija.Where(x => x.Id == id).First();
+            setTrenutnaProjekcijaDetails();
+        }
+
+        private void setTrenutnaProjekcijaDetails()
+        {
+            lblProjekcijeNazivFilma.Text = trenutnaProjekcija.Film.Naziv;
+            lblProjekcijeOpisFilma.Text = trenutnaProjekcija.Film.Opis;
+            trenutnaProjekcija.Film = BioskopUtil.getDAOFactory().getFilmDAO().getById(trenutnaProjekcija.Film.Id);
+            lblProjekcijeNazivDistributera.Text = trenutnaProjekcija.Film.Distributer.Naziv;
+            lblProjekcijeTelefonDistributera.Text = trenutnaProjekcija.Film.Distributer.Telefon;
+            lblProjekcijeVrijeme.Text = trenutnaProjekcija.Vrijeme.ToShortDateString() + " u " + trenutnaProjekcija.Vrijeme.ToShortTimeString() + " časova";
+            lblProjekcijeSala.Text = "Sala: " + trenutnaProjekcija.Sala.Naziv;
+        }
+
+        private void btnIzmjeniProjekciju_Click(object sender, EventArgs e)
+        {
+            ProjekcijaDodajForm pdf = new ProjekcijaDodajForm(trenutnaProjekcija);
+            if (pdf.ShowDialog() == DialogResult.OK)
+            {
+                popuniListuProjekcija();
+            }
         }
 
 

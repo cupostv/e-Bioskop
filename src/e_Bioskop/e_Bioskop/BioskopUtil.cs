@@ -142,6 +142,39 @@ namespace e_Bioskop
             }
         }
 
+        public static void initProjekcijaDTOListView(ListView lvFilm, List<ProjekcijaDTO> lista)
+        {
+            lvFilm.Items.Clear();
+            foreach (ProjekcijaDTO projekcija in lista)
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.Name = projekcija.Id + "";
+                lvi.Text = projekcija.Film.Naziv;
+                lvi.SubItems.Add(projekcija.Film.Zanr.Naziv);
+                lvi.SubItems.Add(projekcija.Vrijeme.ToShortDateString()+projekcija.Vrijeme.ToShortTimeString());
+                lvFilm.Items.Add(lvi);
+            }
+        }
+
+        public static void initSalaDTOComboBox(ComboBox comboBox, int id)
+        {
+            List<SalaDTO> lista = BioskopUtil.getDAOFactory().getSalaDAO().getAll();
+            foreach (SalaDTO sala in lista)
+            {
+                comboBox.Items.Add(sala.Naziv);
+                if (sala.Id == id)
+                {
+                    comboBox.SelectedIndex = comboBox.Items.Count-1;
+                }
+            }
+        }
+
+        public static SalaDTO getSalaFromComboBox(ComboBox comboBox)
+        {
+            string naziv = comboBox.Items[comboBox.SelectedIndex].ToString();
+            return BioskopUtil.getDAOFactory().getSalaDAO().getByNaziv(naziv);
+        }
+
 
 
     }

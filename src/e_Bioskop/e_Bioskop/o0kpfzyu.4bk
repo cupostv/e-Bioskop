@@ -45,7 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbxCijena = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.gbIzabraniFilm.SuspendLayout();
             this.SuspendLayout();
@@ -210,12 +210,12 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Datum:";
             // 
-            // tbxCijena
+            // textBox1
             // 
-            this.tbxCijena.Location = new System.Drawing.Point(170, 324);
-            this.tbxCijena.Name = "tbxCijena";
-            this.tbxCijena.Size = new System.Drawing.Size(200, 20);
-            this.tbxCijena.TabIndex = 29;
+            this.textBox1.Location = new System.Drawing.Point(170, 324);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 29;
             // 
             // label8
             // 
@@ -232,7 +232,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 396);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.tbxCijena);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -270,7 +270,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbxCijena;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label8;
     }
 }

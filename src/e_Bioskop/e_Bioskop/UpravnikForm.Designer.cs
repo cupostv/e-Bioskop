@@ -30,8 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpravnikForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnDodajZaposlenog = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.btnDodajDistributera = new System.Windows.Forms.ToolStripButton();
+            this.btnDodajProjekciju = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lblImePrezime = new System.Windows.Forms.ToolStripLabel();
+            this.tsbDodajProjekciju = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -40,6 +45,8 @@
             this.colLvNarucivanjeZanr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colLvTrajanje = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txbSearchNarucivanje = new System.Windows.Forms.TextBox();
+            this.lblNarucivanjeTrajanjeFilma = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnNarucivanje = new System.Windows.Forms.Button();
             this.lblNarucivanjeOpisFilma = new System.Windows.Forms.Label();
             this.lblNarucivanjeZanrFilma = new System.Windows.Forms.Label();
@@ -76,13 +83,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblNarucivanjeTrajanjeFilma = new System.Windows.Forms.Label();
-            this.btnDodajZaposlenog = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.btnDodajDistributera = new System.Windows.Forms.ToolStripButton();
-            this.btnDodajProjekciju = new System.Windows.Forms.ToolStripButton();
-            this.tsbDodajProjekciju = new System.Windows.Forms.ToolStripButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblProjekcijeVrijeme = new System.Windows.Forms.Label();
+            this.lblProjekcijeSala = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -97,6 +100,7 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -116,6 +120,42 @@
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // btnDodajZaposlenog
+            // 
+            this.btnDodajZaposlenog.Image = global::e_Bioskop.Properties.Resources.korisnik_dodaj;
+            this.btnDodajZaposlenog.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDodajZaposlenog.Name = "btnDodajZaposlenog";
+            this.btnDodajZaposlenog.Size = new System.Drawing.Size(121, 22);
+            this.btnDodajZaposlenog.Text = "Dodaj zaposlenog";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(64, 22);
+            this.toolStripButton3.Text = "Odjava";
+            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // btnDodajDistributera
+            // 
+            this.btnDodajDistributera.Image = global::e_Bioskop.Properties.Resources.distributer_dodaj;
+            this.btnDodajDistributera.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDodajDistributera.Name = "btnDodajDistributera";
+            this.btnDodajDistributera.Size = new System.Drawing.Size(121, 22);
+            this.btnDodajDistributera.Text = "Dodaj distributera";
+            // 
+            // btnDodajProjekciju
+            // 
+            this.btnDodajProjekciju.Image = global::e_Bioskop.Properties.Resources.filmovi_dodaj;
+            this.btnDodajProjekciju.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDodajProjekciju.Name = "btnDodajProjekciju";
+            this.btnDodajProjekciju.Size = new System.Drawing.Size(113, 22);
+            this.btnDodajProjekciju.Text = "Dodaj projekciju";
+            this.btnDodajProjekciju.Click += new System.EventHandler(this.btnDodajProjekciju_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -128,6 +168,15 @@
             this.lblImePrezime.Name = "lblImePrezime";
             this.lblImePrezime.Size = new System.Drawing.Size(72, 22);
             this.lblImePrezime.Text = "Ime Prezime";
+            // 
+            // tsbDodajProjekciju
+            // 
+            this.tsbDodajProjekciju.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbDodajProjekciju.Image = ((System.Drawing.Image)(resources.GetObject("tsbDodajProjekciju.Image")));
+            this.tsbDodajProjekciju.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDodajProjekciju.Name = "tsbDodajProjekciju";
+            this.tsbDodajProjekciju.Size = new System.Drawing.Size(23, 22);
+            this.tsbDodajProjekciju.Text = "Dodaj projekciju";
             // 
             // tabControl1
             // 
@@ -221,6 +270,24 @@
             this.txbSearchNarucivanje.Size = new System.Drawing.Size(223, 20);
             this.txbSearchNarucivanje.TabIndex = 1;
             this.txbSearchNarucivanje.TextChanged += new System.EventHandler(this.txbSearchNarucivanje_TextChanged);
+            // 
+            // lblNarucivanjeTrajanjeFilma
+            // 
+            this.lblNarucivanjeTrajanjeFilma.AutoSize = true;
+            this.lblNarucivanjeTrajanjeFilma.Location = new System.Drawing.Point(110, 117);
+            this.lblNarucivanjeTrajanjeFilma.Name = "lblNarucivanjeTrajanjeFilma";
+            this.lblNarucivanjeTrajanjeFilma.Size = new System.Drawing.Size(35, 13);
+            this.lblNarucivanjeTrajanjeFilma.TabIndex = 12;
+            this.lblNarucivanjeTrajanjeFilma.Text = "label8";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(25, 117);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Trajanje";
             // 
             // btnNarucivanje
             // 
@@ -379,14 +446,11 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.lblProjekcijeSala);
+            this.splitContainer2.Panel2.Controls.Add(this.lblProjekcijeVrijeme);
+            this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer2.Panel2.Controls.Add(this.btnIzmjeniProjekciju);
-            this.splitContainer2.Panel2.Controls.Add(this.lblProjekcijeOpisFilma);
-            this.splitContainer2.Panel2.Controls.Add(this.lblProjekcijeZanrFilma);
-            this.splitContainer2.Panel2.Controls.Add(this.lblProjekcijeNazivFilma);
             this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer2.Panel2.Controls.Add(this.label16);
-            this.splitContainer2.Panel2.Controls.Add(this.label17);
-            this.splitContainer2.Panel2.Controls.Add(this.label18);
             this.splitContainer2.Size = new System.Drawing.Size(700, 344);
             this.splitContainer2.SplitterDistance = 233;
             this.splitContainer2.TabIndex = 0;
@@ -415,6 +479,7 @@
             this.lvProjekcije.TabIndex = 3;
             this.lvProjekcije.UseCompatibleStateImageBehavior = false;
             this.lvProjekcije.View = System.Windows.Forms.View.Details;
+            this.lvProjekcije.SelectedIndexChanged += new System.EventHandler(this.lvProjekcije_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -439,11 +504,12 @@
             this.btnIzmjeniProjekciju.TabIndex = 18;
             this.btnIzmjeniProjekciju.Text = "Izmjeni projekciju";
             this.btnIzmjeniProjekciju.UseVisualStyleBackColor = true;
+            this.btnIzmjeniProjekciju.Click += new System.EventHandler(this.btnIzmjeniProjekciju_Click);
             // 
             // lblProjekcijeOpisFilma
             // 
             this.lblProjekcijeOpisFilma.AutoSize = true;
-            this.lblProjekcijeOpisFilma.Location = new System.Drawing.Point(84, 91);
+            this.lblProjekcijeOpisFilma.Location = new System.Drawing.Point(50, 73);
             this.lblProjekcijeOpisFilma.Name = "lblProjekcijeOpisFilma";
             this.lblProjekcijeOpisFilma.Size = new System.Drawing.Size(35, 13);
             this.lblProjekcijeOpisFilma.TabIndex = 17;
@@ -452,7 +518,7 @@
             // lblProjekcijeZanrFilma
             // 
             this.lblProjekcijeZanrFilma.AutoSize = true;
-            this.lblProjekcijeZanrFilma.Location = new System.Drawing.Point(84, 63);
+            this.lblProjekcijeZanrFilma.Location = new System.Drawing.Point(50, 45);
             this.lblProjekcijeZanrFilma.Name = "lblProjekcijeZanrFilma";
             this.lblProjekcijeZanrFilma.Size = new System.Drawing.Size(35, 13);
             this.lblProjekcijeZanrFilma.TabIndex = 16;
@@ -461,7 +527,7 @@
             // lblProjekcijeNazivFilma
             // 
             this.lblProjekcijeNazivFilma.AutoSize = true;
-            this.lblProjekcijeNazivFilma.Location = new System.Drawing.Point(84, 34);
+            this.lblProjekcijeNazivFilma.Location = new System.Drawing.Point(50, 16);
             this.lblProjekcijeNazivFilma.Name = "lblProjekcijeNazivFilma";
             this.lblProjekcijeNazivFilma.Size = new System.Drawing.Size(35, 13);
             this.lblProjekcijeNazivFilma.TabIndex = 15;
@@ -475,9 +541,9 @@
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Location = new System.Drawing.Point(59, 116);
+            this.groupBox2.Location = new System.Drawing.Point(16, 116);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 128);
+            this.groupBox2.Size = new System.Drawing.Size(409, 117);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Podaci o distributeru";
@@ -539,7 +605,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(40, 91);
+            this.label16.Location = new System.Drawing.Point(6, 73);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(31, 13);
             this.label16.TabIndex = 13;
@@ -548,7 +614,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(40, 63);
+            this.label17.Location = new System.Drawing.Point(6, 45);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(32, 13);
             this.label17.TabIndex = 12;
@@ -557,7 +623,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(40, 34);
+            this.label18.Location = new System.Drawing.Point(6, 16);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(37, 13);
             this.label18.TabIndex = 11;
@@ -572,68 +638,38 @@
             this.tabPage3.Text = "Generisanje izvjestaja";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // groupBox3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 117);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Trajanje";
+            this.groupBox3.Controls.Add(this.lblProjekcijeOpisFilma);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.lblProjekcijeZanrFilma);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.lblProjekcijeNazivFilma);
+            this.groupBox3.Location = new System.Drawing.Point(16, 10);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(409, 100);
+            this.groupBox3.TabIndex = 19;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Podaci o filmu";
             // 
-            // lblNarucivanjeTrajanjeFilma
+            // lblProjekcijeVrijeme
             // 
-            this.lblNarucivanjeTrajanjeFilma.AutoSize = true;
-            this.lblNarucivanjeTrajanjeFilma.Location = new System.Drawing.Point(110, 117);
-            this.lblNarucivanjeTrajanjeFilma.Name = "lblNarucivanjeTrajanjeFilma";
-            this.lblNarucivanjeTrajanjeFilma.Size = new System.Drawing.Size(35, 13);
-            this.lblNarucivanjeTrajanjeFilma.TabIndex = 12;
-            this.lblNarucivanjeTrajanjeFilma.Text = "label8";
+            this.lblProjekcijeVrijeme.AutoSize = true;
+            this.lblProjekcijeVrijeme.Location = new System.Drawing.Point(25, 250);
+            this.lblProjekcijeVrijeme.Name = "lblProjekcijeVrijeme";
+            this.lblProjekcijeVrijeme.Size = new System.Drawing.Size(35, 13);
+            this.lblProjekcijeVrijeme.TabIndex = 20;
+            this.lblProjekcijeVrijeme.Text = "label8";
             // 
-            // btnDodajZaposlenog
+            // lblProjekcijeSala
             // 
-            this.btnDodajZaposlenog.Image = global::e_Bioskop.Properties.Resources.korisnik_dodaj;
-            this.btnDodajZaposlenog.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDodajZaposlenog.Name = "btnDodajZaposlenog";
-            this.btnDodajZaposlenog.Size = new System.Drawing.Size(121, 22);
-            this.btnDodajZaposlenog.Text = "Dodaj zaposlenog";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(64, 22);
-            this.toolStripButton3.Text = "Odjava";
-            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // btnDodajDistributera
-            // 
-            this.btnDodajDistributera.Image = global::e_Bioskop.Properties.Resources.distributer_dodaj;
-            this.btnDodajDistributera.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDodajDistributera.Name = "btnDodajDistributera";
-            this.btnDodajDistributera.Size = new System.Drawing.Size(121, 22);
-            this.btnDodajDistributera.Text = "Dodaj distributera";
-            // 
-            // btnDodajProjekciju
-            // 
-            this.btnDodajProjekciju.Image = global::e_Bioskop.Properties.Resources.filmovi_dodaj;
-            this.btnDodajProjekciju.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDodajProjekciju.Name = "btnDodajProjekciju";
-            this.btnDodajProjekciju.Size = new System.Drawing.Size(113, 22);
-            this.btnDodajProjekciju.Text = "Dodaj projekciju";
-            this.btnDodajProjekciju.Click += new System.EventHandler(this.btnDodajProjekciju_Click);
-            // 
-            // tsbDodajProjekciju
-            // 
-            this.tsbDodajProjekciju.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbDodajProjekciju.Image = ((System.Drawing.Image)(resources.GetObject("tsbDodajProjekciju.Image")));
-            this.tsbDodajProjekciju.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDodajProjekciju.Name = "tsbDodajProjekciju";
-            this.tsbDodajProjekciju.Size = new System.Drawing.Size(23, 22);
-            this.tsbDodajProjekciju.Text = "Dodaj projekciju";
+            this.lblProjekcijeSala.AutoSize = true;
+            this.lblProjekcijeSala.Location = new System.Drawing.Point(25, 277);
+            this.lblProjekcijeSala.Name = "lblProjekcijeSala";
+            this.lblProjekcijeSala.Size = new System.Drawing.Size(35, 13);
+            this.lblProjekcijeSala.TabIndex = 21;
+            this.lblProjekcijeSala.Text = "label8";
             // 
             // UpravnikForm
             // 
@@ -665,6 +701,8 @@
             this.splitContainer2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -726,5 +764,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblNarucivanjeTrajanjeFilma;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblProjekcijeVrijeme;
+        private System.Windows.Forms.Label lblProjekcijeSala;
     }
 }

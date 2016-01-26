@@ -15,5 +15,7 @@ namespace e_Bioskop.data.dao
         List<ProjekcijaDTO> getByFilm(FilmDTO film);
         List<ProjekcijaDTO> getBySala(SalaDTO sala);
         long insert(ProjekcijaDTO projekcija);
+
+        bool update(ProjekcijaDTO projekcija);
     }
 }
