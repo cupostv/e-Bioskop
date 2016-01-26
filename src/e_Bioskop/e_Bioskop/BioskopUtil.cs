@@ -142,9 +142,9 @@ namespace e_Bioskop
             }
         }
 
-        public static void initProjekcijaDTOListView(ListView lvFilm, List<ProjekcijaDTO> lista)
+        public static void initProjekcijaDTOListView(ListView lvProjekcija, List<ProjekcijaDTO> lista)
         {
-            lvFilm.Items.Clear();
+            lvProjekcija.Items.Clear();
             foreach (ProjekcijaDTO projekcija in lista)
             {
                 ListViewItem lvi = new ListViewItem();
@@ -152,7 +152,7 @@ namespace e_Bioskop
                 lvi.Text = projekcija.Film.Naziv;
                 lvi.SubItems.Add(projekcija.Film.Zanr.Naziv);
                 lvi.SubItems.Add(projekcija.Vrijeme.ToShortDateString()+projekcija.Vrijeme.ToShortTimeString());
-                lvFilm.Items.Add(lvi);
+                lvProjekcija.Items.Add(lvi);
             }
         }
 

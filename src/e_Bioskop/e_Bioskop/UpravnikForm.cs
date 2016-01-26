@@ -110,7 +110,7 @@ namespace e_Bioskop
         {
             lblProjekcijeNazivFilma.Text = trenutnaProjekcija.Film.Naziv;
             lblProjekcijeOpisFilma.Text = trenutnaProjekcija.Film.Opis;
-            trenutnaProjekcija.Film = BioskopUtil.getDAOFactory().getFilmDAO().getById(trenutnaProjekcija.Film.Id);
+            lblProjekcijeZanrFilma.Text = trenutnaProjekcija.Film.Zanr.Naziv;
             lblProjekcijeNazivDistributera.Text = trenutnaProjekcija.Film.Distributer.Naziv;
             lblProjekcijeTelefonDistributera.Text = trenutnaProjekcija.Film.Distributer.Telefon;
             lblProjekcijeVrijeme.Text = trenutnaProjekcija.Vrijeme.ToShortDateString() + " u " + trenutnaProjekcija.Vrijeme.ToShortTimeString() + " časova";
@@ -124,6 +124,13 @@ namespace e_Bioskop
             {
                 popuniListuProjekcija();
             }
+        }
+
+        private void tbxProjekcijaSearch_TextChanged(object sender, EventArgs e)
+        {
+            StringComparison comparison = StringComparison.InvariantCultureIgnoreCase;
+            List<ProjekcijaDTO> lista = listaProjekcija.Where(x => x.Film.Naziv.StartsWith(tbxProjekcijaSearch.Text, comparison)).ToList();
+            BioskopUtil.initProjekcijaDTOListView(lvProjekcije, lista);
         }
 
 
