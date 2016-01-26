@@ -124,6 +124,12 @@
     <Compile Include="ProjekcijaDodajForm.Designer.cs">
       <DependentUpon>ProjekcijaDodajForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalaDodajForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalaDodajForm.Designer.cs">
+      <DependentUpon>SalaDodajForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpravnikForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalaDodajForm.resx">
+      <DependentUpon>SalaDodajForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpravnikForm.resx">
       <DependentUpon>UpravnikForm.cs</DependentUpon>

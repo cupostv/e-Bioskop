@@ -36,7 +36,6 @@
             this.btnDodajProjekciju = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lblImePrezime = new System.Windows.Forms.ToolStripLabel();
-            this.tsbDodajProjekciju = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -112,8 +111,7 @@
             this.btnDodajDistributera,
             this.btnDodajProjekciju,
             this.toolStripSeparator1,
-            this.lblImePrezime,
-            this.tsbDodajProjekciju});
+            this.lblImePrezime});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(714, 25);
@@ -168,15 +166,6 @@
             this.lblImePrezime.Name = "lblImePrezime";
             this.lblImePrezime.Size = new System.Drawing.Size(72, 22);
             this.lblImePrezime.Text = "Ime Prezime";
-            // 
-            // tsbDodajProjekciju
-            // 
-            this.tsbDodajProjekciju.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbDodajProjekciju.Image = ((System.Drawing.Image)(resources.GetObject("tsbDodajProjekciju.Image")));
-            this.tsbDodajProjekciju.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDodajProjekciju.Name = "tsbDodajProjekciju";
-            this.tsbDodajProjekciju.Size = new System.Drawing.Size(23, 22);
-            this.tsbDodajProjekciju.Text = "Dodaj projekciju";
             // 
             // tabControl1
             // 
@@ -760,7 +749,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ToolStripButton tsbDodajProjekciju;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox tbxProjekcijaSearch;
         private System.Windows.Forms.Label label7;

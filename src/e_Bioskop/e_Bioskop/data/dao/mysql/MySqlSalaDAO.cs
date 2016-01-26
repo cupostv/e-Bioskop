@@ -29,6 +29,31 @@ namespace e_Bioskop.data.dao.mysql
             return id;
         }
 
+
+        public bool insert(SalaDTO sala, int brojRedova, int brojSjedista)
+        {
+            bool success = true;
+            long id=insert(sala);
+            if (id < 0)
+                return false;
+            sala.Id = (int)id;
+            for (int i = 0; i < brojRedova; i++)
+            {
+                for (int j = 0; j < brojSjedista; j++)
+                {
+                    SjedisteDTO sjediste = new SjedisteDTO();
+                    sjediste.Broj = i;
+                    sjediste.Red = j;
+                    sjediste.Sala = sala;
+                    if (BioskopUtil.getDAOFactory().getSjedisteDAO().insert(sjediste) <= 0)
+                    {
+                        success = false;
+                    }
+                }
+            }
+            return success;
+        }
+
         public bool update(SalaDTO sala)
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();

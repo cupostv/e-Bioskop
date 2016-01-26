@@ -263,6 +263,13 @@ namespace e_Bioskop
             }
         }
 
+        private void btnDodajSalu_Click(object sender, EventArgs e)
+        {
+            SalaDodajForm sdf = new SalaDodajForm();
+            sdf.ShowDialog();
+
+        }
+
 
     }
 }

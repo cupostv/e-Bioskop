@@ -94,5 +94,6 @@ namespace e_Bioskop.data.dao.mysql
             sjediste.Broj = reader.GetInt32("brojSjediste");
             return sjediste;
         }
+
     }
 }
