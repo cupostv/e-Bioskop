@@ -129,15 +129,8 @@ namespace e_Bioskop
             
             if (string.IsNullOrEmpty(txbLozinka.Text))
             {
-                if (zaposleniRadnoMjesto != null && zaposleniRadnoMjesto.Zaposleni.KorisnickoIme.Equals(txbKorisnickoIme.Text))
-                {
-                    epLozinka.Clear();
-                }
-                else
-                {
-                    epLozinka.SetError(txbLozinka, "Unesite lozinku");
-                    valid = false;
-                }
+                epLozinka.SetError(txbLozinka, "Unesite lozinku");
+                valid = false;
             }
             else
             {
@@ -266,22 +259,15 @@ namespace e_Bioskop
 
         private bool validateKorisnickoIme(string korisnickoIme)
         {
-            if (korisnickoIme.Equals(this.zaposleniRadnoMjesto.Zaposleni.KorisnickoIme))
+            if (zaposleniRadnoMjesto != null && zaposleniRadnoMjesto.Zaposleni.KorisnickoIme == txbKorisnickoIme.Text)
             {
                 return true;
             }
-            else
+            if (BioskopUtil.getDAOFactory().getZaposleniDAO().getByUsername(korisnickoIme) != null)
             {
-                if (BioskopUtil.getDAOFactory().getZaposleniDAO().getByUsername(korisnickoIme) != null)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
+                return false;
             }
-            
+            return true;
         }
 
         private void txbLozinka1_TextChanged(object sender, EventArgs e)

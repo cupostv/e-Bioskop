@@ -97,7 +97,7 @@
             this.txbNaziv.Location = new System.Drawing.Point(95, 22);
             this.txbNaziv.Name = "txbNaziv";
             this.txbNaziv.Size = new System.Drawing.Size(193, 20);
-            this.txbNaziv.TabIndex = 4;
+            this.txbNaziv.TabIndex = 1;
             // 
             // txbOpis
             // 
@@ -105,7 +105,7 @@
             this.txbOpis.Multiline = true;
             this.txbOpis.Name = "txbOpis";
             this.txbOpis.Size = new System.Drawing.Size(193, 58);
-            this.txbOpis.TabIndex = 5;
+            this.txbOpis.TabIndex = 6;
             // 
             // label5
             // 
@@ -132,7 +132,7 @@
             this.cbZanr.Location = new System.Drawing.Point(95, 90);
             this.cbZanr.Name = "cbZanr";
             this.cbZanr.Size = new System.Drawing.Size(193, 21);
-            this.cbZanr.TabIndex = 8;
+            this.cbZanr.TabIndex = 3;
             // 
             // cbStatus
             // 
@@ -141,7 +141,7 @@
             this.cbStatus.Location = new System.Drawing.Point(95, 124);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(193, 21);
-            this.cbStatus.TabIndex = 9;
+            this.cbStatus.TabIndex = 4;
             // 
             // cbDistributer
             // 
@@ -150,14 +150,14 @@
             this.cbDistributer.Location = new System.Drawing.Point(95, 158);
             this.cbDistributer.Name = "cbDistributer";
             this.cbDistributer.Size = new System.Drawing.Size(193, 21);
-            this.cbDistributer.TabIndex = 10;
+            this.cbDistributer.TabIndex = 5;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(132, 267);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Potvrdi";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -172,14 +172,15 @@
             0});
             this.txbTrajanje.Name = "txbTrajanje";
             this.txbTrajanje.Size = new System.Drawing.Size(193, 20);
-            this.txbTrajanje.TabIndex = 12;
+            this.txbTrajanje.TabIndex = 2;
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(213, 267);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
+            this.button2.TabIndex = 8;
             this.button2.Text = "Odustani";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -230,6 +231,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FilmDodajForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj film";

@@ -42,13 +42,15 @@ namespace e_Bioskop
                 {
                     this.DialogResult = DialogResult.OK;
                     this.Close();
-                    return;
                 }
             }
-            if (updateDistributer())
+            else
             {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                if (updateDistributer())
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
             }
         }
 

@@ -12,10 +12,27 @@ namespace e_Bioskop
 {
     public partial class FilmDodajForm : Form
     {
+        private FilmDTO film;
+
         public FilmDodajForm()
         {
             InitializeComponent();
             initComboBoxes();
+        }
+
+        public FilmDodajForm(FilmDTO film)
+        {
+            InitializeComponent();
+
+            BioskopUtil.initDistributerComboBox(cbDistributer, film.Distributer.Id);
+            BioskopUtil.initStatusFilmComboBox(cbStatus, film.Status.Id);
+            BioskopUtil.initZanrComboBox(cbZanr, film.Zanr.Id);
+
+            txbNaziv.Text = film.Naziv;
+            txbOpis.Text = film.Opis;
+            txbTrajanje.Value = film.Trajanje;
+
+            this.film = film;
         }
 
         private void initComboBoxes()
@@ -96,12 +113,35 @@ namespace e_Bioskop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (validate())
+            if (film == null)
             {
-                FilmDTO film = controlsToFIlm();
-                BioskopUtil.getDAOFactory().getFilmDAO().insert(film);
+                if (validate())
+                {
+                    FilmDTO film1 = controlsToFIlm();
+                    BioskopUtil.getDAOFactory().getFilmDAO().insert(film1);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+            else
+            {
+                updateFromControls();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+            }
+        }
+
+        private void updateFromControls()
+        {
+            if (validate())
+            {
+                film.Naziv = txbNaziv.Text;
+                film.Opis = txbOpis.Text;
+                film.Trajanje = (int)txbTrajanje.Value;
+                film.Zanr = BioskopUtil.getZanrDTOFromComboBox(cbZanr);
+                film.Status = BioskopUtil.getStatusFilmDTOfromComboBox(cbStatus);
+                film.Distributer = BioskopUtil.getDistributerDTOFromComboBox(cbDistributer);
+                BioskopUtil.getDAOFactory().getFilmDAO().update(film);
             }
         }
 

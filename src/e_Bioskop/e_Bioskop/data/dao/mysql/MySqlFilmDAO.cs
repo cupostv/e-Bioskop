@@ -186,7 +186,11 @@ namespace e_Bioskop.data.dao.mysql
             List<FilmDTO> lista = new List<FilmDTO>();
             while (reader.Read())
             {
-                lista.Add(readerToFilmDTO(reader));
+                FilmDTO film = readerToFilmDTO(reader);
+                film.Distributer = MySqlDistributerDAO.readerToDistributer(reader);
+                film.Zanr = MySqlZanrDAO.readerToZanrDTO(reader);
+                film.Status = MySqlStatusFilmDAO.readerToStatusFilmDTO(reader);
+                lista.Add(film);
             }
             reader.Close();
             ConnectionPool.checkInConnection(connection);

@@ -26,6 +26,7 @@ namespace e_Bioskop
                 ZaposleniRadnoMjestoDTO zaposleniRM = (BioskopUtil.getDAOFactory().getZaposleniRadnoMjestoDAO().getRadnaMjestaZaposlenog(zaposleni))[0];
                 if (zaposleniRM.RadnoMjesto.Naziv == "Upravnik")
                 {
+                    /*
                     UpravnikForm administrator = new UpravnikForm();
                     this.Hide();
                     if ((new UpravnikForm().ShowDialog()) == DialogResult.OK)
@@ -34,6 +35,7 @@ namespace e_Bioskop
                         tbxLozinka.Text = "";
                         this.Show();
                     }
+                    */
                 }
                 else if (zaposleniRM.RadnoMjesto.Naziv == "Administrator")
                 {
@@ -51,7 +53,7 @@ namespace e_Bioskop
                 }
                 else
                 {
-
+                    //ZaposleniForm
                 }
 
             }
@@ -75,6 +77,11 @@ namespace e_Bioskop
             }
 
             if (BioskopUtil.sha256(tbxLozinka.Text) != zaposleni.Lozinka)
+            {
+                return false;
+            }
+
+            if (zaposleni.Aktivan == 0)
             {
                 return false;
             }

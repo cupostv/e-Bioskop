@@ -134,6 +134,7 @@
             // 
             // btnOdustani
             // 
+            this.btnOdustani.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnOdustani.Location = new System.Drawing.Point(251, 200);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
@@ -169,6 +170,8 @@
             this.Controls.Add(this.lblBrojTelefona);
             this.Controls.Add(this.lblAdresa);
             this.Controls.Add(this.lblNaziv);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "DistributerDodajForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj distributera";
