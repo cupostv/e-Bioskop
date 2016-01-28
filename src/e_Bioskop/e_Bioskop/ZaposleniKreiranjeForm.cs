@@ -115,26 +115,36 @@ namespace e_Bioskop
             }
             else
             {
-                if (!validateKorisnickoIme(txbKorisnickoIme.Text))
+                if (zaposleniRadnoMjesto != null && zaposleniRadnoMjesto.Zaposleni.KorisnickoIme.Equals(txbKorisnickoIme.Text))
                 {
-                    epKorisnickoIme.SetError(txbKorisnickoIme, "Korisničko ime zauzeto");
+                    epKorisnickoIme.Clear();
+                }
+                else
+                {
+                    if (!validateKorisnickoIme(txbKorisnickoIme.Text))
+                    {
+                        epKorisnickoIme.SetError(txbKorisnickoIme, "Korisničko ime zauzeto");
+                        valid = false;
+                    }
+                    else
+                    {
+                        epKorisnickoIme.Clear();
+                    }
+                }
+               
+            }
+
+            if (zaposleniRadnoMjesto == null || ! zaposleniRadnoMjesto.Zaposleni.KorisnickoIme.Equals(txbKorisnickoIme.Text))
+            {
+                if (string.IsNullOrEmpty(txbLozinka.Text))
+                {
+                    epLozinka.SetError(txbLozinka, "Unesite lozinku");
                     valid = false;
                 }
                 else
                 {
-                    epKorisnickoIme.Clear();
+                    epLozinka.Clear();
                 }
-               
-            }
-            
-            if (string.IsNullOrEmpty(txbLozinka.Text))
-            {
-                epLozinka.SetError(txbLozinka, "Unesite lozinku");
-                valid = false;
-            }
-            else
-            {
-                epLozinka.Clear();
             }
 
             if (txbLozinka.Text != txbLozinka1.Text)
@@ -259,15 +269,21 @@ namespace e_Bioskop
 
         private bool validateKorisnickoIme(string korisnickoIme)
         {
-            if (zaposleniRadnoMjesto != null && zaposleniRadnoMjesto.Zaposleni.KorisnickoIme == txbKorisnickoIme.Text)
+            if (korisnickoIme.Equals(zaposleniRadnoMjesto.Zaposleni.KorisnickoIme))
             {
                 return true;
             }
-            if (BioskopUtil.getDAOFactory().getZaposleniDAO().getByUsername(korisnickoIme) != null)
+            else
             {
-                return false;
+                if (BioskopUtil.getDAOFactory().getZaposleniDAO().getByUsername(korisnickoIme) != null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
-            return true;
         }
 
         private void txbLozinka1_TextChanged(object sender, EventArgs e)
