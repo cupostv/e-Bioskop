@@ -159,6 +159,7 @@
             // 
             // dtpVrijeme
             // 
+            this.dtpVrijeme.CustomFormat = "HH:mm";
             this.dtpVrijeme.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpVrijeme.Location = new System.Drawing.Point(170, 247);
             this.dtpVrijeme.Name = "dtpVrijeme";
