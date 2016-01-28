@@ -175,7 +175,24 @@ namespace e_Bioskop
             return BioskopUtil.getDAOFactory().getSalaDAO().getByNaziv(naziv);
         }
 
-
+        public static bool checkSalaAvaliblety(SalaDTO sala, DateTime time,int id)
+        {
+            List<ProjekcijaDTO> listaSvihProjekcijaUSali = BioskopUtil.getDAOFactory().getProjekcijaDAO().getBySala(sala);
+            List<ProjekcijaDTO> listaUdanu = listaSvihProjekcijaUSali.Where(x => x.Vrijeme.Date == time.Date && x.Id!=id).ToList();
+            bool check = true;
+            foreach (ProjekcijaDTO projekcija in listaUdanu)
+            {
+                TimeSpan pocetak = projekcija.Vrijeme.TimeOfDay;
+                TimeSpan trajanje = new TimeSpan(0,projekcija.Film.Trajanje,0);
+                TimeSpan kraj = pocetak + trajanje;
+                if (pocetak <= time.TimeOfDay && kraj >= time.TimeOfDay)
+                {
+                    check = false;
+                    break;
+                }
+            }
+            return check;
+        }
 
     }
 }

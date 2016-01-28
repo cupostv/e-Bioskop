@@ -101,6 +101,7 @@ namespace e_Bioskop
 
         }
 
+
         private bool updateProjekcija()
         {
             ProjekcijaDTO projekcija = getProjekcijaFromControlls();
@@ -125,32 +126,52 @@ namespace e_Bioskop
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
+            
             if (izmjena)
             {
-                if (updateProjekcija())
+                if (BioskopUtil.checkSalaAvaliblety(BioskopUtil.getSalaFromComboBox(cbSala), dtpDatum.Value.Date + dtpVrijeme.Value.TimeOfDay, this.projekcija.Id))
                 {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    if (updateProjekcija())
+                    {
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.DialogResult = DialogResult.Abort;
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    this.DialogResult = DialogResult.Abort;
-                    this.Close();
+                    zauzetaSala();
                 }
             }
             else
             {
-                if (insertProjekcija())
+                if (BioskopUtil.checkSalaAvaliblety(BioskopUtil.getSalaFromComboBox(cbSala), dtpDatum.Value.Date + dtpVrijeme.Value.TimeOfDay, -1))
                 {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    if (insertProjekcija())
+                    {
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.DialogResult = DialogResult.Abort;
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    this.DialogResult = DialogResult.Abort;
-                    this.Close();
+                    zauzetaSala();
                 }
             }
+        }
+
+        private void zauzetaSala()
+        {
+            MessageBox.Show("Sala je zauzeta u izabranom terminu!");
         }
     }
 }
