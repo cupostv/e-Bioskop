@@ -187,7 +187,10 @@ namespace e_Bioskop
         {
             zaposleniRadnoMjesto.Zaposleni.Ime = txbIme.Text;
             zaposleniRadnoMjesto.Zaposleni.Prezime = txbPrezime.Text;
-            zaposleniRadnoMjesto.Zaposleni.Lozinka = BioskopUtil.sha256(txbLozinka.Text);
+            if (!(string.IsNullOrEmpty(txbLozinka.Text) && txbKorisnickoIme.Text.Equals(this.zaposleniRadnoMjesto.Zaposleni.KorisnickoIme)))
+            {
+                    zaposleniRadnoMjesto.Zaposleni.Lozinka = BioskopUtil.sha256(txbLozinka.Text);
+            }
             zaposleniRadnoMjesto.Zaposleni.Telefon = txbBrojTelefona.Text;
             zaposleniRadnoMjesto.Zaposleni.KorisnickoIme = txbKorisnickoIme.Text;
             zaposleniRadnoMjesto.Zaposleni.DatumRodjenja = dtpDatumRodjenja.Value;
