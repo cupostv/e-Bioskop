@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpravnikForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnDodajZaposlenog = new System.Windows.Forms.ToolStripButton();
+            this.btnPregledRasporeda = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.btnDodajDistributera = new System.Windows.Forms.ToolStripButton();
             this.btnDodajProjekciju = new System.Windows.Forms.ToolStripButton();
@@ -106,7 +106,7 @@
             // 
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnDodajZaposlenog,
+            this.btnPregledRasporeda,
             this.toolStripButton3,
             this.btnDodajDistributera,
             this.btnDodajProjekciju,
@@ -118,13 +118,14 @@
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btnDodajZaposlenog
+            // btnPregledRasporeda
             // 
-            this.btnDodajZaposlenog.Image = global::e_Bioskop.Properties.Resources.korisnik_dodaj;
-            this.btnDodajZaposlenog.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDodajZaposlenog.Name = "btnDodajZaposlenog";
-            this.btnDodajZaposlenog.Size = new System.Drawing.Size(121, 22);
-            this.btnDodajZaposlenog.Text = "Dodaj zaposlenog";
+            this.btnPregledRasporeda.Image = global::e_Bioskop.Properties.Resources.korisnik_dodaj;
+            this.btnPregledRasporeda.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPregledRasporeda.Name = "btnPregledRasporeda";
+            this.btnPregledRasporeda.Size = new System.Drawing.Size(122, 22);
+            this.btnPregledRasporeda.Text = "Pregled rasporeda";
+            this.btnPregledRasporeda.Click += new System.EventHandler(this.btnPregledRasporeda_Click);
             // 
             // toolStripButton3
             // 
@@ -458,9 +459,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvProjekcije.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
             this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader2});
             this.lvProjekcije.FullRowSelect = true;
             this.lvProjekcije.GridLines = true;
             this.lvProjekcije.Location = new System.Drawing.Point(0, 34);
@@ -701,7 +702,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnDodajZaposlenog;
+        private System.Windows.Forms.ToolStripButton btnPregledRasporeda;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton btnDodajDistributera;
         private System.Windows.Forms.ToolStripButton btnDodajProjekciju;

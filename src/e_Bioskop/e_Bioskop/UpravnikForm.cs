@@ -16,7 +16,7 @@ namespace e_Bioskop
         FilmDTO trenutniFilm=null;
         List<ProjekcijaDTO> listaProjekcija = null;
         ProjekcijaDTO trenutnaProjekcija;
-
+        private PregledRasporedaForm prf=null;
         public UpravnikForm()
         {
             InitializeComponent();
@@ -137,6 +137,13 @@ namespace e_Bioskop
             StringComparison comparison = StringComparison.InvariantCultureIgnoreCase;
             List<ProjekcijaDTO> lista = listaProjekcija.Where(x => x.Film.Naziv.StartsWith(tbxProjekcijaSearch.Text, comparison)).ToList();
             BioskopUtil.initProjekcijaDTOListView(lvProjekcije, lista);
+        }
+
+        private void btnPregledRasporeda_Click(object sender, EventArgs e)
+        {
+            if(prf==null)
+            prf = new PregledRasporedaForm();
+            prf.Show();
         }
 
 

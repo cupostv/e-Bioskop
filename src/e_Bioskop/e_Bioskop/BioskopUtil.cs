@@ -149,9 +149,10 @@ namespace e_Bioskop
             {
                 ListViewItem lvi = new ListViewItem();
                 lvi.Name = projekcija.Id + "";
-                lvi.Text = projekcija.Film.Naziv;
+                lvi.Text = projekcija.Vrijeme.ToShortDateString() + projekcija.Vrijeme.ToShortTimeString(); ;
+                lvi.SubItems.Add(projekcija.Film.Naziv);
                 lvi.SubItems.Add(projekcija.Film.Zanr.Naziv);
-                lvi.SubItems.Add(projekcija.Vrijeme.ToShortDateString()+projekcija.Vrijeme.ToShortTimeString());
+                
                 lvProjekcija.Items.Add(lvi);
             }
         }

@@ -118,6 +118,12 @@
     <Compile Include="FilmIzborForm.Designer.cs">
       <DependentUpon>FilmIzborForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PregledRasporedaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PregledRasporedaForm.Designer.cs">
+      <DependentUpon>PregledRasporedaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProjekcijaDodajForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FilmIzborForm.resx">
       <DependentUpon>FilmIzborForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PregledRasporedaForm.resx">
+      <DependentUpon>PregledRasporedaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrijavaForm.resx">
       <DependentUpon>PrijavaForm.cs</DependentUpon>
