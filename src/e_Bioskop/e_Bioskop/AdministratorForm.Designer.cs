@@ -58,6 +58,7 @@
             this.btnDodajFilm = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lblImePrezime = new System.Windows.Forms.ToolStripLabel();
+            this.btnDodajSalu = new System.Windows.Forms.ToolStripButton();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -366,7 +367,8 @@
             this.btnDodajDistributera,
             this.btnDodajFilm,
             this.toolStripSeparator1,
-            this.lblImePrezime});
+            this.lblImePrezime,
+            this.btnDodajSalu});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(734, 25);
@@ -423,6 +425,16 @@
             this.lblImePrezime.Name = "lblImePrezime";
             this.lblImePrezime.Size = new System.Drawing.Size(72, 22);
             this.lblImePrezime.Text = "Ime Prezime";
+            // 
+            // btnDodajSalu
+            // 
+            this.btnDodajSalu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnDodajSalu.Image = ((System.Drawing.Image)(resources.GetObject("btnDodajSalu.Image")));
+            this.btnDodajSalu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDodajSalu.Name = "btnDodajSalu";
+            this.btnDodajSalu.Size = new System.Drawing.Size(66, 22);
+            this.btnDodajSalu.Text = "Dodaj salu";
+            this.btnDodajSalu.Click += new System.EventHandler(this.btnDodajSalu_Click);
             // 
             // tabControl2
             // 
@@ -1095,5 +1107,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn trajanje;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.ToolStripButton btnDodajSalu;
     }
 }
