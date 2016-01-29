@@ -64,9 +64,9 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tbxProjekcijaSearch = new System.Windows.Forms.TextBox();
             this.lvProjekcije = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblProjekcijeSala = new System.Windows.Forms.Label();
             this.lblProjekcijeVrijeme = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -85,6 +85,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.gboxFilm = new System.Windows.Forms.GroupBox();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -100,6 +101,7 @@
             this.splitContainer2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.gboxFilm.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -206,16 +208,8 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.lblNarucivanjeTrajanjeFilma);
-            this.splitContainer1.Panel2.Controls.Add(this.label7);
-            this.splitContainer1.Panel2.Controls.Add(this.btnNarucivanje);
-            this.splitContainer1.Panel2.Controls.Add(this.lblNarucivanjeOpisFilma);
-            this.splitContainer1.Panel2.Controls.Add(this.lblNarucivanjeZanrFilma);
-            this.splitContainer1.Panel2.Controls.Add(this.lblNarucivanjeNazivFilma);
+            this.splitContainer1.Panel2.Controls.Add(this.gboxFilm);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Size = new System.Drawing.Size(700, 344);
             this.splitContainer1.SplitterDistance = 232;
             this.splitContainer1.TabIndex = 0;
@@ -264,7 +258,7 @@
             // lblNarucivanjeTrajanjeFilma
             // 
             this.lblNarucivanjeTrajanjeFilma.AutoSize = true;
-            this.lblNarucivanjeTrajanjeFilma.Location = new System.Drawing.Point(110, 117);
+            this.lblNarucivanjeTrajanjeFilma.Location = new System.Drawing.Point(111, 84);
             this.lblNarucivanjeTrajanjeFilma.Name = "lblNarucivanjeTrajanjeFilma";
             this.lblNarucivanjeTrajanjeFilma.Size = new System.Drawing.Size(35, 13);
             this.lblNarucivanjeTrajanjeFilma.TabIndex = 12;
@@ -273,7 +267,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 117);
+            this.label7.Location = new System.Drawing.Point(26, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 13);
             this.label7.TabIndex = 11;
@@ -281,7 +275,7 @@
             // 
             // btnNarucivanje
             // 
-            this.btnNarucivanje.Location = new System.Drawing.Point(306, 252);
+            this.btnNarucivanje.Location = new System.Drawing.Point(375, 18);
             this.btnNarucivanje.Name = "btnNarucivanje";
             this.btnNarucivanje.Size = new System.Drawing.Size(75, 23);
             this.btnNarucivanje.TabIndex = 10;
@@ -291,17 +285,16 @@
             // 
             // lblNarucivanjeOpisFilma
             // 
-            this.lblNarucivanjeOpisFilma.AutoSize = true;
-            this.lblNarucivanjeOpisFilma.Location = new System.Drawing.Point(110, 88);
+            this.lblNarucivanjeOpisFilma.Location = new System.Drawing.Point(111, 112);
             this.lblNarucivanjeOpisFilma.Name = "lblNarucivanjeOpisFilma";
-            this.lblNarucivanjeOpisFilma.Size = new System.Drawing.Size(35, 13);
+            this.lblNarucivanjeOpisFilma.Size = new System.Drawing.Size(339, 50);
             this.lblNarucivanjeOpisFilma.TabIndex = 9;
             this.lblNarucivanjeOpisFilma.Text = "label7";
             // 
             // lblNarucivanjeZanrFilma
             // 
             this.lblNarucivanjeZanrFilma.AutoSize = true;
-            this.lblNarucivanjeZanrFilma.Location = new System.Drawing.Point(110, 60);
+            this.lblNarucivanjeZanrFilma.Location = new System.Drawing.Point(111, 56);
             this.lblNarucivanjeZanrFilma.Name = "lblNarucivanjeZanrFilma";
             this.lblNarucivanjeZanrFilma.Size = new System.Drawing.Size(35, 13);
             this.lblNarucivanjeZanrFilma.TabIndex = 8;
@@ -310,7 +303,7 @@
             // lblNarucivanjeNazivFilma
             // 
             this.lblNarucivanjeNazivFilma.AutoSize = true;
-            this.lblNarucivanjeNazivFilma.Location = new System.Drawing.Point(110, 31);
+            this.lblNarucivanjeNazivFilma.Location = new System.Drawing.Point(111, 28);
             this.lblNarucivanjeNazivFilma.Name = "lblNarucivanjeNazivFilma";
             this.lblNarucivanjeNazivFilma.Size = new System.Drawing.Size(35, 13);
             this.lblNarucivanjeNazivFilma.TabIndex = 7;
@@ -324,17 +317,17 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(49, 147);
+            this.groupBox1.Location = new System.Drawing.Point(3, 199);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 128);
+            this.groupBox1.Size = new System.Drawing.Size(456, 140);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Podaci o distributeru";
+            this.groupBox1.Text = "Detalji o distributeru";
             // 
             // lblNarucivanjeTelefonDistributera
             // 
             this.lblNarucivanjeTelefonDistributera.AutoSize = true;
-            this.lblNarucivanjeTelefonDistributera.Location = new System.Drawing.Point(61, 91);
+            this.lblNarucivanjeTelefonDistributera.Location = new System.Drawing.Point(111, 89);
             this.lblNarucivanjeTelefonDistributera.Name = "lblNarucivanjeTelefonDistributera";
             this.lblNarucivanjeTelefonDistributera.Size = new System.Drawing.Size(35, 13);
             this.lblNarucivanjeTelefonDistributera.TabIndex = 9;
@@ -343,7 +336,7 @@
             // lblNarucivanjeAdresaDistributera
             // 
             this.lblNarucivanjeAdresaDistributera.AutoSize = true;
-            this.lblNarucivanjeAdresaDistributera.Location = new System.Drawing.Point(61, 57);
+            this.lblNarucivanjeAdresaDistributera.Location = new System.Drawing.Point(111, 57);
             this.lblNarucivanjeAdresaDistributera.Name = "lblNarucivanjeAdresaDistributera";
             this.lblNarucivanjeAdresaDistributera.Size = new System.Drawing.Size(35, 13);
             this.lblNarucivanjeAdresaDistributera.TabIndex = 8;
@@ -352,7 +345,7 @@
             // lblNarucivanjeNazivDistributera
             // 
             this.lblNarucivanjeNazivDistributera.AutoSize = true;
-            this.lblNarucivanjeNazivDistributera.Location = new System.Drawing.Point(61, 26);
+            this.lblNarucivanjeNazivDistributera.Location = new System.Drawing.Point(111, 25);
             this.lblNarucivanjeNazivDistributera.Name = "lblNarucivanjeNazivDistributera";
             this.lblNarucivanjeNazivDistributera.Size = new System.Drawing.Size(35, 13);
             this.lblNarucivanjeNazivDistributera.TabIndex = 7;
@@ -361,7 +354,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 91);
+            this.label4.Location = new System.Drawing.Point(26, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 6;
@@ -370,7 +363,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 26);
+            this.label5.Location = new System.Drawing.Point(26, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 4;
@@ -379,7 +372,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 57);
+            this.label6.Location = new System.Drawing.Point(26, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 5;
@@ -388,7 +381,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 88);
+            this.label3.Location = new System.Drawing.Point(26, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 2;
@@ -397,7 +390,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 60);
+            this.label2.Location = new System.Drawing.Point(26, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 1;
@@ -406,7 +399,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 31);
+            this.label1.Location = new System.Drawing.Point(26, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 0;
@@ -472,6 +465,11 @@
             this.lvProjekcije.View = System.Windows.Forms.View.Details;
             this.lvProjekcije.SelectedIndexChanged += new System.EventHandler(this.lvProjekcije_SelectedIndexChanged);
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Vrijeme projekcije";
+            this.columnHeader3.Width = 103;
+            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Naziv filma";
@@ -481,11 +479,6 @@
             // 
             this.columnHeader2.Text = "Žanr filma";
             this.columnHeader2.Width = 70;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Vrijeme projekcije";
-            this.columnHeader3.Width = 103;
             // 
             // lblProjekcijeSala
             // 
@@ -662,6 +655,24 @@
             this.tabPage3.Text = "Generisanje izvjestaja";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // gboxFilm
+            // 
+            this.gboxFilm.Controls.Add(this.label1);
+            this.gboxFilm.Controls.Add(this.btnNarucivanje);
+            this.gboxFilm.Controls.Add(this.lblNarucivanjeTrajanjeFilma);
+            this.gboxFilm.Controls.Add(this.label2);
+            this.gboxFilm.Controls.Add(this.label7);
+            this.gboxFilm.Controls.Add(this.label3);
+            this.gboxFilm.Controls.Add(this.lblNarucivanjeNazivFilma);
+            this.gboxFilm.Controls.Add(this.lblNarucivanjeOpisFilma);
+            this.gboxFilm.Controls.Add(this.lblNarucivanjeZanrFilma);
+            this.gboxFilm.Location = new System.Drawing.Point(3, 9);
+            this.gboxFilm.Name = "gboxFilm";
+            this.gboxFilm.Size = new System.Drawing.Size(456, 184);
+            this.gboxFilm.TabIndex = 13;
+            this.gboxFilm.TabStop = false;
+            this.gboxFilm.Text = "Detalji o filmu";
+            // 
             // UpravnikForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -678,7 +689,6 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -694,6 +704,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.gboxFilm.ResumeLayout(false);
+            this.gboxFilm.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -757,5 +769,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblProjekcijeVrijeme;
         private System.Windows.Forms.Label lblProjekcijeSala;
+        private System.Windows.Forms.GroupBox gboxFilm;
     }
 }
