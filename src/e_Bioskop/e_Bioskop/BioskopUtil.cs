@@ -168,6 +168,10 @@ namespace e_Bioskop
                     comboBox.SelectedIndex = comboBox.Items.Count-1;
                 }
             }
+            if (id <0)
+            {
+                comboBox.SelectedIndex = 1;
+            }
         }
 
         public static SalaDTO getSalaFromComboBox(ComboBox comboBox)
@@ -176,17 +180,33 @@ namespace e_Bioskop
             return BioskopUtil.getDAOFactory().getSalaDAO().getByNaziv(naziv);
         }
 
-        public static bool checkSalaAvaliblety(SalaDTO sala, DateTime time,int id)
+        public static bool checkSalaAvailability(SalaDTO sala, DateTime beginTime,int idProjekcije,FilmDTO film)
         {
             List<ProjekcijaDTO> listaSvihProjekcijaUSali = BioskopUtil.getDAOFactory().getProjekcijaDAO().getBySala(sala);
-            List<ProjekcijaDTO> listaUdanu = listaSvihProjekcijaUSali.Where(x => x.Vrijeme.Date == time.Date && x.Id!=id).ToList();
+            TimeSpan endTime = new TimeSpan(0, film.Trajanje, 0)+beginTime.TimeOfDay;
+            List<ProjekcijaDTO> listaUdanu = listaSvihProjekcijaUSali.Where(x => x.Vrijeme.Date == beginTime.Date && x.Id!=idProjekcije).ToList();
             bool check = true;
             foreach (ProjekcijaDTO projekcija in listaUdanu)
             {
                 TimeSpan pocetak = projekcija.Vrijeme.TimeOfDay;
                 TimeSpan trajanje = new TimeSpan(0,projekcija.Film.Trajanje,0);
                 TimeSpan kraj = pocetak + trajanje;
-                if (pocetak <= time.TimeOfDay && kraj >= time.TimeOfDay)
+                if (pocetak >= beginTime.TimeOfDay && pocetak<=endTime)
+                {
+                    check = false;
+                    break;
+                }
+                if (pocetak >= beginTime.TimeOfDay && kraj <= endTime)
+                {
+                    check = false;
+                    break;
+                }
+                if (beginTime.TimeOfDay >= pocetak && beginTime.TimeOfDay <= kraj)
+                {
+                    check = false;
+                    break;
+                }
+                if (endTime >= pocetak && endTime <= kraj)
                 {
                     check = false;
                     break;

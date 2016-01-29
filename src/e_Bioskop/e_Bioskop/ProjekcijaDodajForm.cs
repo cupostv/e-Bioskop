@@ -127,7 +127,7 @@ namespace e_Bioskop
             
             if (izmjena)
             {
-                if (BioskopUtil.checkSalaAvaliblety(BioskopUtil.getSalaFromComboBox(cbSala), dtpDatum.Value.Date + dtpVrijeme.Value.TimeOfDay, this.projekcija.Id))
+                if (BioskopUtil.checkSalaAvailability(BioskopUtil.getSalaFromComboBox(cbSala), dtpDatum.Value.Date + dtpVrijeme.Value.TimeOfDay, this.projekcija.Id,film))
                 {
                     if (updateProjekcija())
                     {
@@ -147,7 +147,7 @@ namespace e_Bioskop
             }
             else
             {
-                if (BioskopUtil.checkSalaAvaliblety(BioskopUtil.getSalaFromComboBox(cbSala), dtpDatum.Value.Date + dtpVrijeme.Value.TimeOfDay, -1))
+                if (BioskopUtil.checkSalaAvailability(BioskopUtil.getSalaFromComboBox(cbSala), dtpDatum.Value.Date + dtpVrijeme.Value.TimeOfDay, -1,film))
                 {
                     if (insertProjekcija())
                     {
