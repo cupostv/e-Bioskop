@@ -190,7 +190,7 @@
             this.colLvTrajanje});
             this.lvFilmoviNarucivanje.FullRowSelect = true;
             this.lvFilmoviNarucivanje.GridLines = true;
-            this.lvFilmoviNarucivanje.Location = new System.Drawing.Point(6, 31);
+            this.lvFilmoviNarucivanje.Location = new System.Drawing.Point(5, 31);
             this.lvFilmoviNarucivanje.Name = "lvFilmoviNarucivanje";
             this.lvFilmoviNarucivanje.Size = new System.Drawing.Size(223, 313);
             this.lvFilmoviNarucivanje.TabIndex = 2;
