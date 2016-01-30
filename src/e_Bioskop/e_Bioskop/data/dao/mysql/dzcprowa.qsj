@@ -172,8 +172,7 @@ namespace e_Bioskop.data.dao.mysql
             MySqlConnection connection = ConnectionPool.checkOutConnection();
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = getInIntervalQuerry;
-            command.Parameters.AddWithValue("from", from);
-            command.Parameters.AddWithValue("to", to);
+            
             MySqlDataReader reader = command.ExecuteReader();
             List<ProjekcijaDTO> lista = new List<ProjekcijaDTO>();
             while (reader.Read())

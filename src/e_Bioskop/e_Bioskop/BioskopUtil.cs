@@ -215,5 +215,10 @@ namespace e_Bioskop
             return check;
         }
 
+
+        public static void initProjekcijaDTODataGridView(DataGridView dg, List<ProjekcijaDTO> lista)
+        {
+           
+        }
     }
 }

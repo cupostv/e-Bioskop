@@ -10,12 +10,12 @@ namespace e_Bioskop.data.dao
     {
         List<ProjekcijaDTO> getAll();
        // List<ProjekcijaDTO> getByVrijeme(DateTime vrijeme);
-        //List<ProjekcijaDTO> getInInterval(DateTime from, DateTime to);
+        List<ProjekcijaDTO> getInInterval(DateTime from, DateTime to);
+        List<ProjekcijaDTO> getByDateAndTime(DateTime date, TimeSpan time);
         ProjekcijaDTO getById(int id);
         List<ProjekcijaDTO> getByFilm(FilmDTO film);
         List<ProjekcijaDTO> getBySala(SalaDTO sala);
         long insert(ProjekcijaDTO projekcija);
-
         bool update(ProjekcijaDTO projekcija);
     }
 }

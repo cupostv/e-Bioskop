@@ -53,7 +53,19 @@ namespace e_Bioskop
                 }
                 else
                 {
-                    //ZaposleniForm
+                    if (zaposleniRM.RadnoMjesto.Naziv == "Radnik")
+                    {
+                        ZaposleniForm administrator = new ZaposleniForm();
+                        this.Hide();
+                        if ((new ZaposleniForm().ShowDialog()) == DialogResult.OK)
+                        {
+                            tbxKorisnickoIme.Text = "";
+                            tbxLozinka.Text = "";
+                            lblGreska.Hide();
+                            tbxKorisnickoIme.Focus();
+                            this.Show();
+                        }
+                    }
                 }
 
             }

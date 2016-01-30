@@ -130,6 +130,12 @@
     <Compile Include="ProjekcijaDodajForm.Designer.cs">
       <DependentUpon>ProjekcijaDodajForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProjekcijaIzborForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjekcijaIzborForm.Designer.cs">
+      <DependentUpon>ProjekcijaIzborForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalaDodajForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ZaposleniForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZaposleniForm.Designer.cs">
+      <DependentUpon>ZaposleniForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ZaposleniKreiranjeForm.cs">
       <SubType>Form</SubType>
@@ -182,6 +194,9 @@
     <EmbeddedResource Include="ProjekcijaDodajForm.resx">
       <DependentUpon>ProjekcijaDodajForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProjekcijaIzborForm.resx">
+      <DependentUpon>ProjekcijaIzborForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -192,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpravnikForm.resx">
       <DependentUpon>UpravnikForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaposleniForm.resx">
+      <DependentUpon>ZaposleniForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ZaposleniKreiranjeForm.resx">
       <DependentUpon>ZaposleniKreiranjeForm.cs</DependentUpon>
