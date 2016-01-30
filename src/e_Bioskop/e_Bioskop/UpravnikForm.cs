@@ -23,6 +23,9 @@ namespace e_Bioskop
             popuniListuFilmovaZaNarucivanje();
             hideTrenutniFilmZaNarucivanjeDetails();
             popuniListuProjekcija();
+            ZaposleniDTO zaposleni = BioskopUtil.getPrijavljeniZaposleni();
+            lblImePrezime.Text = zaposleni.Ime + " " + zaposleni.Prezime;
+            splitContainer2.Panel2.Hide();
         }
 
         private void popuniListuFilmovaZaNarucivanje()
@@ -107,6 +110,7 @@ namespace e_Bioskop
             int id = int.Parse(lvProjekcije.FocusedItem.Name);
             trenutnaProjekcija = listaProjekcija.Where(x => x.Id == id).First();
             setTrenutnaProjekcijaDetails();
+            splitContainer2.Panel2.Show();
         }
 
         private void setTrenutnaProjekcijaDetails()
