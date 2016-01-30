@@ -39,7 +39,7 @@
       </counter>
       <counter>
         <item-type stereotype="" type="UmlControlFlow" />
-        <value>12</value>
+        <value>20</value>
       </counter>
       <counter>
         <item-type stereotype="" type="UmlDecision" />
@@ -48,10 +48,6 @@
       <counter>
         <item-type stereotype="" type="UmlActivityFinalNode" />
         <value>2</value>
-      </counter>
-      <counter>
-        <item-type stereotype="" type="AbstractElementGroup" />
-        <value>44</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -103,7 +99,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-activity" id="p050d4980974c4679ae47c68f48b9a67f_218456034" name="UpravljanjeProjekcijama" order-index="1" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="0,168" zoom="0.9">
+      <diagram type="uml-activity" id="p050d4980974c4679ae47c68f48b9a67f_218456034" name="UpravljanjeProjekcijama" order-index="1" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="0,258" zoom="0.9">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -115,7 +111,7 @@
           </authors>
           <description />
           <creation-date>11/29/2015 15:48:14</creation-date>
-          <change-date>12/13/2015 15:44:36</change-date>
+          <change-date>01/30/2016 20:18:08</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -123,10 +119,11 @@
           <item id="di833105441393058012" cid="SL001" type="swimlane" name="Upravnik" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:09:41">
             <owned-items>
               <owned-item ref="di937374109619213787" />
-              <owned-item ref="di709111024886508037" />
               <owned-item ref="di233642133242876993" />
               <owned-item ref="di233642133242876993" />
               <owned-item ref="di521076804944228286" />
+              <owned-item ref="di679906614454963376" />
+              <owned-item ref="di475723932948649208" />
             </owned-items>
             <style class="default" />
           </item>
@@ -136,6 +133,7 @@
               <owned-item ref="di609136322403087618" />
               <owned-item ref="di503479218352935176" />
               <owned-item ref="di960174275321041492" />
+              <owned-item ref="di569361968720393893" />
             </owned-items>
             <style class="default" />
           </item>
@@ -145,14 +143,13 @@
           <item id="di823873938788804160" cid="ACT002" type="action" name="Prikaz forme za unos podataka o projekciji" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:14:18">
             <style class="default" />
           </item>
-          <item id="di191972481454161812" cid="ELEM011" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="12/13/2015 15:44:36">
-            <style class="default" />
-            <control-flow guard="" />
-          </item>
-          <item id="di233642133242876993" cid="ACT003" type="action" name="Unos podataka o projekciji" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:34:11">
+          <item id="di679906614454963376" cid="ACT003" type="action" name="Izbor projekcije iz liste" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:34:11">
             <style class="default" />
           </item>
-          <item id="di533786952337589947" cid="ELEM003" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:35:09">
+          <item id="di233642133242876993" cid="ACT003" type="action" name="Unos podataka" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:34:11">
+            <style class="default" />
+          </item>
+          <item id="di965121172779992828" cid="ELEM016" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="01/30/2016 20:15:16">
             <style class="default" />
             <control-flow guard="" />
           </item>
@@ -162,7 +159,7 @@
           <item id="di503479218352935176" cid="DC001" type="decision" name="" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:56:58">
             <style class="default" />
           </item>
-          <item id="di310400505490169487" cid="ELEM004" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:58:36">
+          <item id="di125272966318831387" cid="ELEM019" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="01/30/2016 20:18:08">
             <style class="default" />
             <control-flow guard="" />
           </item>
@@ -170,11 +167,11 @@
             <style class="default" />
             <control-flow guard="" />
           </item>
-          <item id="di649240737581868792" cid="ELEM006" type="control-flow" name="Zauzeto" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:58:53">
+          <item id="di925799786503386310" cid="ELEM017" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="01/30/2016 20:16:25">
             <style class="default" />
             <control-flow guard="" />
           </item>
-          <item id="di960174275321041492" cid="ACT005" type="action" name="Čuvanje projekcije i ažuriranje rasporeda projekcija" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:59:56">
+          <item id="di960174275321041492" cid="ACT005" type="action" name="Čuvanje podataka" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:59:56">
             <style class="default" />
           </item>
           <item id="di150666199182473305" cid="ELEM007" type="control-flow" name="Nije zauzeto" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 17:00:10">
@@ -184,9 +181,31 @@
           <item id="di521076804944228286" cid="AFN001" type="activity-final-node" name="" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 17:00:42">
             <style class="default" />
           </item>
-          <item id="di114055543251032218" cid="ELEM009" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 17:01:01">
+          <item id="di355359764954195654" cid="ELEM018" type="control-flow" name="Zauzeto" style-class="" visibility="package" change-tracking-state="added" creation-date="01/30/2016 20:17:28">
             <style class="default" />
             <control-flow guard="" />
+          </item>
+          <item id="di882799397678047261" cid="ELEM012" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="01/30/2016 20:11:38">
+            <style class="default" />
+            <control-flow guard="" />
+          </item>
+          <item id="di711144560632709706" cid="ELEM015" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="01/30/2016 20:14:15">
+            <style class="default" />
+            <control-flow guard="" />
+          </item>
+          <item id="di952977551603454655" cid="ELEM014" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="01/30/2016 20:13:31">
+            <style class="default" />
+            <control-flow guard="" />
+          </item>
+          <item id="di475723932948649208" cid="ACT003" type="action" name="Izbor opcije za izmjenu" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:34:11">
+            <style class="default" />
+          </item>
+          <item id="di722874501555878352" cid="ELEM013" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="01/30/2016 20:12:55">
+            <style class="default" />
+            <control-flow guard="" />
+          </item>
+          <item id="di569361968720393893" cid="ACT003" type="action" name="Prikaz podataka o projekciji" style-class="" visibility="package" change-tracking-state="added" creator="P6ee9da2e43264530a7773353ea0c6890" creation-date="11/29/2015 16:34:11">
+            <style class="default" />
           </item>
         </abstract-items>
         <layer name="Default" visible="true" enabled="true" locked="false">
@@ -202,65 +221,34 @@
             <layout ax="383" ay="30" awidth="25" aheight="25" x="383" y="30" width="25" height="25" angle="0" name-position="0,10" name-anchor="bottom" />
           </item>
           <item id="di823873938788804160" iid="09f309be6d3248d4b8d6933ca6667268" container="di971518828856164153" container-iid="b58700fbf02b4ac99ca19cf51d099c87" creation-date="11/29/2015 16:14:18" order-index="5" type="entity">
-            <layout ax="609" ay="198" awidth="185" aheight="63" x="609" y="198" width="185" height="63" angle="0" />
+            <layout ax="614.125" ay="334.5" awidth="180.75" aheight="63" x="614.125" y="334.5" width="180.75" height="63" angle="0" />
           </item>
           <item id="di233642133242876993" iid="ee587d1b6ab1432f9224dceb76eb58ff" container="di833105441393058012" container-iid="2cc48d550e264e4aa21ed44094930ea4" creation-date="11/29/2015 16:34:11" order-index="7" type="entity">
-            <layout ax="317" ay="312" awidth="181.5" aheight="50" x="317" y="312" width="181.5" height="50" angle="0" />
-          </item>
-          <item id="di533786952337589947" iid="1f45901317e14314993840ef5e33a0e6" creation-date="11/29/2015 16:35:09" order-index="8" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="702" y1="261" x2="498" y2="337" start-border-pos="0.624719568201013" end-border-pos="0.373464202880859" name-position="0,-9">
-              <points>
-                <point x="702" y="261" />
-                <point x="701" y="336" />
-                <point x="498" y="337" />
-              </points>
-            </layout>
-            <relation from="di823873938788804160" from-iid="09f309be6d3248d4b8d6933ca6667268" to="di233642133242876993" to-iid="ee587d1b6ab1432f9224dceb76eb58ff" />
+            <layout ax="316.25" ay="426.5" awidth="181.5" aheight="50" x="316.25" y="426.5" width="181.5" height="50" angle="0" />
           </item>
           <item id="di609136322403087618" iid="366b536e73724f04890a21530fb02331" container="di971518828856164153" container-iid="b58700fbf02b4ac99ca19cf51d099c87" creation-date="11/29/2015 16:42:34" order-index="9" type="entity">
-            <layout ax="609" ay="422" awidth="185" aheight="50" x="609" y="422" width="185" height="50" angle="0" />
+            <layout ax="609" ay="507" awidth="185" aheight="50" x="609" y="507" width="185" height="50" angle="0" />
           </item>
           <item id="di503479218352935176" iid="814b4640b8dd497c8881243a19baccd2" container="di971518828856164153" container-iid="b58700fbf02b4ac99ca19cf51d099c87" creation-date="11/29/2015 16:56:58" order-index="10" type="entity">
-            <layout ax="681.5" ay="528" awidth="40" aheight="39" x="681.5" y="528" width="40" height="39" angle="0" name-position="0,10" name-anchor="bottom" />
-          </item>
-          <item id="di310400505490169487" iid="fc94bd55102d492f9b63951837218eb7" creation-date="11/29/2015 16:58:36" order-index="11" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="408" y1="362" x2="609" y2="447" start-border-pos="0.62465564738292" end-border-pos="0.873418426513672" name-position="10,-10">
-              <points>
-                <point x="408" y="362" />
-                <point x="408" y="448" />
-                <point x="609" y="447" />
-              </points>
-            </layout>
-            <relation from="di233642133242876993" from-iid="ee587d1b6ab1432f9224dceb76eb58ff" to="di609136322403087618" to-iid="366b536e73724f04890a21530fb02331" />
+            <layout ax="681.5" ay="613" awidth="40" aheight="39" x="681.5" y="613" width="40" height="39" angle="0" name-position="0,10" name-anchor="bottom" />
           </item>
           <item id="di251619866895621391" iid="83459c7caed640bbae861ddb47ad9359" creation-date="11/29/2015 16:58:41" order-index="12" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="702" y1="472" x2="702" y2="528" start-border-pos="0.624324324324324" end-border-pos="0.128125" name-position="10,-10">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="702" y1="557" x2="702" y2="613" start-border-pos="0.624324324324324" end-border-pos="0.128125" name-position="10,-10">
               <points>
-                <point x="702" y="472" />
-                <point x="702" y="528" />
+                <point x="702" y="557" />
+                <point x="702" y="613" />
               </points>
             </layout>
             <relation from="di609136322403087618" from-iid="366b536e73724f04890a21530fb02331" to="di503479218352935176" to-iid="814b4640b8dd497c8881243a19baccd2" />
           </item>
-          <item id="di649240737581868792" iid="8d9e6c4530894411a8c39fa8e7cbd3c2" creation-date="11/29/2015 16:58:53" order-index="13" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="682" y1="548" x2="317" y2="338" start-border-pos="0.872406788361378" end-border-pos="0.871862030029297" name-position="10,-10">
-              <points>
-                <point x="682" y="548" />
-                <point x="262" y="546" />
-                <point x="263" y="338" />
-                <point x="317" y="338" />
-              </points>
-            </layout>
-            <relation from="di503479218352935176" from-iid="814b4640b8dd497c8881243a19baccd2" to="di233642133242876993" to-iid="ee587d1b6ab1432f9224dceb76eb58ff" />
-          </item>
           <item id="di960174275321041492" iid="1eb1b4b5ae9f4185a590428821abdb74" container="di971518828856164153" container-iid="b58700fbf02b4ac99ca19cf51d099c87" creation-date="11/29/2015 16:59:56" order-index="14" type="entity">
-            <layout ax="617.5" ay="648" awidth="176.5" aheight="63" x="617.5" y="648" width="176.5" height="63" angle="0" />
+            <layout ax="616.25" ay="708" awidth="178.625" aheight="50" x="616.25" y="708" width="178.625" height="50" angle="0" />
           </item>
           <item id="di150666199182473305" iid="1f105fa6524941edb7cb561cfa8d0d62" creation-date="11/29/2015 17:00:10" order-index="15" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" lock-to-fields="false" auto-path="" x1="702" y1="566" x2="703" y2="648" start-border-pos="0.620687484741211" end-border-pos="0.121104815864023" name-position="40,-8">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" lock-to-fields="false" auto-path="" x1="702" y1="651" x2="703" y2="708" start-border-pos="0.620230102539063" end-border-pos="0.121104815864023" name-position="40,-8">
               <points>
-                <point x="702" y="566" />
-                <point x="703" y="648" />
+                <point x="702" y="651" />
+                <point x="703" y="708" />
               </points>
             </layout>
             <relation from="di503479218352935176" from-iid="814b4640b8dd497c8881243a19baccd2" to="di960174275321041492" to-iid="1eb1b4b5ae9f4185a590428821abdb74" />
@@ -268,26 +256,93 @@
           <item id="di521076804944228286" iid="fa74ec8069c2497e929451e9aa005b7b" container="di833105441393058012" container-iid="2cc48d550e264e4aa21ed44094930ea4" creation-date="11/29/2015 17:00:42" order-index="16" type="entity">
             <layout ax="383" ay="798" awidth="25" aheight="25" x="383" y="798" width="25" height="25" angle="0" name-position="0,10" name-anchor="bottom" />
           </item>
-          <item id="di114055543251032218" iid="3493bcb91bd14ff8a0e6282de9cd84c9" creation-date="11/29/2015 17:01:01" order-index="17" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="618" y1="680" x2="396" y2="798" start-border-pos="0.873015873015873" end-border-pos="0.130923156738281" name-position="10,-10">
+          <item id="di679906614454963376" iid="2468ac4fb09d482e842ee24cdfa8ed51" container="di833105441393058012" container-iid="2cc48d550e264e4aa21ed44094930ea4" creation-date="11/29/2015 16:34:11" order-index="7" type="entity">
+            <layout ax="308.5" ay="115" awidth="174" aheight="50" x="308.5" y="115" width="174" height="50" angle="0" />
+          </item>
+          <item id="di882799397678047261" iid="52bbf6a4fc0f4872862a411b3f55e820" creation-date="01/30/2016 20:11:38" order-index="18" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" lock-to-fields="false" auto-path="" x1="396" y1="55" x2="395" y2="115" start-border-pos="0.621780700683594" end-border-pos="0.124281609195402" name-position="10,-10">
               <points>
-                <point x="618" y="680" />
-                <point x="422" y="680" />
-                <point x="397" y="680" />
-                <point x="396" y="798" />
+                <point x="396" y="55" />
+                <point x="395" y="115" />
+              </points>
+            </layout>
+            <relation from="di937374109619213787" from-iid="d8b58f84eb0b4d4ea146a0172914f96d" to="di679906614454963376" to-iid="2468ac4fb09d482e842ee24cdfa8ed51" />
+          </item>
+          <item id="di569361968720393893" iid="725e6992460542a8a638e9595841a459" container="di971518828856164153" container-iid="b58700fbf02b4ac99ca19cf51d099c87" creation-date="11/29/2015 16:34:11" order-index="7" type="entity">
+            <layout ax="610.75" ay="184" awidth="183.25" aheight="50" x="610.75" y="184" width="183.25" height="50" angle="0" />
+          </item>
+          <item id="di722874501555878352" iid="3959e4e9dee94778ac1b86464715578d" creation-date="01/30/2016 20:12:55" order-index="19" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="482" y1="138" x2="706" y2="184" start-border-pos="0.365" end-border-pos="0.129945429740791" name-position="10,-10">
+              <points>
+                <point x="482" y="138" />
+                <point x="704.5" y="137" />
+                <point x="706" y="184" />
+              </points>
+            </layout>
+            <relation from="di679906614454963376" from-iid="2468ac4fb09d482e842ee24cdfa8ed51" to="di569361968720393893" to-iid="725e6992460542a8a638e9595841a459" />
+          </item>
+          <item id="di475723932948649208" iid="8e04baa8e2b44ee0926d1e375122916d" container="di833105441393058012" container-iid="2cc48d550e264e4aa21ed44094930ea4" creation-date="11/29/2015 16:34:11" order-index="7" type="entity">
+            <layout ax="304.75" ay="258" awidth="193" aheight="50" x="304.75" y="258" width="193" height="50" angle="0" />
+          </item>
+          <item id="di952977551603454655" iid="e1bb5a8ee20a424f8fd3ce37a12efd1e" creation-date="01/30/2016 20:13:31" order-index="20" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="611" y1="207" x2="394" y2="258" start-border-pos="0.885" end-border-pos="0.115608808290155" name-position="10,-10">
+              <points>
+                <point x="611" y="207" />
+                <point x="395" y="207" />
+                <point x="394" y="258" />
+              </points>
+            </layout>
+            <relation from="di569361968720393893" from-iid="725e6992460542a8a638e9595841a459" to="di475723932948649208" to-iid="8e04baa8e2b44ee0926d1e375122916d" />
+          </item>
+          <item id="di711144560632709706" iid="15a343f5cad64348882880354c2d21fd" creation-date="01/30/2016 20:14:15" order-index="21" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="498" y1="282" x2="709" y2="334" start-border-pos="0.37" end-border-pos="0.131224066390041" name-position="10,-10">
+              <points>
+                <point x="498" y="282" />
+                <point x="708.5" y="281" />
+                <point x="709" y="334" />
+              </points>
+            </layout>
+            <relation from="di475723932948649208" from-iid="8e04baa8e2b44ee0926d1e375122916d" to="di823873938788804160" to-iid="09f309be6d3248d4b8d6933ca6667268" />
+          </item>
+          <item id="di965121172779992828" iid="c3180dcf4e6544b5a3569c56dfce4032" creation-date="01/30/2016 20:15:16" order-index="22" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="614" y1="365" x2="402" y2="426" start-border-pos="0.878968253968254" end-border-pos="0.118112947658402" name-position="10,-10">
+              <points>
+                <point x="614" y="365" />
+                <point x="401" y="364" />
+                <point x="402" y="426" />
+              </points>
+            </layout>
+            <relation from="di823873938788804160" from-iid="09f309be6d3248d4b8d6933ca6667268" to="di233642133242876993" to-iid="ee587d1b6ab1432f9224dceb76eb58ff" />
+          </item>
+          <item id="di925799786503386310" iid="e0b856b42e734f96a2840b0e6ca5c9a6" creation-date="01/30/2016 20:16:25" order-index="23" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="498" y1="452" x2="710" y2="507" start-border-pos="0.3775" end-border-pos="0.136486486486486" name-position="10,-10">
+              <points>
+                <point x="498" y="452" />
+                <point x="709" y="452" />
+                <point x="710" y="507" />
+              </points>
+            </layout>
+            <relation from="di233642133242876993" from-iid="ee587d1b6ab1432f9224dceb76eb58ff" to="di609136322403087618" to-iid="366b536e73724f04890a21530fb02331" />
+          </item>
+          <item id="di355359764954195654" iid="b94792ef66af41cfaecfdfc89017a0d4" creation-date="01/30/2016 20:17:28" order-index="24" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="682" y1="632" x2="316" y2="450" start-border-pos="0.878205128205128" end-border-pos="0.8825" name-position="269,-9">
+              <points>
+                <point x="682" y="632" />
+                <point x="269" y="631" />
+                <point x="268" y="449" />
+                <point x="316" y="450" />
+              </points>
+            </layout>
+            <relation from="di503479218352935176" from-iid="814b4640b8dd497c8881243a19baccd2" to="di233642133242876993" to-iid="ee587d1b6ab1432f9224dceb76eb58ff" />
+          </item>
+          <item id="di125272966318831387" iid="157e55dcb89e4982b90a3f2794ba1b34" creation-date="01/30/2016 20:18:08" order-index="25" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="false" lock-to-fields="false" auto-path="" x1="704" y1="758" x2="408" y2="808" start-border-pos="0.627186843946816" end-border-pos="0.349739990234375" name-position="10,-10">
+              <points>
+                <point x="704" y="758" />
+                <point x="408" y="808" />
               </points>
             </layout>
             <relation from="di960174275321041492" from-iid="1eb1b4b5ae9f4185a590428821abdb74" to="di521076804944228286" to-iid="fa74ec8069c2497e929451e9aa005b7b" />
-          </item>
-          <item id="di191972481454161812" iid="612ae03386204e1086a470ef1471bf9a" creation-date="12/13/2015 15:44:36" order-index="18" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="396" y1="55" x2="609" y2="230" start-border-pos="0.62" end-border-pos="0.873015873015873" name-position="10,-10">
-              <points>
-                <point x="396" y="55" />
-                <point x="396" y="230" />
-                <point x="609" y="230" />
-              </points>
-            </layout>
-            <relation from="di937374109619213787" from-iid="d8b58f84eb0b4d4ea146a0172914f96d" to="di823873938788804160" to-iid="09f309be6d3248d4b8d6933ca6667268" />
           </item>
         </layer>
       </diagram>
