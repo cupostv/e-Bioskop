@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using MySql.Data;
+using e_Bioskop.data.dao;
 
 namespace e_Bioskop
 {
