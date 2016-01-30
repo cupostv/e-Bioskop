@@ -34,6 +34,7 @@
             this.colNazivFilma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colZanr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrajanje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOpisFilma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIzbor = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -50,6 +51,7 @@
             this.colNazivFilma,
             this.colZanr,
             this.colTrajanje,
+            this.colSala,
             this.colOpisFilma,
             this.colCijena,
             this.colIzbor});
@@ -86,6 +88,11 @@
             // 
             this.colTrajanje.HeaderText = "Trajanje";
             this.colTrajanje.Name = "colTrajanje";
+            // 
+            // colSala
+            // 
+            this.colSala.HeaderText = "Sala";
+            this.colSala.Name = "colSala";
             // 
             // colOpisFilma
             // 
@@ -124,6 +131,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNazivFilma;
         private System.Windows.Forms.DataGridViewTextBoxColumn colZanr;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrajanje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSala;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOpisFilma;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCijena;
         private System.Windows.Forms.DataGridViewButtonColumn colIzbor;
