@@ -9,11 +9,11 @@ namespace e_Bioskop.data.dao.mysql
 {
     public class MySqlSalaDAO : SalaDAO
     {
-        private string insertQuerry="INSERT INTO `e_bioskop`.`sala` (`aktivna`, `nazivSala`) VALUES (?aktivna, ?naziv);";
-        private string getAllQuerry = "select idSala,aktivna,nazivSala from sala;";
-        private string getByIdQuerry = "select idSala,aktivna,nazivSala from sala where idSala=?id;";
-        private string getByNazivQuerry = "select idSala,aktivna,nazivSala from sala where nazivSala=?naziv;";
-        private string updateQuerry = "UPDATE `e_bioskop`.`sala` SET `aktivna`=?aktivna, `nazivSala`=?naziv WHERE `idSala`=?id;";
+        private string insertQuerry="INSERT INTO `e_bioskop`.`sala` (`aktivna`, `nazivSala`,`brojRedova`,`brojSjedistaURedu`) VALUES (?aktivna, ?naziv,?brojRedova,?brojSjedistaURedu);";
+        private string getAllQuerry = "select idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from sala;";
+        private string getByIdQuerry = "select idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from sala where idSala=?id;";
+        private string getByNazivQuerry = "select idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from sala where nazivSala=?naziv;";
+        private string updateQuerry = "UPDATE `e_bioskop`.`sala` SET `aktivna`=?aktivna, `nazivSala`=?naziv,brojRedova=?brojRedova,brojSjedistaURedu=?brojSjedistaURedu WHERE `idSala`=?id;";
 
         public long insert(SalaDTO sala)
         {
@@ -22,6 +22,8 @@ namespace e_Bioskop.data.dao.mysql
             command.CommandText = insertQuerry;
             command.Parameters.AddWithValue("aktivna", sala.Aktivna);
             command.Parameters.AddWithValue("naziv", sala.Naziv);
+            command.Parameters.AddWithValue("brojRedova", sala.BrojRedova);
+            command.Parameters.AddWithValue("brojSjedistaURedu", sala.BrojSjedistaURedu);
             command.ExecuteNonQuery();
             long id=command.LastInsertedId;
             if (id > 0)
@@ -30,29 +32,6 @@ namespace e_Bioskop.data.dao.mysql
         }
 
 
-        public bool insert(SalaDTO sala, int brojRedova, int brojSjedista)
-        {
-            bool success = true;
-            long id=insert(sala);
-            if (id < 0)
-                return false;
-            sala.Id = (int)id;
-            for (int i = 0; i < brojRedova; i++)
-            {
-                for (int j = 0; j < brojSjedista; j++)
-                {
-                    SjedisteDTO sjediste = new SjedisteDTO();
-                    sjediste.Broj = i;
-                    sjediste.Red = j;
-                    sjediste.Sala = sala;
-                    if (BioskopUtil.getDAOFactory().getSjedisteDAO().insert(sjediste) <= 0)
-                    {
-                        success = false;
-                    }
-                }
-            }
-            return success;
-        }
 
         public bool update(SalaDTO sala)
         {
@@ -62,6 +41,8 @@ namespace e_Bioskop.data.dao.mysql
             command.Parameters.AddWithValue("id", sala.Id);
             command.Parameters.AddWithValue("aktivna", sala.Aktivna);
             command.Parameters.AddWithValue("naziv", sala.Naziv);
+            command.Parameters.AddWithValue("brojRedova", sala.BrojRedova);
+            command.Parameters.AddWithValue("brojSjedistaURedu", sala.BrojSjedistaURedu);
             int rows=command.ExecuteNonQuery();
             if (rows > 0)
                 return true;
@@ -125,6 +106,8 @@ namespace e_Bioskop.data.dao.mysql
             sala.Id = reader.GetInt32("idSala");
             sala.Aktivna = reader.GetInt32("aktivna");
             sala.Naziv = reader["nazivSala"].ToString();
+            sala.BrojRedova = reader.GetInt32("brojRedova");
+            sala.BrojSjedistaURedu = reader.GetInt32("brojSjedistaURedu");
             return sala;
         }
     }

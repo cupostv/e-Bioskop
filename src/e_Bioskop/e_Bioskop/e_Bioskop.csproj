@@ -71,7 +71,6 @@
     <Compile Include="data\dao\mysql\MySqlRadnoMjestoDAO.cs" />
     <Compile Include="data\dao\mysql\MySqlRezervacijaDAO.cs" />
     <Compile Include="data\dao\mysql\MySqlSalaDAO.cs" />
-    <Compile Include="data\dao\mysql\MySqlSjedisteDAO.cs" />
     <Compile Include="data\dao\mysql\MySqlStatusFilmDAO.cs" />
     <Compile Include="data\dao\mysql\MySqlStatusKartaDAO.cs" />
     <Compile Include="data\dao\mysql\MySqlZanrDAO.cs" />
@@ -81,7 +80,6 @@
     <Compile Include="data\dao\RadnoMjestoDAO.cs" />
     <Compile Include="data\dao\RezervacijaDAO.cs" />
     <Compile Include="data\dao\SalaDAO.cs" />
-    <Compile Include="data\dao\SjedisteDAO.cs" />
     <Compile Include="data\dao\StatusFilmDAO.cs" />
     <Compile Include="data\dao\StatusKartaDAO.cs" />
     <Compile Include="data\dao\ZanrDAO.cs" />
@@ -95,7 +93,6 @@
     <Compile Include="data\dto\RadnoMjestoDTO.cs" />
     <Compile Include="data\dto\RezervacijaDTO.cs" />
     <Compile Include="data\dto\SalaDTO.cs" />
-    <Compile Include="data\dto\SjedisteDTO.cs" />
     <Compile Include="data\dto\StatusKartaDTO.cs" />
     <Compile Include="data\dto\ZanrDTO.cs" />
     <Compile Include="data\dto\ZaposleniDTO.cs" />

@@ -110,7 +110,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 111);
+            this.label3.Location = new System.Drawing.Point(6, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 15;
@@ -157,7 +157,7 @@
             this.dtpDatum.Location = new System.Drawing.Point(108, 161);
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(200, 20);
-            this.dtpDatum.TabIndex = 1;
+            this.dtpDatum.TabIndex = 22;
             // 
             // dtpVrijeme
             // 
@@ -167,14 +167,14 @@
             this.dtpVrijeme.Name = "dtpVrijeme";
             this.dtpVrijeme.ShowUpDown = true;
             this.dtpVrijeme.Size = new System.Drawing.Size(200, 20);
-            this.dtpVrijeme.TabIndex = 2;
+            this.dtpVrijeme.TabIndex = 23;
             // 
             // btnSacuvaj
             // 
             this.btnSacuvaj.Location = new System.Drawing.Point(152, 298);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(75, 23);
-            this.btnSacuvaj.TabIndex = 5;
+            this.btnSacuvaj.TabIndex = 24;
             this.btnSacuvaj.Text = "Potvrdi";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
             this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
@@ -186,7 +186,7 @@
             this.cbSala.Location = new System.Drawing.Point(108, 222);
             this.cbSala.Name = "cbSala";
             this.cbSala.Size = new System.Drawing.Size(200, 21);
-            this.cbSala.TabIndex = 3;
+            this.cbSala.TabIndex = 25;
             // 
             // label4
             // 
@@ -220,7 +220,7 @@
             this.tbxCijena.Location = new System.Drawing.Point(108, 254);
             this.tbxCijena.Name = "tbxCijena";
             this.tbxCijena.Size = new System.Drawing.Size(200, 20);
-            this.tbxCijena.TabIndex = 4;
+            this.tbxCijena.TabIndex = 29;
             // 
             // label8
             // 
@@ -237,7 +237,7 @@
             this.btnOdustani.Location = new System.Drawing.Point(233, 298);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
-            this.btnOdustani.TabIndex = 6;
+            this.btnOdustani.TabIndex = 31;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
             // 
@@ -278,7 +278,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ProjekcijaDodajForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dodavanje projekcije";
+            this.Text = "Dodaj projekciju";
             this.gbIzabraniFilm.ResumeLayout(false);
             this.gbIzabraniFilm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epFilm)).EndInit();

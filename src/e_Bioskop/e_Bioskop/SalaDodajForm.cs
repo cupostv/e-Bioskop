@@ -21,7 +21,9 @@ namespace e_Bioskop
         {
             SalaDTO sala = new SalaDTO();
             sala.Naziv = tbxNaziv.Text;
-            BioskopUtil.getDAOFactory().getSalaDAO().insert(sala, int.Parse(tbxBrojRedova.Value.ToString()), int.Parse(tbxBrojSjedistaUredu.Value.ToString()));
+            sala.BrojSjedistaURedu = (int)tbxBrojSjedistaUredu.Value;
+            sala.BrojRedova = (int)tbxBrojRedova.Value;
+            BioskopUtil.getDAOFactory().getSalaDAO().insert(sala);
         }
 
         private bool validate()

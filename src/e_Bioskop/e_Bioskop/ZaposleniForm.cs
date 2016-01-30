@@ -13,7 +13,6 @@ namespace e_Bioskop
     public partial class ZaposleniForm : Form
     {
         private ProjekcijaDTO izabranaProjekcijaZaProdaju;
-        private List<SjedisteDTO> izabranoSjedisteZaProdaju;
         private Color nijeIzabrano = System.Drawing.Color.Transparent;
         private Color izabrano = System.Drawing.Color.Aqua;
         private List<Button> listaIzabranihSjedista = new List<Button>();
@@ -67,9 +66,9 @@ namespace e_Bioskop
             lblProdajaKarteZanr.Text = izabranaProjekcijaZaProdaju.Film.Zanr.Naziv;
             lblProdajaSalaProjekcije.Text = izabranaProjekcijaZaProdaju.Sala.Naziv;
             lblProdajaVrijemeProjekcije.Text=izabranaProjekcijaZaProdaju.Vrijeme.ToShortDateString()+" " +izabranaProjekcijaZaProdaju.Vrijeme.TimeOfDay.ToString();
-            List<SjedisteDTO> lista = BioskopUtil.getDAOFactory().getSjedisteDAO().getBySala(izabranaProjekcijaZaProdaju.Sala);
+            
             listaIzabranihSjedista.Clear();
-            BioskopUtil.initSjedistDTOFlowLayout(flowLayoutPanel1, lista, prodajaIzborSjedistaClick);
+            BioskopUtil.initSjedistDTOFlowLayout(flowLayoutPanel1, izabranaProjekcijaZaProdaju, prodajaIzborSjedistaClick);
         }
 
 
@@ -105,9 +104,8 @@ namespace e_Bioskop
         {
             FlowLayoutPanel flw = (FlowLayoutPanel)sender;
             int count=flw.Controls.Count;
-            List<SjedisteDTO> lista=BioskopUtil.getDAOFactory().getSjedisteDAO().getBySala(izabranaProjekcijaZaProdaju.Sala);
-            int brojSjedistaURedu = lista.Where(x => x.Red == 0).Count();
-            int brojRedova = lista.Where(x => x.Broj == 0).Count();
+            int brojSjedistaURedu = izabranaProjekcijaZaProdaju.Sala.BrojSjedistaURedu;
+            int brojRedova = izabranaProjekcijaZaProdaju.Sala.BrojRedova;
             if (brojSjedistaURedu > 0 && brojRedova > 0)
             {
                 int height = (flowLayoutPanel1.Height / (brojRedova) - flowLayoutPanel1.Margin.Vertical);

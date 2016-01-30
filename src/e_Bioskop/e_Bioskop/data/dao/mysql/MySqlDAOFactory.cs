@@ -57,10 +57,7 @@ namespace e_Bioskop.data.dao.mysql
             return new MySqlSalaDAO();
         }
 
-        public override SjedisteDAO getSjedisteDAO()
-        {
-            return new MySqlSjedisteDAO();
-        }
+        
 
         public override StatusKartaDAO getStatusKartaDAO()
         {
