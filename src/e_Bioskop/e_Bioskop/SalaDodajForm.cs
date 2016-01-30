@@ -22,12 +22,47 @@ namespace e_Bioskop
             SalaDTO sala = new SalaDTO();
             sala.Naziv = tbxNaziv.Text;
             BioskopUtil.getDAOFactory().getSalaDAO().insert(sala, int.Parse(tbxBrojRedova.Value.ToString()), int.Parse(tbxBrojSjedistaUredu.Value.ToString()));
+        }
 
+        private bool validate()
+        {
+            bool valid = true;
+
+            if (string.IsNullOrEmpty(tbxNaziv.Text.Trim()))
+            {
+                valid = false;
+                epNaziv.SetError(tbxNaziv, "Unesite naziv");
+            }
+            else
+            {
+                epNaziv.Clear();
+            }
+
+            return valid;
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            insertSala();
+            if (validate())
+            {
+                this.Cursor = Cursors.WaitCursor;
+                insertSala();
+                this.Cursor = Cursors.Default;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        private void tbxNaziv_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbxNaziv.Text.Trim()))
+            {
+                epNaziv.SetError(tbxNaziv, "Unesite naziv");
+            }
+            else
+            {
+                epNaziv.Clear();
+            }
         }
     }
 }

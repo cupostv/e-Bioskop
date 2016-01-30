@@ -441,5 +441,14 @@ namespace e_Bioskop
             }
         }
 
+        private void btnDodajSalu_Click(object sender, EventArgs e)
+        {
+            SalaDodajForm sala = new SalaDodajForm();
+            if (sala.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
     }
 }
