@@ -215,5 +215,15 @@ namespace e_Bioskop
             return check;
         }
 
+
+        public static void initProjekcijaDTODataGridView(DataGridView dg, List<ProjekcijaDTO> lista)
+        {
+            dg.Rows.Clear();
+            foreach (ProjekcijaDTO proj in lista)
+            {
+                
+                dg.Rows.Add(proj.Vrijeme.TimeOfDay,proj.Film.Naziv,proj.Film.Opis,new )
+            }
+        }
     }
 }
