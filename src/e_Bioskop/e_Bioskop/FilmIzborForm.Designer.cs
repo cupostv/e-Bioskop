@@ -48,9 +48,9 @@
             this.columnHeader4});
             this.lvFilmovi.FullRowSelect = true;
             this.lvFilmovi.GridLines = true;
-            this.lvFilmovi.Location = new System.Drawing.Point(21, 12);
+            this.lvFilmovi.Location = new System.Drawing.Point(12, 12);
             this.lvFilmovi.Name = "lvFilmovi";
-            this.lvFilmovi.Size = new System.Drawing.Size(476, 295);
+            this.lvFilmovi.Size = new System.Drawing.Size(480, 295);
             this.lvFilmovi.TabIndex = 4;
             this.lvFilmovi.UseCompatibleStateImageBehavior = false;
             this.lvFilmovi.View = System.Windows.Forms.View.Details;
@@ -75,10 +75,11 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Opis";
+            this.columnHeader4.Width = 220;
             // 
             // btnIzaberi
             // 
-            this.btnIzaberi.Location = new System.Drawing.Point(422, 321);
+            this.btnIzaberi.Location = new System.Drawing.Point(417, 313);
             this.btnIzaberi.Name = "btnIzaberi";
             this.btnIzaberi.Size = new System.Drawing.Size(75, 23);
             this.btnIzaberi.TabIndex = 5;
@@ -88,9 +89,10 @@
             // 
             // FilmIzborForm
             // 
+            this.AcceptButton = this.btnIzaberi;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 356);
+            this.ClientSize = new System.Drawing.Size(504, 343);
             this.Controls.Add(this.btnIzaberi);
             this.Controls.Add(this.lvFilmovi);
             this.Name = "FilmIzborForm";

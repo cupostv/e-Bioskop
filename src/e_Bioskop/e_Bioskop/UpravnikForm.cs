@@ -23,6 +23,10 @@ namespace e_Bioskop
             popuniListuFilmovaZaNarucivanje();
             hideTrenutniFilmZaNarucivanjeDetails();
             popuniListuProjekcija();
+            ZaposleniDTO zaposleni = BioskopUtil.getPrijavljeniZaposleni();
+            splitContainer2.Panel2.Hide();
+            lblImePrezime.Text = zaposleni.Ime + " " + zaposleni.Prezime;
+
         }
 
         private void popuniListuFilmovaZaNarucivanje()
@@ -60,6 +64,12 @@ namespace e_Bioskop
 
         private void lvFilmoviNarucivanje_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lvFilmoviNarucivanje.SelectedIndices.Count == 0)
+            {
+                splitContainer1.Panel2.Hide();
+                return;
+            }
+            splitContainer1.Panel2.Show();
             int id=int.Parse(lvFilmoviNarucivanje.FocusedItem.Name);
             trenutniFilm=listaFilmovaZaNarucivanje.Where(x => x.Id == id).ToList().First();
             if(trenutniFilm!=null)
@@ -68,10 +78,13 @@ namespace e_Bioskop
 
         private void btnNarucivanje_Click(object sender, EventArgs e)
         {
-            trenutniFilm.Status = BioskopUtil.getDAOFactory().getStatusFilmDAO().getById(2);
-            BioskopUtil.getDAOFactory().getFilmDAO().update(trenutniFilm);
-            hideTrenutniFilmZaNarucivanjeDetails();
-            popuniListuFilmovaZaNarucivanje();
+            if (MessageBox.Show("Da li ste sigurni?", "Naruči film", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                trenutniFilm.Status = BioskopUtil.getDAOFactory().getStatusFilmDAO().getById(2);
+                BioskopUtil.getDAOFactory().getFilmDAO().update(trenutniFilm);
+                hideTrenutniFilmZaNarucivanjeDetails();
+                popuniListuFilmovaZaNarucivanje();
+            }
         }
 
         private void promjeniListuFilmovaPoNazivu()
@@ -104,6 +117,12 @@ namespace e_Bioskop
 
         private void lvProjekcije_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lvProjekcije.SelectedIndices.Count == 0)
+            {
+                splitContainer2.Panel2.Hide();
+                return;
+            }
+            splitContainer2.Panel2.Show();
             int id = int.Parse(lvProjekcije.FocusedItem.Name);
             trenutnaProjekcija = listaProjekcija.Where(x => x.Id == id).First();
             setTrenutnaProjekcijaDetails();
@@ -151,6 +170,20 @@ namespace e_Bioskop
             {
                 Application.Exit();
             }
+        }
+
+        private void lvFilmoviNarucivanje_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                cmsFilmOsvjezi.Show(lvFilmoviNarucivanje, e.X, e.Y);
+                
+            }
+        }
+
+        private void osvježiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            promjeniListuFilmovaPoNazivu();
         }
 
 
