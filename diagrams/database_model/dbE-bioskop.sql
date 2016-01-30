@@ -91,19 +91,18 @@ CREATE TABLE `karta` (
   `cijenaKarta` int(11) NOT NULL,
   `datumProdaje` date DEFAULT NULL,
   `idZaposleni` int(11) NOT NULL,
-  `idSjediste` int(11) NOT NULL,
   `idProjekcija` int(11) NOT NULL,
   `idKarta` int(11) NOT NULL AUTO_INCREMENT,
   `idRezervacija` int(11) DEFAULT NULL,
   `idStatusKarta` int(11) NOT NULL,
+  `brojReda` int(11) NOT NULL,
+  `brojSjedista` int(11) NOT NULL,
   PRIMARY KEY (`idKarta`),
   KEY `R_9` (`idProjekcija`),
-  KEY `R_10` (`idSjediste`),
   KEY `R_12` (`idZaposleni`),
   KEY `R_17` (`idRezervacija`),
   KEY `R_19` (`idStatusKarta`),
   CONSTRAINT `karta_ibfk_1` FOREIGN KEY (`idProjekcija`) REFERENCES `projekcija` (`idProjekcija`),
-  CONSTRAINT `karta_ibfk_2` FOREIGN KEY (`idSjediste`) REFERENCES `sjediste` (`idSjediste`),
   CONSTRAINT `karta_ibfk_3` FOREIGN KEY (`idZaposleni`) REFERENCES `zaposleni` (`idZaposleni`),
   CONSTRAINT `karta_ibfk_4` FOREIGN KEY (`idRezervacija`) REFERENCES `rezervacija` (`idRezervacija`),
   CONSTRAINT `karta_ibfk_5` FOREIGN KEY (`idStatusKarta`) REFERENCES `status_karta` (`idStatusKarta`)
@@ -212,6 +211,8 @@ CREATE TABLE `sala` (
   `aktivna` int(11) NOT NULL,
   `idSala` int(11) NOT NULL AUTO_INCREMENT,
   `nazivSala` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `brojRedova` int(11) NOT NULL,
+  `brojSjedistaURedu` int(11) NOT NULL,
   PRIMARY KEY (`idSala`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -223,33 +224,6 @@ CREATE TABLE `sala` (
 LOCK TABLES `sala` WRITE;
 /*!40000 ALTER TABLE `sala` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sala` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sjediste`
---
-
-DROP TABLE IF EXISTS `sjediste`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `sjediste` (
-  `redSjediste` int(11) NOT NULL,
-  `brojSjediste` int(11) NOT NULL,
-  `idSala` int(11) NOT NULL,
-  `idSjediste` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`idSjediste`),
-  KEY `R_6` (`idSala`),
-  CONSTRAINT `sjediste_ibfk_1` FOREIGN KEY (`idSala`) REFERENCES `sala` (`idSala`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sjediste`
---
-
-LOCK TABLES `sjediste` WRITE;
-/*!40000 ALTER TABLE `sjediste` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sjediste` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
