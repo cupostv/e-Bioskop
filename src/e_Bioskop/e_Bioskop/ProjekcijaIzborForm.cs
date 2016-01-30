@@ -12,6 +12,21 @@ namespace e_Bioskop
 {
     public partial class ProjekcijaIzborForm : Form
     {
+        List<ProjekcijaDTO> lista = null;
+
+        public List<ProjekcijaDTO> Lista
+        {
+            get { return lista; }
+            set { lista = value; }
+        }
+        ProjekcijaDTO izabranaProjekcija = null;
+
+        public ProjekcijaDTO IzabranaProjekcija
+        {
+            get { return izabranaProjekcija; }
+            set { izabranaProjekcija = value; }
+        }
+
         public ProjekcijaIzborForm()
         {
             InitializeComponent();
@@ -21,28 +36,30 @@ namespace e_Bioskop
 
         private void initDataGridView()
         {
-            List<ProjekcijaDTO> lista=BioskopUtil.getDAOFactory().getProjekcijaDAO().getAll();
+            lista=BioskopUtil.getDAOFactory().getProjekcijaDAO().getByDateAndTime(DateTime.Now,DateTime.Now.TimeOfDay);
 
-          //  BioskopUtil.initProjekcijaDTODataGridView(dataGridView1, lista);
              dataGridView1.Rows.Clear();
             foreach (ProjekcijaDTO proj in lista)
             {
-                dataGridView1.Rows.Add(proj.Id,proj.Vrijeme.TimeOfDay,proj.Film.Naziv,proj.Film.Opis,proj.Cijena);
+                dataGridView1.Rows.Add(proj.Id,proj.Vrijeme.TimeOfDay,proj.Film.Naziv,proj.Film.Opis,proj.Cijena,"Izaberi");
             }
         }
 
-        private void btnIzborProjekcije_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex !=
-            dataGridView1.Columns["Izaberi film"].Index)
+            dataGridView1.Columns["colIzbor"].Index)
                 return;
             int id = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
-            Console.Write(id);
+            izabranaProjekcija = lista.Where(x => x.Id == id).First();
+            if(izabranaProjekcija!=null)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
+
+
     }
 }

@@ -60,6 +60,7 @@
             // 
             this.colId.HeaderText = "Id";
             this.colId.Name = "colId";
+            this.colId.Visible = false;
             // 
             // colVrijeme
             // 

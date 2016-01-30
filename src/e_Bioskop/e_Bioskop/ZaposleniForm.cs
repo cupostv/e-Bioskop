@@ -1,4 +1,5 @@
-﻿using System;
+﻿using e_Bioskop.data.dto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +12,8 @@ namespace e_Bioskop
 {
     public partial class ZaposleniForm : Form
     {
+        private ProjekcijaDTO izabranaProjekcija;
+
         public ZaposleniForm()
         {
             InitializeComponent();
@@ -34,7 +37,18 @@ namespace e_Bioskop
         private void btnIzborProjekcije_Click(object sender, EventArgs e)
         {
             ProjekcijaIzborForm pif = new ProjekcijaIzborForm();
-            pif.ShowDialog();
+            if (pif.ShowDialog() == DialogResult.OK)
+            {
+                izabranaProjekcija = pif.IzabranaProjekcija;
+            }
+        }
+
+        private void btnOdjava_Click_1(object sender, EventArgs e)
+        {
+            BioskopUtil.odjavaZaposleni();
+            this.Close();
+            PrijavaForm prijava = new PrijavaForm();
+            prijava.Show();
         }
     }
 }
