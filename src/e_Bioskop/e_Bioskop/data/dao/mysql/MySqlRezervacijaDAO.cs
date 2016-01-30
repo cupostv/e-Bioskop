@@ -13,7 +13,7 @@ namespace e_Bioskop.data.dao.mysql
         {
             RezervacijaDTO rezervacija = new RezervacijaDTO();
             rezervacija.Id = reader.GetInt32("idRezervacija");
-            rezervacija.VrijemeRezervacije = reader.GetDateTime("vrijemeRezervacije");
+            rezervacija.VrijemeRezervacije = reader.GetDateTime("vrijemeRezervacija");
             rezervacija.Opis = reader["opisRezervacija"].ToString();
             rezervacija.Zaposleni = MySqlZaposleniDAO.readerToZaposleni(reader);
             return rezervacija;
