@@ -30,5 +30,11 @@ namespace e_Bioskop
         {
 
         }
+
+        private void btnIzborProjekcije_Click(object sender, EventArgs e)
+        {
+            ProjekcijaIzborForm pif = new ProjekcijaIzborForm();
+            pif.ShowDialog();
+        }
     }
 }
