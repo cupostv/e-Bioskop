@@ -13,8 +13,10 @@ namespace e_Bioskop
     public partial class ZaposleniForm : Form
     {
         private ProjekcijaDTO izabranaProjekcijaZaProdaju;
-        private SjedisteDTO izabranoSjedisteZaProdaju;
-        private Button dugmeIzabranogSjedista = null;
+        private List<SjedisteDTO> izabranoSjedisteZaProdaju;
+        private Color nijeIzabrano = System.Drawing.Color.Transparent;
+        private Color izabrano = System.Drawing.Color.Aqua;
+        private List<Button> listaIzabranihSjedista = new List<Button>();
         public ZaposleniForm()
         {
             InitializeComponent();
@@ -41,9 +43,13 @@ namespace e_Bioskop
             ProjekcijaIzborForm pif = new ProjekcijaIzborForm();
             if (pif.ShowDialog() == DialogResult.OK)
             {
-                izabranaProjekcijaZaProdaju = pif.IzabranaProjekcija;
-                showProjekcijaProdajaKarteControlls();
+                if (izabranaProjekcijaZaProdaju == null || izabranaProjekcijaZaProdaju.Id != pif.IzabranaProjekcija.Id)
+                {
+                    izabranaProjekcijaZaProdaju = pif.IzabranaProjekcija;
+                    showProjekcijaProdajaKarteControlls();
+                }
             }
+            
         }
 
         private void btnOdjava_Click_1(object sender, EventArgs e)
@@ -61,41 +67,25 @@ namespace e_Bioskop
             lblProdajaKarteZanr.Text = izabranaProjekcijaZaProdaju.Film.Zanr.Naziv;
             lblProdajaSalaProjekcije.Text = izabranaProjekcijaZaProdaju.Sala.Naziv;
             lblProdajaVrijemeProjekcije.Text=izabranaProjekcijaZaProdaju.Vrijeme.ToShortDateString()+" " +izabranaProjekcijaZaProdaju.Vrijeme.TimeOfDay.ToString();
-            ss();
+            List<SjedisteDTO> lista = BioskopUtil.getDAOFactory().getSjedisteDAO().getBySala(izabranaProjekcijaZaProdaju.Sala);
+            listaIzabranihSjedista.Clear();
+            BioskopUtil.initSjedistDTOFlowLayout(flowLayoutPanel1, lista, prodajaIzborSjedistaClick);
         }
 
-        private void ss()
-        {
-            flowLayoutPanel1.Controls.Clear();
-            List<SjedisteDTO> lista = BioskopUtil.getDAOFactory().getSjedisteDAO().getBySala(izabranaProjekcijaZaProdaju.Sala);
-            int brojSjedistaURedu = lista.Where(x => x.Red == 1).Count();
-            int brojRedova=lista.Where(x=> x.Broj==1).Count();
-            if (brojSjedistaURedu > 0 && brojRedova > 0)
-            {
-                int height = (flowLayoutPanel1.Height / (brojRedova+1)) - 1;
-                int width = (flowLayoutPanel1.Width / (brojSjedistaURedu+1)) - 1;
-                foreach (SjedisteDTO sjediste in lista)
-                {
-                    Button b = new Button();
-                    b.Width = width;
-                    b.BackColor = System.Drawing.Color.White;
-                    b.Height = height;
-                    b.FlatStyle = FlatStyle.Flat;
-                    b.Click += new EventHandler(prodajaIzborSjedistaClick);
-                    b.Name = "prodaja" + sjediste.Id;
-                    flowLayoutPanel1.Controls.Add(b);
-                }
-            }
-        }
 
         private void prodajaIzborSjedistaClick(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-            if (dugmeIzabranogSjedista != null)
-                dugmeIzabranogSjedista.BackColor = System.Drawing.Color.White;
-            int idSjedista = int.Parse(b.Name.Replace("prodaja", "").Trim());
-            b.BackColor = System.Drawing.Color.Blue;
-            dugmeIzabranogSjedista = b;            
+            if (listaIzabranihSjedista.Where(x => x.Name.Equals(b.Name)).Count()>0)
+            {
+                    listaIzabranihSjedista.Remove(b);
+                    b.BackColor = nijeIzabrano;
+            }
+            else
+            {
+                b.BackColor = izabrano;
+                listaIzabranihSjedista.Add(b);
+            }     
         }
 
         private void hideProjekcijaProdajaKarteControlls()
@@ -109,6 +99,26 @@ namespace e_Bioskop
             fillProjekcijaProdajaKarteControlls();
             gbProdajaPodaciOProjekciji.Show();
             gbProdajaPodaciOFilmu.Show();
+        }
+
+        private void flowLayoutPanel1_Resize(object sender, EventArgs e)
+        {
+            FlowLayoutPanel flw = (FlowLayoutPanel)sender;
+            int count=flw.Controls.Count;
+            List<SjedisteDTO> lista=BioskopUtil.getDAOFactory().getSjedisteDAO().getBySala(izabranaProjekcijaZaProdaju.Sala);
+            int brojSjedistaURedu = lista.Where(x => x.Red == 0).Count();
+            int brojRedova = lista.Where(x => x.Broj == 0).Count();
+            if (brojSjedistaURedu > 0 && brojRedova > 0)
+            {
+                int height = (flowLayoutPanel1.Height / (brojRedova) - flowLayoutPanel1.Margin.Vertical);
+                int width = (flowLayoutPanel1.Width / (brojSjedistaURedu)) - flowLayoutPanel1.Margin.Horizontal;
+                for (int i = 0; i < count; i++)
+                {
+                    Control control = flw.Controls[i];
+                    control.Width = width;
+                    control.Height = height;
+                }
+            }
         }
     }
 }

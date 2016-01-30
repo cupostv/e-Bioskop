@@ -217,9 +217,43 @@ namespace e_Bioskop
         }
 
 
-        public static void initProjekcijaDTODataGridView(DataGridView dg, List<ProjekcijaDTO> lista)
+
+        public static void initSjedistDTOFlowLayout(FlowLayoutPanel flowLayoutPanel1, List<SjedisteDTO> lista, Action<object, EventArgs> prodajaIzborSjedistaClick)
         {
-           
+            flowLayoutPanel1.Controls.Clear();
+            int brojSjedistaURedu = lista.Where(x => x.Red == 0).Count();
+            int brojRedova = lista.Where(x => x.Broj == 0).Count();
+            if (brojSjedistaURedu > 0 && brojRedova > 0)
+            {
+                int height = (flowLayoutPanel1.Height / (brojRedova)-flowLayoutPanel1.Margin.Vertical) ;
+                int width = (flowLayoutPanel1.Width / (brojSjedistaURedu))-flowLayoutPanel1.Margin.Horizontal;
+                foreach (SjedisteDTO sjediste in lista)
+                {
+                    Button b = new Button();
+                    b.Width = width;
+                    b.Text = (sjediste.Red +1)+ " - " + (sjediste.Broj+1);
+                    b.BackColor = System.Drawing.Color.White;
+                    b.Height = height;
+                    b.FlatStyle = FlatStyle.Flat;
+                    b.Click += new EventHandler(prodajaIzborSjedistaClick);
+                    b.Name = "prodaja" + sjediste.Id;
+                    flowLayoutPanel1.Controls.Add(b);
+                }
+            }
         }
+
+        public bool isSjedisteAvalible(ProjekcijaDTO projekcija, SjedisteDTO sjediste,List<KartaDTO> list,List<RezervacijaDTO> rezervacije)
+        {
+            foreach (KartaDTO karta in list)
+            {
+                if (karta.Sjediste.Id == sjediste.Id)
+                {
+                    return false;
+                }
+            }
+            return true;
+
+        }
+
     }
 }
