@@ -55,6 +55,7 @@
             this.lvFilmovi.UseCompatibleStateImageBehavior = false;
             this.lvFilmovi.View = System.Windows.Forms.View.Details;
             this.lvFilmovi.SelectedIndexChanged += new System.EventHandler(this.lvFilmovi_SelectedIndexChanged);
+            this.lvFilmovi.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvFilmovi_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -89,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 356);
+            this.ClientSize = new System.Drawing.Size(514, 356);
             this.Controls.Add(this.btnIzaberi);
             this.Controls.Add(this.lvFilmovi);
             this.Name = "FilmIzborForm";

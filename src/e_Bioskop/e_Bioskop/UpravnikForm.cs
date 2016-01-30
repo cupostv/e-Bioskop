@@ -141,9 +141,16 @@ namespace e_Bioskop
 
         private void btnPregledRasporeda_Click(object sender, EventArgs e)
         {
-            if(prf==null)
             prf = new PregledRasporedaForm();
             prf.Show();
+        }
+
+        private void UpravnikForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (BioskopUtil.getPrijavljeniZaposleni() != null)
+            {
+                Application.Exit();
+            }
         }
 
 

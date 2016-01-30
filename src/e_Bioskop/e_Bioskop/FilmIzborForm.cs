@@ -41,6 +41,11 @@ namespace e_Bioskop
             this.Close();
         }
 
+        private void lvFilmovi_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            btnIzaberi.PerformClick();
+        }
+
         
 
 

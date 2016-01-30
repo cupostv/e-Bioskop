@@ -18,7 +18,6 @@ namespace e_Bioskop
         public ProjekcijaDodajForm()
         {
             InitializeComponent();
-            gbIzabraniFilm.Hide();
             BioskopUtil.initSalaDTOComboBox(cbSala, -1);
             
         }
@@ -48,11 +47,6 @@ namespace e_Bioskop
             {
                 film = fif.SelektovaniFilm;
                 showFilmData();
-            }
-            else
-            {
-                gbIzabraniFilm.Hide();
-                film = null;
             }
         }
 
@@ -122,47 +116,87 @@ namespace e_Bioskop
 
         }
 
-        private void btnSacuvaj_Click(object sender, EventArgs e)
+        private bool validate()
         {
-            
-            if (izmjena)
+            bool valid = true;
+
+            if (cbSala.SelectedIndex < 0)
             {
-                if (BioskopUtil.checkSalaAvailability(BioskopUtil.getSalaFromComboBox(cbSala), dtpDatum.Value.Date + dtpVrijeme.Value.TimeOfDay, this.projekcija.Id,film))
-                {
-                    if (updateProjekcija())
-                    {
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
-                    }
-                    else
-                    {
-                        this.DialogResult = DialogResult.Abort;
-                        this.Close();
-                    }
-                }
-                else
-                {
-                    zauzetaSala();
-                }
+                epSala.SetError(cbSala, "Izaberite salu");
+                valid = false;
             }
             else
             {
-                if (BioskopUtil.checkSalaAvailability(BioskopUtil.getSalaFromComboBox(cbSala), dtpDatum.Value.Date + dtpVrijeme.Value.TimeOfDay, -1,film))
+                epSala.Clear();
+            }
+
+            if (string.IsNullOrEmpty(tbxCijena.Text.Trim()))
+            {
+                epCijena.SetError(tbxCijena, "Unesite cijenu");
+                valid = false;
+            }
+            else
+            {
+                epCijena.Clear();
+            }
+
+            if (film == null)
+            {
+                epFilm.SetError(gbIzabraniFilm, "Izaberite film");
+                valid = false;
+            }
+            else
+            {
+                epFilm.Clear();
+            }
+
+            return valid;
+        }
+
+        private void btnSacuvaj_Click(object sender, EventArgs e)
+        {
+
+            if (validate())
+            {
+                if (izmjena)
                 {
-                    if (insertProjekcija())
+                    if (BioskopUtil.checkSalaAvailability(BioskopUtil.getSalaFromComboBox(cbSala), dtpDatum.Value.Date + dtpVrijeme.Value.TimeOfDay, this.projekcija.Id, film))
                     {
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (updateProjekcija())
+                        {
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.DialogResult = DialogResult.Abort;
+                            this.Close();
+                        }
                     }
                     else
                     {
-                        this.DialogResult = DialogResult.Abort;
-                        this.Close();
+                        zauzetaSala();
                     }
                 }
                 else
                 {
-                    zauzetaSala();
+                    if (BioskopUtil.checkSalaAvailability(BioskopUtil.getSalaFromComboBox(cbSala), dtpDatum.Value.Date + dtpVrijeme.Value.TimeOfDay, -1, film))
+                    {
+                        if (insertProjekcija())
+                        {
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.DialogResult = DialogResult.Abort;
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        zauzetaSala();
+                    }
                 }
             }
         }

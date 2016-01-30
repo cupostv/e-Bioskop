@@ -27,6 +27,11 @@ namespace e_Bioskop
             BioskopUtil.initProjekcijaDTOListView(lvProjekcije, lista);
         }
 
+        private void PregledRasporedaForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+        }
+
 
 
         

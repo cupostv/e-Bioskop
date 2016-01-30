@@ -33,6 +33,8 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lvProjekcije
@@ -42,13 +44,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvProjekcije.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
+            this.columnHeader4,
             this.columnHeader1,
             this.columnHeader2});
             this.lvProjekcije.FullRowSelect = true;
             this.lvProjekcije.GridLines = true;
             this.lvProjekcije.Location = new System.Drawing.Point(12, 50);
             this.lvProjekcije.Name = "lvProjekcije";
-            this.lvProjekcije.Size = new System.Drawing.Size(318, 313);
+            this.lvProjekcije.Size = new System.Drawing.Size(364, 329);
             this.lvProjekcije.TabIndex = 4;
             this.lvProjekcije.UseCompatibleStateImageBehavior = false;
             this.lvProjekcije.View = System.Windows.Forms.View.Details;
@@ -61,12 +64,12 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Naziv filma";
-            this.columnHeader1.Width = 67;
+            this.columnHeader1.Width = 123;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Žanr filma";
-            this.columnHeader2.Width = 70;
+            this.columnHeader2.Width = 82;
             // 
             // dtpDatum
             // 
@@ -77,16 +80,36 @@
             this.dtpDatum.TabIndex = 23;
             this.dtpDatum.ValueChanged += new System.EventHandler(this.dtpDatum_ValueChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Izaberite datum";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Sala";
+            this.columnHeader4.Width = 56;
+            // 
             // PregledRasporedaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 395);
+            this.ClientSize = new System.Drawing.Size(388, 391);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpDatum);
             this.Controls.Add(this.lvProjekcije);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "PregledRasporedaForm";
-            this.Text = "PregledRasporedaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Pregled rasporeda";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PregledRasporedaForm_FormClosed);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -97,5 +120,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.DateTimePicker dtpDatum;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
