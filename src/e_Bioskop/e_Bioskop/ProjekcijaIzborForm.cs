@@ -41,7 +41,7 @@ namespace e_Bioskop
              dataGridView1.Rows.Clear();
             foreach (ProjekcijaDTO proj in lista)
             {
-                dataGridView1.Rows.Add(proj.Id,proj.Vrijeme.TimeOfDay,proj.Film.Naziv,proj.Film.Opis,proj.Cijena,"Izaberi");
+                dataGridView1.Rows.Add(proj.Id,proj.Vrijeme.TimeOfDay,proj.Film.Naziv,proj.Film.Zanr.Naziv,proj.Film.Trajanje,proj.Film.Opis,proj.Cijena,"Izaberi");
             }
         }
 

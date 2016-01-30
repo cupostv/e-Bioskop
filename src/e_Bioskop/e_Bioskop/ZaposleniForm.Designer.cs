@@ -42,9 +42,19 @@
             this.tbRezervacija = new System.Windows.Forms.TabPage();
             this.tbPonistavanjeKarte = new System.Windows.Forms.TabPage();
             this.tbPonistavanjeRezervacije = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblProdajaKarteOpis = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblProdajaKarteZanr = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblProdajaKarteNazivFilma = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbProdajaKarte.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -126,6 +136,9 @@
             // 
             // tbProdajaKarte
             // 
+            this.tbProdajaKarte.Controls.Add(this.groupBox1);
+            this.tbProdajaKarte.Controls.Add(this.flowLayoutPanel1);
+            this.tbProdajaKarte.Controls.Add(this.groupBox3);
             this.tbProdajaKarte.Controls.Add(this.btnIzborProjekcije);
             this.tbProdajaKarte.Location = new System.Drawing.Point(4, 22);
             this.tbProdajaKarte.Name = "tbProdajaKarte";
@@ -137,7 +150,7 @@
             // 
             // btnIzborProjekcije
             // 
-            this.btnIzborProjekcije.Location = new System.Drawing.Point(41, 52);
+            this.btnIzborProjekcije.Location = new System.Drawing.Point(28, 16);
             this.btnIzborProjekcije.Name = "btnIzborProjekcije";
             this.btnIzborProjekcije.Size = new System.Drawing.Size(167, 23);
             this.btnIzborProjekcije.TabIndex = 0;
@@ -173,6 +186,91 @@
             this.tbPonistavanjeRezervacije.Text = "Ponistavanje rezervacije";
             this.tbPonistavanjeRezervacije.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblProdajaKarteOpis);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.lblProdajaKarteZanr);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.lblProdajaKarteNazivFilma);
+            this.groupBox3.Location = new System.Drawing.Point(28, 45);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(250, 100);
+            this.groupBox3.TabIndex = 20;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Podaci o filmu";
+            // 
+            // lblProdajaKarteOpis
+            // 
+            this.lblProdajaKarteOpis.AutoSize = true;
+            this.lblProdajaKarteOpis.Location = new System.Drawing.Point(50, 73);
+            this.lblProdajaKarteOpis.Name = "lblProdajaKarteOpis";
+            this.lblProdajaKarteOpis.Size = new System.Drawing.Size(35, 13);
+            this.lblProdajaKarteOpis.TabIndex = 17;
+            this.lblProdajaKarteOpis.Text = "label7";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 16);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(37, 13);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "Naziv:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 45);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(32, 13);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Žanr:";
+            // 
+            // lblProdajaKarteZanr
+            // 
+            this.lblProdajaKarteZanr.AutoSize = true;
+            this.lblProdajaKarteZanr.Location = new System.Drawing.Point(50, 45);
+            this.lblProdajaKarteZanr.Name = "lblProdajaKarteZanr";
+            this.lblProdajaKarteZanr.Size = new System.Drawing.Size(35, 13);
+            this.lblProdajaKarteZanr.TabIndex = 16;
+            this.lblProdajaKarteZanr.Text = "label7";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 73);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(31, 13);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "Opis:";
+            // 
+            // lblProdajaKarteNazivFilma
+            // 
+            this.lblProdajaKarteNazivFilma.AutoSize = true;
+            this.lblProdajaKarteNazivFilma.Location = new System.Drawing.Point(50, 16);
+            this.lblProdajaKarteNazivFilma.Name = "lblProdajaKarteNazivFilma";
+            this.lblProdajaKarteNazivFilma.Size = new System.Drawing.Size(35, 13);
+            this.lblProdajaKarteNazivFilma.TabIndex = 15;
+            this.lblProdajaKarteNazivFilma.Text = "label7";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(364, 31);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 21;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(28, 174);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // ZaposleniForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +284,8 @@
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tbProdajaKarte.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +306,14 @@
         private System.Windows.Forms.TabPage tbPonistavanjeKarte;
         private System.Windows.Forms.TabPage tbPonistavanjeRezervacije;
         private System.Windows.Forms.Button btnIzborProjekcije;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblProdajaKarteOpis;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblProdajaKarteZanr;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblProdajaKarteNazivFilma;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

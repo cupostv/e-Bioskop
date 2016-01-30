@@ -32,6 +32,8 @@
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVrijeme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNazivFilma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colZanr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrajanje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOpisFilma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIzbor = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -46,6 +48,8 @@
             this.colId,
             this.colVrijeme,
             this.colNazivFilma,
+            this.colZanr,
+            this.colTrajanje,
             this.colOpisFilma,
             this.colCijena,
             this.colIzbor});
@@ -72,6 +76,16 @@
             this.colNazivFilma.FillWeight = 200F;
             this.colNazivFilma.HeaderText = "Naziv filma";
             this.colNazivFilma.Name = "colNazivFilma";
+            // 
+            // colZanr
+            // 
+            this.colZanr.HeaderText = "Zanr";
+            this.colZanr.Name = "colZanr";
+            // 
+            // colTrajanje
+            // 
+            this.colTrajanje.HeaderText = "Trajanje";
+            this.colTrajanje.Name = "colTrajanje";
             // 
             // colOpisFilma
             // 
@@ -108,6 +122,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVrijeme;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNazivFilma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colZanr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrajanje;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOpisFilma;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCijena;
         private System.Windows.Forms.DataGridViewButtonColumn colIzbor;

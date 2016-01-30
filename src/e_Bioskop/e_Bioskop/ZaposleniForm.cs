@@ -50,5 +50,10 @@ namespace e_Bioskop
             PrijavaForm prijava = new PrijavaForm();
             prijava.Show();
         }
+
+        private void fillProjekcijaProdajaKarteControlls()
+        {
+
+        }
     }
 }
