@@ -28,5 +28,21 @@ namespace e_Bioskop.data.dto
             get { return naziv; }
             set { naziv = value; }
         }
+
+        private int brojRedova;
+
+        public int BrojRedova
+        {
+            get { return brojRedova; }
+            set { brojRedova = value; }
+        }
+
+        private int brojSjedistaURedu;
+
+        public int BrojSjedistaURedu
+        {
+            get { return brojSjedistaURedu; }
+            set { brojSjedistaURedu = value; }
+        }
     }
 }

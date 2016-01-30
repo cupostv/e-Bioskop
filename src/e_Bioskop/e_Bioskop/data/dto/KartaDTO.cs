@@ -28,13 +28,6 @@ namespace e_Bioskop.data.dto
             get { return zaposleni; }
             set { zaposleni = value; }
         }
-        private SjedisteDTO sjediste;
-
-        internal SjedisteDTO Sjediste
-        {
-            get { return sjediste; }
-            set { sjediste = value; }
-        }
         private ProjekcijaDTO projekcija;
 
         public ProjekcijaDTO Projekcija
@@ -63,6 +56,22 @@ namespace e_Bioskop.data.dto
         {
             get { return cijena; }
             set { cijena = value; }
+        }
+
+        private int brojReda;
+
+        internal int BrojReda
+        {
+            get { return brojReda; }
+            set { brojReda = value; }
+        }
+
+        private int brojSjedista;
+
+        internal int BrojSjedista
+        {
+            get { return brojSjedista; }
+            set { brojSjedista = value; }
         }
     }
 }
