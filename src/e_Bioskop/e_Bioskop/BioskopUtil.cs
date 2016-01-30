@@ -215,7 +215,7 @@ namespace e_Bioskop
 
 
 
-        public static void initSjedistDTOFlowLayout(FlowLayoutPanel flowLayoutPanel1, ProjekcijaDTO projekcija, Action<object, EventArgs> prodajaIzborSjedistaClick)
+        public static void initSjedistDTOFlowLayout(FlowLayoutPanel flowLayoutPanel1, ProjekcijaDTO projekcija, Action<object, EventArgs> prodajaIzborSjedistaClick,List<KartaDTO> listaKarata)
         {
             flowLayoutPanel1.Controls.Clear();
             int brojSjedistaURedu = projekcija.Sala.BrojSjedistaURedu;
@@ -234,7 +234,23 @@ namespace e_Bioskop
                         b.BackColor = System.Drawing.Color.White;
                         b.Height = height;
                         b.FlatStyle = FlatStyle.Flat;
-                        b.Click += new EventHandler(prodajaIzborSjedistaClick);
+                        int status = BioskopUtil.isSjedisteAvalible(i, j, listaKarata);
+                        if (status == -1)
+                        {
+                            b.Click += new EventHandler(prodajaIzborSjedistaClick);
+                        }
+                        else
+                        {
+                            switch (status)
+                            {
+                                case 1:
+                                    b.BackColor = System.Drawing.Color.Red;
+                                    break;
+                                case 2:
+                                    b.BackColor = System.Drawing.Color.Tomato;
+                                    break;
+                            }
+                        }
                         b.Name = "prodaja" + i + "_" + j;
                         flowLayoutPanel1.Controls.Add(b);
                     }
@@ -242,16 +258,16 @@ namespace e_Bioskop
             }
         }
 
-        public bool isSjedisteAvalible(ProjekcijaDTO projekcija, int brojReda,int brojSjedista,List<KartaDTO> list,List<RezervacijaDTO> rezervacije)
+        public static int isSjedisteAvalible(int brojReda,int brojSjedista,List<KartaDTO> list)
         {
             foreach (KartaDTO karta in list)
             {
                 if (karta.BrojReda==brojReda && karta.BrojSjedista==brojSjedista)
                 {
-                    return false;
+                    return karta.Status.Id;
                 }
             }
-            return true;
+            return -1;
 
         }
 

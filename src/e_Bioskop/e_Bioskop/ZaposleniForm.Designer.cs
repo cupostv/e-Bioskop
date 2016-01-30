@@ -52,12 +52,12 @@
             this.lblProdajaKarteZanr = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.lblProdajaKarteNazivFilma = new System.Windows.Forms.Label();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnProdajaKarata = new System.Windows.Forms.Button();
             this.tbRezervacija = new System.Windows.Forms.TabPage();
             this.tbPonistavanjeKarte = new System.Windows.Forms.TabPage();
             this.tbPonistavanjeRezervacije = new System.Windows.Forms.TabPage();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.btnProdajaKarata = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbProdajaKarte.SuspendLayout();
@@ -308,6 +308,24 @@
             this.lblProdajaKarteNazivFilma.TabIndex = 15;
             this.lblProdajaKarteNazivFilma.Text = "label7";
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.btnProdajaKarata);
+            this.splitContainer2.Size = new System.Drawing.Size(456, 312);
+            this.splitContainer2.SplitterDistance = 253;
+            this.splitContainer2.TabIndex = 22;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -316,6 +334,16 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(456, 253);
             this.flowLayoutPanel1.TabIndex = 21;
             this.flowLayoutPanel1.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
+            // 
+            // btnProdajaKarata
+            // 
+            this.btnProdajaKarata.Location = new System.Drawing.Point(307, 23);
+            this.btnProdajaKarata.Name = "btnProdajaKarata";
+            this.btnProdajaKarata.Size = new System.Drawing.Size(113, 23);
+            this.btnProdajaKarata.TabIndex = 0;
+            this.btnProdajaKarata.Text = "Izvrsi prodaju";
+            this.btnProdajaKarata.UseVisualStyleBackColor = true;
+            this.btnProdajaKarata.Click += new System.EventHandler(this.btnProdajaKarata_Click);
             // 
             // tbRezervacija
             // 
@@ -344,33 +372,6 @@
             this.tbPonistavanjeRezervacije.TabIndex = 3;
             this.tbPonistavanjeRezervacije.Text = "Ponistavanje rezervacije";
             this.tbPonistavanjeRezervacije.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.btnProdajaKarata);
-            this.splitContainer2.Size = new System.Drawing.Size(456, 312);
-            this.splitContainer2.SplitterDistance = 253;
-            this.splitContainer2.TabIndex = 22;
-            // 
-            // btnProdajaKarata
-            // 
-            this.btnProdajaKarata.Location = new System.Drawing.Point(307, 23);
-            this.btnProdajaKarata.Name = "btnProdajaKarata";
-            this.btnProdajaKarata.Size = new System.Drawing.Size(113, 23);
-            this.btnProdajaKarata.TabIndex = 0;
-            this.btnProdajaKarata.Text = "Izvrsi prodaju";
-            this.btnProdajaKarata.UseVisualStyleBackColor = true;
             // 
             // ZaposleniForm
             // 

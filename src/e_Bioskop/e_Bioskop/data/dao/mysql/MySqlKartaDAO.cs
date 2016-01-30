@@ -136,7 +136,14 @@ namespace e_Bioskop.data.dao.mysql
             command.Parameters.AddWithValue("datumProdaje", karta.DatumProdaje);
             command.Parameters.AddWithValue("idZaposleni", karta.Zaposleni.Id);
             command.Parameters.AddWithValue("idProjekcija", karta.Projekcija.Id);
-            command.Parameters.AddWithValue("idRezervacija", karta.Rezervacija.Id);
+            if (karta.Rezervacija != null)
+            {
+                command.Parameters.AddWithValue("idRezervacija", karta.Rezervacija.Id);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("idRezervacija", null);
+            }
             command.Parameters.AddWithValue("idStatusKarta", karta.Status.Id);
             command.Parameters.AddWithValue("brojReda", karta.BrojReda);
             command.Parameters.AddWithValue("brojSjedista", karta.BrojSjedista);

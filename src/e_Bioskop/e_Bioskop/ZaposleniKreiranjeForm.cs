@@ -272,7 +272,7 @@ namespace e_Bioskop
 
         private bool validateKorisnickoIme(string korisnickoIme)
         {
-            if (korisnickoIme.Equals(zaposleniRadnoMjesto.Zaposleni.KorisnickoIme))
+            if (zaposleniRadnoMjesto!=null && korisnickoIme.Equals(zaposleniRadnoMjesto.Zaposleni.KorisnickoIme))
             {
                 return true;
             }

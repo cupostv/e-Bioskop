@@ -16,6 +16,7 @@ namespace e_Bioskop
         private Color nijeIzabrano = System.Drawing.Color.Transparent;
         private Color izabrano = System.Drawing.Color.Aqua;
         private List<Button> listaIzabranihSjedista = new List<Button>();
+        private List<KartaDTO> prodajaListaVecIzdatihKarata = null;
         public ZaposleniForm()
         {
             InitializeComponent();
@@ -68,7 +69,8 @@ namespace e_Bioskop
             lblProdajaVrijemeProjekcije.Text=izabranaProjekcijaZaProdaju.Vrijeme.ToShortDateString()+" " +izabranaProjekcijaZaProdaju.Vrijeme.TimeOfDay.ToString();
             
             listaIzabranihSjedista.Clear();
-            BioskopUtil.initSjedistDTOFlowLayout(flowLayoutPanel1, izabranaProjekcijaZaProdaju, prodajaIzborSjedistaClick);
+            prodajaListaVecIzdatihKarata = BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcija(izabranaProjekcijaZaProdaju);
+            BioskopUtil.initSjedistDTOFlowLayout(flowLayoutPanel1, izabranaProjekcijaZaProdaju, prodajaIzborSjedistaClick,prodajaListaVecIzdatihKarata);
         }
 
 
@@ -117,6 +119,37 @@ namespace e_Bioskop
                     control.Height = height;
                 }
             }
+        }
+
+        private void btnProdajaKarata_Click(object sender, EventArgs e)
+        {
+            if (listaIzabranihSjedista != null && listaIzabranihSjedista.Count() > 0)
+            {
+                foreach (Button b in listaIzabranihSjedista)
+                {
+                    KartaDTO karta = new KartaDTO();
+                    karta.Projekcija = izabranaProjekcijaZaProdaju;
+                    karta.Status = BioskopUtil.getDAOFactory().getStatusKartaDAO().getByNaziv("Prodana");
+                    karta.Zaposleni = BioskopUtil.getPrijavljeniZaposleni();
+                    string str = b.Name.Replace("prodaja", "");
+                    char[] del={'_'};
+                    string[] s=str.Split(del,StringSplitOptions.RemoveEmptyEntries);
+                    if (s.Length == 2)
+                    {
+                        karta.BrojSjedista = int.Parse(s[1]);
+                        karta.BrojReda = int.Parse(s[0]);
+                        if (BioskopUtil.isSjedisteAvalible(karta.BrojReda, karta.BrojSjedista, prodajaListaVecIzdatihKarata)==-1)
+                        {
+                            int id = (int)BioskopUtil.getDAOFactory().getKartaDAO().insert(karta);
+                            karta.Id = id;                            
+                        }
+                    }
+
+                }
+                fillProjekcijaProdajaKarteControlls();
+                
+            }
+            
         }
     }
 }
