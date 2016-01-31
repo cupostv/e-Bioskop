@@ -18,5 +18,7 @@ namespace e_Bioskop.data.dao
 
         long insert(KartaDTO karta);
 
+        bool update(KartaDTO karta);
+
     }
 }
