@@ -142,7 +142,7 @@ namespace e_Bioskop
                     {
                         karta.BrojSjedista = int.Parse(s[1]);
                         karta.BrojReda = int.Parse(s[0]);
-                        if (BioskopUtil.isSjedisteAvalible(karta.BrojReda, karta.BrojSjedista, prodajaListaVecIzdatihKarata)==-1)
+                        if (BioskopUtil.isSjedisteAvalible(karta.BrojReda, karta.BrojSjedista, prodajaListaVecIzdatihKarata).Equals("Slobodna"))
                         {
                             int id = (int)BioskopUtil.getDAOFactory().getKartaDAO().insert(karta);
                             karta.Id = id;                            
@@ -193,6 +193,45 @@ namespace e_Bioskop
             lblRezervacijaZanr.Text = izabranaProjekcija.Film.Zanr.Naziv;
             prodajaListaVecIzdatihKarata=BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcija(izabranaProjekcija);
             BioskopUtil.initSjedistDTOFlowLayout(flwRezervacija,izabranaProjekcija,prodajaIzborSjedistaClick,prodajaListaVecIzdatihKarata);
+        }
+
+        private void btnRezervisi_Click(object sender, EventArgs e)
+        {
+            if (listaIzabranihSjedista != null && listaIzabranihSjedista.Count() > 0)
+            {
+                 RezervacijaDTO rezervacija = new RezervacijaDTO();
+                 rezervacija.Zaposleni = BioskopUtil.getPrijavljeniZaposleni();
+                 rezervacija.Opis = tbxRezervacijaOpisRezervacije.Text;
+                 rezervacija.VrijemeRezervacije = DateTime.Now;
+                int id=(int) BioskopUtil.getDAOFactory().getRezervacijaDAO().insert(rezervacija);
+                rezervacija.Id = id;
+                StatusKartaDTO rezervisanaStatus = BioskopUtil.getDAOFactory().getStatusKartaDAO().getByNaziv("Rezervisana");
+                foreach (Button b in listaIzabranihSjedista)
+                {
+                    KartaDTO karta = new KartaDTO();
+                    karta.Projekcija = izabranaProjekcija;
+                    karta.Status = rezervisanaStatus;
+                    karta.Zaposleni = BioskopUtil.getPrijavljeniZaposleni();
+                    karta.Rezervacija = rezervacija;
+                    string str = b.Name.Replace("prodaja", "");
+                    char[] del = { '_' };
+                    string[] s = str.Split(del, StringSplitOptions.RemoveEmptyEntries);
+                    if (s.Length == 2)
+                    {
+                        karta.BrojSjedista = int.Parse(s[1]);
+                        karta.BrojReda = int.Parse(s[0]);
+                        
+                        if (BioskopUtil.isSjedisteAvalible(karta.BrojReda, karta.BrojSjedista, prodajaListaVecIzdatihKarata).Equals("Slobodna"))
+                        {
+                            int idk = (int)BioskopUtil.getDAOFactory().getKartaDAO().insert(karta);
+                            karta.Id = idk;
+                        }
+                    }
+
+                }
+                fillRezervisanjeControls();
+
+            }
         }
     }
 }

@@ -234,22 +234,21 @@ namespace e_Bioskop
                         b.BackColor = System.Drawing.Color.White;
                         b.Height = height;
                         b.FlatStyle = FlatStyle.Flat;
-                        int status = BioskopUtil.isSjedisteAvalible(i, j, listaKarata);
-                        if (status == -1)
+                        string status = BioskopUtil.isSjedisteAvalible(i, j, listaKarata);
+                        switch (status)
                         {
-                            b.Click += new EventHandler(prodajaIzborSjedistaClick);
-                        }
-                        else
-                        {
-                            switch (status)
-                            {
-                                case 1:
-                                    b.BackColor = System.Drawing.Color.Red;
-                                    break;
-                                case 2:
-                                    b.BackColor = System.Drawing.Color.Tomato;
-                                    break;
-                            }
+                            case "Prodana":
+                                b.BackColor = System.Drawing.Color.Red;
+                                break;
+                            case "Rezervisana":
+                                b.BackColor = System.Drawing.Color.Blue;
+                                break;
+                            case "Ponistena":
+                                b.Click += new EventHandler(prodajaIzborSjedistaClick);
+                                break;
+                            case "Slobodna":
+                                b.Click += new EventHandler(prodajaIzborSjedistaClick);
+                                break;
                         }
                         b.Name = "prodaja" + i + "_" + j;
                         flowLayoutPanel1.Controls.Add(b);
@@ -258,16 +257,16 @@ namespace e_Bioskop
             }
         }
 
-        public static int isSjedisteAvalible(int brojReda,int brojSjedista,List<KartaDTO> list)
+        public static string isSjedisteAvalible(int brojReda,int brojSjedista,List<KartaDTO> list)
         {
             foreach (KartaDTO karta in list)
             {
                 if (karta.BrojReda==brojReda && karta.BrojSjedista==brojSjedista)
                 {
-                    return karta.Status.Id;
+                    return karta.Status.Naziv;
                 }
             }
-            return -1;
+            return "Slobodna";
 
         }
 

@@ -77,6 +77,7 @@
             this.flwRezervacija = new System.Windows.Forms.FlowLayoutPanel();
             this.tbPonistavanjeKarte = new System.Windows.Forms.TabPage();
             this.tbPonistavanjeRezervacije = new System.Windows.Forms.TabPage();
+            this.btnRezervisi = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbProdajaKarte.SuspendLayout();
@@ -100,6 +101,7 @@
             this.gbRezervacijaPodaciOFilmu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sc2Rezervacija)).BeginInit();
             this.sc2Rezervacija.Panel1.SuspendLayout();
+            this.sc2Rezervacija.Panel2.SuspendLayout();
             this.sc2Rezervacija.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -574,6 +576,10 @@
             // sc2Rezervacija.Panel1
             // 
             this.sc2Rezervacija.Panel1.Controls.Add(this.flwRezervacija);
+            // 
+            // sc2Rezervacija.Panel2
+            // 
+            this.sc2Rezervacija.Panel2.Controls.Add(this.btnRezervisi);
             this.sc2Rezervacija.Size = new System.Drawing.Size(496, 373);
             this.sc2Rezervacija.SplitterDistance = 318;
             this.sc2Rezervacija.TabIndex = 0;
@@ -604,6 +610,16 @@
             this.tbPonistavanjeRezervacije.TabIndex = 3;
             this.tbPonistavanjeRezervacije.Text = "Ponistavanje rezervacije";
             this.tbPonistavanjeRezervacije.UseVisualStyleBackColor = true;
+            // 
+            // btnRezervisi
+            // 
+            this.btnRezervisi.Location = new System.Drawing.Point(273, 23);
+            this.btnRezervisi.Name = "btnRezervisi";
+            this.btnRezervisi.Size = new System.Drawing.Size(75, 23);
+            this.btnRezervisi.TabIndex = 0;
+            this.btnRezervisi.Text = "Rezervisi";
+            this.btnRezervisi.UseVisualStyleBackColor = true;
+            this.btnRezervisi.Click += new System.EventHandler(this.btnRezervisi_Click);
             // 
             // ZaposleniForm
             // 
@@ -642,6 +658,7 @@
             this.gbRezervacijaPodaciOFilmu.ResumeLayout(false);
             this.gbRezervacijaPodaciOFilmu.PerformLayout();
             this.sc2Rezervacija.Panel1.ResumeLayout(false);
+            this.sc2Rezervacija.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sc2Rezervacija)).EndInit();
             this.sc2Rezervacija.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -699,5 +716,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbxRezervacijaOpisRezervacije;
         private System.Windows.Forms.FlowLayoutPanel flwRezervacija;
+        private System.Windows.Forms.Button btnRezervisi;
     }
 }

@@ -48,7 +48,7 @@ namespace e_Bioskop
             if (p == 0)
             {
                 lista = BioskopUtil.getDAOFactory().getProjekcijaDAO().getByDateAndTime(DateTime.Now, DateTime.Now.TimeOfDay);
-                dataGridView1.Columns["colDatum"].Visible=false;
+                dataGridView1.Columns["colDatum"].Visible=true;
             }
             else
             {
