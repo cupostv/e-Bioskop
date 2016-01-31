@@ -47,7 +47,9 @@ namespace e_Bioskop
         {
             if (p == 0)
             {
-                lista = BioskopUtil.getDAOFactory().getProjekcijaDAO().getByDateAndTime(DateTime.Now, DateTime.Now.TimeOfDay);
+                DateTime sutra = DateTime.Today+new TimeSpan(1,0,0,0);
+                TimeSpan razlika = sutra - DateTime.Now;
+                lista = BioskopUtil.getDAOFactory().getProjekcijaDAO().getInInterval(DateTime.Now, sutra);
                 dataGridView1.Columns["colDatum"].Visible=true;
             }
             else
