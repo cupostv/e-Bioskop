@@ -31,9 +31,7 @@ namespace e_Bioskop
                     this.Hide();
                     if ((new UpravnikForm().ShowDialog()) == DialogResult.OK)
                     {
-                        tbxKorisnickoIme.Text = "";
-                        tbxLozinka.Text = "";
-                        this.Show();
+                        Refresh();
                     }
                     
                 }
@@ -43,12 +41,7 @@ namespace e_Bioskop
                     this.Hide();
                     if ((new AdministratorForm().ShowDialog()) == DialogResult.OK)
                     {
-                        tbxKorisnickoIme.Text = "";
-                        tbxLozinka.Text = "";
-                        lblGreska.Hide();
-                        tbxKorisnickoIme.Focus();
-
-                        this.Show();
+                        Refresh();
                     }
                 }
                 else
@@ -59,11 +52,7 @@ namespace e_Bioskop
                         this.Hide();
                         if ((new ZaposleniForm().ShowDialog()) == DialogResult.OK)
                         {
-                            tbxKorisnickoIme.Text = "";
-                            tbxLozinka.Text = "";
-                            lblGreska.Hide();
-                            tbxKorisnickoIme.Focus();
-                            this.Show();
+                            Refresh();
                         }
                     }
                 }
@@ -79,28 +68,41 @@ namespace e_Bioskop
         {
             if (string.IsNullOrEmpty(tbxKorisnickoIme.Text) || string.IsNullOrEmpty(tbxLozinka.Text))
             {
+                lblGreska.Text = "Pogrešno korisničko ime i/ili lozinka";
                 return false;
             }
 
             ZaposleniDTO zaposleni = BioskopUtil.getDAOFactory().getZaposleniDAO().getByUsername(tbxKorisnickoIme.Text);
             if (zaposleni == null)
             {
+                lblGreska.Text = "Pogrešno korisničko ime i/ili lozinka";
                 return false;
             }
 
             if (BioskopUtil.sha256(tbxLozinka.Text) != zaposleni.Lozinka)
             {
+                lblGreska.Text = "Pogrešno korisničko ime i/ili lozinka";
                 return false;
             }
 
             if (zaposleni.Aktivan == 0)
             {
+                lblGreska.Text = "Ovaj nalog je neaktivan, ne možete se prijaviti na sistem.";
                 return false;
             }
 
             BioskopUtil.prijavaZaposleni(zaposleni);
             
             return true;
+        }
+
+        private void Refresh()
+        {
+            tbxKorisnickoIme.Text = "";
+            tbxLozinka.Text = "";
+            lblGreska.Hide();
+            tbxKorisnickoIme.Focus();
+            this.Show();
         }
 
         private void PrijavaForm_FormClosed(object sender, FormClosedEventArgs e)

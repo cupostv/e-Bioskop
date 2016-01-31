@@ -46,7 +46,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             // tbxNaziv
             // 
-            this.tbxNaziv.Location = new System.Drawing.Point(172, 6);
+            this.tbxNaziv.Location = new System.Drawing.Point(172, 12);
             this.tbxNaziv.Name = "tbxNaziv";
             this.tbxNaziv.Size = new System.Drawing.Size(176, 20);
             this.tbxNaziv.TabIndex = 1;
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 44);
+            this.label2.Location = new System.Drawing.Point(12, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             // tbxBrojRedova
             // 
-            this.tbxBrojRedova.Location = new System.Drawing.Point(172, 42);
+            this.tbxBrojRedova.Location = new System.Drawing.Point(172, 45);
             this.tbxBrojRedova.Minimum = new decimal(new int[] {
             1,
             0,

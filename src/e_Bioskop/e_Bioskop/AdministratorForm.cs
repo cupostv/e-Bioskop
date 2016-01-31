@@ -179,11 +179,10 @@ namespace e_Bioskop
         private void prikaziDetalje(FilmDTO film)
         {
             lblNazivFilm.Text = film.Naziv;
-            lblFilmTrajanje.Text = film.Trajanje + "";
+            lblFilmTrajanje.Text = film.Trajanje.ToString();
             lblFilmZanr.Text = film.Zanr.Naziv;
             lblFilmStatus.Text = film.Status.Naziv;
             lblFilmOpis.Text = film.Opis;
-
             lblDistFilmNaziv.Text = film.Distributer.Naziv;
             lblDistFilmEmail.Text = film.Distributer.Email;
             lblDistFilmBrojTelefona.Text = film.Distributer.Telefon;

@@ -83,6 +83,16 @@ namespace e_Bioskop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dodajSala {
+            get {
+                object obj = ResourceManager.GetObject("dodajSala", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap filmovi_dodaj {
             get {
                 object obj = ResourceManager.GetObject("filmovi_dodaj", resourceCulture);
@@ -146,6 +156,16 @@ namespace e_Bioskop.Properties {
         internal static System.Drawing.Bitmap ok {
             get {
                 object obj = ResourceManager.GetObject("ok", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap podesavanja {
+            get {
+                object obj = ResourceManager.GetObject("podesavanja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
