@@ -30,6 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVrijeme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNazivFilma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colZanr = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +48,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
+            this.colDatum,
             this.colVrijeme,
             this.colNazivFilma,
             this.colZanr,
@@ -67,6 +69,11 @@
             this.colId.HeaderText = "Id";
             this.colId.Name = "colId";
             this.colId.Visible = false;
+            // 
+            // colDatum
+            // 
+            this.colDatum.HeaderText = "Datum";
+            this.colDatum.Name = "colDatum";
             // 
             // colVrijeme
             // 
@@ -127,6 +134,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDatum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVrijeme;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNazivFilma;
         private System.Windows.Forms.DataGridViewTextBoxColumn colZanr;

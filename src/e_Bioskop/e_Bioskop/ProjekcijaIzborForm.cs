@@ -20,6 +20,7 @@ namespace e_Bioskop
             set { lista = value; }
         }
         ProjekcijaDTO izabranaProjekcija = null;
+        private int p=0;
 
         public ProjekcijaDTO IzabranaProjekcija
         {
@@ -33,15 +34,32 @@ namespace e_Bioskop
             initDataGridView();
         }
 
+        public ProjekcijaIzborForm(int p)
+        {
+            this.p = 1;
+            InitializeComponent();
+            initDataGridView();
+
+        }
+
 
         private void initDataGridView()
         {
-            lista=BioskopUtil.getDAOFactory().getProjekcijaDAO().getByDateAndTime(DateTime.Now,DateTime.Now.TimeOfDay);
+            if (p == 0)
+            {
+                lista = BioskopUtil.getDAOFactory().getProjekcijaDAO().getByDateAndTime(DateTime.Now, DateTime.Now.TimeOfDay);
+                dataGridView1.Columns["colDatum"].Visible=false;
+            }
+            else
+            {
+                lista = BioskopUtil.getDAOFactory().getProjekcijaDAO().getInInterval(DateTime.Now, DateTime.Now + new TimeSpan(7, 0, 0, 0));
+                dataGridView1.Columns["colDatum"].Visible = true;
+            }
 
              dataGridView1.Rows.Clear();
             foreach (ProjekcijaDTO proj in lista)
             {
-                dataGridView1.Rows.Add(proj.Id,proj.Vrijeme.TimeOfDay,proj.Film.Naziv,proj.Film.Zanr.Naziv,proj.Film.Trajanje,proj.Sala.Naziv,proj.Film.Opis,proj.Cijena,"Izaberi");
+                dataGridView1.Rows.Add(proj.Id,proj.Vrijeme.ToShortDateString(),proj.Vrijeme.TimeOfDay,proj.Film.Naziv,proj.Film.Zanr.Naziv,proj.Film.Trajanje,proj.Sala.Naziv,proj.Film.Opis,proj.Cijena,"Izaberi");
             }
         }
 

@@ -170,7 +170,7 @@ namespace e_Bioskop
 
         private void btnRezervisanjeIzborProjekcije_Click(object sender, EventArgs e)
         {
-            ProjekcijaIzborForm pif = new ProjekcijaIzborForm();
+            ProjekcijaIzborForm pif = new ProjekcijaIzborForm(1);
             if (pif.ShowDialog() == DialogResult.OK)
             {
                 if (izabranaProjekcija == null || izabranaProjekcija.Id != pif.IzabranaProjekcija.Id)

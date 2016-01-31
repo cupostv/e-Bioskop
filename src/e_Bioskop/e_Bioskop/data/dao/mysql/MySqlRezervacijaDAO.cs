@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace e_Bioskop.data.dao.mysql
 {
-    class MySqlRezervacijaDAO : RezervacijaDAO
+    public class MySqlRezervacijaDAO : RezervacijaDAO
     {
         public static RezervacijaDTO readerToRezervacijaDTO(MySqlDataReader reader)
         {
