@@ -181,7 +181,7 @@ DROP TABLE IF EXISTS `rezervacija`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `rezervacija` (
-  `vrijemeRezervacija` date DEFAULT NULL,
+  `vrijemeRezervacija` datetime DEFAULT NULL,
   `idZaposleni` int(11) NOT NULL,
   `opisRezervacija` varchar(70) COLLATE utf8_unicode_ci DEFAULT NULL,
   `idRezervacija` int(11) NOT NULL AUTO_INCREMENT,

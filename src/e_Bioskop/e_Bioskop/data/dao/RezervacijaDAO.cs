@@ -8,5 +8,8 @@ namespace e_Bioskop.data.dao
 {
     public interface RezervacijaDAO
     {
+        List<RezervacijaDTO> getAllByProjekcija(ProjekcijaDTO projekcija);
+        long insert(RezervacijaDTO rezervacija);
+        bool update(RezervacijaDTO rezervacija);
     }
 }
