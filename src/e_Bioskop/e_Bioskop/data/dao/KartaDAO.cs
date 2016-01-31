@@ -14,6 +14,8 @@ namespace e_Bioskop.data.dao
 
         List<KartaDTO> getByStatus(StatusKartaDTO status);
 
+        List<KartaDTO> getByProjekcijaAndRezervacija(ProjekcijaDTO projekcija, RezervacijaDTO rezervacija);
+
         KartaDTO getById(int id);
 
         long insert(KartaDTO karta);

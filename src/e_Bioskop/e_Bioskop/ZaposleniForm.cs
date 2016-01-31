@@ -129,11 +129,18 @@ namespace e_Bioskop
         {
             if (listaIzabranihSjedista != null && listaIzabranihSjedista.Count() > 0)
             {
+                StatusKartaDTO prodana= BioskopUtil.getDAOFactory().getStatusKartaDAO().getByNaziv("Prodana");
+                StatusKartaDTO rezervisana=BioskopUtil.getDAOFactory().getStatusKartaDAO().getByNaziv("Rezervisana");
+                List<KartaDTO> listaZaRezervaciju=new List<KartaDTO>();
+                if(izabranaRezervacija!=null)
+                {
+                listaZaRezervaciju=BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcijaAndRezervacija(izabranaProjekcija,izabranaRezervacija);
+                }
                 foreach (Button b in listaIzabranihSjedista)
                 {
                     KartaDTO karta = new KartaDTO();
                     karta.Projekcija = izabranaProjekcija;
-                    karta.Status = BioskopUtil.getDAOFactory().getStatusKartaDAO().getByNaziv("Prodana");
+                    karta.Status = prodana;
                     karta.Zaposleni = BioskopUtil.getPrijavljeniZaposleni();
                     string str = b.Name.Replace("prodaja", "");
                     char[] del={'_'};
@@ -148,7 +155,13 @@ namespace e_Bioskop
                             karta.Id = id;                            
                         }
                     }
-
+                    if (s.Length == 3)
+                    {
+                        karta = listaZaRezervaciju.Where(x => x.Id == int.Parse(s[0])).First();
+                        karta.Status = prodana;
+                        karta.Zaposleni = BioskopUtil.getPrijavljeniZaposleni();
+                        BioskopUtil.getDAOFactory().getKartaDAO().update(karta);
+                    }
                 }
                 fillProjekcijaProdajaKarteControlls();
                 
@@ -240,9 +253,17 @@ namespace e_Bioskop
             if (rpf.ShowDialog() == DialogResult.OK)
             {
                 izabranaRezervacija = rpf.IzabranaRezervacija;
-                List<KartaDTO> listaKarataZaRezervaciju = BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcija(izabranaProjekcija).Where(x => x.Rezervacija != null && x.Rezervacija.Id == izabranaRezervacija.Id).ToList();
-
+                List<KartaDTO> listaKarataZaRezervaciju = BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcijaAndRezervacija(izabranaProjekcija,izabranaRezervacija);
+                
                 BioskopUtil.initSjedistDTOFlowLayout(flwProdaja, izabranaProjekcija, prodajaIzborSjedistaClick, prodajaListaVecIzdatihKarata);
+                listaIzabranihSjedista.Clear();
+                foreach(KartaDTO karta in listaKarataZaRezervaciju)
+                {
+                    Button b = (Button)flwProdaja.Controls["prodaja" + karta.BrojReda + "_" + karta.BrojSjedista];
+                    b.Name = karta.Id+"_"+b.Name;
+                    b.BackColor = System.Drawing.Color.Yellow;
+                    listaIzabranihSjedista.Add(b);
+                }
             }
         }
     }

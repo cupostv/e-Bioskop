@@ -40,10 +40,10 @@ namespace e_Bioskop.data.dao.mysql
                                        + " inner join status_karta sk on k.idStatusKarta = sk.idStatusKarta "
                                        + " where sk.idStatusKarta=?idStatusKarta;";
 
-        private string getByIdQuerry = "select k.idKarta, datumProdaje, k.idZaposleni, korisnickoIme, lozinka, ime, prezime, "
+        private string getByIdQuerry = "select k.idKarta, brojReda,brojSjedista,datumProdaje, k.idZaposleni, korisnickoIme, lozinka, ime, prezime, "
                                        + " datumRodjenja, telefon, e_mail, aktivan, "
                                        + " sk.idStatusKarta, NazivStatusKarta, p.idProjekcija, idFilm, vrijemeProjekcija, cijenaProjekcija, "
-                                       + " sl.idSala, nazivSala, aktivna, "
+                                       + " sl.idSala, nazivSala, aktivna,brojRedova,brojSjedistaURedu "
                                        + " r.idRezervacija, vrijemeRezervacija, opisRezervacija "
                                        + " from karta k "
                                        + " inner join zaposleni z on k.idZaposleni = z.idZaposleni "
@@ -54,6 +54,7 @@ namespace e_Bioskop.data.dao.mysql
                                        + " where k.IdKarta=?idKarta;";
 
         private string insertQuerry = "INSERT INTO `e_bioskop`.`karta` (`cijenaKarta`, `datumProdaje`, `idZaposleni`, `idProjekcija`, `idRezervacija`, `idStatusKarta`, `brojReda`, `brojSjedista`) VALUES (?cijenaKarta, ?datumProdaje, ?idZaposleni, ?idProjekcija, ?idRezervacija, ?idStatusKarta, ?brojReda, ?brojSjedista);";
+        private string getByRezervacijaAndProjekcijaQuerry = "select k.idKarta,brojReda,brojSjedista,datumProdaje, k.idZaposleni, korisnickoIme, lozinka, ime, prezime,  datumRodjenja, telefon, e_mail, aktivan,  sk.idStatusKarta, NazivStatusKarta from karta k inner join zaposleni z on k.idZaposleni=z.idZaposleni inner join status_karta sk on k.idStatusKarta=sk.idStatusKarta where idRezervacija=?idRezervacija and idProjekcija=?idProjekcija;";
 
         private string updateQuerry = "UPDATE `e_bioskop`.`karta` SET `cijenaKarta`=?cijena, `datumProdaje`=?datumProdaje, `idZaposleni`=?idZaposleni, `idProjekcija`=?idProjekcija, `idRezervacija`=?idRezervacija, `idStatusKarta`=?idStatusKarta, `brojReda`=?brojReda, `brojSjedista`=?brojSjedista WHERE `idKarta`=?idKarta;";
 
@@ -177,10 +178,29 @@ namespace e_Bioskop.data.dao.mysql
             command.Parameters.AddWithValue("brojReda", karta.BrojReda);
             command.Parameters.AddWithValue("brojSjedista", karta.BrojSjedista);
             command.Parameters.AddWithValue("idKarta", karta.Id);
+            command.Parameters.AddWithValue("cijena", karta.Cijena);
             int rows = command.ExecuteNonQuery();
             return rows > 0;
         }
 
+        public List<KartaDTO> getByProjekcijaAndRezervacija(ProjekcijaDTO projekcija, RezervacijaDTO rezervacija)
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = getByRezervacijaAndProjekcijaQuerry;
+            command.Parameters.AddWithValue("idProjekcija", projekcija.Id);
+            command.Parameters.AddWithValue("idRezervacija", rezervacija.Id);
+            MySqlDataReader reader = command.ExecuteReader();
+            List<KartaDTO> lista = new List<KartaDTO>();
+            while (reader.Read())
+            {
+                KartaDTO karta = readerToKartaDTO(reader, projekcija, rezervacija);
+                lista.Add(karta);
+            }
+            reader.Close();
+            ConnectionPool.checkInConnection(connection);
+            return lista;
+        }
         public static KartaDTO readerToKartaDTO(MySqlDataReader reader)
         {
             KartaDTO karta = new KartaDTO();
@@ -209,6 +229,20 @@ namespace e_Bioskop.data.dao.mysql
             karta.Zaposleni = MySqlZaposleniDAO.readerToZaposleni(reader);
             karta.Projekcija = projekcija;
             //karta.Rezervacija = MySqlRezervacijaDAO.readerToRezervacijaDTO(reader);
+            karta.Status = MySqlStatusKartaDAO.readerToStatusKartaDTO(reader);
+            return karta;
+        }
+
+        public static KartaDTO readerToKartaDTO(MySqlDataReader reader, ProjekcijaDTO projekcija,RezervacijaDTO rezervacija)
+        {
+            KartaDTO karta = new KartaDTO();
+            karta.Id = reader.GetInt32("idKarta");
+            karta.DatumProdaje = reader.GetDateTime("datumProdaje");
+            karta.BrojReda = reader.GetInt32("brojReda");
+            karta.BrojSjedista = reader.GetInt32("brojSjedista");
+            karta.Zaposleni = MySqlZaposleniDAO.readerToZaposleni(reader);
+            karta.Projekcija = projekcija;
+            karta.Rezervacija = rezervacija;
             karta.Status = MySqlStatusKartaDAO.readerToStatusKartaDTO(reader);
             return karta;
         }
