@@ -51,7 +51,7 @@
       </counter>
       <counter>
         <item-type stereotype="" type="AbstractElementGroup" />
-        <value>36</value>
+        <value>3</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -103,7 +103,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-activity" id="pad198ed9611b4251abb230630b8ed878_473270258" name="AžuriranjeZaposlenih" order-index="1" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="0,-6" zoom="0.6">
+      <diagram type="uml-activity" id="pad198ed9611b4251abb230630b8ed878_473270258" name="AžuriranjeZaposlenih" order-index="1" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="0,123" zoom="0.6">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -336,11 +336,11 @@
             <layout ax="326" ay="942" awidth="25" aheight="25" x="326" y="942" width="25" height="25" angle="0" name-position="0,10" name-anchor="bottom" />
           </item>
           <item id="di376846799457593302" iid="0bccce8c432b4938a93f7746425cfb67" creation-date="11/29/2015 15:45:46" order-index="21" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="548" y1="864" x2="338" y2="942" start-border-pos="0.877659574468085" end-border-pos="0.12" name-position="10,-10">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="false" lock-to-fields="false" auto-path="" x1="630" y1="888" x2="351" y2="951" start-border-pos="0.610544217687075" end-border-pos="0.340616455078125" name-position="10,-10">
               <points>
-                <point x="548" y="864" />
-                <point x="338" y="864" />
-                <point x="338" y="942" />
+                <point x="630" y="888" />
+                <point x="438" y="931" />
+                <point x="351" y="951" />
               </points>
             </layout>
             <relation from="di810315968817390878" from-iid="809d715014394e878b18318e311b0930" to="di266721285875959222" to-iid="9ec90260c1194682bfeac8cf24fc15d2" />
