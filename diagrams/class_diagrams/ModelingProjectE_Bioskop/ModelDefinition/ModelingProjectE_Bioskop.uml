@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="5e67811f-5096-434b-863a-15f354efedf4"
+  name="ModelingProjectE_Bioskop" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="8fca9e8f-f667-41d2-b570-6d16f02c734f"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3D::"
+      tag="ViewCode" />
+  </referencesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="5445d36d-d346-4d21-a4f1-44a81eaaf3a8">
+      <profileInstance
+        Id="c06dcbbc-6c3b-4f95-9d6c-cc6fb0b03382"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="4393d5fb-fca5-44b2-82fe-9fb939354344"
+        LastKnownName="e_Bioskop"
+        LastKnownLocation="Package_2242.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="70bdbe37-ce4e-4820-86d5-2e2370aa95d4"
+        LastKnownName="System"
+        LastKnownLocation="Package3_2242.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fd521f75-bae1-4fa7-ad89-adb99eba8d71"
+        name="MySqlConnection"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="265af34f-1987-46bc-8b88-54ae4d907624"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Type%3DMySqlConnection"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="954d37d6-d0d8-43e1-aec4-d9702631c88c"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="123906f4-780c-4d0b-8a82-4225b886d233">
+                <propertyInstance
+                  Id="ad680dce-f144-4c97-9e7d-17e3ad7b298e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6fae8776-4ab3-4edd-a9f8-ff22c96e77d1">
+                <propertyInstance
+                  Id="6787e261-32a2-4eaa-beab-e9b52a9bf656"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="da12fcaa-21e7-471b-8d75-e005a6b5c74e">
+                <propertyInstance
+                  Id="422c9399-1e79-4278-b9a6-514575fc4987"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a9efcf87-2839-4d41-84d5-c06fc9aae3e9">
+                <propertyInstance
+                  Id="24022ad1-0051-49a7-ba85-a52cc9a09804"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4aabb2b2-987e-4a4f-9eba-e1d0c99c84b5">
+                <propertyInstance
+                  Id="c8ddcc29-c6a8-4635-b54c-61064259fa4b"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="59d54b44-e165-4b5c-8d72-4719babef3da"
+        name="MySqlDataReader"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="31cb034d-62fb-4966-8baa-9d53b80f61dc"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Type%3DMySqlDataReader"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c24362ca-1839-458e-a5ef-edad6f61dd3a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2959ff8d-0185-4914-88b5-a3f9de8ac1fe">
+                <propertyInstance
+                  Id="73fb7f69-bc19-4e15-bddc-3cfff375ddd4"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b00ffcb8-8501-4552-b1f7-0da70a1a892c">
+                <propertyInstance
+                  Id="71b9a0e8-a7b5-4c7b-b9e2-0f1d6c4ac3fd"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="06dec46a-8451-4282-8abb-d0e92c9e28c0">
+                <propertyInstance
+                  Id="7423f22c-4bed-47b9-aa0f-aae6bb0a918d"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1ba2e5c7-7f40-418f-a5e9-a83719fe801c">
+                <propertyInstance
+                  Id="05678c14-30b9-4028-acca-e9e4c59a8097"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="379393ae-59df-4964-96ba-8ff6802446bf">
+                <propertyInstance
+                  Id="9476bb9e-5722-4b79-87f2-8a3f46457e4f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

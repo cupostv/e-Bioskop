@@ -1,0 +1,1765 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d4d79270-5910-4580-bc11-2aea7c79ed26"
+  name="Properties"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="a03409d1-27c4-464b-b158-0dccf59cb2c7"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3De_Bioskop.Properties"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="60e7e89a-a259-4e20-82a2-ca5094d4b916"
+        name="Resources"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="8a5550ad-4d86-4cf2-986b-431fdf20ebc3"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="7120f20d-2479-4af4-be3d-9dc8cffdcf1d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="54e65810-da62-4867-a4f5-12d44f261ef0">
+                <propertyInstance
+                  Id="45eb2cdb-80f6-427f-bc75-dd0331a4a801"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3b8e21f9-ba09-4ae5-b449-d66fc40e84f1">
+                <propertyInstance
+                  Id="138c269a-f42e-4d26-bb44-ea6a2eb47fd6"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="289033ff-cabb-478c-ad80-c204473df257">
+                <propertyInstance
+                  Id="db4fbfae-a007-4232-b910-421d1a035553"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6d7c1e45-28eb-4389-a4af-72119f08b33c">
+                <propertyInstance
+                  Id="5c524055-0ba4-4cee-8a72-5c6cf2311c9f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5fa3f9df-6347-4753-a08f-323213b552df">
+                <propertyInstance
+                  Id="2df47621-d7ab-4d37-9a95-a06192c40924"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="b8ba26b0-f99f-44dc-85cf-4b275abb7936"
+            name="ResourceManager"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9dd741a4-478e-47ea-a21e-580bdc02b6af"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3DResourceManager"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ae15b0b2-fa45-4592-83e9-1d62b99f68a1"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="afeb60d9-7f56-4f19-94c3-0cc6d2b87b46">
+                    <propertyInstance
+                      Id="1d21ae87-b4ee-41c9-b2dd-bccd5006294a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="630c8728-288b-4946-94a8-a4f2e1ca67a5">
+                    <propertyInstance
+                      Id="9b0c7cd4-ed4c-4bb2-bb0e-c057a06a57b9"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92ab8870-d6dd-490c-9f60-59ad427d532d">
+                    <propertyInstance
+                      Id="89a424f9-52c8-488a-8657-4a8f2469ba8b"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="654fe6d7-b338-4ebd-83cc-cc0d17e59773">
+                    <propertyInstance
+                      Id="70335897-be64-4db8-9612-5d8a031e735d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="11b9c3b4-3dbd-4329-85a6-bf5e3089d01f">
+                    <propertyInstance
+                      Id="52a3b071-b93f-4e2f-afa6-b5cfb0fd06a9"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="217c106f-1e01-40a4-ad78-dc860f92b837">
+                    <propertyInstance
+                      Id="7a4e30ed-ad5e-441f-a453-80b91beb6d8a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf316211-df49-496f-ab0a-ecbd683fa710">
+                    <propertyInstance
+                      Id="d612328e-827e-4c6b-a40a-2cfcfdfcdbe4"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="b449793a-3f87-4989-8645-296a64c1562e"
+                LastKnownName="ResourceManager"
+                LastKnownLocation="Package1_2302.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f84a82a6-a142-45d5-8027-3b2a34328464"
+            name="Culture"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="208da12d-edd2-4d20-a80c-f43584f30393"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3DCulture"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c4203e82-d190-4bfe-a645-3715acdb8026"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fc27256-54f9-477f-818b-c7711b00b8b8">
+                    <propertyInstance
+                      Id="e156a5a3-e640-4265-8804-6198a65f1e7b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b78e3eb-cc1d-441b-9029-81cf4bfd67eb">
+                    <propertyInstance
+                      Id="65552430-387a-49fb-9605-51813f262558"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1036d007-0964-4e02-b4a3-f14d41609d98">
+                    <propertyInstance
+                      Id="f9d1c027-7376-4054-8570-d7cf97cf9851"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16f13d8e-4947-4aa1-b1ba-9298c3ac59fa">
+                    <propertyInstance
+                      Id="1d7889f5-a221-4837-8fce-c520d2f97d96"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0a455ce8-19d2-4656-8b5a-f03ac9bba650">
+                    <propertyInstance
+                      Id="40da5ab1-f85f-4bd7-9185-3644de6879d8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b7826de6-5dd3-4bef-8845-1e13072218c9">
+                    <propertyInstance
+                      Id="c943d520-7e1f-438d-82f7-524a4b793375"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6d21585-523a-4e52-b78f-4465be0f6a07">
+                    <propertyInstance
+                      Id="62454953-cdd9-46ac-b712-0eb5061c5f3c"
+                      name="Set"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="f927e917-043d-498d-af32-634d619b6b6e"
+                LastKnownName="CultureInfo"
+                LastKnownLocation="Package2_2302.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3603ba2e-a497-4ace-8214-2a5403e2f1c1"
+            name="crveno"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="db93f0a2-de48-4499-ba57-d442cb746577"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3Dcrveno"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f69e53b0-b087-46ed-a94b-abdeee7daea6"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="938bcb43-c6bd-4e4f-adcb-a1b41b583b7b">
+                    <propertyInstance
+                      Id="d32ea80d-a491-4a78-bc00-6a0c215d1314"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c963f6d-4b5c-4389-b79b-5cf85134d969">
+                    <propertyInstance
+                      Id="ae99c1c9-6d0c-4225-944b-65f1dc8979da"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="666e0844-18b7-43cc-aaa7-1163ec67a76c">
+                    <propertyInstance
+                      Id="9659fcf3-9948-42e7-b2e6-be8656935d6b"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7476bb1e-7645-4872-a7fa-cf7c8150142f">
+                    <propertyInstance
+                      Id="335f11e0-2eb0-472c-8ea8-50c7e8f80a97"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="97dc5dec-2114-4501-9090-bfd7dd0c4084">
+                    <propertyInstance
+                      Id="3ae7808d-8728-4d94-93f3-e97758241705"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ad695a65-2aed-4a35-9168-a4b983f5b44f">
+                    <propertyInstance
+                      Id="049d5b34-8623-49a1-8f57-71f045fbb88a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c4e71771-75c6-4d40-8030-ecb0e511d8fd">
+                    <propertyInstance
+                      Id="2c67d408-b11a-42bb-b10c-081a4dd0e4b0"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="860215b9-5949-4b11-885d-83883a773705"
+                LastKnownName="Bitmap"
+                LastKnownLocation="Package10_2242.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="88cc8858-44b1-4c09-8fc0-47d2e12fe17e"
+            name="distributer_dodaj"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="60df2523-e8de-4ba3-9a20-b6aaa89a146d"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3Ddistributer_dodaj"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9451ee33-90c9-4eaa-92a4-852b2165397f"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="781d7c51-0a28-4f82-8c08-2f77ee13e7d1">
+                    <propertyInstance
+                      Id="f0ec8a14-dda3-4419-a90a-714cfcd21050"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e16d1ecb-10d5-4909-9cf5-8a29dca51c3e">
+                    <propertyInstance
+                      Id="5e511bab-40a3-497d-9598-160855656255"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="915936c7-a177-44d4-b48d-7b576cd5dc3f">
+                    <propertyInstance
+                      Id="52e14273-ceb4-45f2-b745-30265b7441e9"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c4f5fe0c-f9ad-491b-98ed-4d9e40d2acb7">
+                    <propertyInstance
+                      Id="0778c551-0882-440b-ba14-5fc2a5040924"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="997f31b2-d595-4114-a10e-f02e92f89336">
+                    <propertyInstance
+                      Id="a3f5b6a5-e5c2-493d-94f8-c87b6c9a8240"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e498696-ec16-4fae-9494-9b36ffccf9c2">
+                    <propertyInstance
+                      Id="c4a2b514-0931-48f5-bda5-0439df831f54"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7a156ced-dff6-4a03-b048-30444225ed78">
+                    <propertyInstance
+                      Id="a80620e0-2086-47ba-a6c7-4f3a2c2fe507"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="860215b9-5949-4b11-885d-83883a773705"
+                LastKnownName="Bitmap"
+                LastKnownLocation="Package10_2242.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="fde7c49b-ad5e-43ff-9b21-74f625fab668"
+            name="dodajSala"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="daab03c1-e991-456e-90ba-5c35e2d11664"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3DdodajSala"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1754c179-9522-4fb5-83b1-a1b8e1410828"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fcfba96-020e-48aa-aa35-4d8c2412f81a">
+                    <propertyInstance
+                      Id="876695b1-fa8c-4720-999b-dcd0982c6f96"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="47ba6f91-b76c-447a-8fd1-8c99e0453f3c">
+                    <propertyInstance
+                      Id="92b4a041-65de-43ce-a61c-c342c4b52a1f"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fabc9403-4655-4832-baca-3b34a228be87">
+                    <propertyInstance
+                      Id="04fbd8d5-a583-4324-8d97-4082c86bb3df"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9c9b91f-b4f7-45b7-957a-0a3688da961a">
+                    <propertyInstance
+                      Id="9f7b4619-3176-4a4d-9fb4-3e9f47aaa0ce"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cc7fc6b6-d556-4c30-97bd-8ec93c5294ac">
+                    <propertyInstance
+                      Id="5436ef13-2645-43e3-aa71-b9cec274e2be"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b14cccd7-b8e5-49d4-b19b-f1dede2430ad">
+                    <propertyInstance
+                      Id="071fbff8-968a-4611-bce1-a72928975b23"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e0738a97-8612-485b-be97-7f9a594d0f10">
+                    <propertyInstance
+                      Id="331d9a7d-e083-478b-9ce8-fc4b9d8bbc28"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="860215b9-5949-4b11-885d-83883a773705"
+                LastKnownName="Bitmap"
+                LastKnownLocation="Package10_2242.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3b54c1d3-8185-4a2a-b8c8-fdb315b8df8f"
+            name="filmovi_dodaj"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f01240ac-7861-45cd-92a2-232e2e2a3cc6"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3Dfilmovi_dodaj"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d00b0280-3cdf-4c05-8cb8-44f438828c72"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f46645ee-5b18-4676-90c8-b5cceff2f98b">
+                    <propertyInstance
+                      Id="bd7dbcb7-b06b-4583-9dd5-1d1529184745"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6e7536cb-4913-4ea2-9e23-50ef472dac9f">
+                    <propertyInstance
+                      Id="4da30ea9-694a-42b6-aa96-c720be35dc1a"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cc872f2a-b154-4184-b661-299e3e52bf93">
+                    <propertyInstance
+                      Id="1ce73f8b-b5c4-4742-b665-df61d1b799cb"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f5d04513-9eb0-43d0-a876-5030580b2079">
+                    <propertyInstance
+                      Id="05fe9a05-16c4-4723-92e3-70d415c7af0e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="365e9fe9-f81d-4fc9-af7e-e10a57dc386b">
+                    <propertyInstance
+                      Id="7adf613b-8c18-4c5a-8fd4-728cb4bd96e5"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="76a682ae-4dc9-4b81-8098-79e377e989e0">
+                    <propertyInstance
+                      Id="3e38916f-edec-4b3c-8442-f0fac92983f5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="49c6474b-cf14-47cb-a222-5af324207c0c">
+                    <propertyInstance
+                      Id="54f3bf30-fa6b-40a7-9a8e-dc1484c6b34d"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="860215b9-5949-4b11-885d-83883a773705"
+                LastKnownName="Bitmap"
+                LastKnownLocation="Package10_2242.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c76ca26d-da73-4b69-bd16-2f1719290372"
+            name="korisnik"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="58dd4d25-9cb3-4c67-b986-5e2897cabf58"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3Dkorisnik"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="67e4477d-f2f4-4488-a1e3-162c8d01d30d"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f5394fe9-f331-421d-9120-b733aa32bf2f">
+                    <propertyInstance
+                      Id="5ba2e1d8-7e08-4dbf-8a26-d7f0a22d8854"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f643dc9e-52b6-4d76-a927-978ce692bfae">
+                    <propertyInstance
+                      Id="2587f8b1-1ac1-4a04-8b35-a391c588d8d0"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="17d581fc-178a-4d3f-95b6-3b5fabcc6615">
+                    <propertyInstance
+                      Id="b8fcb2bb-c7c9-453b-8302-42b08acbacf6"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="20d5afe7-52b0-40e0-a4e5-359bdca66746">
+                    <propertyInstance
+                      Id="b90023a1-3985-4fec-864c-7d8ec95601a1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ae05c88-ead9-46c5-b303-f3a47f9895aa">
+                    <propertyInstance
+                      Id="7a31ba7f-733a-4efd-9602-2a1ab7bde285"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3fd2d2d-e905-4ce6-a952-b619fb7af75d">
+                    <propertyInstance
+                      Id="995374e3-d865-413d-b6f3-97437a78aa87"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5c01c3ce-8aca-4226-9969-e6eb09e38fd9">
+                    <propertyInstance
+                      Id="2ea474a9-a455-447c-8e56-231709b3d55f"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="860215b9-5949-4b11-885d-83883a773705"
+                LastKnownName="Bitmap"
+                LastKnownLocation="Package10_2242.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0ac3e3fe-0cd5-4224-9ebe-561826397893"
+            name="korisnik_dodaj"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="46898a91-9ca8-4c69-94db-c24916ba1c3f"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3Dkorisnik_dodaj"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="64da84b5-6de7-4012-94ce-34f1b4948375"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="34cd0cb9-5b73-48be-a9a9-352ff7a48a65">
+                    <propertyInstance
+                      Id="354ae3fa-260e-4740-85d9-d80684e54db1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eb1f979b-b396-4bda-b4fe-0c0185610ec3">
+                    <propertyInstance
+                      Id="181090fa-13e4-453c-a3a0-d8cf5bbb9be5"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3ec165a2-3e70-458b-923a-ef4045926e29">
+                    <propertyInstance
+                      Id="c3a2a484-d293-4ce4-9226-fa5b603aa177"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1328c950-59a3-4ef1-a240-cfd1ecea3eaa">
+                    <propertyInstance
+                      Id="291c01da-ead2-429c-bb63-46ee2b374e65"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2dfde1b9-7f8b-4883-adf8-10ffd40b46cf">
+                    <propertyInstance
+                      Id="6305bbca-1340-42a5-8e53-bb1d0723f403"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ab2794b5-d9d3-437b-b086-4066a252292f">
+                    <propertyInstance
+                      Id="245bde60-959e-403c-8e5c-e45c4b0e35c5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="03b98f44-13e1-46b7-b54e-412b4ef78086">
+                    <propertyInstance
+                      Id="bdf86aca-33ac-47c3-b1e4-7c18ac4583c6"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="860215b9-5949-4b11-885d-83883a773705"
+                LastKnownName="Bitmap"
+                LastKnownLocation="Package10_2242.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="684924da-0687-464b-801e-b5f839b33380"
+            name="lista"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="45f1b240-7101-4a34-af0e-2d5f618929e1"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3Dlista"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d6272eed-8b78-4eeb-8a18-00d924e5b338"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="851d835d-b291-4348-99ee-ae0cfb3048ed">
+                    <propertyInstance
+                      Id="f202faa5-3457-4d78-9334-8d185113363c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f2bd4b14-a0fb-4ffa-a5c7-91131c21a85a">
+                    <propertyInstance
+                      Id="cce68eb1-37b3-49e7-9bb6-647d8af95d1f"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a008cf3-2116-4519-a7e8-acca3ac01246">
+                    <propertyInstance
+                      Id="43d6cf13-b3e7-43b9-b4ab-23aad4dfa36d"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="902b2038-47a5-4061-8854-a54659eb07fe">
+                    <propertyInstance
+                      Id="bfe523cd-d645-437b-8d0c-028c189022ff"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c022be32-253f-4bae-abfd-0309129a79cd">
+                    <propertyInstance
+                      Id="fea63063-3062-4f96-8b78-d7090014c124"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3e5f4832-d53b-4dcf-a12b-de37490a390d">
+                    <propertyInstance
+                      Id="602ed512-6b25-4f3e-85f1-10143f7e3510"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41e13e08-7bc2-4944-b3c6-3c564169d3d6">
+                    <propertyInstance
+                      Id="93fb1216-c099-497b-a2c9-a83865e86754"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="860215b9-5949-4b11-885d-83883a773705"
+                LastKnownName="Bitmap"
+                LastKnownLocation="Package10_2242.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0ed4dab3-dbed-4902-92a7-2e69880e5135"
+            name="lozinka"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3e793fb7-0542-4de3-99aa-5998ad4fb27a"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3Dlozinka"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="790e3532-1e0e-4556-b306-5650361a8fe6"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7d49709a-9260-42e6-9ea7-df476cd8cdad">
+                    <propertyInstance
+                      Id="f72c96c9-1c32-4b7a-bf2b-fe5cc73c3586"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1dabbaef-2cc3-4989-8912-04453dd98985">
+                    <propertyInstance
+                      Id="4e2eac2d-f760-4900-acbd-19eab0d17d9a"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="091c4fcb-92dc-4c83-a423-e977b0dd8832">
+                    <propertyInstance
+                      Id="5831e443-8710-4014-a0bb-f16102dd8217"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ee31a1c-04f2-419c-8270-48262680d615">
+                    <propertyInstance
+                      Id="7a3dcf71-c5bd-4ab6-99aa-f164842039bb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7a54ef5-00f1-4fbf-8644-a90a4441496c">
+                    <propertyInstance
+                      Id="9b0b6886-9b92-47df-b514-b86fd551404f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ca32b65-82c2-4d9e-815c-490908f6a6f4">
+                    <propertyInstance
+                      Id="63954306-5bf7-4e12-b7bd-23bd4455d57f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="89c54822-02c6-45da-83e9-1c51e926957f">
+                    <propertyInstance
+                      Id="2c6f1c68-4af6-4e48-bf68-c15af681e291"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="860215b9-5949-4b11-885d-83883a773705"
+                LastKnownName="Bitmap"
+                LastKnownLocation="Package10_2242.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f8c7f32e-9870-42f9-a138-daea30b7a089"
+            name="odjava"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3c06a9c6-b6a8-4a08-8b34-e32b5a2818ca"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3Dodjava"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3be9f39b-5576-45fb-a809-97f841bbc2c3"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="21142474-f44f-4f61-ae8d-7354ab51d414">
+                    <propertyInstance
+                      Id="9ba693a6-e01c-4008-9991-49f1600a6984"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a6627e6f-4845-43a1-b1a6-0f818935bef7">
+                    <propertyInstance
+                      Id="5dbb1f4e-13b6-4261-b17b-88ec169e47da"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="83f981dd-a02a-4398-ba08-40c8164ebfcd">
+                    <propertyInstance
+                      Id="e919a8cf-aa5c-409c-9695-9f4e5701a02c"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="401d3394-8467-47b4-882a-780b259a198b">
+                    <propertyInstance
+                      Id="80b92657-1384-49b2-80fa-058839a02537"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3d559a3-be2b-4d88-a961-3b04091fad89">
+                    <propertyInstance
+                      Id="605abd77-9446-44a6-aaf7-8cd40fd469e3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1b078b30-50cc-4ab3-9dc5-aa03bce99607">
+                    <propertyInstance
+                      Id="4c0538ac-d096-42ca-8dcc-5477af9d9b5f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35cf2497-127d-4490-a35d-cf68f9e8b911">
+                    <propertyInstance
+                      Id="d21dcaf9-3209-4089-bacc-b5cb69e17cce"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="860215b9-5949-4b11-885d-83883a773705"
+                LastKnownName="Bitmap"
+                LastKnownLocation="Package10_2242.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="28d152f4-62b6-474f-aa78-a2a177a34544"
+            name="ok"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="58ac246a-44f7-4bb5-b14a-42915514c40d"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3Dok"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="bd7d59d6-25d2-40b8-9d1b-9480550e1fac"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="924b4de0-71d3-4e6f-8bac-288e61aa1c76">
+                    <propertyInstance
+                      Id="0af8d1f0-bbee-4040-82c3-e32693e968ac"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f8f00342-dab8-4094-8efc-4619a3760682">
+                    <propertyInstance
+                      Id="c1819f72-cbb1-4199-a398-048a8681a50e"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="38328cea-2edd-4c93-aab1-5d3ec04d523b">
+                    <propertyInstance
+                      Id="737113ee-75d8-48ae-9aff-830f6b5a65f4"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="40656cae-cb5a-452c-aa2c-30c2d16649f2">
+                    <propertyInstance
+                      Id="50a8dd44-5447-453e-aeb2-4894d01a2a88"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f7aee7b2-586e-4fe2-9d7e-a030b06d69f6">
+                    <propertyInstance
+                      Id="bd771d6e-a94c-4f95-b20e-001911a87a8b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f53de04-3643-46ae-bc89-ae3a24bb5ec8">
+                    <propertyInstance
+                      Id="e6726394-c401-4509-adb3-df9a8880c767"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb514e2a-3d65-4260-979b-41f62a95dc72">
+                    <propertyInstance
+                      Id="0ee433ad-9e72-4159-8829-6239a81d67a7"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="860215b9-5949-4b11-885d-83883a773705"
+                LastKnownName="Bitmap"
+                LastKnownLocation="Package10_2242.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="29dfc462-e6f8-47d4-be80-3f3f11287487"
+            name="podesavanja"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="27c0a476-db59-4c67-b7f1-85468b0eabd3"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3Dpodesavanja"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="11a97163-79b3-4de0-8e49-57282677b18f"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="736d5960-dccf-48ad-a7aa-35c07c6d3403">
+                    <propertyInstance
+                      Id="fb283e94-2778-471f-b781-866b589d4715"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a838dfb6-a556-4810-8ef4-1da84f5df234">
+                    <propertyInstance
+                      Id="dc622d82-eddc-4883-bf6e-24ecbe7dd33b"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35e5bc7a-9896-4f49-bd72-cdaaa0f83b91">
+                    <propertyInstance
+                      Id="97ac4080-12ea-448e-8671-fec23271b5b5"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b2cbe563-158c-4d25-a3b6-4727a2debf4f">
+                    <propertyInstance
+                      Id="a411595a-5d16-47f2-ab74-f89125c07f91"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ac9d381-f67d-4c38-9393-b8105edbc434">
+                    <propertyInstance
+                      Id="29d0dad0-2a2a-4148-813f-e654f0cb6e5b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d3e73270-e1f5-4a75-8911-7baa902cf724">
+                    <propertyInstance
+                      Id="b6c8b480-f616-4086-b7ce-e43a93005421"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="80c2f78f-6178-4a1b-891d-2c8c5cbb674d">
+                    <propertyInstance
+                      Id="a557cec1-b4d3-4178-b239-6de2955ea439"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="860215b9-5949-4b11-885d-83883a773705"
+                LastKnownName="Bitmap"
+                LastKnownLocation="Package10_2242.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8ab1c502-9ade-4fd2-b286-f05cbb057341"
+            name="zeleno"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="872a2e1b-1fd7-4648-a500-6b040eb3d7dd"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3Dzeleno"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f4c3ba6d-c3a4-41a7-bc07-6d5712ddba91"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cdd069ee-44c2-4402-bcd0-c7e9297fb0a5">
+                    <propertyInstance
+                      Id="ff49a417-b1d8-4153-819e-b0d41958a7d7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0920b5c8-36bb-45c5-9cf3-71b690ead08f">
+                    <propertyInstance
+                      Id="0e1aa8e9-7d57-437e-b744-f5ee57c88269"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="848fd379-04b9-4685-8239-2184983186b4">
+                    <propertyInstance
+                      Id="6032d43e-3dc2-4b16-a290-4ecfe4357971"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="34ebbece-bb6b-49c8-8a9c-84550b4275c5">
+                    <propertyInstance
+                      Id="e6107391-533f-4915-994b-9e152668c6d9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e37dfeec-5b80-465c-9e0f-cfa8137f0ed8">
+                    <propertyInstance
+                      Id="adbf1897-c943-49b7-bd1a-53ff5b928c52"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="418fa135-2bab-4f47-b37c-1e00c83ca8bf">
+                    <propertyInstance
+                      Id="af81e532-586b-46ab-a37d-dbd261cda8ff"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="86a0fe24-cd0e-4ebd-8f19-f67a8ca71b2f">
+                    <propertyInstance
+                      Id="308a7f9b-e7da-4d71-b35e-bf24de79df9c"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="860215b9-5949-4b11-885d-83883a773705"
+                LastKnownName="Bitmap"
+                LastKnownLocation="Package10_2242.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6b79afa2-405a-4bf1-95e2-fa95076d8139"
+            name="resourceMan"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3f86cb3f-7822-4808-b8dd-e8b25eccc2c8"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3DresourceMan"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="db06014b-b690-46d3-b398-08d6a259848c"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92aa0213-69e9-47e3-ba02-a9f9e7d5ac07">
+                    <propertyInstance
+                      Id="dc03f288-4afc-48ed-83a2-6b99e6fae56f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3cef0a28-3f9d-477e-ad54-4938307d3051">
+                    <propertyInstance
+                      Id="3bea35ea-3d5f-4f47-a18e-2eda2030da6a"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="53a2b7f2-7631-47be-95cd-9896f5a9f803">
+                    <propertyInstance
+                      Id="9e4c9a6a-0085-4f25-a35d-95366920b56b"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ff482ef4-6d8d-4fdd-919d-823b5c6734b1">
+                    <propertyInstance
+                      Id="9c5365a1-b572-45c0-8507-58d3ba3ddf50"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a0c7725d-eb2a-4977-aa65-77ce4903c9a4">
+                    <propertyInstance
+                      Id="f49efd91-69ac-4021-89ea-b97cf5b50905"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="b449793a-3f87-4989-8645-296a64c1562e"
+                LastKnownName="ResourceManager"
+                LastKnownLocation="Package1_2302.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1b824173-3fcb-41f5-b3e8-cd5758c056a1"
+            name="resourceCulture"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="8c79738b-2125-4ca2-abcf-178ee1c65f9c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3DresourceCulture"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d890a5eb-f982-4ad7-b968-b5b5b9a33198"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c99ab440-41d0-4680-a588-81086383cfe9">
+                    <propertyInstance
+                      Id="6283a51f-9cac-4800-b383-d5946b363736"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="12223eb8-bd99-4fe2-b021-820abd27ee9d">
+                    <propertyInstance
+                      Id="81bd328d-c537-43d8-83b1-015439151d1b"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="81ff4256-6730-414c-967e-bd6bc3e32015">
+                    <propertyInstance
+                      Id="d903cea3-5898-4fd3-9060-f9f1df963ec5"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8543367b-28c4-48fe-b3f1-1ac1d1ad0e0e">
+                    <propertyInstance
+                      Id="d35cdb40-588c-49bc-8160-3b2fc07cfafc"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26234a41-c2b3-4047-a3b4-e799209eefb9">
+                    <propertyInstance
+                      Id="a97ddd34-320f-42cc-80d7-ff5445637923"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="f927e917-043d-498d-af32-634d619b6b6e"
+                LastKnownName="CultureInfo"
+                LastKnownLocation="Package2_2302.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="d955279f-6c85-4725-b108-b58f814d25a5"
+            name="Resources"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="0542cb23-604c-4ccb-aab5-b3644a7dabab"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DResources Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="43553fef-8bbf-4ba8-9bc7-62e1163d810d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="39e4b15e-2af7-45a4-b4a9-39c922664f6d">
+                    <propertyInstance
+                      Id="f20ce4ac-c9f0-4e7c-a23e-e0ea85e04cf2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f3645c6-0fde-4097-89e6-a824c3946cc7">
+                    <propertyInstance
+                      Id="9d57a1e1-ee38-48c1-952a-0f9c0edd1aef"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="efeef92e-9edd-431b-9e58-03ef4425e486">
+                    <propertyInstance
+                      Id="71bcbde3-2483-49ca-913c-53f2ebe0da0a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1d89868c-26d9-4929-84eb-6858f9995398">
+                    <propertyInstance
+                      Id="1d2037a1-896c-46f7-9779-1a1132f2371e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8f25222f-3e56-499d-8dac-dc64aff86d56">
+                    <propertyInstance
+                      Id="df5c196f-68dd-409e-8a28-0e3c97785dd9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88aa4db5-6dc7-459a-beda-4318fa2d9014">
+                    <propertyInstance
+                      Id="e6a943fc-7000-45e9-b14e-4a0c075898bf"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4e5e17f0-c5b8-43ee-b069-19e3e8d7e9b1"
+        name="Settings"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="e2fc05a6-287b-4f62-9baa-099f316a1e2b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DSettings"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a5af5197-e3d7-4248-95d4-1f618019f925"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="adb2e8bc-1502-47d1-a610-82aafc4a62c3">
+                <propertyInstance
+                  Id="27372c59-7342-41ae-bae6-c7a32e3ff092"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e4456d2b-c0ba-4937-b38d-3b84e1dee33b">
+                <propertyInstance
+                  Id="7b9917e4-405e-4abf-b661-8a9d82e16788"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5b021ef9-b1c6-4581-9632-747aa8da9e45">
+                <propertyInstance
+                  Id="2692c4bb-4f07-40b5-8731-bf387e20ddf6"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="62ce1974-92b3-4aad-83dc-e62cf8177ef4">
+                <propertyInstance
+                  Id="00d500ff-5d36-4c06-b39a-84467c2b0b8a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2866ba32-4209-4012-8cde-aee2af770d51">
+                <propertyInstance
+                  Id="ac05e7a2-8653-4cd0-b0cc-2b29288db6dd"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="c3419208-1815-471a-9cfb-13800930c76b"
+            isSubstitutable="false">
+            <classMoniker
+              Id="2ac12ec4-4602-4d2e-b206-3acdd79262bf"
+              LastKnownName="ApplicationSettingsBase"
+              LastKnownLocation="Package3_2302.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="928f2c26-79e3-414e-9cac-53d5e64c6f21"
+            isDerived="false"
+            sourceEndRoleName="Settings"
+            targetEndRoleName="Default"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4e5e17f0-c5b8-43ee-b069-19e3e8d7e9b1"
+              LastKnownName="Settings"
+              LastKnownLocation="Package_2302.uml" />
+            <description>Property Default references type Settings.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="46e9f381-2e06-43f5-91ea-b393dd9f897c"
+                  name="Settings"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="22990bed-9ffd-488e-b38f-53b476468aba"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="26e14785-c46d-4d8e-811c-ddfc188ac6c7"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f1d30ca0-bd67-4963-866f-f9ac2a23f062"
+                  name="Default"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="2ef82152-c47d-4d09-a2a9-145e5ef6857c"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="bb67f69d-cd1d-45b1-b84a-0fa4e4e5cd33"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="cf4289c3-50cd-4e08-97ad-fcc4d40030bd"
+            name="Default"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d535810b-3bca-4e83-a5cb-d50aac92c626"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DSettings Member%3DDefault"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e8362a87-8a23-4394-b686-5ec63078e375"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b3dde09-9368-4079-bafb-79761ad94e02">
+                    <propertyInstance
+                      Id="528a9118-1967-43f5-a8a4-4ee37c5ed799"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eedb12a6-a6cb-41ca-aec5-4133da60bc04">
+                    <propertyInstance
+                      Id="715e6877-9e39-4cf7-b166-e0ed11998c3a"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92d45515-7c37-4405-9708-d03bf8728e3e">
+                    <propertyInstance
+                      Id="f76e55ac-25fa-44d4-b264-169076f168a3"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4b4ec31-a6ec-4446-8489-146a44e54f4e">
+                    <propertyInstance
+                      Id="5def8ba4-ceeb-4928-b8be-5479a78a1847"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aa0932ac-2f71-4b4f-a790-08664cefb730">
+                    <propertyInstance
+                      Id="178011d0-d405-4b4e-a8ac-5d0cf816519c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3e9d5fc-a9ad-4ce0-ab05-9fa44dea7d54">
+                    <propertyInstance
+                      Id="f68e23e2-c723-4a87-a1ec-5d9b906223d2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b3690b30-a72e-4d56-81ab-656334abb9b1">
+                    <propertyInstance
+                      Id="34ef6e2b-e964-402f-9251-b6bbafa0060e"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="4e5e17f0-c5b8-43ee-b069-19e3e8d7e9b1"
+                LastKnownName="Settings"
+                LastKnownLocation="Package_2302.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="44eac54b-beb3-450d-b900-80c4ec3345fb"
+            name="defaultInstance"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="014e658a-3718-4710-858a-114c60560c3d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DSettings Member%3DdefaultInstance"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ff3a3cf7-47ed-4327-b026-87449935be47"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b6b7bc2-6b56-4ef6-a4e2-62115b54971f">
+                    <propertyInstance
+                      Id="3110f167-849a-49ef-bc01-5c69c4450bbf"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="abaf2507-26f9-47d2-a6bb-a1990093c168">
+                    <propertyInstance
+                      Id="3c7f151b-b9dd-44dd-8122-6edc1b94d504"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2879b716-74c9-4e8d-8ba7-17ef2f1b7aee">
+                    <propertyInstance
+                      Id="8250bacb-20c0-4ee5-ab43-33c2790dc893"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3ce105d8-d0de-43a4-a5ca-fb6416085b75">
+                    <propertyInstance
+                      Id="8cac9cff-e45c-4253-b2d8-a3a7420d3c30"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c613e44e-d393-4ec7-9c9b-3fd79e281942">
+                    <propertyInstance
+                      Id="92d65983-038c-465f-b330-6c923ffe9297"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="4e5e17f0-c5b8-43ee-b069-19e3e8d7e9b1"
+                LastKnownName="Settings"
+                LastKnownLocation="Package_2302.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="2ac132e1-d7fc-441c-a6c4-fd3ac43d8acc"
+            name="Settings"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="cc7c1b13-5def-4ee4-a62c-0b577a9c6be2"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FBioskop%2Fe-Bioskop%2Fsrc%2Fe_Bioskop%2Fe_Bioskop%2Fbin%2FDebug%2Fe_Bioskop.exe Namespace%3De_Bioskop.Properties Type%3DSettings Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="745e2685-f221-4bd9-aed7-958cf53c310a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c7c32513-43f3-47cd-ba55-fc59a9a5e1ea">
+                    <propertyInstance
+                      Id="a6c1ff0d-786a-4aec-a491-e35a2ea404ec"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="57fe9276-ab63-41b9-959a-4b455a636222">
+                    <propertyInstance
+                      Id="e9056a0c-1643-4bd9-9a24-ef0d2e333ef3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99a2fec8-d5ca-4a63-a7bd-98525e72b192">
+                    <propertyInstance
+                      Id="03ce9e93-45b0-4f29-b9ea-5a2edb52f9ae"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f86d2f02-634f-42aa-8b2a-42bfd0eb6937">
+                    <propertyInstance
+                      Id="3aa2f6a3-8f11-4428-8f8c-33bb30777b69"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8eb5317-e869-4b32-accd-1e1c0f0e7ba8">
+                    <propertyInstance
+                      Id="9c5fa9d8-00e7-45b3-a63d-4c0609f8125f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92147972-8923-4fb1-ae35-1e2d3fa778b6">
+                    <propertyInstance
+                      Id="d8216643-98a7-42cb-a60d-13adf977b468"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

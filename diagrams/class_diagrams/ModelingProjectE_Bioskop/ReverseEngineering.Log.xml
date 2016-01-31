@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///D:/PROGRAMS/VISUAL STUDION 2012 EXPRESS/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2016-01-31T23:02:43" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop' -  (Package)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties' -  (Package)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources' -  (Class)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::crveno' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::Culture' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::distributer_dodaj' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::dodajSala' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::filmovi_dodaj' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::korisnik' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::korisnik_dodaj' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::lista' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::lozinka' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::odjava' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::ok' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::podesavanja' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::resourceCulture' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::resourceMan' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::ResourceManager' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::Resources' -  (Operation)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Resources::zeleno' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Settings' -  (Class)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Settings::Default' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Settings::defaultInstance' -  (Property)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::e_Bioskop::Properties::Settings::Settings' -  (Operation)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::System' -  (Package)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::System::Configuration' -  (Package)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::System::Configuration::ApplicationSettingsBase' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::System::Drawing' -  (Package)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::System::Drawing::Bitmap' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::System::Globalization' -  (Package)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::System::Globalization::CultureInfo' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::System::Resources' -  (Package)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProjectE_Bioskop::System::Resources::ResourceManager' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProjectE_Bioskop::e_Bioskop::Properties::Settings to ModelingProjectE_Bioskop::e_Bioskop::Properties::Settings (Association)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProjectE_Bioskop::e_Bioskop::Properties::Settings to ModelingProjectE_Bioskop::System::Configuration::ApplicationSettingsBase (Generalization)" />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="High" Text="(2) type(s) fully reverse engineered." />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="High" Text="(4) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2016-01-31T23:02:45" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+</Log>
