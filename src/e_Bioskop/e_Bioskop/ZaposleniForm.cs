@@ -260,6 +260,7 @@ namespace e_Bioskop
                 foreach(KartaDTO karta in listaKarataZaRezervaciju)
                 {
                     Button b = (Button)flwProdaja.Controls["prodaja" + karta.BrojReda + "_" + karta.BrojSjedista];
+                    b.Click += prodajaIzborSjedistaClick;
                     b.Name = karta.Id+"_"+b.Name;
                     b.BackColor = System.Drawing.Color.Yellow;
                     listaIzabranihSjedista.Add(b);
