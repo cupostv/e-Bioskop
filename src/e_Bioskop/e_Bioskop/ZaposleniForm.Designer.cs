@@ -56,27 +56,27 @@
             this.flwProdaja = new System.Windows.Forms.FlowLayoutPanel();
             this.btnProdajaKarata = new System.Windows.Forms.Button();
             this.tbRezervacija = new System.Windows.Forms.TabPage();
-            this.tbPonistavanjeKarte = new System.Windows.Forms.TabPage();
-            this.tbPonistavanjeRezervacije = new System.Windows.Forms.TabPage();
             this.sc1Rezervacija = new System.Windows.Forms.SplitContainer();
-            this.sc2Rezervacija = new System.Windows.Forms.SplitContainer();
+            this.gbRezervisanjePodaciORezervaciji = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbxRezervacijaOpisRezervacije = new System.Windows.Forms.TextBox();
             this.btnRezervisanjeIzborProjekcije = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbRezervisanjePodaciOProjekciji = new System.Windows.Forms.GroupBox();
             this.lblRezervacijaSalaProjekcije = new System.Windows.Forms.Label();
             this.lblRezervacijaVrijemeProjekcije = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbRezervacijaPodaciOFilmu = new System.Windows.Forms.GroupBox();
             this.lblRezervacijaOpisFilma = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblRezervacijaZanr = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lblRezervacijaNazivFilma = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tbxRezervacijaOpisRezervacije = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.flpRezervacija = new System.Windows.Forms.FlowLayoutPanel();
+            this.sc2Rezervacija = new System.Windows.Forms.SplitContainer();
+            this.flwRezervacija = new System.Windows.Forms.FlowLayoutPanel();
+            this.tbPonistavanjeKarte = new System.Windows.Forms.TabPage();
+            this.tbPonistavanjeRezervacije = new System.Windows.Forms.TabPage();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbProdajaKarte.SuspendLayout();
@@ -95,12 +95,12 @@
             this.sc1Rezervacija.Panel1.SuspendLayout();
             this.sc1Rezervacija.Panel2.SuspendLayout();
             this.sc1Rezervacija.SuspendLayout();
+            this.gbRezervisanjePodaciORezervaciji.SuspendLayout();
+            this.gbRezervisanjePodaciOProjekciji.SuspendLayout();
+            this.gbRezervacijaPodaciOFilmu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sc2Rezervacija)).BeginInit();
             this.sc2Rezervacija.Panel1.SuspendLayout();
             this.sc2Rezervacija.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -180,6 +180,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(764, 405);
             this.tabControl1.TabIndex = 5;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tbProdajaKarte
             // 
@@ -388,24 +389,6 @@
             this.tbRezervacija.Text = "Rezervacija karte";
             this.tbRezervacija.UseVisualStyleBackColor = true;
             // 
-            // tbPonistavanjeKarte
-            // 
-            this.tbPonistavanjeKarte.Location = new System.Drawing.Point(4, 22);
-            this.tbPonistavanjeKarte.Name = "tbPonistavanjeKarte";
-            this.tbPonistavanjeKarte.Size = new System.Drawing.Size(696, 318);
-            this.tbPonistavanjeKarte.TabIndex = 2;
-            this.tbPonistavanjeKarte.Text = "Ponistavanje karte";
-            this.tbPonistavanjeKarte.UseVisualStyleBackColor = true;
-            // 
-            // tbPonistavanjeRezervacije
-            // 
-            this.tbPonistavanjeRezervacije.Location = new System.Drawing.Point(4, 22);
-            this.tbPonistavanjeRezervacije.Name = "tbPonistavanjeRezervacije";
-            this.tbPonistavanjeRezervacije.Size = new System.Drawing.Size(696, 318);
-            this.tbPonistavanjeRezervacije.TabIndex = 3;
-            this.tbPonistavanjeRezervacije.Text = "Ponistavanje rezervacije";
-            this.tbPonistavanjeRezervacije.UseVisualStyleBackColor = true;
-            // 
             // sc1Rezervacija
             // 
             this.sc1Rezervacija.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -414,10 +397,10 @@
             // 
             // sc1Rezervacija.Panel1
             // 
-            this.sc1Rezervacija.Panel1.Controls.Add(this.groupBox3);
+            this.sc1Rezervacija.Panel1.Controls.Add(this.gbRezervisanjePodaciORezervaciji);
             this.sc1Rezervacija.Panel1.Controls.Add(this.btnRezervisanjeIzborProjekcije);
-            this.sc1Rezervacija.Panel1.Controls.Add(this.groupBox1);
-            this.sc1Rezervacija.Panel1.Controls.Add(this.groupBox2);
+            this.sc1Rezervacija.Panel1.Controls.Add(this.gbRezervisanjePodaciOProjekciji);
+            this.sc1Rezervacija.Panel1.Controls.Add(this.gbRezervacijaPodaciOFilmu);
             // 
             // sc1Rezervacija.Panel2
             // 
@@ -426,19 +409,32 @@
             this.sc1Rezervacija.SplitterDistance = 250;
             this.sc1Rezervacija.TabIndex = 0;
             // 
-            // sc2Rezervacija
+            // gbRezervisanjePodaciORezervaciji
             // 
-            this.sc2Rezervacija.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sc2Rezervacija.Location = new System.Drawing.Point(0, 0);
-            this.sc2Rezervacija.Name = "sc2Rezervacija";
-            this.sc2Rezervacija.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.gbRezervisanjePodaciORezervaciji.Controls.Add(this.label3);
+            this.gbRezervisanjePodaciORezervaciji.Controls.Add(this.tbxRezervacijaOpisRezervacije);
+            this.gbRezervisanjePodaciORezervaciji.Location = new System.Drawing.Point(15, 234);
+            this.gbRezervisanjePodaciORezervaciji.Name = "gbRezervisanjePodaciORezervaciji";
+            this.gbRezervisanjePodaciORezervaciji.Size = new System.Drawing.Size(216, 88);
+            this.gbRezervisanjePodaciORezervaciji.TabIndex = 26;
+            this.gbRezervisanjePodaciORezervaciji.TabStop = false;
+            this.gbRezervisanjePodaciORezervaciji.Text = "Podaci o rezervaciji";
             // 
-            // sc2Rezervacija.Panel1
+            // label3
             // 
-            this.sc2Rezervacija.Panel1.Controls.Add(this.flpRezervacija);
-            this.sc2Rezervacija.Size = new System.Drawing.Size(496, 373);
-            this.sc2Rezervacija.SplitterDistance = 318;
-            this.sc2Rezervacija.TabIndex = 0;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Opis projekcije";
+            // 
+            // tbxRezervacijaOpisRezervacije
+            // 
+            this.tbxRezervacijaOpisRezervacije.Location = new System.Drawing.Point(110, 18);
+            this.tbxRezervacijaOpisRezervacije.Name = "tbxRezervacijaOpisRezervacije";
+            this.tbxRezervacijaOpisRezervacije.Size = new System.Drawing.Size(100, 20);
+            this.tbxRezervacijaOpisRezervacije.TabIndex = 0;
             // 
             // btnRezervisanjeIzborProjekcije
             // 
@@ -448,19 +444,20 @@
             this.btnRezervisanjeIzborProjekcije.TabIndex = 23;
             this.btnRezervisanjeIzborProjekcije.Text = "Izbor projekcije";
             this.btnRezervisanjeIzborProjekcije.UseVisualStyleBackColor = true;
+            this.btnRezervisanjeIzborProjekcije.Click += new System.EventHandler(this.btnRezervisanjeIzborProjekcije_Click);
             // 
-            // groupBox1
+            // gbRezervisanjePodaciOProjekciji
             // 
-            this.groupBox1.Controls.Add(this.lblRezervacijaSalaProjekcije);
-            this.groupBox1.Controls.Add(this.lblRezervacijaVrijemeProjekcije);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(15, 147);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(216, 81);
-            this.groupBox1.TabIndex = 25;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Podaci o projekciji";
+            this.gbRezervisanjePodaciOProjekciji.Controls.Add(this.lblRezervacijaSalaProjekcije);
+            this.gbRezervisanjePodaciOProjekciji.Controls.Add(this.lblRezervacijaVrijemeProjekcije);
+            this.gbRezervisanjePodaciOProjekciji.Controls.Add(this.label5);
+            this.gbRezervisanjePodaciOProjekciji.Controls.Add(this.label6);
+            this.gbRezervisanjePodaciOProjekciji.Location = new System.Drawing.Point(15, 147);
+            this.gbRezervisanjePodaciOProjekciji.Name = "gbRezervisanjePodaciOProjekciji";
+            this.gbRezervisanjePodaciOProjekciji.Size = new System.Drawing.Size(216, 81);
+            this.gbRezervisanjePodaciOProjekciji.TabIndex = 25;
+            this.gbRezervisanjePodaciOProjekciji.TabStop = false;
+            this.gbRezervisanjePodaciOProjekciji.Text = "Podaci o projekciji";
             // 
             // lblRezervacijaSalaProjekcije
             // 
@@ -498,20 +495,20 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Vrijeme:";
             // 
-            // groupBox2
+            // gbRezervacijaPodaciOFilmu
             // 
-            this.groupBox2.Controls.Add(this.lblRezervacijaOpisFilma);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.lblRezervacijaZanr);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.lblRezervacijaNazivFilma);
-            this.groupBox2.Location = new System.Drawing.Point(15, 39);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(216, 102);
-            this.groupBox2.TabIndex = 24;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Podaci o filmu";
+            this.gbRezervacijaPodaciOFilmu.Controls.Add(this.lblRezervacijaOpisFilma);
+            this.gbRezervacijaPodaciOFilmu.Controls.Add(this.label8);
+            this.gbRezervacijaPodaciOFilmu.Controls.Add(this.label9);
+            this.gbRezervacijaPodaciOFilmu.Controls.Add(this.lblRezervacijaZanr);
+            this.gbRezervacijaPodaciOFilmu.Controls.Add(this.label11);
+            this.gbRezervacijaPodaciOFilmu.Controls.Add(this.lblRezervacijaNazivFilma);
+            this.gbRezervacijaPodaciOFilmu.Location = new System.Drawing.Point(15, 39);
+            this.gbRezervacijaPodaciOFilmu.Name = "gbRezervacijaPodaciOFilmu";
+            this.gbRezervacijaPodaciOFilmu.Size = new System.Drawing.Size(216, 102);
+            this.gbRezervacijaPodaciOFilmu.TabIndex = 24;
+            this.gbRezervacijaPodaciOFilmu.TabStop = false;
+            this.gbRezervacijaPodaciOFilmu.Text = "Podaci o filmu";
             // 
             // lblRezervacijaOpisFilma
             // 
@@ -567,41 +564,46 @@
             this.lblRezervacijaNazivFilma.TabIndex = 15;
             this.lblRezervacijaNazivFilma.Text = "label7";
             // 
-            // groupBox3
+            // sc2Rezervacija
             // 
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.tbxRezervacijaOpisRezervacije);
-            this.groupBox3.Location = new System.Drawing.Point(15, 234);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(216, 88);
-            this.groupBox3.TabIndex = 26;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Podaci o rezervaciji";
+            this.sc2Rezervacija.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sc2Rezervacija.Location = new System.Drawing.Point(0, 0);
+            this.sc2Rezervacija.Name = "sc2Rezervacija";
+            this.sc2Rezervacija.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // tbxRezervacijaOpisRezervacije
+            // sc2Rezervacija.Panel1
             // 
-            this.tbxRezervacijaOpisRezervacije.Location = new System.Drawing.Point(110, 18);
-            this.tbxRezervacijaOpisRezervacije.Name = "tbxRezervacijaOpisRezervacije";
-            this.tbxRezervacijaOpisRezervacije.Size = new System.Drawing.Size(100, 20);
-            this.tbxRezervacijaOpisRezervacije.TabIndex = 0;
+            this.sc2Rezervacija.Panel1.Controls.Add(this.flwRezervacija);
+            this.sc2Rezervacija.Size = new System.Drawing.Size(496, 373);
+            this.sc2Rezervacija.SplitterDistance = 318;
+            this.sc2Rezervacija.TabIndex = 0;
             // 
-            // label3
+            // flwRezervacija
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Opis projekcije";
+            this.flwRezervacija.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flwRezervacija.Location = new System.Drawing.Point(0, 0);
+            this.flwRezervacija.Name = "flwRezervacija";
+            this.flwRezervacija.Size = new System.Drawing.Size(496, 318);
+            this.flwRezervacija.TabIndex = 22;
+            this.flwRezervacija.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
             // 
-            // flpRezervacija
+            // tbPonistavanjeKarte
             // 
-            this.flpRezervacija.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpRezervacija.Location = new System.Drawing.Point(0, 0);
-            this.flpRezervacija.Name = "flpRezervacija";
-            this.flpRezervacija.Size = new System.Drawing.Size(496, 318);
-            this.flpRezervacija.TabIndex = 22;
-            this.flpRezervacija.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
+            this.tbPonistavanjeKarte.Location = new System.Drawing.Point(4, 22);
+            this.tbPonistavanjeKarte.Name = "tbPonistavanjeKarte";
+            this.tbPonistavanjeKarte.Size = new System.Drawing.Size(756, 379);
+            this.tbPonistavanjeKarte.TabIndex = 2;
+            this.tbPonistavanjeKarte.Text = "Ponistavanje karte";
+            this.tbPonistavanjeKarte.UseVisualStyleBackColor = true;
+            // 
+            // tbPonistavanjeRezervacije
+            // 
+            this.tbPonistavanjeRezervacije.Location = new System.Drawing.Point(4, 22);
+            this.tbPonistavanjeRezervacije.Name = "tbPonistavanjeRezervacije";
+            this.tbPonistavanjeRezervacije.Size = new System.Drawing.Size(756, 379);
+            this.tbPonistavanjeRezervacije.TabIndex = 3;
+            this.tbPonistavanjeRezervacije.Text = "Ponistavanje rezervacije";
+            this.tbPonistavanjeRezervacije.UseVisualStyleBackColor = true;
             // 
             // ZaposleniForm
             // 
@@ -633,15 +635,15 @@
             this.sc1Rezervacija.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sc1Rezervacija)).EndInit();
             this.sc1Rezervacija.ResumeLayout(false);
+            this.gbRezervisanjePodaciORezervaciji.ResumeLayout(false);
+            this.gbRezervisanjePodaciORezervaciji.PerformLayout();
+            this.gbRezervisanjePodaciOProjekciji.ResumeLayout(false);
+            this.gbRezervisanjePodaciOProjekciji.PerformLayout();
+            this.gbRezervacijaPodaciOFilmu.ResumeLayout(false);
+            this.gbRezervacijaPodaciOFilmu.PerformLayout();
             this.sc2Rezervacija.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sc2Rezervacija)).EndInit();
             this.sc2Rezervacija.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -681,21 +683,21 @@
         private System.Windows.Forms.SplitContainer sc1Rezervacija;
         private System.Windows.Forms.SplitContainer sc2Rezervacija;
         private System.Windows.Forms.Button btnRezervisanjeIzborProjekcije;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbRezervisanjePodaciOProjekciji;
         private System.Windows.Forms.Label lblRezervacijaSalaProjekcije;
         private System.Windows.Forms.Label lblRezervacijaVrijemeProjekcije;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbRezervacijaPodaciOFilmu;
         private System.Windows.Forms.Label lblRezervacijaOpisFilma;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblRezervacijaZanr;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblRezervacijaNazivFilma;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbRezervisanjePodaciORezervaciji;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbxRezervacijaOpisRezervacije;
-        private System.Windows.Forms.FlowLayoutPanel flpRezervacija;
+        private System.Windows.Forms.FlowLayoutPanel flwRezervacija;
     }
 }

@@ -12,15 +12,37 @@ namespace e_Bioskop
 {
     public partial class ZaposleniForm : Form
     {
-        private ProjekcijaDTO izabranaProjekcijaZaProdaju;
+        private ProjekcijaDTO izabranaProjekcija;
         private Color nijeIzabrano = System.Drawing.Color.Transparent;
         private Color izabrano = System.Drawing.Color.Aqua;
         private List<Button> listaIzabranihSjedista = new List<Button>();
         private List<KartaDTO> prodajaListaVecIzdatihKarata = null;
+
         public ZaposleniForm()
         {
             InitializeComponent();
             hideProjekcijaProdajaKarteControlls();
+            hideRezervisanjeControlls();
+        }
+
+        private void hideRezervisanjeControlls()
+        {
+            gbRezervacijaPodaciOFilmu.Hide();
+            gbRezervisanjePodaciOProjekciji.Hide();
+            gbRezervisanjePodaciORezervaciji.Hide();
+            flwRezervacija.Controls.Clear();
+
+        }
+
+        private void hideProjekcijaProdajaKarteControlls()
+        {
+            gbProdajaPodaciOFilmu.Hide();
+            gbProdajaPodaciOProjekciji.Hide();
+            izabranaProjekcija = null;
+            listaIzabranihSjedista.Clear();
+            prodajaListaVecIzdatihKarata = null;
+            flwProdaja.Controls.Clear();
+            sc1Prodaja.Panel2.Hide();
         }
 
 
@@ -29,9 +51,9 @@ namespace e_Bioskop
             ProjekcijaIzborForm pif = new ProjekcijaIzborForm();
             if (pif.ShowDialog() == DialogResult.OK)
             {
-                if (izabranaProjekcijaZaProdaju == null || izabranaProjekcijaZaProdaju.Id != pif.IzabranaProjekcija.Id)
+                if (izabranaProjekcija == null || izabranaProjekcija.Id != pif.IzabranaProjekcija.Id)
                 {
-                    izabranaProjekcijaZaProdaju = pif.IzabranaProjekcija;
+                    izabranaProjekcija = pif.IzabranaProjekcija;
                     showProjekcijaProdajaKarteControlls();
                 }
             }
@@ -48,15 +70,16 @@ namespace e_Bioskop
 
         private void fillProjekcijaProdajaKarteControlls()
         {
-            lblProdajaKarteNazivFilma.Text = izabranaProjekcijaZaProdaju.Film.Naziv;
-            lblProdajaKarteOpis.Text = izabranaProjekcijaZaProdaju.Film.Opis;
-            lblProdajaKarteZanr.Text = izabranaProjekcijaZaProdaju.Film.Zanr.Naziv;
-            lblProdajaSalaProjekcije.Text = izabranaProjekcijaZaProdaju.Sala.Naziv;
-            lblProdajaVrijemeProjekcije.Text=izabranaProjekcijaZaProdaju.Vrijeme.ToShortDateString()+" " +izabranaProjekcijaZaProdaju.Vrijeme.TimeOfDay.ToString();
+            sc1Prodaja.Panel2.Show();
+            lblProdajaKarteNazivFilma.Text = izabranaProjekcija.Film.Naziv;
+            lblProdajaKarteOpis.Text = izabranaProjekcija.Film.Opis;
+            lblProdajaKarteZanr.Text = izabranaProjekcija.Film.Zanr.Naziv;
+            lblProdajaSalaProjekcije.Text = izabranaProjekcija.Sala.Naziv;
+            lblProdajaVrijemeProjekcije.Text=izabranaProjekcija.Vrijeme.ToShortDateString()+" " +izabranaProjekcija.Vrijeme.TimeOfDay.ToString();
             
             listaIzabranihSjedista.Clear();
-            prodajaListaVecIzdatihKarata = BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcija(izabranaProjekcijaZaProdaju);
-            BioskopUtil.initSjedistDTOFlowLayout(flwProdaja, izabranaProjekcijaZaProdaju, prodajaIzborSjedistaClick,prodajaListaVecIzdatihKarata);
+            prodajaListaVecIzdatihKarata = BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcija(izabranaProjekcija);
+            BioskopUtil.initSjedistDTOFlowLayout(flwProdaja, izabranaProjekcija, prodajaIzborSjedistaClick,prodajaListaVecIzdatihKarata);
         }
 
 
@@ -75,11 +98,6 @@ namespace e_Bioskop
             }     
         }
 
-        private void hideProjekcijaProdajaKarteControlls()
-        {
-            gbProdajaPodaciOFilmu.Hide();
-            gbProdajaPodaciOProjekciji.Hide();
-        }
 
         private void showProjekcijaProdajaKarteControlls()
         {
@@ -92,8 +110,8 @@ namespace e_Bioskop
         {
             FlowLayoutPanel flw = (FlowLayoutPanel)sender;
             int count=flw.Controls.Count;
-            int brojSjedistaURedu = izabranaProjekcijaZaProdaju.Sala.BrojSjedistaURedu;
-            int brojRedova = izabranaProjekcijaZaProdaju.Sala.BrojRedova;
+            int brojSjedistaURedu = izabranaProjekcija.Sala.BrojSjedistaURedu;
+            int brojRedova = izabranaProjekcija.Sala.BrojRedova;
             if (brojSjedistaURedu > 0 && brojRedova > 0)
             {
                 int height = (flwProdaja.Height / (brojRedova) - flwProdaja.Margin.Vertical);
@@ -114,7 +132,7 @@ namespace e_Bioskop
                 foreach (Button b in listaIzabranihSjedista)
                 {
                     KartaDTO karta = new KartaDTO();
-                    karta.Projekcija = izabranaProjekcijaZaProdaju;
+                    karta.Projekcija = izabranaProjekcija;
                     karta.Status = BioskopUtil.getDAOFactory().getStatusKartaDAO().getByNaziv("Prodana");
                     karta.Zaposleni = BioskopUtil.getPrijavljeniZaposleni();
                     string str = b.Name.Replace("prodaja", "");
@@ -142,6 +160,39 @@ namespace e_Bioskop
         {
             PregledRasporedaForm prf = new PregledRasporedaForm();
             prf.ShowDialog();
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            hideProjekcijaProdajaKarteControlls();
+            hideRezervisanjeControlls();
+        }
+
+        private void btnRezervisanjeIzborProjekcije_Click(object sender, EventArgs e)
+        {
+            ProjekcijaIzborForm pif = new ProjekcijaIzborForm();
+            if (pif.ShowDialog() == DialogResult.OK)
+            {
+                if (izabranaProjekcija == null || izabranaProjekcija.Id != pif.IzabranaProjekcija.Id)
+                {
+                    izabranaProjekcija = pif.IzabranaProjekcija;
+                    fillRezervisanjeControls();
+                }
+            }
+        }
+
+        private void fillRezervisanjeControls()
+        {
+            gbRezervacijaPodaciOFilmu.Show();
+            gbRezervisanjePodaciOProjekciji.Show();
+            gbRezervisanjePodaciORezervaciji.Show();
+            sc1Rezervacija.Panel2.Show();
+            lblRezervacijaNazivFilma.Text = izabranaProjekcija.Film.Naziv;
+            lblRezervacijaOpisFilma.Text = izabranaProjekcija.Film.Opis;
+            lblRezervacijaSalaProjekcije.Text = izabranaProjekcija.Sala.Naziv;
+            lblRezervacijaZanr.Text = izabranaProjekcija.Film.Zanr.Naziv;
+            prodajaListaVecIzdatihKarata=BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcija(izabranaProjekcija);
+            BioskopUtil.initSjedistDTOFlowLayout(flwRezervacija,izabranaProjekcija,prodajaIzborSjedistaClick,prodajaListaVecIzdatihKarata);
         }
     }
 }
