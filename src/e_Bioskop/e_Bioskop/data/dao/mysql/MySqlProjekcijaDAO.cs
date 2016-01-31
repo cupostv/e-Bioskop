@@ -9,15 +9,15 @@ namespace e_Bioskop.data.dao.mysql
 {
     public class MySqlProjekcijaDAO : ProjekcijaDAO
     {
-        private string getAllQuerry = "SELECT idProjekcija,vrijemeProjekcija,idFilm,cijenaProjekcija,p.idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from projekcija p inner join sala s on p.idSala=s.idSala;";
-        private string getByFilmQuerry = "SELECT idProjekcija,vrijemeProjekcija,idFilm,cijenaProjekcija,p.idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from projekcija p inner join sala s on p.idSala=s.idSala where idFilm=?idFilm;";
-        private string getByIdQuerry = "SELECT idProjekcija,vrijemeProjekcija,idFilm,cijenaProjekcija,p.idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from projekcija p inner join sala s on p.idSala=s.idSala where idProjekcija=?id;";
-        private string getBySalaQuerry = "SELECT idProjekcija,vrijemeProjekcija,idFilm,cijenaProjekcija,idSala from projekcija where idSala=?idSala;";
+        private string getAllQuerry = "SELECT idProjekcija,vrijemeProjekcija,idFilm,cijenaProjekcija,p.idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from projekcija p inner join sala s on p.idSala=s.idSala order by vrijemeProjekcija asc;";
+        private string getByFilmQuerry = "SELECT idProjekcija,vrijemeProjekcija,idFilm,cijenaProjekcija,p.idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from projekcija p inner join sala s on p.idSala=s.idSala where idFilm=?idFilm order by vrijemeProjekcija asc;";
+        private string getByIdQuerry = "SELECT idProjekcija,vrijemeProjekcija,idFilm,cijenaProjekcija,p.idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from projekcija p inner join sala s on p.idSala=s.idSala where idProjekcija=?id order by vrijemeProjekcija asc;";
+        private string getBySalaQuerry = "SELECT idProjekcija,vrijemeProjekcija,idFilm,cijenaProjekcija,idSala from projekcija where idSala=?idSala order by vrijemeProjekcija asc;";
         private string insertQuerry = "INSERT INTO `e_bioskop`.`projekcija` (`vrijemeProjekcija`, `idFilm`, `idSala`, `cijenaProjekcija`) VALUES (?vrijeme, ?idFilm, ?idSala, ?cijena);";
         private string updateQuerry = "UPDATE `e_bioskop`.`projekcija` SET `vrijemeProjekcija`=?vrijeme, `idFilm`=?idFilm, `idSala`=?idSala, `cijenaProjekcija`=?cijena WHERE `idProjekcija`=?idProjekcija;";
 
-        private string getByDateQuerry = "SELECT idProjekcija,vrijemeProjekcija,idFilm,cijenaProjekcija,p.idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from projekcija p inner join sala s on p.idSala=s.idSala where Date(vrijemeProjekcija)=?datum and time(vrijemeProjekcija)>?vrijeme;";
-        private string getInIntervalQuerry = "SELECT idProjekcija,vrijemeProjekcija,idFilm,cijenaProjekcija,p.idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from projekcija p inner join sala s on p.idSala=s.idSala where vrijemeProjekcija>=?from and vrijemeProjekcija<=?to;";
+        private string getByDateQuerry = "SELECT idProjekcija,vrijemeProjekcija,idFilm,cijenaProjekcija,p.idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from projekcija p inner join sala s on p.idSala=s.idSala where Date(vrijemeProjekcija)=?datum and time(vrijemeProjekcija)>?vrijeme order by vrijemeProjekcija asc;";
+        private string getInIntervalQuerry = "SELECT idProjekcija,vrijemeProjekcija,idFilm,cijenaProjekcija,p.idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from projekcija p inner join sala s on p.idSala=s.idSala where vrijemeProjekcija>=?from and vrijemeProjekcija<=?to order by vrijemeProjekcija asc;";
         public List<ProjekcijaDTO> getAll()
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();

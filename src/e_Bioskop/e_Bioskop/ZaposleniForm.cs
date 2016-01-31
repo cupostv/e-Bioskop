@@ -23,20 +23,6 @@ namespace e_Bioskop
             hideProjekcijaProdajaKarteControlls();
         }
 
-        private void btnOdjava_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDodajDistributera_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDodajFilm_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnIzborProjekcije_Click(object sender, EventArgs e)
         {
@@ -70,7 +56,7 @@ namespace e_Bioskop
             
             listaIzabranihSjedista.Clear();
             prodajaListaVecIzdatihKarata = BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcija(izabranaProjekcijaZaProdaju);
-            BioskopUtil.initSjedistDTOFlowLayout(flowLayoutPanel1, izabranaProjekcijaZaProdaju, prodajaIzborSjedistaClick,prodajaListaVecIzdatihKarata);
+            BioskopUtil.initSjedistDTOFlowLayout(flwProdaja, izabranaProjekcijaZaProdaju, prodajaIzborSjedistaClick,prodajaListaVecIzdatihKarata);
         }
 
 
@@ -110,8 +96,8 @@ namespace e_Bioskop
             int brojRedova = izabranaProjekcijaZaProdaju.Sala.BrojRedova;
             if (brojSjedistaURedu > 0 && brojRedova > 0)
             {
-                int height = (flowLayoutPanel1.Height / (brojRedova) - flowLayoutPanel1.Margin.Vertical);
-                int width = (flowLayoutPanel1.Width / (brojSjedistaURedu)) - flowLayoutPanel1.Margin.Horizontal;
+                int height = (flwProdaja.Height / (brojRedova) - flwProdaja.Margin.Vertical);
+                int width = (flwProdaja.Width / (brojSjedistaURedu)) - flwProdaja.Margin.Horizontal;
                 for (int i = 0; i < count; i++)
                 {
                     Control control = flw.Controls[i];
@@ -150,6 +136,12 @@ namespace e_Bioskop
                 
             }
             
+        }
+
+        private void btnPregledRasporeda_Click(object sender, EventArgs e)
+        {
+            PregledRasporedaForm prf = new PregledRasporedaForm();
+            prf.ShowDialog();
         }
     }
 }
