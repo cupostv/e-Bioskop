@@ -240,13 +240,25 @@ namespace e_Bioskop
                             case "Prodana":
                                 b.BackColor = System.Drawing.Color.Red;
                                 break;
+                            case "prodana":
+                                b.BackColor = System.Drawing.Color.Red;
+                                break;
                             case "Rezervisana":
+                                b.BackColor = System.Drawing.Color.Blue;
+                                break;
+                            case "rezervisana":
                                 b.BackColor = System.Drawing.Color.Blue;
                                 break;
                             case "Ponistena":
                                 b.Click += new EventHandler(prodajaIzborSjedistaClick);
                                 break;
+                            case "ponistena":
+                                b.Click += new EventHandler(prodajaIzborSjedistaClick);
+                                break;
                             case "Slobodna":
+                                b.Click += new EventHandler(prodajaIzborSjedistaClick);
+                                break;
+                            case "slobodna":
                                 b.Click += new EventHandler(prodajaIzborSjedistaClick);
                                 break;
                         }

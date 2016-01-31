@@ -133,6 +133,12 @@
     <Compile Include="ProjekcijaIzborForm.Designer.cs">
       <DependentUpon>ProjekcijaIzborForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RezervacijePregledForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RezervacijePregledForm.Designer.cs">
+      <DependentUpon>RezervacijePregledForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalaDodajForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RezervacijePregledForm.resx">
+      <DependentUpon>RezervacijePregledForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalaDodajForm.resx">
       <DependentUpon>SalaDodajForm.cs</DependentUpon>

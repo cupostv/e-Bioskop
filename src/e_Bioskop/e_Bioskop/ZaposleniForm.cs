@@ -17,7 +17,7 @@ namespace e_Bioskop
         private Color izabrano = System.Drawing.Color.Aqua;
         private List<Button> listaIzabranihSjedista = new List<Button>();
         private List<KartaDTO> prodajaListaVecIzdatihKarata = null;
-
+        private RezervacijaDTO izabranaRezervacija;
         public ZaposleniForm()
         {
             InitializeComponent();
@@ -231,6 +231,18 @@ namespace e_Bioskop
                 }
                 fillRezervisanjeControls();
 
+            }
+        }
+
+        private void btnProdajaIzaberiRezervaciju_Click(object sender, EventArgs e)
+        {
+            RezervacijePregledForm rpf = new RezervacijePregledForm(izabranaProjekcija);
+            if (rpf.ShowDialog() == DialogResult.OK)
+            {
+                izabranaRezervacija = rpf.IzabranaRezervacija;
+                List<KartaDTO> listaKarataZaRezervaciju = BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcija(izabranaProjekcija).Where(x => x.Rezervacija != null && x.Rezervacija.Id == izabranaRezervacija.Id).ToList();
+
+                BioskopUtil.initSjedistDTOFlowLayout(flwProdaja, izabranaProjekcija, prodajaIzborSjedistaClick, prodajaListaVecIzdatihKarata);
             }
         }
     }
