@@ -267,5 +267,11 @@ namespace e_Bioskop
                 }
             }
         }
+
+        private void btnPonistavanjeKarte_Click(object sender, EventArgs e)
+        {
+            PonistavanjeKarteForm pkf = new PonistavanjeKarteForm();
+            pkf.ShowDialog();
+        }
     }
 }

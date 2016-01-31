@@ -115,6 +115,12 @@
     <Compile Include="FilmIzborForm.Designer.cs">
       <DependentUpon>FilmIzborForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PonistavanjeKarteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PonistavanjeKarteForm.Designer.cs">
+      <DependentUpon>PonistavanjeKarteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PregledRasporedaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FilmIzborForm.resx">
       <DependentUpon>FilmIzborForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PonistavanjeKarteForm.resx">
+      <DependentUpon>PonistavanjeKarteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PregledRasporedaForm.resx">
       <DependentUpon>PregledRasporedaForm.cs</DependentUpon>

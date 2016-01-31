@@ -43,7 +43,7 @@ namespace e_Bioskop.data.dao.mysql
         private string getByIdQuerry = "select k.idKarta, brojReda,brojSjedista,datumProdaje, k.idZaposleni, korisnickoIme, lozinka, ime, prezime, "
                                        + " datumRodjenja, telefon, e_mail, aktivan, "
                                        + " sk.idStatusKarta, NazivStatusKarta, p.idProjekcija, idFilm, vrijemeProjekcija, cijenaProjekcija, "
-                                       + " sl.idSala, nazivSala, aktivna,brojRedova,brojSjedistaURedu "
+                                       + " sl.idSala, nazivSala, aktivna,brojRedova,brojSjedistaURedu, "
                                        + " r.idRezervacija, vrijemeRezervacija, opisRezervacija "
                                        + " from karta k "
                                        + " inner join zaposleni z on k.idZaposleni = z.idZaposleni "
