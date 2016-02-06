@@ -10,7 +10,7 @@ namespace e_Bioskop.data.dao.mysql
     public class MySqlSalaDAO : SalaDAO
     {
         private string insertQuerry="INSERT INTO `e_bioskop`.`sala` (`aktivna`, `nazivSala`,`brojRedova`,`brojSjedistaURedu`) VALUES (?aktivna, ?naziv,?brojRedova,?brojSjedistaURedu);";
-        private string getAllQuerry = "select idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from sala;";
+        private string getAllQuerry = "select idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from sala where aktivna=1;";
         private string getByIdQuerry = "select idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from sala where idSala=?id;";
         private string getByNazivQuerry = "select idSala,aktivna,nazivSala,brojRedova,brojSjedistaURedu from sala where nazivSala=?naziv;";
         private string updateQuerry = "UPDATE `e_bioskop`.`sala` SET `aktivna`=?aktivna, `nazivSala`=?naziv,brojRedova=?brojRedova,brojSjedistaURedu=?brojSjedistaURedu WHERE `idSala`=?id;";
