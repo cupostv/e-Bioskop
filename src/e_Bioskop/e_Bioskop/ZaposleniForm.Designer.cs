@@ -78,6 +78,7 @@
             this.flwProdaja = new System.Windows.Forms.FlowLayoutPanel();
             this.btnProdajaKarata = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.lblOpis = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tbRezervacija.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sc1Rezervacija)).BeginInit();
@@ -96,6 +97,7 @@
             this.sc1Prodaja.Panel1.SuspendLayout();
             this.sc1Prodaja.Panel2.SuspendLayout();
             this.sc1Prodaja.SuspendLayout();
+            this.gbProdajaPodaciORezervaciji.SuspendLayout();
             this.gbProdajaPodaciOProjekciji.SuspendLayout();
             this.gbProdajaPodaciOFilmu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sc2Prodaja)).BeginInit();
@@ -216,11 +218,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 16);
+            this.label3.Location = new System.Drawing.Point(9, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Opis projekcije";
+            this.label3.Text = "Opis rezervacije";
             // 
             // tbxRezervacijaOpisRezervacije
             // 
@@ -418,19 +420,20 @@
             this.sc1Prodaja.Panel1.Controls.Add(this.btnIzborProjekcije);
             this.sc1Prodaja.Panel1.Controls.Add(this.gbProdajaPodaciOProjekciji);
             this.sc1Prodaja.Panel1.Controls.Add(this.gbProdajaPodaciOFilmu);
+            this.sc1Prodaja.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // sc1Prodaja.Panel2
             // 
             this.sc1Prodaja.Panel2.Controls.Add(this.sc2Prodaja);
             this.sc1Prodaja.Size = new System.Drawing.Size(750, 373);
-            this.sc1Prodaja.SplitterDistance = 250;
+            this.sc1Prodaja.SplitterDistance = 209;
             this.sc1Prodaja.TabIndex = 23;
             // 
             // btnProdajaIzaberiRezervaciju
             // 
-            this.btnProdajaIzaberiRezervaciju.Location = new System.Drawing.Point(20, 245);
+            this.btnProdajaIzaberiRezervaciju.Location = new System.Drawing.Point(5, 245);
             this.btnProdajaIzaberiRezervaciju.Name = "btnProdajaIzaberiRezervaciju";
-            this.btnProdajaIzaberiRezervaciju.Size = new System.Drawing.Size(179, 23);
+            this.btnProdajaIzaberiRezervaciju.Size = new System.Drawing.Size(194, 23);
             this.btnProdajaIzaberiRezervaciju.TabIndex = 0;
             this.btnProdajaIzaberiRezervaciju.Text = "Izaberi rezervaciju";
             this.btnProdajaIzaberiRezervaciju.UseVisualStyleBackColor = true;
@@ -438,16 +441,17 @@
             // 
             // gbProdajaPodaciORezervaciji
             // 
+            this.gbProdajaPodaciORezervaciji.Controls.Add(this.lblOpis);
             this.gbProdajaPodaciORezervaciji.Location = new System.Drawing.Point(5, 270);
             this.gbProdajaPodaciORezervaciji.Name = "gbProdajaPodaciORezervaciji";
-            this.gbProdajaPodaciORezervaciji.Size = new System.Drawing.Size(200, 100);
+            this.gbProdajaPodaciORezervaciji.Size = new System.Drawing.Size(194, 98);
             this.gbProdajaPodaciORezervaciji.TabIndex = 23;
             this.gbProdajaPodaciORezervaciji.TabStop = false;
-            this.gbProdajaPodaciORezervaciji.Text = "Podaci o rezervaciji";
+            this.gbProdajaPodaciORezervaciji.Text = "Opis rezervacije";
             // 
             // btnIzborProjekcije
             // 
-            this.btnIzborProjekcije.Location = new System.Drawing.Point(17, 3);
+            this.btnIzborProjekcije.Location = new System.Drawing.Point(5, 3);
             this.btnIzborProjekcije.Name = "btnIzborProjekcije";
             this.btnIzborProjekcije.Size = new System.Drawing.Size(194, 23);
             this.btnIzborProjekcije.TabIndex = 0;
@@ -461,9 +465,9 @@
             this.gbProdajaPodaciOProjekciji.Controls.Add(this.lblProdajaVrijemeProjekcije);
             this.gbProdajaPodaciOProjekciji.Controls.Add(this.label2);
             this.gbProdajaPodaciOProjekciji.Controls.Add(this.label1);
-            this.gbProdajaPodaciOProjekciji.Location = new System.Drawing.Point(5, 158);
+            this.gbProdajaPodaciOProjekciji.Location = new System.Drawing.Point(5, 140);
             this.gbProdajaPodaciOProjekciji.Name = "gbProdajaPodaciOProjekciji";
-            this.gbProdajaPodaciOProjekciji.Size = new System.Drawing.Size(194, 81);
+            this.gbProdajaPodaciOProjekciji.Size = new System.Drawing.Size(194, 99);
             this.gbProdajaPodaciOProjekciji.TabIndex = 22;
             this.gbProdajaPodaciOProjekciji.TabStop = false;
             this.gbProdajaPodaciOProjekciji.Text = "Podaci o projekciji";
@@ -471,7 +475,7 @@
             // lblProdajaSalaProjekcije
             // 
             this.lblProdajaSalaProjekcije.AutoSize = true;
-            this.lblProdajaSalaProjekcije.Location = new System.Drawing.Point(53, 53);
+            this.lblProdajaSalaProjekcije.Location = new System.Drawing.Point(50, 53);
             this.lblProdajaSalaProjekcije.Name = "lblProdajaSalaProjekcije";
             this.lblProdajaSalaProjekcije.Size = new System.Drawing.Size(35, 13);
             this.lblProdajaSalaProjekcije.TabIndex = 3;
@@ -480,7 +484,7 @@
             // lblProdajaVrijemeProjekcije
             // 
             this.lblProdajaVrijemeProjekcije.AutoSize = true;
-            this.lblProdajaVrijemeProjekcije.Location = new System.Drawing.Point(59, 20);
+            this.lblProdajaVrijemeProjekcije.Location = new System.Drawing.Point(50, 29);
             this.lblProdajaVrijemeProjekcije.Name = "lblProdajaVrijemeProjekcije";
             this.lblProdajaVrijemeProjekcije.Size = new System.Drawing.Size(35, 13);
             this.lblProdajaVrijemeProjekcije.TabIndex = 2;
@@ -489,7 +493,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 53);
+            this.label2.Location = new System.Drawing.Point(6, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 1;
@@ -498,7 +502,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 20);
+            this.label1.Location = new System.Drawing.Point(6, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
@@ -587,7 +591,7 @@
             // sc2Prodaja.Panel2
             // 
             this.sc2Prodaja.Panel2.Controls.Add(this.btnProdajaKarata);
-            this.sc2Prodaja.Size = new System.Drawing.Size(496, 373);
+            this.sc2Prodaja.Size = new System.Drawing.Size(537, 373);
             this.sc2Prodaja.SplitterDistance = 302;
             this.sc2Prodaja.TabIndex = 22;
             // 
@@ -596,14 +600,14 @@
             this.flwProdaja.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flwProdaja.Location = new System.Drawing.Point(0, 0);
             this.flwProdaja.Name = "flwProdaja";
-            this.flwProdaja.Size = new System.Drawing.Size(496, 302);
+            this.flwProdaja.Size = new System.Drawing.Size(537, 302);
             this.flwProdaja.TabIndex = 21;
             this.flwProdaja.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
             // 
             // btnProdajaKarata
             // 
             this.btnProdajaKarata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProdajaKarata.Location = new System.Drawing.Point(378, 23);
+            this.btnProdajaKarata.Location = new System.Drawing.Point(419, 23);
             this.btnProdajaKarata.Name = "btnProdajaKarata";
             this.btnProdajaKarata.Size = new System.Drawing.Size(113, 23);
             this.btnProdajaKarata.TabIndex = 0;
@@ -622,6 +626,14 @@
             this.tabControl1.Size = new System.Drawing.Size(764, 405);
             this.tabControl1.TabIndex = 5;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // lblOpis
+            // 
+            this.lblOpis.AutoSize = true;
+            this.lblOpis.Location = new System.Drawing.Point(6, 28);
+            this.lblOpis.Name = "lblOpis";
+            this.lblOpis.Size = new System.Drawing.Size(0, 13);
+            this.lblOpis.TabIndex = 0;
             // 
             // ZaposleniForm
             // 
@@ -654,6 +666,8 @@
             this.sc1Prodaja.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sc1Prodaja)).EndInit();
             this.sc1Prodaja.ResumeLayout(false);
+            this.gbProdajaPodaciORezervaciji.ResumeLayout(false);
+            this.gbProdajaPodaciORezervaciji.PerformLayout();
             this.gbProdajaPodaciOProjekciji.ResumeLayout(false);
             this.gbProdajaPodaciOProjekciji.PerformLayout();
             this.gbProdajaPodaciOFilmu.ResumeLayout(false);
@@ -719,5 +733,6 @@
         private System.Windows.Forms.FlowLayoutPanel flwProdaja;
         private System.Windows.Forms.Button btnProdajaKarata;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Label lblOpis;
     }
 }

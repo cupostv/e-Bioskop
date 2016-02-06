@@ -48,7 +48,7 @@ namespace e_Bioskop.data.dao.mysql
             return lista;
         }
 
-        public List<RezervacijaDTO> getAllActiveRezervacija(ProjekcijaDTO projekcija)
+        public List<RezervacijaDTO> getAllActiveRezervacija()
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();
             MySqlCommand command = connection.CreateCommand();

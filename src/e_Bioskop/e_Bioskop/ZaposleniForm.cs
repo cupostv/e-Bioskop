@@ -260,8 +260,14 @@ namespace e_Bioskop
             if (rpf.ShowDialog() == DialogResult.OK)
             {
                 izabranaRezervacija = rpf.IzabranaRezervacija;
+
                 List<KartaDTO> listaKarataZaRezervaciju = BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcijaAndRezervacija(izabranaProjekcija,izabranaRezervacija);
-                
+                if (izabranaProjekcija == null)
+                {
+                    izabranaProjekcija = listaKarataZaRezervaciju[0].Projekcija;
+                    showProjekcijaProdajaKarteControlls();
+                    lblOpis.Text = izabranaRezervacija.Opis;
+                }
                 BioskopUtil.initSjedistDTOFlowLayout(flwProdaja, izabranaProjekcija, prodajaIzborSjedistaClick, prodajaListaVecIzdatihKarata);
                 listaIzabranihSjedista.Clear();
                 foreach(KartaDTO karta in listaKarataZaRezervaciju)

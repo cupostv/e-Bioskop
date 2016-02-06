@@ -31,11 +31,24 @@ namespace e_Bioskop
 
         private void initRezervacijeGridView()
         {
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[1].ReadOnly = true;
+            dataGridView1.Columns[2].ReadOnly = true;
+            dataGridView1.Columns[3].ReadOnly = true;
+
             lista.Clear();
-            lista = BioskopUtil.getDAOFactory().getRezervacijaDAO().getAllByProjekcija(projekcija);
+            if (projekcija != null)
+            {
+                lista = BioskopUtil.getDAOFactory().getRezervacijaDAO().getAllByProjekcija(projekcija);
+            }
+            else
+            {
+                lista = BioskopUtil.getDAOFactory().getRezervacijaDAO().getAllActiveRezervacija();
+            }
+
             foreach (RezervacijaDTO rez in lista)
             {
-                dataGridView1.Rows.Add(rez.Id, rez.VrijemeRezervacije.ToShortDateString(), rez.VrijemeRezervacije.TimeOfDay, rez.Opis,"Izaberi");
+                dataGridView1.Rows.Add(rez.Id, rez.VrijemeRezervacije.ToShortDateString(), rez.VrijemeRezervacije.TimeOfDay, rez.Opis, "Izaberi");
             }
         }
 

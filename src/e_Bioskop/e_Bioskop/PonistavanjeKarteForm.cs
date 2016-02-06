@@ -20,7 +20,6 @@ namespace e_Bioskop
         private void btnPonisti_Click(object sender, EventArgs e)
         {
             bool validation = true;
-            bool hasChar = false;
 
             if (string.IsNullOrWhiteSpace(tbxBrojKarte.Text))
             {
@@ -33,7 +32,6 @@ namespace e_Bioskop
                 {
                     if (!char.IsDigit(letter))
                     {
-                        hasChar = true;
                         errProvBrojKarte.SetError(tbxBrojKarte, "Broj karte mora biti numerička vrijednost.");
                         validation = false;
                         break;
