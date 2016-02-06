@@ -298,5 +298,12 @@ namespace e_Bioskop
               lblCijena.Text = (izabranaProjekcija.Cijena - izabranaProjekcija.Cijena * (comboBox1.SelectedIndex / 10.0)).ToString() + " KM";
         }
 
+        private void ZaposleniForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (BioskopUtil.getPrijavljeniZaposleni() != null)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

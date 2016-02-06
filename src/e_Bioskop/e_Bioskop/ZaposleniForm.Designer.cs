@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ZaposleniForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnPregledRasporeda = new System.Windows.Forms.ToolStripButton();
+            this.btnOdjava = new System.Windows.Forms.ToolStripButton();
             this.btnPonistavanjeKarte = new System.Windows.Forms.ToolStripButton();
+            this.btnDodajFilm = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lblImePrezime = new System.Windows.Forms.ToolStripLabel();
             this.tbRezervacija = new System.Windows.Forms.TabPage();
@@ -80,9 +83,6 @@
             this.flwProdaja = new System.Windows.Forms.FlowLayoutPanel();
             this.btnProdajaKarata = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.btnPregledRasporeda = new System.Windows.Forms.ToolStripButton();
-            this.btnOdjava = new System.Windows.Forms.ToolStripButton();
-            this.btnDodajFilm = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.tbRezervacija.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sc1Rezervacija)).BeginInit();
@@ -127,6 +127,26 @@
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // btnPregledRasporeda
+            // 
+            this.btnPregledRasporeda.Image = global::e_Bioskop.Properties.Resources.pregled_rasporeda;
+            this.btnPregledRasporeda.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPregledRasporeda.Name = "btnPregledRasporeda";
+            this.btnPregledRasporeda.Size = new System.Drawing.Size(122, 22);
+            this.btnPregledRasporeda.Text = "Pregled rasporeda";
+            this.btnPregledRasporeda.Click += new System.EventHandler(this.btnPregledRasporeda_Click);
+            // 
+            // btnOdjava
+            // 
+            this.btnOdjava.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnOdjava.Image = ((System.Drawing.Image)(resources.GetObject("btnOdjava.Image")));
+            this.btnOdjava.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOdjava.Name = "btnOdjava";
+            this.btnOdjava.Size = new System.Drawing.Size(64, 22);
+            this.btnOdjava.Text = "Odjava";
+            this.btnOdjava.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click_1);
+            // 
             // btnPonistavanjeKarte
             // 
             this.btnPonistavanjeKarte.Image = global::e_Bioskop.Properties.Resources.ponisti_kartu;
@@ -135,6 +155,14 @@
             this.btnPonistavanjeKarte.Size = new System.Drawing.Size(123, 22);
             this.btnPonistavanjeKarte.Text = "Ponistavanje karte";
             this.btnPonistavanjeKarte.Click += new System.EventHandler(this.btnPonistavanjeKarte_Click);
+            // 
+            // btnDodajFilm
+            // 
+            this.btnDodajFilm.Image = global::e_Bioskop.Properties.Resources.filmovi_dodaj;
+            this.btnDodajFilm.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDodajFilm.Name = "btnDodajFilm";
+            this.btnDodajFilm.Size = new System.Drawing.Size(82, 22);
+            this.btnDodajFilm.Text = "Dodaj film";
             // 
             // toolStripSeparator1
             // 
@@ -663,34 +691,6 @@
             this.tabControl1.TabIndex = 5;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // btnPregledRasporeda
-            // 
-            this.btnPregledRasporeda.Image = global::e_Bioskop.Properties.Resources.pregled_rasporeda;
-            this.btnPregledRasporeda.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPregledRasporeda.Name = "btnPregledRasporeda";
-            this.btnPregledRasporeda.Size = new System.Drawing.Size(122, 22);
-            this.btnPregledRasporeda.Text = "Pregled rasporeda";
-            this.btnPregledRasporeda.Click += new System.EventHandler(this.btnPregledRasporeda_Click);
-            // 
-            // btnOdjava
-            // 
-            this.btnOdjava.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnOdjava.Image = ((System.Drawing.Image)(resources.GetObject("btnOdjava.Image")));
-            this.btnOdjava.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnOdjava.Name = "btnOdjava";
-            this.btnOdjava.Size = new System.Drawing.Size(64, 22);
-            this.btnOdjava.Text = "Odjava";
-            this.btnOdjava.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click_1);
-            // 
-            // btnDodajFilm
-            // 
-            this.btnDodajFilm.Image = global::e_Bioskop.Properties.Resources.filmovi_dodaj;
-            this.btnDodajFilm.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDodajFilm.Name = "btnDodajFilm";
-            this.btnDodajFilm.Size = new System.Drawing.Size(82, 22);
-            this.btnDodajFilm.Text = "Dodaj film";
-            // 
             // ZaposleniForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -700,6 +700,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "ZaposleniForm";
             this.Text = "ZaposleniForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ZaposleniForm_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tbRezervacija.ResumeLayout(false);
