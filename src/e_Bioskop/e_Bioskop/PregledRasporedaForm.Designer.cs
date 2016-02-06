@@ -30,11 +30,11 @@
         {
             this.lvProjekcije = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lvProjekcije
@@ -61,10 +61,15 @@
             this.columnHeader3.Text = "Vrijeme projekcije";
             this.columnHeader3.Width = 103;
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Sala";
+            this.columnHeader4.Width = 56;
+            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Naziv filma";
-            this.columnHeader1.Width = 123;
+            this.columnHeader1.Width = 117;
             // 
             // columnHeader2
             // 
@@ -88,11 +93,6 @@
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 24;
             this.label1.Text = "Izaberite datum";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Sala";
-            this.columnHeader4.Width = 56;
             // 
             // PregledRasporedaForm
             // 

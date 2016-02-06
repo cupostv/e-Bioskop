@@ -33,7 +33,6 @@
             this.btnPregledRasporeda = new System.Windows.Forms.ToolStripButton();
             this.btnOdjava = new System.Windows.Forms.ToolStripButton();
             this.btnPonistavanjeKarte = new System.Windows.Forms.ToolStripButton();
-            this.btnDodajFilm = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lblImePrezime = new System.Windows.Forms.ToolStripLabel();
             this.tbRezervacija = new System.Windows.Forms.TabPage();
@@ -118,7 +117,6 @@
             this.btnPregledRasporeda,
             this.btnOdjava,
             this.btnPonistavanjeKarte,
-            this.btnDodajFilm,
             this.toolStripSeparator1,
             this.lblImePrezime});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -155,14 +153,6 @@
             this.btnPonistavanjeKarte.Size = new System.Drawing.Size(123, 22);
             this.btnPonistavanjeKarte.Text = "Ponistavanje karte";
             this.btnPonistavanjeKarte.Click += new System.EventHandler(this.btnPonistavanjeKarte_Click);
-            // 
-            // btnDodajFilm
-            // 
-            this.btnDodajFilm.Image = global::e_Bioskop.Properties.Resources.filmovi_dodaj;
-            this.btnDodajFilm.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDodajFilm.Name = "btnDodajFilm";
-            this.btnDodajFilm.Size = new System.Drawing.Size(82, 22);
-            this.btnDodajFilm.Text = "Dodaj film";
             // 
             // toolStripSeparator1
             // 
@@ -745,7 +735,6 @@
         private System.Windows.Forms.ToolStripButton btnPregledRasporeda;
         private System.Windows.Forms.ToolStripButton btnOdjava;
         private System.Windows.Forms.ToolStripButton btnPonistavanjeKarte;
-        private System.Windows.Forms.ToolStripButton btnDodajFilm;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel lblImePrezime;
         private System.Windows.Forms.TabPage tbRezervacija;

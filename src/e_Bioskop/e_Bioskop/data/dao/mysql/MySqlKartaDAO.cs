@@ -43,14 +43,12 @@ namespace e_Bioskop.data.dao.mysql
         private string getByIdQuerry = "select k.idKarta, brojReda,brojSjedista,datumProdaje, k.idZaposleni, korisnickoIme, lozinka, ime, prezime, "
                                        + " datumRodjenja, telefon, e_mail, aktivan, "
                                        + " sk.idStatusKarta, NazivStatusKarta, p.idProjekcija, idFilm, vrijemeProjekcija, cijenaProjekcija, "
-                                       + " sl.idSala, nazivSala, aktivna,brojRedova,brojSjedistaURedu, "
-                                       + " r.idRezervacija, vrijemeRezervacija, opisRezervacija,aktivnaRezervacija "
+                                       + " sl.idSala, nazivSala, aktivna,brojRedova,brojSjedistaURedu "
                                        + " from karta k "
                                        + " inner join zaposleni z on k.idZaposleni = z.idZaposleni "
                                        + " inner join projekcija p on k.idProjekcija = p.idProjekcija "
                                        + " inner join sala sl on p.idSala = sl.idSala "
                                        + " inner join status_karta sk on k.idStatusKarta = sk.idStatusKarta "
-                                       + " inner join rezervacija r on k.idRezervacija = r.idRezervacija "
                                        + " where k.IdKarta=?idKarta;";
 
         private string insertQuerry = "INSERT INTO `e_bioskop`.`karta` (`cijenaKarta`, `datumProdaje`, `idZaposleni`, `idProjekcija`, `idRezervacija`, `idStatusKarta`, `brojReda`, `brojSjedista`) VALUES (?cijenaKarta, ?datumProdaje, ?idZaposleni, ?idProjekcija, ?idRezervacija, ?idStatusKarta, ?brojReda, ?brojSjedista);";

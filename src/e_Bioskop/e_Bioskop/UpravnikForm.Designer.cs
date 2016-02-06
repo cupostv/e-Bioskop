@@ -446,7 +446,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer2.Size = new System.Drawing.Size(700, 344);
-            this.splitContainer2.SplitterDistance = 233;
+            this.splitContainer2.SplitterDistance = 250;
             this.splitContainer2.TabIndex = 0;
             // 
             // tbxProjekcijaSearch
@@ -470,7 +470,7 @@
             this.lvProjekcije.GridLines = true;
             this.lvProjekcije.Location = new System.Drawing.Point(0, 34);
             this.lvProjekcije.Name = "lvProjekcije";
-            this.lvProjekcije.Size = new System.Drawing.Size(230, 313);
+            this.lvProjekcije.Size = new System.Drawing.Size(247, 313);
             this.lvProjekcije.TabIndex = 3;
             this.lvProjekcije.UseCompatibleStateImageBehavior = false;
             this.lvProjekcije.View = System.Windows.Forms.View.Details;
