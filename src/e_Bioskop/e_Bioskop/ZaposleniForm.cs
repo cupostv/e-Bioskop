@@ -23,6 +23,9 @@ namespace e_Bioskop
             InitializeComponent();
             hideProjekcijaProdajaKarteControlls();
             hideRezervisanjeControlls();
+            ZaposleniDTO zaposleni = BioskopUtil.getPrijavljeniZaposleni();
+            lblImePrezime.Text = zaposleni.Ime + " " + zaposleni.Prezime;
+            comboBox1.SelectedIndex = 0;
         }
 
         private void hideRezervisanjeControlls()
@@ -54,6 +57,7 @@ namespace e_Bioskop
                 if (izabranaProjekcija == null || izabranaProjekcija.Id != pif.IzabranaProjekcija.Id)
                 {
                     izabranaProjekcija = pif.IzabranaProjekcija;
+                    lblCijena.Text = izabranaProjekcija.Cijena.ToString() + " KM";
                     showProjekcijaProdajaKarteControlls();
                 }
             }
@@ -142,6 +146,7 @@ namespace e_Bioskop
                     karta.Projekcija = izabranaProjekcija;
                     karta.Status = prodana;
                     karta.Zaposleni = BioskopUtil.getPrijavljeniZaposleni();
+                    karta.Cijena = izabranaProjekcija.Cijena - izabranaProjekcija.Cijena * (comboBox1.SelectedIndex / 10.0);
                     string str = b.Name.Replace("prodaja", "");
                     char[] del={'_'};
                     string[] s=str.Split(del,StringSplitOptions.RemoveEmptyEntries);
@@ -286,5 +291,12 @@ namespace e_Bioskop
             PonistavanjeKarteForm pkf = new PonistavanjeKarteForm();
             pkf.ShowDialog();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (izabranaProjekcija != null)
+              lblCijena.Text = (izabranaProjekcija.Cijena - izabranaProjekcija.Cijena * (comboBox1.SelectedIndex / 10.0)).ToString() + " KM";
+        }
+
     }
 }

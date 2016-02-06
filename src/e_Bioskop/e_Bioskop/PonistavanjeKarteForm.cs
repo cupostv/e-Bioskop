@@ -44,14 +44,16 @@ namespace e_Bioskop
             {
                 errProvBrojKarte.Clear();
                 KartaDTO karta = BioskopUtil.getDAOFactory().getKartaDAO().getById(int.Parse(tbxBrojKarte.Text));
+            
                 if (karta == null || karta.Id == 0)
                 {
-                    MessageBox.Show(this, "Karta ne postoji", "");
+                    MessageBox.Show(this, karta.Id.ToString());
                 }
                 else
                 {
                     karta.Status = BioskopUtil.getDAOFactory().getStatusKartaDAO().getByNaziv("Ponistena");
                     BioskopUtil.getDAOFactory().getKartaDAO().update(karta);
+                    MessageBox.Show(this, "Vasa karta je ponistena.");
                 }
             }
         }
