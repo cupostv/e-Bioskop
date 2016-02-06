@@ -19,16 +19,48 @@ namespace e_Bioskop
 
         private void btnPonisti_Click(object sender, EventArgs e)
         {
-            KartaDTO karta = BioskopUtil.getDAOFactory().getKartaDAO().getById(int.Parse(textBox1.Text));
-            if (karta == null|| karta.Id==0)
+            bool validation = true;
+            bool hasChar = false;
+
+            if (string.IsNullOrWhiteSpace(tbxBrojKarte.Text))
             {
-                MessageBox.Show(this, "Karta ne postoji", "");
+                errProvBrojKarte.SetError(tbxBrojKarte, "Niste unijeli broj karte.");
+                validation = false;
             }
             else
             {
-                karta.Status = BioskopUtil.getDAOFactory().getStatusKartaDAO().getByNaziv("Ponistena");
-                BioskopUtil.getDAOFactory().getKartaDAO().update(karta);
+                foreach (char letter in tbxBrojKarte.Text)
+                {
+                    if (!char.IsDigit(letter))
+                    {
+                        hasChar = true;
+                        errProvBrojKarte.SetError(tbxBrojKarte, "Broj karte mora biti numerička vrijednost.");
+                        validation = false;
+                        break;
+                    }
+                }
             }
+
+
+            if (validation)
+            {
+                errProvBrojKarte.Clear();
+                KartaDTO karta = BioskopUtil.getDAOFactory().getKartaDAO().getById(int.Parse(tbxBrojKarte.Text));
+                if (karta == null || karta.Id == 0)
+                {
+                    MessageBox.Show(this, "Karta ne postoji", "");
+                }
+                else
+                {
+                    karta.Status = BioskopUtil.getDAOFactory().getStatusKartaDAO().getByNaziv("Ponistena");
+                    BioskopUtil.getDAOFactory().getKartaDAO().update(karta);
+                }
+            }
+        }
+
+        private void tbxBrojKarte_TextChanged(object sender, EventArgs e)
+        {
+            errProvBrojKarte.Clear();
         }
     }
 }

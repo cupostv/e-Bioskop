@@ -31,7 +31,7 @@ namespace e_Bioskop
             gbRezervisanjePodaciOProjekciji.Hide();
             gbRezervisanjePodaciORezervaciji.Hide();
             flwRezervacija.Controls.Clear();
-
+            btnRezervisi.Visible = false;
         }
 
         private void hideProjekcijaProdajaKarteControlls()
@@ -201,6 +201,7 @@ namespace e_Bioskop
 
         private void fillRezervisanjeControls()
         {
+            btnRezervisi.Visible = true;
             gbRezervacijaPodaciOFilmu.Show();
             gbRezervisanjePodaciOProjekciji.Show();
             gbRezervisanjePodaciORezervaciji.Show();
