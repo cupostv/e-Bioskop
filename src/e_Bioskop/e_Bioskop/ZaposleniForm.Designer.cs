@@ -82,7 +82,6 @@
             this.flwProdaja = new System.Windows.Forms.FlowLayoutPanel();
             this.btnProdajaKarata = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.tbRezervacija.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sc1Rezervacija)).BeginInit();
@@ -119,8 +118,7 @@
             this.btnOdjava,
             this.btnPonistavanjeKarte,
             this.toolStripSeparator1,
-            this.lblImePrezime,
-            this.toolStripButton1});
+            this.lblImePrezime});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(764, 25);
@@ -384,7 +382,7 @@
             // 
             // btnRezervisi
             // 
-            this.btnRezervisi.Location = new System.Drawing.Point(455, 14);
+            this.btnRezervisi.Location = new System.Drawing.Point(452, 14);
             this.btnRezervisi.Name = "btnRezervisi";
             this.btnRezervisi.Size = new System.Drawing.Size(75, 23);
             this.btnRezervisi.TabIndex = 0;
@@ -683,14 +681,6 @@
             this.tabControl1.TabIndex = 5;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = global::e_Bioskop.Properties.Resources.ponisti_rezervaciju;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(152, 22);
-            this.toolStripButton1.Text = "Poništavanje rezervacije";
-            // 
             // ZaposleniForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -794,6 +784,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblCijena;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
