@@ -35,6 +35,7 @@
             this.btnPonistavanjeKarte = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lblImePrezime = new System.Windows.Forms.ToolStripLabel();
+            this.btnPonistiRezervaciju = new System.Windows.Forms.ToolStripButton();
             this.tbRezervacija = new System.Windows.Forms.TabPage();
             this.sc1Rezervacija = new System.Windows.Forms.SplitContainer();
             this.gbRezervisanjePodaciORezervaciji = new System.Windows.Forms.GroupBox();
@@ -118,7 +119,8 @@
             this.btnOdjava,
             this.btnPonistavanjeKarte,
             this.toolStripSeparator1,
-            this.lblImePrezime});
+            this.lblImePrezime,
+            this.btnPonistiRezervaciju});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(764, 25);
@@ -166,6 +168,15 @@
             this.lblImePrezime.Name = "lblImePrezime";
             this.lblImePrezime.Size = new System.Drawing.Size(72, 22);
             this.lblImePrezime.Text = "Ime Prezime";
+            // 
+            // btnPonistiRezervaciju
+            // 
+            this.btnPonistiRezervaciju.Image = global::e_Bioskop.Properties.Resources.ponisti_rezervaciju;
+            this.btnPonistiRezervaciju.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPonistiRezervaciju.Name = "btnPonistiRezervaciju";
+            this.btnPonistiRezervaciju.Size = new System.Drawing.Size(152, 22);
+            this.btnPonistiRezervaciju.Text = "Ponistavanje rezervacije";
+            this.btnPonistiRezervaciju.Click += new System.EventHandler(this.btnPonistiRezervaciju_Click);
             // 
             // tbRezervacija
             // 
@@ -784,5 +795,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblCijena;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ToolStripButton btnPonistiRezervaciju;
     }
 }

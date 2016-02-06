@@ -265,7 +265,7 @@ namespace e_Bioskop
             if (rpf.ShowDialog() == DialogResult.OK)
             {
                 izabranaRezervacija = rpf.IzabranaRezervacija;
-
+                
                 List<KartaDTO> listaKarataZaRezervaciju = BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcijaAndRezervacija(izabranaProjekcija,izabranaRezervacija);
                 if (izabranaProjekcija == null)
                 {
@@ -303,6 +303,25 @@ namespace e_Bioskop
             if (BioskopUtil.getPrijavljeniZaposleni() != null)
             {
                 Application.Exit();
+            }
+        }
+
+        private void btnPonistiRezervaciju_Click(object sender, EventArgs e)
+        {
+            RezervacijePregledForm rpf = new RezervacijePregledForm();
+
+            if (rpf.ShowDialog() == DialogResult.OK)
+            {
+                izabranaRezervacija = rpf.IzabranaRezervacija;
+                List<KartaDTO> listaKarataZaRezervaciju = BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcijaAndRezervacija(izabranaProjekcija, izabranaRezervacija);
+                izabranaRezervacija.Aktivna = 0;
+                BioskopUtil.getDAOFactory().getRezervacijaDAO().update(izabranaRezervacija);
+
+                foreach(KartaDTO karta in listaKarataZaRezervaciju)
+                {
+                    karta.Status.Id = 3;
+                    BioskopUtil.getDAOFactory().getKartaDAO().update(karta);
+                }
             }
         }
     }

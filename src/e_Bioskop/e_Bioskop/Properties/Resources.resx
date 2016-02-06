@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="podesavanja" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\podesavanja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="odjava" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\odjava.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,6 +136,9 @@
   <data name="distributer_dodaj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\distributer_dodaj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ponisti_kartu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ponisti_kartu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="korisnik_dodaj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\korisnik_dodaj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,19 +151,22 @@
   <data name="zeleno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zeleno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="changeSala" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\changeSala.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pregled_rasporeda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pregled_rasporeda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="changeSala" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\changeSala.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="podesavanja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\podesavanja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lozinka" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lozinka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ponisti_kartu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ponisti_kartu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ponisti_rezervaciju" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ponisti_rezervaciju.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

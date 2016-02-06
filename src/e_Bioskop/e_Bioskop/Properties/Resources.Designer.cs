@@ -203,6 +203,16 @@ namespace e_Bioskop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ponisti_rezervaciju {
+            get {
+                object obj = ResourceManager.GetObject("ponisti_rezervaciju", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pregled_rasporeda {
             get {
                 object obj = ResourceManager.GetObject("pregled_rasporeda", resourceCulture);

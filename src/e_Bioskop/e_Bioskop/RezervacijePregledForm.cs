@@ -29,12 +29,22 @@ namespace e_Bioskop
             initRezervacijeGridView();
         }
 
+        public RezervacijePregledForm()
+        {
+            InitializeComponent();
+            initPonistiRezervacijuGridView();
+        }
+
         private void initRezervacijeGridView()
         {
             dataGridView1.Columns[0].ReadOnly = true;
             dataGridView1.Columns[1].ReadOnly = true;
             dataGridView1.Columns[2].ReadOnly = true;
             dataGridView1.Columns[3].ReadOnly = true;
+
+            dataGridView1.Dock = DockStyle.Fill;
+            label1.Hide();
+            tbxOpis.Hide();
 
             lista.Clear();
             if (projekcija != null)
@@ -52,6 +62,21 @@ namespace e_Bioskop
             }
         }
 
+        private void initPonistiRezervacijuGridView()
+        {
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[1].ReadOnly = true;
+            dataGridView1.Columns[2].ReadOnly = true;
+            dataGridView1.Columns[3].ReadOnly = true;
+            label1.Show();
+            tbxOpis.Show();
+            dataGridView1.Dock = DockStyle.None;
+
+            lista.Clear();
+
+            lista = BioskopUtil.getDAOFactory().getRezervacijaDAO().getAllActiveRezervacija();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex !=
@@ -63,6 +88,19 @@ namespace e_Bioskop
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+            StringComparison comparison = StringComparison.InvariantCultureIgnoreCase;
+
+            List<RezervacijaDTO> lr = lista.Where(x => x.Opis.StartsWith(tbxOpis.Text, comparison)).ToList();
+
+            foreach (RezervacijaDTO rez in lr)
+            {
+                dataGridView1.Rows.Add(rez.Id, rez.VrijemeRezervacije.ToShortDateString(), rez.VrijemeRezervacije.TimeOfDay, rez.Opis, "Izaberi");
             }
         }
     }
