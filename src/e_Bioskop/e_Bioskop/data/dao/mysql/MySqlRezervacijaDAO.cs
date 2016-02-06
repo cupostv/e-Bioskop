@@ -18,6 +18,13 @@ namespace e_Bioskop.data.dao.mysql
                                                 + " inner join karta k on r.idRezervacija = k.idRezervacija "
                                                 + " where k.idProjekcija=?idProjekcija and aktivnaRezervacija=1 group by k.idRezervacija;";
 
+        private string getAllActiveProjekcijaQuerry = "select r.idRezervacija, vrijemeRezervacija, opisRezervacija, aktivnaRezervacija, "
+                                                + " z.idZaposleni, datumRodjenja, korisnickoIme, lozinka, ime, "
+                                                + " prezime, telefon, e_mail, aktivan "
+                                                + " from rezervacija r "
+                                                + " inner join zaposleni z on r.idZaposleni = z.idZaposleni "
+                                                + " inner join karta k on r.idRezervacija = k.idRezervacija "
+                                                + " where aktivnaRezervacija=1 group by k.idRezervacija;";
         
         private string insertQuerry = "INSERT INTO `e_bioskop`.`rezervacija` (`vrijemeRezervacija`, `idZaposleni`, `opisRezervacija`,`aktivnaRezervacija`) VALUES (?vrijemeRezervacija, ?idZaposleni, ?opisRezervacija,?aktivna);";
 
@@ -38,6 +45,23 @@ namespace e_Bioskop.data.dao.mysql
             }
             reader.Close();
             ConnectionPool.checkInConnection(connection);
+            return lista;
+        }
+
+        public List<RezervacijaDTO> getAllActiveProjekcija(ProjekcijaDTO projekcija)
+        {
+            MySqlConnection connection = ConnectionPool.checkOutConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = getAllActiveProjekcijaQuerry;
+            MySqlDataReader reader = command.ExecuteReader();
+            List<RezervacijaDTO> lista = new List<RezervacijaDTO>();
+
+            while (reader.Read())
+            {
+                lista.Add(readerToRezervacijaDTO(reader));
+            }
+            reader.Close();
+            ConnectionPool.checkInConnection(conncetion);
             return lista;
         }
 
