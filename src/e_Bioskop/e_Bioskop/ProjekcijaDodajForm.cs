@@ -66,7 +66,7 @@ namespace e_Bioskop
             projekcija.Film = film;
             projekcija.Sala = BioskopUtil.getSalaFromComboBox(cbSala);
             projekcija.Vrijeme = dtpDatum.Value.Date + dtpVrijeme.Value.TimeOfDay;
-            projekcija.Cijena = int.Parse(tbxCijena.Text);
+            projekcija.Cijena = float.Parse(tbxCijena.Text);
             return projekcija;
         }
 

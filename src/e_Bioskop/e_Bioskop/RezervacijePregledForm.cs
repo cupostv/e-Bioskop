@@ -55,7 +55,7 @@ namespace e_Bioskop
             {
                 lista = BioskopUtil.getDAOFactory().getRezervacijaDAO().getAllActiveRezervacija();
             }
-
+            dataGridView1.Rows.Clear();
             foreach (RezervacijaDTO rez in lista)
             {
                 dataGridView1.Rows.Add(rez.Id, rez.VrijemeRezervacije.ToShortDateString(), rez.VrijemeRezervacije.TimeOfDay, rez.Opis, "Izaberi");
@@ -75,6 +75,10 @@ namespace e_Bioskop
             lista.Clear();
 
             lista = BioskopUtil.getDAOFactory().getRezervacijaDAO().getAllActiveRezervacija();
+            foreach (RezervacijaDTO rez in lista)
+            {
+                dataGridView1.Rows.Add(rez.Id, rez.VrijemeRezervacije.ToShortDateString(), rez.VrijemeRezervacije.TimeOfDay, rez.Opis, "Izaberi");
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -97,7 +101,7 @@ namespace e_Bioskop
             StringComparison comparison = StringComparison.InvariantCultureIgnoreCase;
 
             List<RezervacijaDTO> lr = lista.Where(x => x.Opis.StartsWith(tbxOpis.Text, comparison)).ToList();
-
+            dataGridView1.Rows.Clear();
             foreach (RezervacijaDTO rez in lr)
             {
                 dataGridView1.Rows.Add(rez.Id, rez.VrijemeRezervacije.ToShortDateString(), rez.VrijemeRezervacije.TimeOfDay, rez.Opis, "Izaberi");

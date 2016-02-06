@@ -462,7 +462,7 @@ namespace e_Bioskop
             }
             else
             {
-                MessageBox.Show(this,"Nema sala za izmjenu","Nema sala");
+                MessageBox.Show(this,"Ne postoje sale za izmjenu.","Ne postoje sale");
             }
         }
 

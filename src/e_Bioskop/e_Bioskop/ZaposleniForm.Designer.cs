@@ -397,7 +397,7 @@
             this.btnRezervisi.Name = "btnRezervisi";
             this.btnRezervisi.Size = new System.Drawing.Size(75, 23);
             this.btnRezervisi.TabIndex = 0;
-            this.btnRezervisi.Text = "Rezervisi";
+            this.btnRezervisi.Text = "Rezerviši";
             this.btnRezervisi.UseVisualStyleBackColor = true;
             this.btnRezervisi.Click += new System.EventHandler(this.btnRezervisi_Click);
             // 
@@ -676,7 +676,7 @@
             this.btnProdajaKarata.Name = "btnProdajaKarata";
             this.btnProdajaKarata.Size = new System.Drawing.Size(113, 23);
             this.btnProdajaKarata.TabIndex = 0;
-            this.btnProdajaKarata.Text = "Izvrsi prodaju";
+            this.btnProdajaKarata.Text = "Izvrši prodaju";
             this.btnProdajaKarata.UseVisualStyleBackColor = true;
             this.btnProdajaKarata.Click += new System.EventHandler(this.btnProdajaKarata_Click);
             // 

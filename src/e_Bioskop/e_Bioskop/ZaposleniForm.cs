@@ -46,6 +46,7 @@ namespace e_Bioskop
             prodajaListaVecIzdatihKarata = null;
             flwProdaja.Controls.Clear();
             sc1Prodaja.Panel2.Hide();
+            gbProdajaPodaciORezervaciji.Hide();
         }
 
 
@@ -108,6 +109,7 @@ namespace e_Bioskop
             fillProjekcijaProdajaKarteControlls();
             gbProdajaPodaciOProjekciji.Show();
             gbProdajaPodaciOFilmu.Show();
+            gbProdajaPodaciORezervaciji.Show();
         }
 
         private void flowLayoutPanel1_Resize(object sender, EventArgs e)
@@ -167,6 +169,7 @@ namespace e_Bioskop
                         karta.Zaposleni = BioskopUtil.getPrijavljeniZaposleni();
                         BioskopUtil.getDAOFactory().getKartaDAO().update(karta);
                     }
+                    gbProdajaPodaciORezervaciji.Hide();
                 }
                 fillProjekcijaProdajaKarteControlls();
                 if (izabranaRezervacija != null)
@@ -211,6 +214,7 @@ namespace e_Bioskop
             gbRezervisanjePodaciOProjekciji.Show();
             gbRezervisanjePodaciORezervaciji.Show();
             sc1Rezervacija.Panel2.Show();
+            lblRezervacijaVrijemeProjekcije.Text = izabranaProjekcija.Vrijeme.ToShortDateString() + " " + izabranaProjekcija.Vrijeme.TimeOfDay.ToString();
             lblRezervacijaNazivFilma.Text = izabranaProjekcija.Film.Naziv;
             lblRezervacijaOpisFilma.Text = izabranaProjekcija.Film.Opis;
             lblRezervacijaSalaProjekcije.Text = izabranaProjekcija.Sala.Naziv;
@@ -223,6 +227,7 @@ namespace e_Bioskop
         {
             if (listaIzabranihSjedista != null && listaIzabranihSjedista.Count() > 0)
             {
+                tbxRezervacijaOpisRezervacije.Text = "";
                  RezervacijaDTO rezervacija = new RezervacijaDTO();
                  rezervacija.Zaposleni = BioskopUtil.getPrijavljeniZaposleni();
                  rezervacija.Opis = tbxRezervacijaOpisRezervacije.Text;
