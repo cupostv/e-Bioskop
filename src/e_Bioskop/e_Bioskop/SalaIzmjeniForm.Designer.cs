@@ -182,7 +182,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SalaIzmjeniForm";
-            this.Text = "IzmjeniSaluForm";
+            this.Text = "Izmjena podataka";
             ((System.ComponentModel.ISupportInitialize)(this.tbxBrojSjedistaUredu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxBrojRedova)).EndInit();
             this.ResumeLayout(false);

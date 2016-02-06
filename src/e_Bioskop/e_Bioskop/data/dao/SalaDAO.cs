@@ -11,6 +11,7 @@ namespace e_Bioskop.data.dao
         long insert(SalaDTO sala);
         bool update(SalaDTO sala);
         List<SalaDTO> getAll();
+        List<SalaDTO> getAllForChange();
         SalaDTO getById(int id);
         SalaDTO getByNaziv(string naziv);
 

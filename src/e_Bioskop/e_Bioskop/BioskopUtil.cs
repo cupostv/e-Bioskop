@@ -172,6 +172,20 @@ namespace e_Bioskop
            
         }
 
+        public static void initSalaAllDTOComboBox(ComboBox comboBox, int id)
+        {
+            List<SalaDTO> lista = BioskopUtil.getDAOFactory().getSalaDAO().getAllForChange();
+            foreach (SalaDTO sala in lista)
+            {
+                comboBox.Items.Add(sala.Naziv);
+                if (sala.Id == id)
+                {
+                    comboBox.SelectedIndex = comboBox.Items.Count - 1;
+                }
+            }
+
+        }
+
         public static SalaDTO getSalaFromComboBox(ComboBox comboBox)
         {
             string naziv = comboBox.Items[comboBox.SelectedIndex].ToString();

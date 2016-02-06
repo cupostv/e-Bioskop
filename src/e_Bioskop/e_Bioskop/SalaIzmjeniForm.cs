@@ -15,7 +15,7 @@ namespace e_Bioskop
         public SalaIzmjeniForm()
         {
             InitializeComponent();
-            BioskopUtil.initSalaDTOComboBox(cbNazivSale, 1);
+            BioskopUtil.initSalaAllDTOComboBox(cbNazivSale, 1);
             string naziv = cbNazivSale.Items[cbNazivSale.SelectedIndex].ToString();
             SalaDTO sala=BioskopUtil.getDAOFactory().getSalaDAO().getByNaziv(naziv);
             tbxNoviNaziv.Text = naziv;
@@ -32,8 +32,7 @@ namespace e_Bioskop
         private void cbNazivSale_SelectedIndexChanged(object sender, EventArgs e)
         {
             string naziv = cbNazivSale.Items[cbNazivSale.SelectedIndex].ToString();
-            SalaDTO sala = BioskopUtil.getDAOFactory().getSalaDAO().
-                getByNaziv(naziv);
+            SalaDTO sala = BioskopUtil.getDAOFactory().getSalaDAO().getByNaziv(naziv);
             tbxNoviNaziv.Text = naziv;
             tbxBrojRedova.Minimum = sala.BrojRedova;
             tbxBrojSjedistaUredu.Minimum = sala.BrojSjedistaURedu;
