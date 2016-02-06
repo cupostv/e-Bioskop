@@ -18,7 +18,7 @@ namespace e_Bioskop.data.dao.mysql
                                                 + " inner join karta k on r.idRezervacija = k.idRezervacija "
                                                 + " where k.idProjekcija=?idProjekcija and aktivnaRezervacija=1 group by k.idRezervacija;";
 
-        private string getAllActiveProjekcijaQuerry = "select r.idRezervacija, vrijemeRezervacija, opisRezervacija, aktivnaRezervacija, "
+        private string getAllActiveRezervacijaQuerry = "select r.idRezervacija, vrijemeRezervacija, opisRezervacija, aktivnaRezervacija, "
                                                 + " z.idZaposleni, datumRodjenja, korisnickoIme, lozinka, ime, "
                                                 + " prezime, telefon, e_mail, aktivan "
                                                 + " from rezervacija r "
@@ -48,11 +48,11 @@ namespace e_Bioskop.data.dao.mysql
             return lista;
         }
 
-        public List<RezervacijaDTO> getAllActiveProjekcija(ProjekcijaDTO projekcija)
+        public List<RezervacijaDTO> getAllActiveRezervacija(ProjekcijaDTO projekcija)
         {
             MySqlConnection connection = ConnectionPool.checkOutConnection();
             MySqlCommand command = connection.CreateCommand();
-            command.CommandText = getAllActiveProjekcijaQuerry;
+            command.CommandText = getAllActiveRezervacijaQuerry;
             MySqlDataReader reader = command.ExecuteReader();
             List<RezervacijaDTO> lista = new List<RezervacijaDTO>();
 
@@ -61,7 +61,7 @@ namespace e_Bioskop.data.dao.mysql
                 lista.Add(readerToRezervacijaDTO(reader));
             }
             reader.Close();
-            ConnectionPool.checkInConnection(conncetion);
+            ConnectionPool.checkInConnection(connection);
             return lista;
         }
 
