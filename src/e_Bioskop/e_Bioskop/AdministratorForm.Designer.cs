@@ -109,7 +109,9 @@
             this.btnOdjava = new System.Windows.Forms.ToolStripButton();
             this.btnDodajDistributera = new System.Windows.Forms.ToolStripButton();
             this.btnDodajFilm = new System.Windows.Forms.ToolStripButton();
-            this.btnDodajSalu = new System.Windows.Forms.ToolStripButton();
+            this.ddbAdministracijaSala = new System.Windows.Forms.ToolStripDropDownButton();
+            this.miDodajSalu = new System.Windows.Forms.ToolStripMenuItem();
+            this.izmjeniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.picAktivan = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -356,7 +358,7 @@
             this.btnDodajFilm,
             this.toolStripSeparator1,
             this.lblImePrezime,
-            this.btnDodajSalu});
+            this.ddbAdministracijaSala});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(734, 25);
@@ -954,14 +956,32 @@
             this.btnDodajFilm.Text = "Dodaj film";
             this.btnDodajFilm.Click += new System.EventHandler(this.btnDodajFilm_Click);
             // 
-            // btnDodajSalu
+            // ddbAdministracijaSala
             // 
-            this.btnDodajSalu.Image = global::e_Bioskop.Properties.Resources.dodajSala;
-            this.btnDodajSalu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDodajSalu.Name = "btnDodajSalu";
-            this.btnDodajSalu.Size = new System.Drawing.Size(82, 22);
-            this.btnDodajSalu.Text = "Dodaj salu";
-            this.btnDodajSalu.Click += new System.EventHandler(this.btnDodajSalu_Click);
+            this.ddbAdministracijaSala.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miDodajSalu,
+            this.izmjeniToolStripMenuItem1});
+            this.ddbAdministracijaSala.Image = global::e_Bioskop.Properties.Resources.manageSala;
+            this.ddbAdministracijaSala.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ddbAdministracijaSala.Name = "ddbAdministracijaSala";
+            this.ddbAdministracijaSala.Size = new System.Drawing.Size(135, 22);
+            this.ddbAdministracijaSala.Text = "Administracija sala";
+            // 
+            // miDodajSalu
+            // 
+            this.miDodajSalu.Image = global::e_Bioskop.Properties.Resources.dodajSala;
+            this.miDodajSalu.Name = "miDodajSalu";
+            this.miDodajSalu.Size = new System.Drawing.Size(152, 22);
+            this.miDodajSalu.Text = "Dodaj salu";
+            this.miDodajSalu.Click += new System.EventHandler(this.miDodajSalu_Click);
+            // 
+            // izmjeniToolStripMenuItem1
+            // 
+            this.izmjeniToolStripMenuItem1.Image = global::e_Bioskop.Properties.Resources.changeSala;
+            this.izmjeniToolStripMenuItem1.Name = "izmjeniToolStripMenuItem1";
+            this.izmjeniToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.izmjeniToolStripMenuItem1.Text = "Izmjeni";
+            this.izmjeniToolStripMenuItem1.Click += new System.EventHandler(this.izmjeniToolStripMenuItem1_Click);
             // 
             // picAktivan
             // 
@@ -1106,6 +1126,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn trajanje;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.ToolStripButton btnDodajSalu;
+        private System.Windows.Forms.ToolStripDropDownButton ddbAdministracijaSala;
+        private System.Windows.Forms.ToolStripMenuItem miDodajSalu;
+        private System.Windows.Forms.ToolStripMenuItem izmjeniToolStripMenuItem1;
     }
 }

@@ -38,6 +38,7 @@
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.epNaziv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbAktivna = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbxBrojRedova)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxBrojSjedistaUredu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epNaziv)).BeginInit();
@@ -114,7 +115,7 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(192, 116);
+            this.btnDodaj.Location = new System.Drawing.Point(192, 148);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(75, 23);
             this.btnDodaj.TabIndex = 6;
@@ -125,7 +126,7 @@
             // btnOdustani
             // 
             this.btnOdustani.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnOdustani.Location = new System.Drawing.Point(273, 116);
+            this.btnOdustani.Location = new System.Drawing.Point(273, 148);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
             this.btnOdustani.TabIndex = 7;
@@ -137,6 +138,18 @@
             this.epNaziv.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epNaziv.ContainerControl = this;
             // 
+            // cbAktivna
+            // 
+            this.cbAktivna.AutoSize = true;
+            this.cbAktivna.Checked = true;
+            this.cbAktivna.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbAktivna.Location = new System.Drawing.Point(172, 112);
+            this.cbAktivna.Name = "cbAktivna";
+            this.cbAktivna.Size = new System.Drawing.Size(62, 17);
+            this.cbAktivna.TabIndex = 9;
+            this.cbAktivna.Text = "Aktivna";
+            this.cbAktivna.UseVisualStyleBackColor = true;
+            // 
             // SalaDodajForm
             // 
             this.AcceptButton = this.btnDodaj;
@@ -144,7 +157,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.CancelButton = this.btnOdustani;
-            this.ClientSize = new System.Drawing.Size(374, 151);
+            this.ClientSize = new System.Drawing.Size(374, 183);
+            this.Controls.Add(this.cbAktivna);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.tbxBrojSjedistaUredu);
@@ -177,5 +191,6 @@
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.ErrorProvider epNaziv;
+        private System.Windows.Forms.CheckBox cbAktivna;
     }
 }

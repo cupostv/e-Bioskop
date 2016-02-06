@@ -115,6 +115,9 @@
     <Compile Include="FilmIzborForm.Designer.cs">
       <DependentUpon>FilmIzborForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalaIzmjeniForm.Designer.cs">
+      <DependentUpon>SalaIzmjeniForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PonistavanjeKarteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +153,9 @@
     </Compile>
     <Compile Include="SalaDodajForm.Designer.cs">
       <DependentUpon>SalaDodajForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalaIzmjeniForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="UpravnikForm.cs">
       <SubType>Form</SubType>
@@ -220,6 +226,9 @@
     <EmbeddedResource Include="SalaDodajForm.resx">
       <DependentUpon>SalaDodajForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalaIzmjeniForm.resx">
+      <DependentUpon>SalaIzmjeniForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpravnikForm.resx">
       <DependentUpon>UpravnikForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +267,8 @@
     <None Include="Resources\korisnik.png" />
     <None Include="Resources\lozinka.png" />
     <None Include="Resources\lista.png" />
+    <Content Include="Resources\changeSala.png" />
+    <Content Include="Resources\manageSala.png" />
     <Content Include="Resources\ok.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

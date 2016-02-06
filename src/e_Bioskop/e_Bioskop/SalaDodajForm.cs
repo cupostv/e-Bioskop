@@ -23,6 +23,10 @@ namespace e_Bioskop
             sala.Naziv = tbxNaziv.Text;
             sala.BrojSjedistaURedu = (int)tbxBrojSjedistaUredu.Value;
             sala.BrojRedova = (int)tbxBrojRedova.Value;
+            if (cbAktivna.Checked)
+                sala.Aktivna = 1;
+            else
+                sala.Aktivna = 0;
             BioskopUtil.getDAOFactory().getSalaDAO().insert(sala);
         }
 

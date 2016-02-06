@@ -440,12 +440,29 @@ namespace e_Bioskop
             }
         }
 
-        private void btnDodajSalu_Click(object sender, EventArgs e)
+        private void miDodajSalu_Click(object sender, EventArgs e)
         {
             SalaDodajForm sala = new SalaDodajForm();
             if (sala.ShowDialog() == DialogResult.OK)
             {
 
+            }
+        }
+
+        private void izmjeniToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int brojSala = BioskopUtil.getDAOFactory().getSalaDAO().getAll().Count;
+            if (brojSala > 0)
+            {
+                SalaIzmjeniForm sala = new SalaIzmjeniForm();
+                if (sala.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show(this,"Nema sala za izmjenu","Nema sala");
             }
         }
 
