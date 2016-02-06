@@ -969,7 +969,7 @@
             // 
             // miDodajSalu
             // 
-            this.miDodajSalu.Image = global::e_Bioskop.Properties.Resources.dodajSala;
+            this.miDodajSalu.Image = global::e_Bioskop.Properties.Resources.dodaj_salu;
             this.miDodajSalu.Name = "miDodajSalu";
             this.miDodajSalu.Size = new System.Drawing.Size(152, 22);
             this.miDodajSalu.Text = "Dodaj salu";
@@ -977,7 +977,7 @@
             // 
             // izmjeniToolStripMenuItem1
             // 
-            this.izmjeniToolStripMenuItem1.Image = global::e_Bioskop.Properties.Resources.changeSala;
+            this.izmjeniToolStripMenuItem1.Image = global::e_Bioskop.Properties.Resources.promjeni_salu1;
             this.izmjeniToolStripMenuItem1.Name = "izmjeniToolStripMenuItem1";
             this.izmjeniToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.izmjeniToolStripMenuItem1.Text = "Izmjeni";

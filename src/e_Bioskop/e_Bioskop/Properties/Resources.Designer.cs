@@ -93,6 +93,16 @@ namespace e_Bioskop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dodaj_salu {
+            get {
+                object obj = ResourceManager.GetObject("dodaj_salu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dodajSala {
             get {
                 object obj = ResourceManager.GetObject("dodajSala", resourceCulture);
@@ -203,9 +213,39 @@ namespace e_Bioskop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ponisti_rezervaciju {
+            get {
+                object obj = ResourceManager.GetObject("ponisti_rezervaciju", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pregled_rasporeda {
             get {
                 object obj = ResourceManager.GetObject("pregled_rasporeda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap promjeni_salu {
+            get {
+                object obj = ResourceManager.GetObject("promjeni_salu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap promjeni_salu1 {
+            get {
+                object obj = ResourceManager.GetObject("promjeni_salu1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
