@@ -34,5 +34,15 @@ namespace e_Bioskop.data.dto
             get { return opis; }
             set { opis = value; }
         }
+
+        private int aktivna;
+
+        public int Aktivna
+        {
+            get { return aktivna; }
+            set { aktivna = value; }
+        }
+
+        
     }
 }

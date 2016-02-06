@@ -44,7 +44,7 @@ namespace e_Bioskop.data.dao.mysql
                                        + " datumRodjenja, telefon, e_mail, aktivan, "
                                        + " sk.idStatusKarta, NazivStatusKarta, p.idProjekcija, idFilm, vrijemeProjekcija, cijenaProjekcija, "
                                        + " sl.idSala, nazivSala, aktivna,brojRedova,brojSjedistaURedu, "
-                                       + " r.idRezervacija, vrijemeRezervacija, opisRezervacija "
+                                       + " r.idRezervacija, vrijemeRezervacija, opisRezervacija,aktivnaRezervacija "
                                        + " from karta k "
                                        + " inner join zaposleni z on k.idZaposleni = z.idZaposleni "
                                        + " inner join projekcija p on k.idProjekcija = p.idProjekcija "

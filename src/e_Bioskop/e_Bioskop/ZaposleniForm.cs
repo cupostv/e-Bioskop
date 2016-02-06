@@ -164,7 +164,12 @@ namespace e_Bioskop
                     }
                 }
                 fillProjekcijaProdajaKarteControlls();
-                
+                if (izabranaRezervacija != null)
+                {
+                    izabranaRezervacija.Aktivna = 0;
+                    BioskopUtil.getDAOFactory().getRezervacijaDAO().update(izabranaRezervacija);
+                    izabranaRezervacija = null;
+                }
             }
             
         }
@@ -216,6 +221,7 @@ namespace e_Bioskop
                  rezervacija.Zaposleni = BioskopUtil.getPrijavljeniZaposleni();
                  rezervacija.Opis = tbxRezervacijaOpisRezervacije.Text;
                  rezervacija.VrijemeRezervacije = DateTime.Now;
+                 rezervacija.Aktivna = 1;
                 int id=(int) BioskopUtil.getDAOFactory().getRezervacijaDAO().insert(rezervacija);
                 rezervacija.Id = id;
                 StatusKartaDTO rezervisanaStatus = BioskopUtil.getDAOFactory().getStatusKartaDAO().getByNaziv("Rezervisana");

@@ -35,7 +35,7 @@ namespace e_Bioskop
             lista = BioskopUtil.getDAOFactory().getRezervacijaDAO().getAllByProjekcija(projekcija);
             foreach (RezervacijaDTO rez in lista)
             {
-                dataGridView1.Rows.Add(rez.Id, rez.VrijemeRezervacije.Date, rez.VrijemeRezervacije.TimeOfDay, rez.Opis,"Izaberi");
+                dataGridView1.Rows.Add(rez.Id, rez.VrijemeRezervacije.ToShortDateString(), rez.VrijemeRezervacije.TimeOfDay, rez.Opis,"Izaberi");
             }
         }
 

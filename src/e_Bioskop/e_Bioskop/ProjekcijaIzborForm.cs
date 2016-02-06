@@ -19,6 +19,7 @@ namespace e_Bioskop
             get { return lista; }
             set { lista = value; }
         }
+
         ProjekcijaDTO izabranaProjekcija = null;
         private int p=0;
 
