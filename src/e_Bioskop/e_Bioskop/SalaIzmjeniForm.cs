@@ -51,18 +51,38 @@ namespace e_Bioskop
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            string naziv = cbNazivSale.Items[cbNazivSale.SelectedIndex].ToString();
-            SalaDTO sala = BioskopUtil.getDAOFactory().getSalaDAO().
-                getByNaziv(naziv);
-            sala.Naziv = tbxNoviNaziv.Text;
-            sala.BrojRedova = (int)tbxBrojRedova.Value;
-            sala.BrojSjedistaURedu = (int)tbxBrojSjedistaUredu.Value;
-            if (cbAktivna.Checked)
-                sala.Aktivna = 1;
+            if (validate())
+            {
+                string naziv = cbNazivSale.Items[cbNazivSale.SelectedIndex].ToString();
+                SalaDTO sala = BioskopUtil.getDAOFactory().getSalaDAO().
+                    getByNaziv(naziv);
+                sala.Naziv = tbxNoviNaziv.Text;
+                sala.BrojRedova = (int)tbxBrojRedova.Value;
+                sala.BrojSjedistaURedu = (int)tbxBrojSjedistaUredu.Value;
+                if (cbAktivna.Checked)
+                    sala.Aktivna = 1;
+                else
+                    sala.Aktivna = 0;
+                BioskopUtil.getDAOFactory().getSalaDAO().update(sala);
+                this.Close();
+            }
+        }
+
+        private bool validate()
+        {
+            bool valid = true;
+
+            if (string.IsNullOrEmpty(tbxNoviNaziv.Text.Trim()))
+            {
+                valid = false;
+                errorProvider.SetError(tbxNoviNaziv, "Unesite naziv");
+            }
             else
-                sala.Aktivna = 0;
-            BioskopUtil.getDAOFactory().getSalaDAO().update(sala);
-            this.Close();
+            {
+                errorProvider.Clear();
+            }
+
+            return valid;
         }
     }
 }

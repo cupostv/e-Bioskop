@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cbAktivna = new System.Windows.Forms.CheckBox();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
@@ -39,8 +40,10 @@
             this.cbNazivSale = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbxNoviNaziv = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tbxBrojSjedistaUredu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxBrojRedova)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // cbAktivna
@@ -163,6 +166,11 @@
             this.tbxNoviNaziv.Size = new System.Drawing.Size(176, 20);
             this.tbxNoviNaziv.TabIndex = 21;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // SalaIzmjeniForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +193,7 @@
             this.Text = "Izmjena podataka";
             ((System.ComponentModel.ISupportInitialize)(this.tbxBrojSjedistaUredu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxBrojRedova)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,5 +212,6 @@
         private System.Windows.Forms.ComboBox cbNazivSale;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbxNoviNaziv;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
