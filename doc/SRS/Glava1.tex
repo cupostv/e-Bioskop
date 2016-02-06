@@ -6,13 +6,10 @@
 % Delineate the purpose of the SRS;
 % Specify the intended audience for the SRS.
 
-Ova specifikacija opisuje proces kreiranja softverskog proizvoda - aplikacije za rad bioskopa. Osnovna namjena ovog dokumenta je specifikacija zahtjeva informacionog sistema bioskopa.
+Ova specifikacija opisuje softverski proizvod - aplikaciju za rad bioskopa. Osnovna namjena ovog dokumenta je specifikacija zahtjeva informacionog sistema bioskopa.
+Ova specifikacija je namjenjena naručiocu (kupcu) proizvoda, da bi se ustanovilo da li softver ispunjava njegove zahtjeve, kao i proizvođaču softvera za pregled svega što je potrebno implementirati u sistemu. Specifikacija opisuje ciljeve projekta, parametre, korisnički interfejs, zahtjeve i pitanje dizajna.
 
-Ova specifikacija je namjenjena naručiocu (kupcu) proizvoda, da bi se ustanovilo da li softver ispunjava njihove zahtjeve, kao i proizvođaču softvera za pregled šta je potrebno implementirati u sistemu. Specifikacija opisuje ciljeve projekta, parametre, korisnički interfejs, zahtjeve i pitanje dizajna.
-
-
-Ova specifikacija je napisana po preporuci \textit{IEEE Std 830-1998} i svrha joj je da opiše zahtjeve sistema, korisničke zahtjeve itd.
-
+Ova specifikacija je napisana po preporuci \textit{IEEE Std 830-1998},
 \section{Područje}
 % This subsection should
 % Identify the software product(s) to be produced by name (e.g., Host DBMS, Report Generator, etc.);
@@ -24,7 +21,8 @@ Ova specifikacija je napisana po preporuci \textit{IEEE Std 830-1998} i svrha jo
 
 Naziv softverskog proizvoda je "\naziv". Ovaj softver bi trebao da omogućava:
 \begin{itemize}
-  \item prodaju, rezervaciju i poništavanje karata.
+  \item prodaju, rezervaciju karata;
+  \item poništavanje rezervacije karata;
   \item unos filmova i termina projekcije;
   \item pregled stanja arhive filmova;
   \item generisanje izvještaja o poslovanju bioskopa;
@@ -32,29 +30,45 @@ Naziv softverskog proizvoda je "\naziv". Ovaj softver bi trebao da omogućava:
   \item administraciju korisnika.
 \end{itemize}
 
-Ovaj softver je namjenjen da se koristi u bioskopima. Ovaj informacioni sistem ne predstavlja proširenje postojećeg informacionog sistema, već predstavlja cjelinu za sebe.
+Ovaj softver je namjenjen korištenju u bioskopima i trebao bi da olakša i ubrza rad zaposlenih u bioskopu.
 
-\naziv \ predstavlja sistem koji bi trebao da olakša rad zaposlenih u bioskopu. 
+Ne predstavlja proširenje postojećeg informacionog sistema, već predstavlja cjelinu za sebe.
+
 \section{Definicije,akronimi i skraćenice}
 %This subsection should provide the deÞnitions of all terms, acronyms, and abbreviations required to properly
 % interpret the SRS. This information may be provided by reference to one or more appendixes in the SRS or
 % by reference to other documents.
 \subsection{Definicije}
+
 \begin{itemize}
-\item \textbf{kupac (naručilac) softvera} - osoba ili organizacija, koja naručuje (kupuje) gotov softverski proizvod od proizvođača, ili softver koji je izrađen po njegovom zahtjevu. U ovom slučaju to je:
-\item \textbf{proizvođač softvera} - osoba ili organizacija koja izrađuje (programira) softver. U ovom slučaju to su studenti ETFBL koji ovaj softver prave u okviru predmeta \textit{informacioni sistemi}
-\item \textbf{korisnik} - osoba koja koristi ovaj softver
-\item \textbf{karta} - komad papira koji predstavlja ulaznicu u salu za projekciju filma, često se naziva i ulaznica
-\item \textbf{projekcija filma} - vremenski termin u kojem se u jednoj sali za projekciju prikazuje film
-\item \textbf{film} - sekvenca pokretnih slika, koja je namjenjena za prikazivanje u javnosti
+\item \textbf{kupac (naručilac) softvera} - osoba ili organizacija, koja naručuje (kupuje) gotov softverski proizvod od proizvođača, ili softver koji je izrađen po njegovom zahtjevu. 
+\item \textbf{proizvođač softvera} - osoba ili organizacija koja izrađuje (programira) softver.
+\item \textbf{radnik} - zaposleni u bioskopu koji obavlja prodaju karata, puštanje filmova itd.
+\item \textbf{administrator} - zaposleni u bisoskopu koji je zadužen za održavanje sistema, kao i vođenje računa o ažurnosti podataka u sistemu;
+\item \textbf{gledalac} - osoba koja dolazi u bioskop da gleda film.
+
+\item \textbf{karta} - potvrda koja gledaocu omogućuje da uđe u projekcionu salu i gleda film;
+
+\item \textbf{projekciona sala} - prostorija u kojoj se projektuju (puštaju) filmovi;
+
+\item \textbf{projekcija filma} - vremenski termin u kojem se u jednoj sali za projekciju prikazuje film;
+
+\item \textbf{film} - sekvenca pokretnih slika, koja je namijenjena za prikazivanje u javnosti;
+
+\item \textbf{izvještaj} - dokument koji generiše sistem i sadrži različite podatke o radu bioskopa;
+
+\item \textbf{arhiva} - skladište podataka u kome se čuvaju podaci o filmovima koji više nisu aktuelni u bioskopu;
+
+\item \textbf{\naziv } - naziv softverkog proizvoda za koji je napisana ova specifikacija;
 \end{itemize}
 
 \subsection{Skraćenice}
 \begin{itemize}
-\item \textbf{ETFBL} - Univerzitet u Banjoj Luci, Elektrotehnički fakultet.
-\item \textbf{IEEE} - The Institute of Electrical and Electronics Engineers
-\item \textbf{SRS} - Software Requirements Specification (specifikaicja korisničkih zahtjeva).
-\item \textbf{HCI} – Human Computer Interaction (interakcija čovjek – računar)- 
+\item \textbf{ETFBL} - Univerzitet u Banjoj Luci, Elektrotehnički fakultet;
+\item \textbf{IEEE} - The Institute of Electrical and Electronics Engineers;
+\item \textbf{SRS} - Software Requirements Specification (specifikaicja korisničkih zahtjeva);
+\item \textbf{HCI} – Human Computer Interaction (interakcija čovjek – računar);
+
 \end{itemize}
 
 \section{Reference}
@@ -65,16 +79,13 @@ Ovaj softver je namjenjen da se koristi u bioskopima. Ovaj informacioni sistem n
 % This information may be provided by reference to an appendix or to another document.
 
 \begin{itemize}
-\item IEEE Recommended Practice for Software Requirements Specifcations , IEEE Std 830-1998
-\item 
+\item IEEE Recommended Practice for Software Requirements Specifications, IEEE Std 830-1998
 \end{itemize}
 \section{Pregled}
 %This subsection should
 % Describe what the rest of the SRS contains;
 % Explain how the SRS is organized.
 
-Drugo poglavlje sadrži opis perspektive sistema, funkcija proizvoda, karakteristika korisnika itd.
-Odnosno sadrži generalne informacije o funkcionalnim zahtjevima i zahtjevima podataka za softver "\naziv", sa detaljnim informacijama o korisnicima i perspektivama proizvoda. Takođe, sadrži i informacije o ograničenjima, pretpostavkama i zavisnosti softvera.
+Drugo poglavlje sadrži opis perspektive sistema, funkcija proizvoda, karakteristika korisnika, odnosno sadrži generalne informacije o funkcionalnim zahtjevima i zahtjevima podataka za softver "\naziv", sa detaljnim informacijama o korisnicima i perspektivama proizvoda. Takođe, sadrži i informacije o ograničenjima, pretpostavkama i zavisnostima softvera.
 
-Treće poglavlje sadrži više tehničkih informacija, koje proizvođači softvera trebaju.
-
+Treće poglavlje sadrži više tehničkih informacija, koje proizvođači softvera trebaju, a opisuje specifične zahtjeve informacionog sistema.

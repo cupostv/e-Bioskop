@@ -1,36 +1,116 @@
 \chapter{Specifični zahtjevi}
 \label{poglavlje3}
-\section{Eksterni interfejsi}
-% This should be a detailed description of all inputs into and outputs from the software system. It should
-% complement the interface descriptions in 5.2 and should not repeat information there.
-% It should include both content and format as follows:
-% Name of item;
-% Description of purpose;
-% Source of input or destination of output;
-% Valid range, accuracy, and/or tolerance;
-% Units of measure;
-% Timing;
-% Relationships to other inputs/outputs;
-% Screen formats/organization;
-% Window formats/organization;
-% Data formats;
-% Command formats;
-% End messages.
+\section{Funkcionalni zahtjevi}
+\subsection{Administracija zaposlenih}
+Administracija zaposlenih se odnosi na dvije različite aktivnosti, a to su ažuriranje podataka o 
+zaposlenom i kreiranje naloga. Obje ove aktivnosti može da vrši samo administrator.
 
-\section{Funkcije softvera}
-% Functional requirements should deÞne the fundamental actions that must take place in the software in
-% accepting and processing the inputs and in processing and generating the outputs. These are generally listed
-% as ÒshallÓ statements starting with ÒThe system shallÉÓ
-% These include
-% Validity checks on the inputs
-% Exact sequence of operations
-% Responses to abnormal situations, including
-% 1) Overßow
-% 2) Communication facilities
-% 3) Error handling and recovery
-% Effect of parameters
-% Relationship of outputs to inputs, including
-% 1) Input/output sequences
-% 2) Formulas for input to output conversion
-% It may be appropriate to partition the functional requirements into subfunctions or subprocesses. This does
-% not imply that the software design will also be partitioned that way.
+Da bi se ažurirali podaci o zaposlenom, potrebno je odabrati njegov nalog iz liste svih ponuđenih naloga nakon 
+čega se prikazuju svi podaci o zaposlenom. Nakon izbora opcije za izmjenu, otvara se forma za izmjenu podataka. 
+Poslije unosa novih podataka potrebno je utvrditi da su podaci validni i ako jesu vrši se čuvanje podataka. 
+U suprotnom se nevalidni podaci moraju ispraviti. 
+
+Da bi se napravio novi nalog moraju se unijeti podaci o novom zaposlenom nakon čega se vrši validacija. Ako su 
+svi podaci validni, nalog je kreiran i vrši se njegova aktivacija.
+
+\subsection{Administracija distributera}
+Administracija distributera se odnosi na dvije različite aktivnosti, a to su ažuriranje podataka 
+o distributeru i dodavanje distributera. Obje ove aktivnosti može da vrši samo administrator.
+ 
+Da bi se izvršilo ažuriranje distibutera potrebno je odabrati željenog distributera iz liste nakon čega se prikazuju  svi
+podaci o distributeru. Nakon izbora opcije za izmjenu, otvara se forma sa 
+podacima i vrše željene promjene. Prilikom potvrde unosa, izvršiće se validacija podataka i u zavisnosti od rezultata 
+čuvanje podataka ili vraćanje korisnika na prethodnu formu radi korekcije navalidnih podataka.
+
+Da bi se dodao novi distibuter unose se njegovi podaci nakon čega se vrši validacija. Ako su svi podaci validni, 
+distributer je dodan i svi potrebni podaci sačuvani. U suprotnom se nevalidni podaci moraju ispraviti. 
+
+\subsection{Upravljanje filmovima}
+Upravljanje filmovima obuhvata više različitih aktivnosti. To su izmjena podataka, naručivanje filmova.
+
+Da bi se izmjenili podaci o filmu potrebno je isti selektovati u listi svih filmova. Nakon toga se prikazuju podaci o filmu i 
+izborom opcije za izmjenu otvara se forma u kojoj je podatke moguće promijeniti. Poslije izmjena se vrši validacija i, u zavisnosti
+ od ishoda validacije, čuvanje podataka ili ispravljanje grešaka načinjenih prilikom unosa. 
+ 
+Da bi se naručio film potrebno je izabrati željeni film iz liste filmova dostupnih za naručivanje. Nakon toga se prikazuju podaci o 
+izabranom filmu i moguće je naručiti film. Broj filmova u listi se može smanjiti unosom ključnih pojmova pri čemu se prikazuju samo 
+filmovi koji te pojmove sadrže.
+
+\subsection{Unos filmova u sistem}
+Ukoliko se želi dodati novi film, o njemu se unesu podaci, izvrši se validacija i, u zavisnosti od ishoda validacije, čuvanje podataka
+ ili ispravljanje grešaka načinjenih prilikom unosa.
+
+\subsection{Generisanje izvještaja}
+
+\subsection{Administracija sala}
+U okviru administracije sale moguće je izabrati jednu od dvije aktivnosti, a to su dodavanje nove sale i izmjena podataka o postojećim salama.
+
+Prilikom dodavanja nove sale moraju se unijeti svi podaci o sali (ime, broj redova, broj sjedišta u redu). Takođe je moguće izabrati da li je sala aktivna ili neaktivna, tj. da li se može koristiti za prikazivanje projekcija ili ne.
+
+Da bi se izvršila izmjena podataka o salama, potrebno je odbrati za koju salu se mijenjaju podaci i izvršiti željene izmjene, a nakon toga potvrditi izmjene. Prilikom potvrde  vrši se validacija i u zavisnosti od ishoda čuvanje podataka ili vraćanje na formu radi korekcije unesenih vrijednosti.
+
+\subsection{Dodavanje projekcije}
+Dodavanje nove projekcije može da izvrši samo upravnik. Pri tome se otvara forma na kojoj je moguće unijeti podatke o novoj 
+projekciji (film, vrijeme, sala i slično). Nakon toga se provjerava da li je odabrana 
+sala zauzeta u odabranom terminu. Ako nije onda se ta projekcija može dodati i karte za nju postaju dostupne u prodaji. U suprotnom 
+se moraju izabrati ili drugi termin u kojem je sala dostupna ili sala koja je dostupna u odabranom terminu.
+
+\subsection{Upravljanje projekcijama}
+Upravljanje projekcijama se odnosi na izmjenu podataka o postojećim projekcijama. Iz liste svih projekcija se bira projekcija 
+za koju se žele promijeniti podaci. Nakon prikaza podataka bira se opcija za izmjenu podataka i otvara forma u kojoj se 
+željeni podaci mogu promijeniti. Prije čuvanja podataka se vrši validacija unesenih podataka.
+
+\subsection{Rezervacija karata}
+Da bi se izvršila rezervacija karata potrebno je odabrati projekciju. Nakon prikaza svih podatka o odabranoj projekciji, 
+vrši se provjera slobodnih mjesta i ukoliko postoje mjesta koja su zadovoljavajuća za gledaoca, karte se rezervišu 
+i odabrana mjesta se smatraju zauzetim.
+
+\subsection{Poništavanje rezervacija}
+Ukoliko je isteklo vrijeme za preuzimanje rezervacija, potrebno je odabrati opciju za poništavanje svih rezervacija za 
+koje karte nisu kupljene pri čemu ta mjesta na projekcijama postaju dostupna. 
+Ako neki gledalac želi da poništi svoju rezervaciju onda se iz liste bira rezervacija koja se želi poništiti i nakon potvrde poništavanja
+ta mjesta postaju dostupna.
+
+\subsection{Prodaja karata}
+Kod prodaje karata postoje dvije opcije:
+\begin{itemize}
+\item gledalac ima rezervaciju;
+\item gledalac nema rezervaciju.
+\end{itemize}
+
+Ukoliko gledalac ima rezervaciju, otvara se prozor sa listom gdje se bira rezervacija za koju se kupuje karta. Nakon toga se potvrđuje kupovina i izdaje karta.
+
+Ako rezervacija ne postoji, bira se projekcija za koju se kupuje karta nakon čega se prikazuje izgled sale. Označena su mjesta za koja su karte prodane i rezervisane. Ukoliko se nađu zadovoljavajuća mjesta za gledaoca, ona se selektuju, potvrđuje se prodaja karte, nakon čega se ista i izdaje.
+
+\subsection{Poništavanje karata}
+Nakon izbora opcije za poništavanje karata, potrebno je unijeti broj karte koja se poništava. Nakon toga se potvrđuje poništavanje. Ukoliko takva karta postoji, poništavanje je izvršeno, karta se vraća u prodaju i oslobađaju se mjesta. Ukoliko karta ne postoji, dobija se obavještenje o tome.
+
+\section{Zahtjevi performansi}
+Softver treba da izvršava operacije za što kraće vrijeme. Na sve akcije koje korisnik može poduzeti, sistem, u 95\% slučajeva, 
+odgovara u roku 2-3 sekunde.
+
+\section{Ograničenja dizajna}
+Softver bi trebao da bude dizajniran tako da zadovoljava osnovne principe HCI,
+tj. trebao bi da bude što jednostavnije dizajniran, bez pretjerivanja u bojama,
+slikama, jer sve treba da bude umjereno, zatim, komande i tekstualna polja i
+ostalo što će se nalaziti na prozorima, treba da bude grupisano i poravnato, kako
+bi korisnik mogao lakše da se snađe.
+
+Formati izvještaja bi trebali da budu onakvi na kakve su korisnici navikli, znači u
+gornjem lijevom uglu bi trebao da se nalazi logo fakulteta, naziv, adresa, kontakt
+telefon i e-mail adresa, ispod toga, najbolje na sredini, trebalo bi da se nalazi
+naslov izvještaja, pa ispod njega sadržaj, i u donjem lijevom uglu naznačeno
+mjesto za potpis službenika i mjesto za pečat.
+
+\section{Atributi softverskog sistema}
+\begin{itemize}
+\item Softver bi trebao da bude proširiv, što znači da bi se u slučaju potrebe za novim funkcijama, dodavanje 
+istih moglo da se izvrši u što kraćem roku.
+\item Softver bi trebao da bude pouzdan, tj. da pruža korisniku tačne informacije.
+\item Softver bi trebao da bude u potpunosti funkcionalan na Windows operativnom sistemu.
+\item Softver bi trebao da sadrži i jedan ReadMe dokument koji će sadržati informacije o minimalnim konfiguracionim 
+zahtjevima kao i druge informacije koje bi mogle biti od koristi.
+\item Sam kod softvera bi trebao da bude dobro dokumentovan kako bi se omogućile lake izmjene.
+\end{itemize}
+
+\section{Ostali zahtjevi}

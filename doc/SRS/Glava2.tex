@@ -2,8 +2,9 @@
 % This section of the SRS should describe the general factors that affect the product and its requirements. This
 % section does not state speciÞc requirements. Instead, it provides a background for those requirements, which
 % are deÞned in detail in Section 3 of the SRS, and makes them easier to understand.
+
 U ovom poglavlju će biti opisani generalni faktori koji mogu uticati na softverski proizvod i njegove zahtjeve. 
-Ovo poglavlje ne sadrži specifične zahtjeve, detaljniji zahtjevi će biti prikazani u poglavlju \ref{poglavlje3} .
+Ovo poglavlje ne sadrži specifične zahtjeve. Detaljniji zahtjevi će biti prikazani u poglavlju \ref{poglavlje3} .
 
 \section{Perspektiva sistema}
 % This subsection of the SRS should put the product into perspective with other related products. If the product
@@ -18,16 +19,14 @@ Kao najvažniji ciljevi ovog sistema mogu se izdvojiti:
 \begin{itemize}
   \item prilagodljivost sistema različitim bioskopima;
   \item mogućnost pravljenja izvještaja po raznim kriterijumima;
+  \item jednostavnost korištenja.
 \end{itemize}
-
-Ideja je da se napravi informacioni sistem koji će odgovarati potrebama što većeg broja bioskopa.
 
 \subsection{Sistemski interfejsi}
 % This should list each system interface and identify the functionality of the software to accomplish the system
 % requirement and the interface description to match the system.
 
 Softver bi trebao da bude napravljen tako da se ne izdvaja iz postojećeg sistemskog softvera i da prati standardne procedure korištenja nekih uobičajenih funkcija u softverskom proizvodu koje su standardne za dati sistemski softver koji koristi bioskop - Windows operativni sistem. 
-
 
 \subsection{Korisnički interfejsi}
 % This should specify the following:
@@ -42,9 +41,11 @@ Softver bi trebao da bude napravljen tako da se ne izdvaja iz postojećeg sistem
 % rather than Òa typist can do function X. Ó (This may also be speciÞed in the Software System
 % Attributes under a section titled Ease of Use.)
 \subsubsection{Logičke karakteristike}
+
 Ovaj softver bi trebao da bude korišten kroz grafički korisnički interfejs (GUI). Korisnički interfejs bi trebao da bude projektovan u skladu sa heuristikama interakcije čovjek-računar.
 
 \subsubsection{Aspekti optimizovanja interfejsa}
+
 Ovaj softver trebao bi imati kratke i razumljive poruke o greškama, praćene kratkim zvučnim signalom. Trebao bi da podrži mogućnost \textit{undo} operacije u slučaju manje greške.
 
 \subsection{Hardverski interfejsi}
@@ -52,25 +53,44 @@ Ovaj softver trebao bi imati kratke i razumljive poruke o greškama, praćene kr
 % ware components of the system. This includes conÞguration characteristics (number of ports, instruction
 % sets, etc.). It also covers such matters as what devices are to be supported, how they are to be supported, and
 % protocols. For example, terminal support may specify full-screen support as opposed to line-by-line support
-Za pravilan rad ovakvog softverskog proizvoda od hardverskih uređaja potrebne su standardne periferijske jedinice (tastatura, miš,štampač, ...). Računar na kom će raditi softver ne treba zadovoljavati visoke kriterijume na primjer, to može da bude:
+
+Za pravilan rad ovakvog softverskog proizvoda od hardverskih uređaja potrebne su standardne periferijske jedinice (tastatura, miš, štampač, ...). Računar na kom će raditi softver ne treba zadovoljavati visoke kriterijume, na primjer, to može da bude:
 \begin{itemize}
   \item CPU: Intel Pentium Core2Duo 
   \item RAM: 1024MB
   \item HDD: 120GB
 \end{itemize}
+% * <milan.maric.ja@gmail.com> 2016-01-26T06:07:00.025Z:
+%
+% Provjeriti minimalne zahtjeve, .NET Framework 4.0
+%
+% ^.
+% * <milan.maric.ja@gmail.com> 2016-01-26T06:08:34.006Z:
+%
+% Server?
+%
+% ^.
 \subsection{Softverski interfejsi}
 % This should specify the use of other required software products (e.g., a data management system, an operat-
 % ing system, or a mathematical package), and interfaces with other application systems (e.g., the linkage
 % between an accounts receivable system and a general ledger system).
-Ovaj softver bi trebao da koristi \textit{mySQL} bazu podataka, za čuvanje podataka o predhodno izdanim kartama, arhivi filmova itd. Ovaj softver je namjenjen za najzastupljeniju platformu Microsoft  Windows.
+
+Ovaj softver bi trebao da koristi \textit{mySQL} bazu podataka, za čuvanje podataka o prethodno izdanim kartama, arhivi filmova itd. Ovaj softver je namjenjen za najzastupljeniju platformu Microsoft Windows.
 
 \subsection{Komunikacioni interfejsi} 
 % This should specify the various interfaces to communications such as local network protocols, etc.
-Za ovaj sistem je neophodna računarska mreža zbog mogućeg udaljenog pristupa bazi podataka.
+
+Za ovaj sistem je neophodna računarska mreža zbog mogućnosti udaljenog pristupa bazi podataka, odnosno pregleda podataka i izmjene podataka van bioskopa.
+% * <milan.maric.ja@gmail.com> 2016-01-26T06:08:13.738Z:
+%
+% Mreža zbog različitih vrsta korisnika
+%
+% ^.
 
 \subsection{Ograničenja memorije}
 % This should specify any applicable characteristics and limits on primary and secondary memory.
-Za ispravan rad softvera, s obzirom na dinamičnu promjenu baze, potrebno je obezbjediti dovoljnu količinu sekundarne memorije.
+
+Za ispravan rad softvera, s obzirom na dinamičnu promjenu baze, potrebno je obezbjediti dovoljnu količinu sekundarne memorije. 
 
 \subsection{Operacije}
 % This should specify the normal and special operations required by the user such as
@@ -78,10 +98,11 @@ Za ispravan rad softvera, s obzirom na dinamičnu promjenu baze, potrebno je obe
 % Periods of interactive operations and periods of unattended operations;
 % Data processing support functions;
 % Backup and recovery operations.
-Zahtjevan je rad sa bazom podataka, pa su potrebne operacije
+
+Potreban je rad sa bazom podataka, pa su potrebne operacije
 koje se vrše nad podacima u bazi, kao što su: upisivanje u bazu,
 ažuriranje podataka i čitanje iz baze, kao i neke \textit{backup} operacije, koje bi
-štitile od nepredviđenih situacija, kao što je na primjer kvar na hard disku.
+štitile od nepredviđenih situacija, kao što je, na primjer, kvar na hard disku.
 
 
 \section{Funkcije proizvoda}
@@ -92,7 +113,8 @@ ažuriranje podataka i čitanje iz baze, kao i neke \textit{backup} operacije, k
 % Sometimes the function summary that is necessary for this part can be taken directly from the section of the
 % higher-level speciÞcation (if one exists) that allocates particular functions to the software product. Note that
 % for the sake of clarity
-Ovaj softverski proizvod bi trebao da omogućava sledeće funkcije:
+
+Ovaj softverski proizvod bi trebao da omogućava sljedeće funkcije:
 \begin{itemize}
   \item vođenje evidencije o rezervacijama i prodajama karata (ulaznica)
   \item vođenje podataka o projekcijama, prisustvu na pojedinim projekcijama
@@ -108,11 +130,20 @@ Ovaj softverski proizvod bi trebao da omogućava sledeće funkcije:
 % Section 3 of the SRS.
 
 Korisnici ovog sistema su zaposleni u bioskopu. Najčešće te osobe nisu napredni korisnici računara. Takođe, potreban je jedan administrator sistema, tj. osoba sa dovoljnim tehničkim znanjem da može da vrši održavanje sistema.
-
+% * <milan.maric.ja@gmail.com> 2016-01-26T06:09:03.141Z:
+%
+% Radnik, Upravnik i Administrator?
+%
+% ^.
 
 \section{Ograničenja}
 % This subsection of the SRS should provide a general description of any other items that will limit the devel-
 % operÕs options.
+
+Ovaj informacioni sistem treba biti implementiran u skladu sa zakonom o zaštiti autorskih prava. Softver bi trebao i da
+omogući paralelno izvršavanje operacija, kako bi više službenika moglo u isto
+vrijeme da obavlja određene operacije, ukoliko to bude potrebno.
+Zatim, potrebno je napraviti određen vid zaštite u vidu lozinke za svakog službenika, kako ne bi neko drugi, osim službenika odgovornih za rad, mogao koristiti ovaj softver i izvršiti nekorektne izmjene.
 
 \section{Pretpostavke i zavisnosti}
 % This subsection of the SRS should list each of the factors that affect the requirements stated in the SRS.
@@ -121,4 +152,6 @@ Korisnici ovog sistema su zaposleni u bioskopu. Najčešće te osobe nisu napred
 % available on the hardware designated for the software product. If, in fact, the operating system is not avail-
 % able, the SRS would then have to change accordingly.
 
-
+Pretpostavka je da računar na kom će se koristiti ovaj program imati
+instaliran Windows operativni sistem i .NET Framework, kako bi aplikacija uopšte
+mogla da se pokrene, kao i odgovarajuće drajvere za baze podataka koje program koristi.
