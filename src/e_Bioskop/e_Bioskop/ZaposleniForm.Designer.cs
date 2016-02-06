@@ -153,7 +153,7 @@
             this.btnPonistavanjeKarte.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPonistavanjeKarte.Name = "btnPonistavanjeKarte";
             this.btnPonistavanjeKarte.Size = new System.Drawing.Size(123, 22);
-            this.btnPonistavanjeKarte.Text = "Ponistavanje karte";
+            this.btnPonistavanjeKarte.Text = "Poništavanje karte";
             this.btnPonistavanjeKarte.Click += new System.EventHandler(this.btnPonistavanjeKarte_Click);
             // 
             // toolStripSeparator1
@@ -175,7 +175,7 @@
             this.btnPonistiRezervaciju.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPonistiRezervaciju.Name = "btnPonistiRezervaciju";
             this.btnPonistiRezervaciju.Size = new System.Drawing.Size(152, 22);
-            this.btnPonistiRezervaciju.Text = "Ponistavanje rezervacije";
+            this.btnPonistiRezervaciju.Text = "Poništavanje rezervacije";
             this.btnPonistiRezervaciju.Click += new System.EventHandler(this.btnPonistiRezervaciju_Click);
             // 
             // tbRezervacija
@@ -700,7 +700,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "ZaposleniForm";
-            this.Text = "ZaposleniForm";
+            this.Text = "Radnik";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ZaposleniForm_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

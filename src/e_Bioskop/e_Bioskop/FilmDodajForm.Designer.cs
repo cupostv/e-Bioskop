@@ -90,7 +90,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Zanr:";
+            this.label4.Text = "Žanr:";
             // 
             // txbNaziv
             // 

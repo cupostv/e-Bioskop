@@ -59,7 +59,7 @@
             this.btnPonisti.Name = "btnPonisti";
             this.btnPonisti.Size = new System.Drawing.Size(75, 23);
             this.btnPonisti.TabIndex = 2;
-            this.btnPonisti.Text = "Ponisti kartu";
+            this.btnPonisti.Text = "Poništi kartu";
             this.btnPonisti.UseVisualStyleBackColor = true;
             this.btnPonisti.Click += new System.EventHandler(this.btnPonisti_Click);
             // 
@@ -72,7 +72,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 137);
+            this.ClientSize = new System.Drawing.Size(304, 138);
             this.Controls.Add(this.btnPonisti);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxBrojKarte);
@@ -81,7 +81,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(320, 176);
             this.Name = "PonistavanjeKarteForm";
-            this.Text = "PonistavanjeKarteForm";
+            this.Text = "Poništavanje karte";
             ((System.ComponentModel.ISupportInitialize)(this.errProvBrojKarte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

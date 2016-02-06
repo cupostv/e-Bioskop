@@ -37,6 +37,7 @@
             this.colPrezime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnOtkaz = new System.Windows.Forms.Button();
+            this.picAktivan = new System.Windows.Forms.PictureBox();
             this.btnIzmjeniZaposleni = new System.Windows.Forms.Button();
             this.lblImeStatic = new System.Windows.Forms.Label();
             this.lblRadnoMjesto = new System.Windows.Forms.Label();
@@ -51,8 +52,15 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblEmailStatic = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnDodajZaposlenog = new System.Windows.Forms.ToolStripButton();
+            this.btnOdjava = new System.Windows.Forms.ToolStripButton();
+            this.btnDodajDistributera = new System.Windows.Forms.ToolStripButton();
+            this.btnDodajFilm = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lblImePrezime = new System.Windows.Forms.ToolStripLabel();
+            this.ddbAdministracijaSala = new System.Windows.Forms.ToolStripDropDownButton();
+            this.miDodajSalu = new System.Windows.Forms.ToolStripMenuItem();
+            this.izmjeniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -105,19 +113,12 @@
             this.lblNazivStatic = new System.Windows.Forms.Label();
             this.cmsFilmDistributer = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.izmjeniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDodajZaposlenog = new System.Windows.Forms.ToolStripButton();
-            this.btnOdjava = new System.Windows.Forms.ToolStripButton();
-            this.btnDodajDistributera = new System.Windows.Forms.ToolStripButton();
-            this.btnDodajFilm = new System.Windows.Forms.ToolStripButton();
-            this.ddbAdministracijaSala = new System.Windows.Forms.ToolStripDropDownButton();
-            this.miDodajSalu = new System.Windows.Forms.ToolStripMenuItem();
-            this.izmjeniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.picAktivan = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAktivan)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -136,7 +137,6 @@
             this.gboxDistributer.SuspendLayout();
             this.gboxFilm.SuspendLayout();
             this.cmsFilmDistributer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAktivan)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -228,6 +228,18 @@
             this.btnOtkaz.Text = "Otkaz";
             this.btnOtkaz.UseVisualStyleBackColor = true;
             this.btnOtkaz.Click += new System.EventHandler(this.btnOtkaz_Click);
+            // 
+            // picAktivan
+            // 
+            this.picAktivan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.picAktivan.Image = global::e_Bioskop.Properties.Resources.crveno;
+            this.picAktivan.InitialImage = global::e_Bioskop.Properties.Resources.zeleno;
+            this.picAktivan.Location = new System.Drawing.Point(347, 19);
+            this.picAktivan.Name = "picAktivan";
+            this.picAktivan.Size = new System.Drawing.Size(12, 12);
+            this.picAktivan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAktivan.TabIndex = 14;
+            this.picAktivan.TabStop = false;
             // 
             // btnIzmjeniZaposleni
             // 
@@ -365,6 +377,44 @@
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // btnDodajZaposlenog
+            // 
+            this.btnDodajZaposlenog.Image = global::e_Bioskop.Properties.Resources.korisnik_dodaj;
+            this.btnDodajZaposlenog.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDodajZaposlenog.Name = "btnDodajZaposlenog";
+            this.btnDodajZaposlenog.Size = new System.Drawing.Size(121, 22);
+            this.btnDodajZaposlenog.Text = "Dodaj zaposlenog";
+            this.btnDodajZaposlenog.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // btnOdjava
+            // 
+            this.btnOdjava.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnOdjava.Image = ((System.Drawing.Image)(resources.GetObject("btnOdjava.Image")));
+            this.btnOdjava.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOdjava.Name = "btnOdjava";
+            this.btnOdjava.Size = new System.Drawing.Size(64, 22);
+            this.btnOdjava.Text = "Odjava";
+            this.btnOdjava.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
+            // 
+            // btnDodajDistributera
+            // 
+            this.btnDodajDistributera.Image = global::e_Bioskop.Properties.Resources.distributer_dodaj;
+            this.btnDodajDistributera.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDodajDistributera.Name = "btnDodajDistributera";
+            this.btnDodajDistributera.Size = new System.Drawing.Size(121, 22);
+            this.btnDodajDistributera.Text = "Dodaj distributera";
+            this.btnDodajDistributera.Click += new System.EventHandler(this.btnDodajDistributera_Click);
+            // 
+            // btnDodajFilm
+            // 
+            this.btnDodajFilm.Image = global::e_Bioskop.Properties.Resources.filmovi_dodaj;
+            this.btnDodajFilm.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDodajFilm.Name = "btnDodajFilm";
+            this.btnDodajFilm.Size = new System.Drawing.Size(82, 22);
+            this.btnDodajFilm.Text = "Dodaj film";
+            this.btnDodajFilm.Click += new System.EventHandler(this.btnDodajFilm_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -377,6 +427,33 @@
             this.lblImePrezime.Name = "lblImePrezime";
             this.lblImePrezime.Size = new System.Drawing.Size(72, 22);
             this.lblImePrezime.Text = "Ime Prezime";
+            // 
+            // ddbAdministracijaSala
+            // 
+            this.ddbAdministracijaSala.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miDodajSalu,
+            this.izmjeniToolStripMenuItem1});
+            this.ddbAdministracijaSala.Image = global::e_Bioskop.Properties.Resources.manageSala;
+            this.ddbAdministracijaSala.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ddbAdministracijaSala.Name = "ddbAdministracijaSala";
+            this.ddbAdministracijaSala.Size = new System.Drawing.Size(135, 22);
+            this.ddbAdministracijaSala.Text = "Administracija sala";
+            // 
+            // miDodajSalu
+            // 
+            this.miDodajSalu.Image = global::e_Bioskop.Properties.Resources.dodajSala;
+            this.miDodajSalu.Name = "miDodajSalu";
+            this.miDodajSalu.Size = new System.Drawing.Size(152, 22);
+            this.miDodajSalu.Text = "Dodaj salu";
+            this.miDodajSalu.Click += new System.EventHandler(this.miDodajSalu_Click);
+            // 
+            // izmjeniToolStripMenuItem1
+            // 
+            this.izmjeniToolStripMenuItem1.Image = global::e_Bioskop.Properties.Resources.editSala;
+            this.izmjeniToolStripMenuItem1.Name = "izmjeniToolStripMenuItem1";
+            this.izmjeniToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.izmjeniToolStripMenuItem1.Text = "Izmjeni";
+            this.izmjeniToolStripMenuItem1.Click += new System.EventHandler(this.izmjeniToolStripMenuItem1_Click);
             // 
             // tabControl2
             // 
@@ -918,83 +995,6 @@
             this.izmjeniToolStripMenuItem.Text = "Izmjeni";
             this.izmjeniToolStripMenuItem.Click += new System.EventHandler(this.izmjeniToolStripMenuItem_Click);
             // 
-            // btnDodajZaposlenog
-            // 
-            this.btnDodajZaposlenog.Image = global::e_Bioskop.Properties.Resources.korisnik_dodaj;
-            this.btnDodajZaposlenog.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDodajZaposlenog.Name = "btnDodajZaposlenog";
-            this.btnDodajZaposlenog.Size = new System.Drawing.Size(121, 22);
-            this.btnDodajZaposlenog.Text = "Dodaj zaposlenog";
-            this.btnDodajZaposlenog.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // btnOdjava
-            // 
-            this.btnOdjava.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnOdjava.Image = ((System.Drawing.Image)(resources.GetObject("btnOdjava.Image")));
-            this.btnOdjava.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnOdjava.Name = "btnOdjava";
-            this.btnOdjava.Size = new System.Drawing.Size(64, 22);
-            this.btnOdjava.Text = "Odjava";
-            this.btnOdjava.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
-            // 
-            // btnDodajDistributera
-            // 
-            this.btnDodajDistributera.Image = global::e_Bioskop.Properties.Resources.distributer_dodaj;
-            this.btnDodajDistributera.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDodajDistributera.Name = "btnDodajDistributera";
-            this.btnDodajDistributera.Size = new System.Drawing.Size(121, 22);
-            this.btnDodajDistributera.Text = "Dodaj distributera";
-            this.btnDodajDistributera.Click += new System.EventHandler(this.btnDodajDistributera_Click);
-            // 
-            // btnDodajFilm
-            // 
-            this.btnDodajFilm.Image = global::e_Bioskop.Properties.Resources.filmovi_dodaj;
-            this.btnDodajFilm.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDodajFilm.Name = "btnDodajFilm";
-            this.btnDodajFilm.Size = new System.Drawing.Size(82, 22);
-            this.btnDodajFilm.Text = "Dodaj film";
-            this.btnDodajFilm.Click += new System.EventHandler(this.btnDodajFilm_Click);
-            // 
-            // ddbAdministracijaSala
-            // 
-            this.ddbAdministracijaSala.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miDodajSalu,
-            this.izmjeniToolStripMenuItem1});
-            this.ddbAdministracijaSala.Image = global::e_Bioskop.Properties.Resources.manageSala;
-            this.ddbAdministracijaSala.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ddbAdministracijaSala.Name = "ddbAdministracijaSala";
-            this.ddbAdministracijaSala.Size = new System.Drawing.Size(135, 22);
-            this.ddbAdministracijaSala.Text = "Administracija sala";
-            // 
-            // miDodajSalu
-            // 
-            this.miDodajSalu.Image = global::e_Bioskop.Properties.Resources.dodajSala;
-            this.miDodajSalu.Name = "miDodajSalu";
-            this.miDodajSalu.Size = new System.Drawing.Size(152, 22);
-            this.miDodajSalu.Text = "Dodaj salu";
-            this.miDodajSalu.Click += new System.EventHandler(this.miDodajSalu_Click);
-            // 
-            // izmjeniToolStripMenuItem1
-            // 
-            this.izmjeniToolStripMenuItem1.Image = global::e_Bioskop.Properties.Resources.changeSala;
-            this.izmjeniToolStripMenuItem1.Name = "izmjeniToolStripMenuItem1";
-            this.izmjeniToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.izmjeniToolStripMenuItem1.Text = "Izmjeni";
-            this.izmjeniToolStripMenuItem1.Click += new System.EventHandler(this.izmjeniToolStripMenuItem1_Click);
-            // 
-            // picAktivan
-            // 
-            this.picAktivan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.picAktivan.Image = global::e_Bioskop.Properties.Resources.crveno;
-            this.picAktivan.InitialImage = global::e_Bioskop.Properties.Resources.zeleno;
-            this.picAktivan.Location = new System.Drawing.Point(347, 19);
-            this.picAktivan.Name = "picAktivan";
-            this.picAktivan.Size = new System.Drawing.Size(12, 12);
-            this.picAktivan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAktivan.TabIndex = 14;
-            this.picAktivan.TabStop = false;
-            // 
             // AdministratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1014,6 +1014,7 @@
             this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAktivan)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControl2.ResumeLayout(false);
@@ -1038,7 +1039,6 @@
             this.gboxFilm.ResumeLayout(false);
             this.gboxFilm.PerformLayout();
             this.cmsFilmDistributer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAktivan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

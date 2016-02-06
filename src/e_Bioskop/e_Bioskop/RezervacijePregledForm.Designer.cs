@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbxOpis = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVrijeme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOpis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIzbor = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tbxOpis = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(554, 213);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // tbxOpis
+            // 
+            this.tbxOpis.Location = new System.Drawing.Point(410, 7);
+            this.tbxOpis.Name = "tbxOpis";
+            this.tbxOpis.Size = new System.Drawing.Size(132, 20);
+            this.tbxOpis.TabIndex = 2;
+            this.tbxOpis.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(367, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Opis";
             // 
             // colId
             // 
@@ -86,23 +103,6 @@
             this.colIzbor.HeaderText = "Izaberi";
             this.colIzbor.Name = "colIzbor";
             // 
-            // tbxOpis
-            // 
-            this.tbxOpis.Location = new System.Drawing.Point(410, 7);
-            this.tbxOpis.Name = "tbxOpis";
-            this.tbxOpis.Size = new System.Drawing.Size(132, 20);
-            this.tbxOpis.TabIndex = 2;
-            this.tbxOpis.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(367, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Opis";
-            // 
             // RezervacijePregledForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,7 +112,7 @@
             this.Controls.Add(this.tbxOpis);
             this.Controls.Add(this.dataGridView1);
             this.Name = "RezervacijePregledForm";
-            this.Text = "RezervacijePregledForm";
+            this.Text = "Pregled rezervacija";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -122,12 +122,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox tbxOpis;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDatum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVrijeme;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOpis;
         private System.Windows.Forms.DataGridViewButtonColumn colIzbor;
-        private System.Windows.Forms.TextBox tbxOpis;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -81,9 +81,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 83);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 19;
-            this.label7.Text = "Trajanje";
+            this.label7.Text = "Trajanje:";
             // 
             // lblOpisFilma
             // 

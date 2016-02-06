@@ -89,7 +89,7 @@
             // 
             // colZanr
             // 
-            this.colZanr.HeaderText = "Zanr";
+            this.colZanr.HeaderText = "Žanr";
             this.colZanr.Name = "colZanr";
             // 
             // colTrajanje
