@@ -16,8 +16,9 @@ namespace e_Bioskop
         {
             InitializeComponent();
             BioskopUtil.initSalaDTOComboBox(cbNazivSale, 1);
-            SalaDTO sala=BioskopUtil.getDAOFactory().getSalaDAO().
-                getByNaziv(cbNazivSale.Items[cbNazivSale.SelectedIndex].ToString());
+            string naziv = cbNazivSale.Items[cbNazivSale.SelectedIndex].ToString();
+            SalaDTO sala=BioskopUtil.getDAOFactory().getSalaDAO().getByNaziv(naziv);
+            tbxNoviNaziv.Text = naziv;
             tbxBrojRedova.Minimum = sala.BrojRedova;
             tbxBrojSjedistaUredu.Minimum = sala.BrojSjedistaURedu;
             tbxBrojRedova.Value = sala.BrojRedova;
@@ -30,8 +31,10 @@ namespace e_Bioskop
 
         private void cbNazivSale_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string naziv = cbNazivSale.Items[cbNazivSale.SelectedIndex].ToString();
             SalaDTO sala = BioskopUtil.getDAOFactory().getSalaDAO().
-                getByNaziv(cbNazivSale.Items[cbNazivSale.SelectedIndex].ToString());
+                getByNaziv(naziv);
+            tbxNoviNaziv.Text = naziv;
             tbxBrojRedova.Minimum = sala.BrojRedova;
             tbxBrojSjedistaUredu.Minimum = sala.BrojSjedistaURedu;
             tbxBrojRedova.Value = sala.BrojRedova;
@@ -49,8 +52,10 @@ namespace e_Bioskop
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+            string naziv = cbNazivSale.Items[cbNazivSale.SelectedIndex].ToString();
             SalaDTO sala = BioskopUtil.getDAOFactory().getSalaDAO().
-                getByNaziv(cbNazivSale.Items[cbNazivSale.SelectedIndex].ToString());
+                getByNaziv(naziv);
+            sala.Naziv = tbxNoviNaziv.Text;
             sala.BrojRedova = (int)tbxBrojRedova.Value;
             sala.BrojSjedistaURedu = (int)tbxBrojSjedistaUredu.Value;
             if (cbAktivna.Checked)

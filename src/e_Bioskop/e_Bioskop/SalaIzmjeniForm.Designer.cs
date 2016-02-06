@@ -37,6 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbNazivSale = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbxNoviNaziv = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbxBrojSjedistaUredu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxBrojRedova)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +48,7 @@
             this.cbAktivna.AutoSize = true;
             this.cbAktivna.Checked = true;
             this.cbAktivna.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbAktivna.Location = new System.Drawing.Point(179, 112);
+            this.cbAktivna.Location = new System.Drawing.Point(179, 145);
             this.cbAktivna.Name = "cbAktivna";
             this.cbAktivna.Size = new System.Drawing.Size(62, 17);
             this.cbAktivna.TabIndex = 18;
@@ -56,7 +58,7 @@
             // btnOdustani
             // 
             this.btnOdustani.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnOdustani.Location = new System.Drawing.Point(280, 148);
+            this.btnOdustani.Location = new System.Drawing.Point(280, 181);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
             this.btnOdustani.TabIndex = 17;
@@ -66,7 +68,7 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(199, 148);
+            this.btnDodaj.Location = new System.Drawing.Point(199, 181);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(75, 23);
             this.btnDodaj.TabIndex = 16;
@@ -76,7 +78,7 @@
             // 
             // tbxBrojSjedistaUredu
             // 
-            this.tbxBrojSjedistaUredu.Location = new System.Drawing.Point(179, 77);
+            this.tbxBrojSjedistaUredu.Location = new System.Drawing.Point(179, 110);
             this.tbxBrojSjedistaUredu.Minimum = new decimal(new int[] {
             1,
             0,
@@ -94,7 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 79);
+            this.label3.Location = new System.Drawing.Point(19, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(133, 13);
             this.label3.TabIndex = 14;
@@ -102,7 +104,7 @@
             // 
             // tbxBrojRedova
             // 
-            this.tbxBrojRedova.Location = new System.Drawing.Point(179, 45);
+            this.tbxBrojRedova.Location = new System.Drawing.Point(179, 78);
             this.tbxBrojRedova.Minimum = new decimal(new int[] {
             1,
             0,
@@ -120,7 +122,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 47);
+            this.label2.Location = new System.Drawing.Point(19, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 12;
@@ -137,6 +139,7 @@
             // 
             // cbNazivSale
             // 
+            this.cbNazivSale.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNazivSale.FormattingEnabled = true;
             this.cbNazivSale.Location = new System.Drawing.Point(179, 12);
             this.cbNazivSale.Name = "cbNazivSale";
@@ -144,11 +147,29 @@
             this.cbNazivSale.TabIndex = 19;
             this.cbNazivSale.SelectedIndexChanged += new System.EventHandler(this.cbNazivSale_SelectedIndexChanged);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Novi naziv";
+            // 
+            // tbxNoviNaziv
+            // 
+            this.tbxNoviNaziv.Location = new System.Drawing.Point(179, 43);
+            this.tbxNoviNaziv.Name = "tbxNoviNaziv";
+            this.tbxNoviNaziv.Size = new System.Drawing.Size(176, 20);
+            this.tbxNoviNaziv.TabIndex = 21;
+            // 
             // SalaIzmjeniForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 183);
+            this.ClientSize = new System.Drawing.Size(374, 214);
+            this.Controls.Add(this.tbxNoviNaziv);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.cbNazivSale);
             this.Controls.Add(this.cbAktivna);
             this.Controls.Add(this.btnOdustani);
@@ -180,5 +201,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbNazivSale;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbxNoviNaziv;
     }
 }
