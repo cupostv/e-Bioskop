@@ -16,7 +16,7 @@ namespace e_Bioskop.data.dao.mysql
                                                 + " from rezervacija r "
                                                 + " inner join zaposleni z on r.idZaposleni = z.idZaposleni "
                                                 + " inner join karta k on r.idRezervacija = k.idRezervacija "
-                                                + " where k.idProjekcija=?idProjekcija group by k.idRezervacija and aktivnaRezervacija=1;";
+                                                + " where k.idProjekcija=?idProjekcija and aktivnaRezervacija=1 group by k.idRezervacija;";
 
         
         private string insertQuerry = "INSERT INTO `e_bioskop`.`rezervacija` (`vrijemeRezervacija`, `idZaposleni`, `opisRezervacija`,`aktivnaRezervacija`) VALUES (?vrijemeRezervacija, ?idZaposleni, ?opisRezervacija,?aktivna);";
