@@ -51,7 +51,7 @@
       </counter>
       <counter>
         <item-type stereotype="" type="AbstractElementGroup" />
-        <value>3</value>
+        <value>4</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -250,7 +250,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-usecase" id="peee698f3ff3c4b4a800226ed41d0f611_896096527" name="UseCaseDiagram1" order-index="1" expanded="true" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-110,-305">
+      <diagram type="uml-usecase" id="peee698f3ff3c4b4a800226ed41d0f611_896096527" name="UseCaseDiagram1" order-index="1" expanded="true" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-110,-575">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -262,7 +262,7 @@
           </authors>
           <description />
           <creation-date>11/23/2015 19:35:18</creation-date>
-          <change-date>01/30/2016 20:44:34</change-date>
+          <change-date>02/07/2016 16:19:39</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -274,9 +274,6 @@
             <style class="default" />
           </item>
           <item id="di115620329818792825" cid="AC003" type="actor" name="Administrator" style-class="" visibility="package" change-tracking-state="added" creator="P67a86e58478348cca6eba339882e2164" creation-date="11/23/2015 19:58:26">
-            <style class="default" />
-          </item>
-          <item id="di108394730910777046" cid="GNR004" type="generalization" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="11/28/2015 15:12:56">
             <style class="default" />
           </item>
           <item id="di446002657620025595" cid="UC015" type="use-case" name="Dodavanje distributera" style-class="" visibility="package" change-tracking-state="added" creation-date="11/28/2015 09:35:30">
@@ -308,13 +305,6 @@
           <item id="di957896645134248516" cid="REL012" type="relationship" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="01/26/2016 06:53:50">
             <style class="default" />
             <relation from="di115620329818792825" to="di436248855317027068">
-              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
-            </relation>
-          </item>
-          <item id="di766886439924816055" cid="REL013" type="relationship" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="01/26/2016 06:54:22">
-            <style class="default" />
-            <relation from="di123426579829039819" to="di436248855317027068">
               <start-role id="" name="" navigability="" association-type="association" visibility="private" />
               <end-role id="" name="" navigability="" association-type="association" visibility="private" />
             </relation>
@@ -455,15 +445,6 @@
             </layout>
             <relation from="di363904228624133042" from-iid="bbde9bd8343f421c908e3c919a39a0f0" to="di238950820421732686" to-iid="94dd8afada6a4cc6b365a2a0c362e3c0" />
           </item>
-          <item id="di108394730910777046" iid="a686e013cb0140959fd8756155206701" creation-date="11/28/2015 15:12:56" order-index="34" type="relation">
-            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="31" y1="-56" x2="31" y2="-301" start-border-pos="0.125" end-border-pos="0.64" name-position="10,-10">
-              <points>
-                <point x="31" y="-56" />
-                <point x="31" y="-301" />
-              </points>
-            </layout>
-            <relation from="di123426579829039819" from-iid="56e6e28ad9244ea18d9441c90fa3d4a3" to="di892273586903640929" to-iid="bbad39d7ec5a4cdea619b85b9be0b4a0" />
-          </item>
           <item id="di585991187541996902" iid="f7990d110e164ea5897f9e73a42d969b" creation-date="11/23/2015 20:52:24" order-index="24" type="relation">
             <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="341" y1="-368" x2="207" y2="-412" start-border-pos="0.956165167001578" end-border-pos="0.455078125" name-position="10,-10">
               <points>
@@ -540,15 +521,6 @@
               </points>
             </layout>
             <relation from="di115620329818792825" from-iid="de8daf8a9c354db2ad1b1aff3041c689" to="di436248855317027068" to-iid="97a7210ace194ea6955a7a3c5d7f8743" />
-          </item>
-          <item id="di766886439924816055" iid="0af9c6a01cd54af4a84b0bf95a7ef731" creation-date="01/26/2016 06:54:22" order-index="39" type="relation">
-            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="41" y1="-56" x2="708" y2="-404" start-border-pos="0.173125" end-border-pos="0.858333333333333" name-position="10,-10">
-              <points>
-                <point x="41" y="-56" />
-                <point x="708" y="-404" />
-              </points>
-            </layout>
-            <relation from="di123426579829039819" from-iid="56e6e28ad9244ea18d9441c90fa3d4a3" to="di436248855317027068" to-iid="97a7210ace194ea6955a7a3c5d7f8743" />
           </item>
           <item id="di112365932719869461" iid="ee19998bb1044a4da895b01a09fed9e9" creation-date="01/26/2016 06:57:00" order-index="40" type="entity">
             <layout ax="708" ay="52" awidth="120" aheight="75" x="708" y="52" width="120" height="75" angle="0" />
