@@ -61,6 +61,8 @@ namespace e_Bioskop
                     lblCijena.Text = izabranaProjekcija.Cijena.ToString() + " KM";
                     showProjekcijaProdajaKarteControlls();
                 }
+
+                gbProdajaPodaciORezervaciji.Hide();
             }
             
         }
@@ -227,10 +229,10 @@ namespace e_Bioskop
         {
             if (listaIzabranihSjedista != null && listaIzabranihSjedista.Count() > 0)
             {
-                tbxRezervacijaOpisRezervacije.Text = "";
                  RezervacijaDTO rezervacija = new RezervacijaDTO();
                  rezervacija.Zaposleni = BioskopUtil.getPrijavljeniZaposleni();
                  rezervacija.Opis = tbxRezervacijaOpisRezervacije.Text;
+                 tbxRezervacijaOpisRezervacije.Text = "";
                  rezervacija.VrijemeRezervacije = DateTime.Now;
                  rezervacija.Aktivna = 1;
                 int id=(int) BioskopUtil.getDAOFactory().getRezervacijaDAO().insert(rezervacija);
@@ -270,14 +272,15 @@ namespace e_Bioskop
             if (rpf.ShowDialog() == DialogResult.OK)
             {
                 izabranaRezervacija = rpf.IzabranaRezervacija;
-                
+                gbProdajaPodaciORezervaciji.Show();
                 List<KartaDTO> listaKarataZaRezervaciju = BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcijaAndRezervacija(izabranaProjekcija,izabranaRezervacija);
                 if (izabranaProjekcija == null)
                 {
                     izabranaProjekcija = listaKarataZaRezervaciju[0].Projekcija;
+                }
                     showProjekcijaProdajaKarteControlls();
                     lblOpis.Text = izabranaRezervacija.Opis;
-                }
+                
                 BioskopUtil.initSjedistDTOFlowLayout(flwProdaja, izabranaProjekcija, prodajaIzborSjedistaClick, prodajaListaVecIzdatihKarata);
                 listaIzabranihSjedista.Clear();
                 foreach(KartaDTO karta in listaKarataZaRezervaciju)

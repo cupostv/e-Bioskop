@@ -123,6 +123,16 @@ namespace e_Bioskop
             lblProjekcijeVrijeme.Text = trenutnaProjekcija.Vrijeme.ToShortDateString() + " u " + trenutnaProjekcija.Vrijeme.ToShortTimeString() + " časova";
             lblProjekcijeSala.Text = "Sala: " + trenutnaProjekcija.Sala.Naziv;
             lblProjekcijeAdresaDistributera.Text = trenutnaProjekcija.Film.Distributer.Adresa;
+            lblCijena.Text = trenutnaProjekcija.Cijena.ToString();
+            DateTime now = DateTime.Now;
+            if (now > trenutnaProjekcija.Vrijeme)
+            {
+                btnIzmjeniProjekciju.Enabled = false;
+            }
+            else
+            {
+                btnIzmjeniProjekciju.Enabled = true;
+            }
         }
 
         private void btnIzmjeniProjekciju_Click(object sender, EventArgs e)

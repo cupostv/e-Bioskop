@@ -74,10 +74,12 @@ namespace e_Bioskop
 
             lista.Clear();
 
+            ponistiIstekleRezervacije();
             lista = BioskopUtil.getDAOFactory().getRezervacijaDAO().getAllActiveRezervacija();
+
             foreach (RezervacijaDTO rez in lista)
             {
-                dataGridView1.Rows.Add(rez.Id, rez.VrijemeRezervacije.ToShortDateString(), rez.VrijemeRezervacije.TimeOfDay, rez.Opis, "Izaberi");
+                dataGridView1.Rows.Add(rez.Id, rez.VrijemeRezervacije.ToShortDateString(), rez.VrijemeRezervacije.TimeOfDay, rez.Opis, "Ponisti");
             }
         }
 
@@ -104,8 +106,33 @@ namespace e_Bioskop
             dataGridView1.Rows.Clear();
             foreach (RezervacijaDTO rez in lr)
             {
-                dataGridView1.Rows.Add(rez.Id, rez.VrijemeRezervacije.ToShortDateString(), rez.VrijemeRezervacije.TimeOfDay, rez.Opis, "Izaberi");
+                dataGridView1.Rows.Add(rez.Id, rez.VrijemeRezervacije.ToShortDateString(), rez.VrijemeRezervacije.TimeOfDay, rez.Opis, "Ponisti");
             }
         }
-    }
+
+        public void ponistiIstekleRezervacije()
+        {
+            DateTime now = DateTime.Now;
+            DateTime up15mins = now.Add(new TimeSpan(0, 15, 0));
+            List<RezervacijaDTO> listaRezervacija = BioskopUtil.getDAOFactory().getRezervacijaDAO().getAllActiveRezervacija();
+            List<ProjekcijaDTO> listaProjekcija = BioskopUtil.getDAOFactory().getProjekcijaDAO().getInInterval(now, up15mins);
+
+            foreach (ProjekcijaDTO p in listaProjekcija)
+            { 
+                foreach(RezervacijaDTO r in listaRezervacija)
+                {
+                    List<KartaDTO> listaKarata = BioskopUtil.getDAOFactory().getKartaDAO().getByProjekcijaAndRezervacija(p, r);
+                    r.Aktivna = 0;
+                    BioskopUtil.getDAOFactory().getRezervacijaDAO().update(r);
+                    //listaRezervacija.Remove(r);
+
+                    foreach(KartaDTO karta in listaKarata)
+                    {
+                        karta.Status.Id = 3;
+                        BioskopUtil.getDAOFactory().getKartaDAO().update(karta);
+                    }
+                }
+            } 
+         }  
+     }
 }

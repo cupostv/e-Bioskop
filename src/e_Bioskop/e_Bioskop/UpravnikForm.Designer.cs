@@ -88,6 +88,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblCijena = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -493,6 +495,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lblCijena);
+            this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.lblProjekcijeVrijeme);
@@ -508,7 +512,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 53);
+            this.label9.Location = new System.Drawing.Point(6, 41);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(31, 13);
             this.label9.TabIndex = 23;
@@ -517,7 +521,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 26);
+            this.label8.Location = new System.Drawing.Point(6, 16);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 13);
             this.label8.TabIndex = 22;
@@ -526,7 +530,7 @@
             // lblProjekcijeVrijeme
             // 
             this.lblProjekcijeVrijeme.AutoSize = true;
-            this.lblProjekcijeVrijeme.Location = new System.Drawing.Point(104, 26);
+            this.lblProjekcijeVrijeme.Location = new System.Drawing.Point(104, 16);
             this.lblProjekcijeVrijeme.Name = "lblProjekcijeVrijeme";
             this.lblProjekcijeVrijeme.Size = new System.Drawing.Size(35, 13);
             this.lblProjekcijeVrijeme.TabIndex = 20;
@@ -535,7 +539,7 @@
             // lblProjekcijeSala
             // 
             this.lblProjekcijeSala.AutoSize = true;
-            this.lblProjekcijeSala.Location = new System.Drawing.Point(104, 53);
+            this.lblProjekcijeSala.Location = new System.Drawing.Point(104, 41);
             this.lblProjekcijeSala.Name = "lblProjekcijeSala";
             this.lblProjekcijeSala.Size = new System.Drawing.Size(35, 13);
             this.lblProjekcijeSala.TabIndex = 21;
@@ -697,6 +701,24 @@
             this.tabPage3.Text = "Generisanje izvjestaja";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 64);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Cijena";
+            // 
+            // lblCijena
+            // 
+            this.lblCijena.AutoSize = true;
+            this.lblCijena.Location = new System.Drawing.Point(104, 64);
+            this.lblCijena.Name = "lblCijena";
+            this.lblCijena.Size = new System.Drawing.Size(41, 13);
+            this.lblCijena.TabIndex = 25;
+            this.lblCijena.Text = "label11";
+            // 
             // UpravnikForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -798,5 +820,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblCijena;
     }
 }

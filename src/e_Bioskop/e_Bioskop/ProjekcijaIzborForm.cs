@@ -50,7 +50,7 @@ namespace e_Bioskop
             {
                 DateTime sutra = DateTime.Today+new TimeSpan(1,0,0,0);
                 TimeSpan razlika = sutra - DateTime.Now;
-                lista = BioskopUtil.getDAOFactory().getProjekcijaDAO().getInInterval(DateTime.Now, sutra);
+                lista = BioskopUtil.getDAOFactory().getProjekcijaDAO().getInInterval(DateTime.Now.Add(new TimeSpan(0,15,0)), sutra);
                 dataGridView1.Columns["colDatum"].Visible=true;
             }
             else
