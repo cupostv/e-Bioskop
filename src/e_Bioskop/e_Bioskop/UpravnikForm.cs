@@ -27,6 +27,7 @@ namespace e_Bioskop
             ZaposleniDTO zaposleni = BioskopUtil.getPrijavljeniZaposleni();
             lblImePrezime.Text = zaposleni.Ime + " " + zaposleni.Prezime;
             splitContainer2.Panel2.Hide();
+            cbIzvjestajTip.SelectedIndex = 0;
         }
 
         private void popuniListuFilmovaZaNarucivanje()

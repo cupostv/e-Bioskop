@@ -30,10 +30,6 @@
         <value>5</value>
       </counter>
       <counter>
-        <item-type stereotype="" type="AbstractElementGroup" />
-        <value>55</value>
-      </counter>
-      <counter>
         <item-type stereotype="" type="UmlInitialNode" />
         <value>2</value>
       </counter>
@@ -52,6 +48,10 @@
       <counter>
         <item-type stereotype="" type="UmlActivityFinalNode" />
         <value>2</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="AbstractElementGroup" />
+        <value>9</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -103,7 +103,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-activity" id="pcdb592bedc034fc4a66070af064ff358_322229967" name="ActivityDiagram1" order-index="1" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-96,282">
+      <diagram type="uml-activity" id="pcdb592bedc034fc4a66070af064ff358_322229967" name="ActivityDiagram1" order-index="1" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-96,252">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -130,8 +130,6 @@
           </item>
           <item id="di151366535508374458" cid="SL002" type="swimlane" name="Sistem" style-class="" visibility="package" change-tracking-state="added" creator="P657b4abcbced4a9ebeee05dc016b10b5" creation-date="01/30/2016 20:57:05">
             <owned-items>
-              <owned-item ref="di688287811100234915" />
-              <owned-item ref="di689365417257214558" />
               <owned-item ref="di952758670823658384" />
               <owned-item ref="di742321713220708421" />
               <owned-item ref="di751738353639869125" />
@@ -174,7 +172,7 @@
             <style class="default" />
             <control-flow guard="" />
           </item>
-          <item id="di652749310426207596" cid="ACT001" type="action" name="Validacija podataka" style-class="" visibility="package" change-tracking-state="added" creator="P657b4abcbced4a9ebeee05dc016b10b5" creation-date="01/30/2016 20:59:01">
+          <item id="di652749310426207596" cid="ACT001" type="action" name="Čuvanje podataka" style-class="" visibility="package" change-tracking-state="added" creator="P657b4abcbced4a9ebeee05dc016b10b5" creation-date="01/30/2016 20:59:01">
             <style class="default" />
           </item>
           <item id="di611708093300789231" cid="ELEM006" type="control-flow" name="Validno" style-class="" visibility="package" change-tracking-state="added" creator="P657b4abcbced4a9ebeee05dc016b10b5" creation-date="01/30/2016 21:03:26">

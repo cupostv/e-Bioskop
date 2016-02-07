@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="9.05" multi-file="no">
+  <meta>
+    <name>Project</name>
+    <authors> </authors>
+    <description />
+  </meta>
+  <counters models="2">
+    <entity-names>
+      <counter>
+        <item-type stereotype="" type="UmlSwimlane" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlInitialNode" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlActivity" />
+        <value>9</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlAction" />
+        <value>20</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlActivityFinalNode" />
+        <value>3</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlFork" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlDecision" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlObject" />
+        <value>2</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type stereotype="" type="UmlSwimlane" />
+        <value>3</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlInitialNode" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlActivity" />
+        <value>10</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlAction" />
+        <value>21</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlControlFlow" />
+        <value>34</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlActivityFinalNode" />
+        <value>4</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlFork" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlDecision" />
+        <value>4</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlObjectFlow" />
+        <value>9</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlObject" />
+        <value>3</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="UmlMerge" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type stereotype="" type="AbstractElementGroup" />
+        <value>86</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlActivityDiagram</type>
+        <value>5</value>
+      </counter>
+    </diagrams>
+    <fields />
+  </counters>
+  <alias-groups />
+  <management>
+    <persons>
+      <person id="P751400cc10f14b159fd7535168c556cc">
+        <first-name />
+        <last-name />
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <tasks />
+    <requirements />
+    <issues />
+    <to-dos />
+  </management>
+  <glossary />
+  <types>
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types />
+  </types>
+  <filters />
+  <items>
+    <item id="di216166360295329378" cid="AFN002" type="activity-final-node" name="" style-class="" visibility="package" change-tracking-state="added" creator="P751400cc10f14b159fd7535168c556cc" creation-date="11/28/2015 21:06:51">
+      <style class="default" />
+    </item>
+    <item id="di439368289229029066" cid="ELEM007" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creator="P751400cc10f14b159fd7535168c556cc" creation-date="11/28/2015 21:06:51">
+      <style class="default" />
+      <control-flow guard="" />
+    </item>
+    <item id="di358775090478224750" cid="SL001" type="swimlane" name="Upravnik" style-class="" visibility="package" change-tracking-state="added" creator="P751400cc10f14b159fd7535168c556cc" creation-date="11/28/2015 20:48:56">
+      <owned-items>
+        <owned-item ref="di681342306207759223" />
+        <owned-item ref="di720984288996534760" />
+        <owned-item ref="di326090399167664829" />
+        <owned-item ref="di735648052803765638" />
+        <owned-item ref="di158137193963846292" />
+        <owned-item ref="di996607869500142817" />
+        <owned-item ref="di860517341713225431" />
+        <owned-item ref="di949709807119246148" />
+        <owned-item ref="di167174232651345385" />
+        <owned-item ref="di236345235668187156" />
+        <owned-item ref="di600882744862251797" />
+        <owned-item ref="di413702598694750803" />
+        <owned-item ref="di650685895318583070" />
+      </owned-items>
+      <style class="default" />
+    </item>
+  </items>
+  <models>
+    <model id="pa09d441ed6b64c40b228aec0e4e87dd6_136629895" name="Model 1" namespace="" order-index="1" expanded="true">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>11/28/2015 20:48:51</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models />
+      <diagram type="uml-activity" id="p53604adddd8a4ac3b48ee891429782b0_163884053" name="GenerisanjeIzvještajaActivity" order-index="1" expanded="true" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" show-frame="false" view-location="-246,381">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author />
+          </authors>
+          <description />
+          <creation-date>11/28/2015 20:48:51</creation-date>
+          <change-date>02/07/2016 20:21:30</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <documentation>
+          <text>
+            <styles>
+              <style name="S1" font-name="Verdana" font-size="8.25" font-bold="false" font-italic="false" font-underline="false" font-strikeout="false">
+                <text>
+                  <solid-brush color="#FF000000" />
+                </text>
+              </style>
+            </styles>
+            <content>
+              <paragraph>
+                <p s="S1">
+                  <t>Upravnik </t>
+                </p>
+                <p s="S1">
+                  <t>može </t>
+                </p>
+                <p s="S1">
+                  <t>da </t>
+                </p>
+                <p s="S1">
+                  <t>generiše </t>
+                </p>
+                <p s="S1">
+                  <t>izvještaje.
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>U </t>
+                </p>
+                <p s="S1">
+                  <t>početku </t>
+                </p>
+                <p s="S1">
+                  <t>upravnik </t>
+                </p>
+                <p s="S1">
+                  <t>bira </t>
+                </p>
+                <p s="S1">
+                  <t>vrstu </t>
+                </p>
+                <p s="S1">
+                  <t>izvještaja </t>
+                </p>
+                <p s="S1">
+                  <t>koji </t>
+                </p>
+                <p s="S1">
+                  <t>želi </t>
+                </p>
+                <p s="S1">
+                  <t>da </t>
+                </p>
+                <p s="S1">
+                  <t>generiše.
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>Moguće </t>
+                </p>
+                <p s="S1">
+                  <t>vrste </t>
+                </p>
+                <p s="S1">
+                  <t>izvještaja </t>
+                </p>
+                <p s="S1">
+                  <t>su:
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>1.</t>
+                </p>
+                <p s="S1">
+                  <t> </t>
+                </p>
+                <p s="S1">
+                  <t>izvještaj </t>
+                </p>
+                <p s="S1">
+                  <t>zauzetosti </t>
+                </p>
+                <p s="S1">
+                  <t>sala </t>
+                </p>
+                <p s="S1">
+                  <t>po </t>
+                </p>
+                <p s="S1">
+                  <t>projekcijama
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>2. </t>
+                </p>
+                <p s="S1">
+                  <t>izvještaj </t>
+                </p>
+                <p s="S1">
+                  <t>finansijskih </t>
+                </p>
+                <p s="S1">
+                  <t>prihoda </t>
+                </p>
+                <p s="S1">
+                  <t>po </t>
+                </p>
+                <p s="S1">
+                  <t>projekcijama
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>3.</t>
+                </p>
+                <p s="S1">
+                  <t> </t>
+                </p>
+                <p s="S1">
+                  <t>izvještaj </t>
+                </p>
+                <p s="S1">
+                  <t>finansijskih </t>
+                </p>
+                <p s="S1">
+                  <t>prihoda </t>
+                </p>
+                <p s="S1">
+                  <t>po </t>
+                </p>
+                <p s="S1">
+                  <t>filmovima
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>4. </t>
+                </p>
+                <p s="S1">
+                  <t>izvještaj </t>
+                </p>
+                <p s="S1">
+                  <t>finansijskih </t>
+                </p>
+                <p s="S1">
+                  <t>prihoda </t>
+                </p>
+                <p s="S1">
+                  <t>po </t>
+                </p>
+                <p s="S1">
+                  <t>filmovima </t>
+                </p>
+                <p s="S1">
+                  <t>nabavljenih </t>
+                </p>
+                <p s="S1">
+                  <t>od </t>
+                </p>
+                <p s="S1">
+                  <t>jednog </t>
+                </p>
+                <p s="S1">
+                  <t>distributera
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>5. </t>
+                </p>
+                <p s="S1">
+                  <t>izvještaj </t>
+                </p>
+                <p s="S1">
+                  <t>o </t>
+                </p>
+                <p s="S1">
+                  <t>finansijskim </t>
+                </p>
+                <p s="S1">
+                  <t>prihodima </t>
+                </p>
+                <p s="S1">
+                  <t>od </t>
+                </p>
+                <p s="S1">
+                  <t>prodatih </t>
+                </p>
+                <p s="S1">
+                  <t>karata </t>
+                </p>
+                <p s="S1">
+                  <t>u </t>
+                </p>
+                <p s="S1">
+                  <t>vremenskom </t>
+                </p>
+                <p s="S1">
+                  <t>intervalu </t>
+                </p>
+                <p s="S1">
+                  <t>(mjesecu, </t>
+                </p>
+                <p s="S1">
+                  <t>godini,...)
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>Nakon </t>
+                </p>
+                <p s="S1">
+                  <t>toga </t>
+                </p>
+                <p s="S1">
+                  <t>upravnik </t>
+                </p>
+                <p s="S1">
+                  <t>unosi </t>
+                </p>
+                <p s="S1">
+                  <t>parametre </t>
+                </p>
+                <p s="S1">
+                  <t>za </t>
+                </p>
+                <p s="S1">
+                  <t>izvještaje. 
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>1. </t>
+                </p>
+                <p s="S1">
+                  <t>Izbor </t>
+                </p>
+                <p s="S1">
+                  <t>projekcije
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>2. </t>
+                </p>
+                <p s="S1">
+                  <t>Izbor </t>
+                </p>
+                <p s="S1">
+                  <t>projekcije
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>3. </t>
+                </p>
+                <p s="S1">
+                  <t>Izbor </t>
+                </p>
+                <p s="S1">
+                  <t>filma
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>4. </t>
+                </p>
+                <p s="S1">
+                  <t>Izbor </t>
+                </p>
+                <p s="S1">
+                  <t>distributera
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>Korisnik </t>
+                </p>
+                <p s="S1">
+                  <t>ima </t>
+                </p>
+                <p s="S1">
+                  <t>mogućnost </t>
+                </p>
+                <p s="S1">
+                  <t>izbora </t>
+                </p>
+                <p s="S1">
+                  <t>vremenskog </t>
+                </p>
+                <p s="S1">
+                  <t>perioda </t>
+                </p>
+                <p s="S1">
+                  <t>za </t>
+                </p>
+                <p s="S1">
+                  <t>koji </t>
+                </p>
+                <p s="S1">
+                  <t>želi </t>
+                </p>
+                <p s="S1">
+                  <t>da </t>
+                </p>
+                <p s="S1">
+                  <t>generiše </t>
+                </p>
+                <p s="S1">
+                  <t>izvještaj.
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>Nakon </t>
+                </p>
+                <p s="S1">
+                  <t>unosa </t>
+                </p>
+                <p s="S1">
+                  <t>podataka </t>
+                </p>
+                <p s="S1">
+                  <t>(kriterijuma) </t>
+                </p>
+                <p s="S1">
+                  <t>izvještaja </t>
+                </p>
+                <p s="S1">
+                  <t>sistem </t>
+                </p>
+                <p s="S1">
+                  <t>vrši </t>
+                </p>
+                <p s="S1">
+                  <t>validaciju </t>
+                </p>
+                <p s="S1">
+                  <t>parametara. </t>
+                </p>
+                <p s="S1">
+                  <t>
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>U </t>
+                </p>
+                <p s="S1">
+                  <t>slucaju </t>
+                </p>
+                <p s="S1">
+                  <t>da </t>
+                </p>
+                <p s="S1">
+                  <t>podaci </t>
+                </p>
+                <p s="S1">
+                  <t>nisu </t>
+                </p>
+                <p s="S1">
+                  <t>validni, </t>
+                </p>
+                <p s="S1">
+                  <t>korisnik </t>
+                </p>
+                <p s="S1">
+                  <t>može </t>
+                </p>
+                <p s="S1">
+                  <t>da </t>
+                </p>
+                <p s="S1">
+                  <t>ponovi </t>
+                </p>
+                <p s="S1">
+                  <t>unos.
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>U </t>
+                </p>
+                <p s="S1">
+                  <t>svakom </t>
+                </p>
+                <p s="S1">
+                  <t>koraku </t>
+                </p>
+                <p s="S1">
+                  <t>upravnik </t>
+                </p>
+                <p s="S1">
+                  <t>može </t>
+                </p>
+                <p s="S1">
+                  <t>da </t>
+                </p>
+                <p s="S1">
+                  <t>odustane </t>
+                </p>
+                <p s="S1">
+                  <t>od </t>
+                </p>
+                <p s="S1">
+                  <t>generisanja </t>
+                </p>
+                <p s="S1">
+                  <t>izvještaja.
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t>
+</t>
+                </p>
+              </paragraph>
+              <paragraph>
+                <p s="S1">
+                  <t> 
+</t>
+                </p>
+              </paragraph>
+            </content>
+          </text>
+        </documentation>
+        <frame>
+          <parameters return-type="" return-type-id="" />
+        </frame>
+        <abstract-items>
+          <item id="di237371269850781500" cid="SL001" type="swimlane" name="Sistem" style-class="" visibility="package" change-tracking-state="added" creator="P751400cc10f14b159fd7535168c556cc" creation-date="11/28/2015 20:48:56">
+            <owned-items>
+              <owned-item ref="di289159147624054724" />
+              <owned-item ref="di421073465239850357" />
+              <owned-item ref="di345119720720024840" />
+              <owned-item ref="di712999384538440957" />
+              <owned-item ref="di954347208439908190" />
+              <owned-item ref="di686937075832856612" />
+              <owned-item ref="di932797745256855474" />
+              <owned-item ref="di316740340794636113" />
+            </owned-items>
+            <style class="default" />
+          </item>
+          <item id="di860517341713225431" cid="IN001" type="initial-node" name="" style-class="" visibility="package" change-tracking-state="added" creator="P751400cc10f14b159fd7535168c556cc" creation-date="11/28/2015 20:59:25">
+            <style class="default" />
+          </item>
+          <item id="di167174232651345385" cid="ACT020" type="action" name="Izbor kategorije izvještaja" style-class="" visibility="package" change-tracking-state="added" creation-date="02/07/2016 20:17:50">
+            <style class="default" />
+          </item>
+          <item id="di316740340794636113" cid="ACT020" type="action" name="Generisanje izvještaja" style-class="" visibility="package" change-tracking-state="added" creation-date="02/07/2016 20:17:50">
+            <style class="default" />
+          </item>
+          <item id="di674207012697972063" cid="ELEM032" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="02/07/2016 20:21:06">
+            <style class="default" />
+            <control-flow guard="" />
+          </item>
+          <item id="di218116225797708003" cid="ELEM033" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="02/07/2016 20:21:30">
+            <style class="default" />
+            <control-flow guard="" />
+          </item>
+          <item id="di236345235668187156" cid="ACT020" type="action" name="Izbor datuma" style-class="" visibility="package" change-tracking-state="added" creation-date="02/07/2016 20:17:50">
+            <style class="default" />
+          </item>
+          <item id="di508496653749747447" cid="ELEM030" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="02/07/2016 20:20:06">
+            <style class="default" />
+            <control-flow guard="" />
+          </item>
+          <item id="di600882744862251797" cid="ACT020" type="action" name="Potvrda generisanja izvještaja" style-class="" visibility="package" change-tracking-state="added" creation-date="02/07/2016 20:17:50">
+            <style class="default" />
+          </item>
+          <item id="di541405677739669515" cid="ELEM031" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="02/07/2016 20:20:45">
+            <style class="default" />
+            <control-flow guard="" />
+          </item>
+          <item id="di413702598694750803" cid="OBJ002" type="object" name="Izvještaj" style-class="" visibility="package" change-tracking-state="added" creation-date="12/01/2015 09:53:31">
+            <style class="default" />
+            <object classifier-name="">
+              <attributes />
+            </object>
+          </item>
+          <item id="di744075369523856600" cid="ELEM029" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="02/07/2016 20:18:51">
+            <style class="default" />
+            <control-flow guard="" />
+          </item>
+          <item id="di650685895318583070" cid="AFN003" type="activity-final-node" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="12/01/2015 09:54:10">
+            <style class="default" />
+          </item>
+          <item id="di971716250692738625" cid="ELEM028" type="control-flow" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="12/01/2015 09:54:16">
+            <style class="default" />
+            <control-flow guard="" />
+          </item>
+        </abstract-items>
+        <layer name="Default" visible="true" enabled="true" locked="false">
+          <item id="di237371269850781500" iid="b9ae085fbab240e38ea695eff1946a59" creation-date="11/28/2015 20:48:56" order-index="0" type="entity">
+            <layout ax="155" ay="29" awidth="301" aheight="838" x="155" y="29" width="301" height="838" angle="0" />
+            <swimlane vertical="true" is-closed="false" />
+          </item>
+          <item id="di971716250692738625" iid="b80c6959666342da918bddaa5b01a10a" creation-date="12/01/2015 09:54:16" order-index="39" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="false" lock-to-fields="false" auto-path="" x1="78" y1="675" x2="12" y2="755" start-border-pos="0.733379501385041" end-border-pos="0.219775276184082" name-position="10,-10">
+              <points>
+                <point x="78" y="675" />
+                <point x="12" y="755" />
+              </points>
+            </layout>
+            <relation from="di413702598694750803" from-iid="d5b84a2320c941ad8706fc2c3fbe2a2c" to="di650685895318583070" to-iid="726fa57585b8471e9efd3cc0eb253f73" />
+          </item>
+          <item id="di358775090478224750" iid="80b97544b30648e6a09977bcffecfdb7" creation-date="11/28/2015 20:48:56" order-index="0" type="entity">
+            <layout ax="-146" ay="29" awidth="301" aheight="838" x="-146" y="29" width="301" height="838" angle="0" />
+            <swimlane vertical="true" is-closed="false" />
+          </item>
+          <item id="di860517341713225431" iid="945db20c141442239e53403f17c9a181" container="di358775090478224750" container-iid="80b97544b30648e6a09977bcffecfdb7" creation-date="11/28/2015 20:59:25" order-index="1" type="entity">
+            <layout ax="-8" ay="87" awidth="25" aheight="25" x="-8" y="87" width="25" height="25" angle="0" name-position="0,10" name-anchor="bottom" />
+          </item>
+          <item id="di413702598694750803" iid="d5b84a2320c941ad8706fc2c3fbe2a2c" container="di358775090478224750" container-iid="80b97544b30648e6a09977bcffecfdb7" creation-date="12/01/2015 09:53:31" order-index="36" type="entity">
+            <layout ax="66" ay="615" awidth="180.5" aheight="60" x="66" y="615" width="180.5" height="60" angle="0" />
+          </item>
+          <item id="di650685895318583070" iid="726fa57585b8471e9efd3cc0eb253f73" container="di358775090478224750" container-iid="80b97544b30648e6a09977bcffecfdb7" creation-date="12/01/2015 09:54:10" order-index="38" type="entity">
+            <layout ax="-8" ay="752" awidth="25" aheight="25" x="-8" y="752" width="25" height="25" angle="0" name-position="0,10" name-anchor="bottom" />
+          </item>
+          <item id="di167174232651345385" iid="1435d3af7fcf40599351f0ffed4391d6" container="di358775090478224750" container-iid="80b97544b30648e6a09977bcffecfdb7" creation-date="02/07/2016 20:17:50" order-index="40" type="entity">
+            <layout ax="-85.5" ay="158" awidth="180" aheight="50" x="-85.5" y="158" width="180" height="50" angle="0" />
+          </item>
+          <item id="di744075369523856600" iid="795158816cd84e81beb7685f72058308" creation-date="02/07/2016 20:18:51" order-index="41" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" lock-to-fields="false" auto-path="" x1="4" y1="112" x2="4" y2="158" start-border-pos="0.63" end-border-pos="0.124305555555556" name-position="10,-10">
+              <points>
+                <point x="4" y="112" />
+                <point x="4" y="158" />
+              </points>
+            </layout>
+            <relation from="di860517341713225431" from-iid="945db20c141442239e53403f17c9a181" to="di167174232651345385" to-iid="1435d3af7fcf40599351f0ffed4391d6" />
+          </item>
+          <item id="di236345235668187156" iid="05c45e199a894a7090feeb3dc559140c" container="di358775090478224750" container-iid="80b97544b30648e6a09977bcffecfdb7" creation-date="02/07/2016 20:17:50" order-index="40" type="entity">
+            <layout ax="-85.5" ay="270" awidth="180" aheight="50" x="-85.5" y="270" width="180" height="50" angle="0" />
+          </item>
+          <item id="di508496653749747447" iid="2e7b0e12c3704ece8865eb01b1603d4c" creation-date="02/07/2016 20:20:06" order-index="42" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="4" y1="208" x2="4" y2="270" start-border-pos="0.625694444444444" end-border-pos="0.124305555555556" name-position="10,-10">
+              <points>
+                <point x="4" y="208" />
+                <point x="4" y="270" />
+              </points>
+            </layout>
+            <relation from="di167174232651345385" from-iid="1435d3af7fcf40599351f0ffed4391d6" to="di236345235668187156" to-iid="05c45e199a894a7090feeb3dc559140c" />
+          </item>
+          <item id="di600882744862251797" iid="322e167b979b4b85b2387e70f2bfda42" container="di358775090478224750" container-iid="80b97544b30648e6a09977bcffecfdb7" creation-date="02/07/2016 20:17:50" order-index="40" type="entity">
+            <layout ax="-85.5" ay="382" awidth="180" aheight="50" x="-85.5" y="382" width="180" height="50" angle="0" />
+          </item>
+          <item id="di541405677739669515" iid="1a83f29b7a01432c9d056bb0ef58d0ed" creation-date="02/07/2016 20:20:45" order-index="43" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="5" y1="320" x2="4" y2="382" start-border-pos="0.624305555555556" end-border-pos="0.124305555555556" name-position="10,-10">
+              <points>
+                <point x="5" y="320" />
+                <point x="4" y="382" />
+              </points>
+            </layout>
+            <relation from="di236345235668187156" from-iid="05c45e199a894a7090feeb3dc559140c" to="di600882744862251797" to-iid="322e167b979b4b85b2387e70f2bfda42" />
+          </item>
+          <item id="di316740340794636113" iid="8654d074b125495fbaf98700b760bf5a" container="di237371269850781500" container-iid="b9ae085fbab240e38ea695eff1946a59" creation-date="02/07/2016 20:17:50" order-index="40" type="entity">
+            <layout ax="215.5" ay="493" awidth="180" aheight="50" x="215.5" y="493" width="180" height="50" angle="0" />
+          </item>
+          <item id="di674207012697972063" iid="dceb45841a3f48cea85dec81cacf7ded" creation-date="02/07/2016 20:21:06" order-index="44" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="94" y1="407" x2="306" y2="493" start-border-pos="0.375" end-border-pos="0.125694444444444" name-position="10,-10">
+              <points>
+                <point x="94" y="407" />
+                <point x="308" y="407" />
+                <point x="306" y="493" />
+              </points>
+            </layout>
+            <relation from="di600882744862251797" from-iid="322e167b979b4b85b2387e70f2bfda42" to="di316740340794636113" to-iid="8654d074b125495fbaf98700b760bf5a" />
+          </item>
+          <item id="di218116225797708003" iid="b70b8f3fc5f5458c98cfd0b3e27ac204" creation-date="02/07/2016 20:21:30" order-index="45" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="299" y1="543" x2="195" y2="615" start-border-pos="0.634027777777778" end-border-pos="0.178670360110803" name-position="10,-10">
+              <points>
+                <point x="299" y="543" />
+                <point x="195" y="615" />
+              </points>
+            </layout>
+            <relation from="di316740340794636113" from-iid="8654d074b125495fbaf98700b760bf5a" to="di413702598694750803" to-iid="d5b84a2320c941ad8706fc2c3fbe2a2c" />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+  <documents />
+  <document-templates />
+</sim-project>

@@ -68,6 +68,8 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblCijena = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblProjekcijeVrijeme = new System.Windows.Forms.Label();
@@ -95,8 +97,6 @@
             this.dtpIzvjestajDo = new System.Windows.Forms.DateTimePicker();
             this.dtpIzvjestajOd = new System.Windows.Forms.DateTimePicker();
             this.btnGenerisiIzvjestaj = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblCijena = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -517,6 +517,24 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Detalji o projekciji";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 68);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Cijena:";
+            // 
+            // lblCijena
+            // 
+            this.lblCijena.AutoSize = true;
+            this.lblCijena.Location = new System.Drawing.Point(104, 68);
+            this.lblCijena.Name = "lblCijena";
+            this.lblCijena.Size = new System.Drawing.Size(41, 13);
+            this.lblCijena.TabIndex = 19;
+            this.lblCijena.Text = "label11";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -713,7 +731,7 @@
             this.cbDatum.Name = "cbDatum";
             this.cbDatum.Size = new System.Drawing.Size(706, 350);
             this.cbDatum.TabIndex = 2;
-            this.cbDatum.Text = "Generisanje izvjestaja";
+            this.cbDatum.Text = "Generisanje izvještaja";
             this.cbDatum.UseVisualStyleBackColor = true;
             // 
             // lblIzvjestajDo
@@ -782,27 +800,9 @@
             this.btnGenerisiIzvjestaj.Name = "btnGenerisiIzvjestaj";
             this.btnGenerisiIzvjestaj.Size = new System.Drawing.Size(331, 23);
             this.btnGenerisiIzvjestaj.TabIndex = 0;
-            this.btnGenerisiIzvjestaj.Text = "Generisi izvjestaj";
+            this.btnGenerisiIzvjestaj.Text = "Generisi izvještaj";
             this.btnGenerisiIzvjestaj.UseVisualStyleBackColor = true;
             this.btnGenerisiIzvjestaj.Click += new System.EventHandler(this.btnGenerisiIzvjestaj_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 68);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 13);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Cijena:";
-            // 
-            // lblCijena
-            // 
-            this.lblCijena.AutoSize = true;
-            this.lblCijena.Location = new System.Drawing.Point(104, 68);
-            this.lblCijena.Name = "lblCijena";
-            this.lblCijena.Size = new System.Drawing.Size(41, 13);
-            this.lblCijena.TabIndex = 19;
-            this.lblCijena.Text = "label11";
             // 
             // UpravnikForm
             // 

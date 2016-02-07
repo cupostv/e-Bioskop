@@ -41,6 +41,17 @@ Ukoliko se želi dodati novi film, o njemu se unesu podaci, izvrši se validacij
  ili ispravljanje grešaka načinjenih prilikom unosa.
 
 \subsection{Generisanje izvještaja}
+Generiše izvještaja može da vrši upravnik. U početku upravnik bira vrstu izvještaja koji želi da generiše. Moguće vrste izvještaja su: 
+\begin{itemize}
+\item izvještaj finansijskih prihoda po zaposlenima;
+\item izvještaj finansijskih prihoda po distributerima;
+\item izvještaj finansijskih prihoda po filmovima.
+\end{itemize}
+Korisnik ima mogućnost izbora vremenskog perioda za koji želi da generiše izvještaj.
+
+Nakon unosa podataka (kriterijuma) izvještaja sistem vrši validaciju parametara. U slucaju da podaci nisu validni, korisnik može da ponovi unos. U suprotnom se prikazuje generisani izvještaj.
+
+U svakom koraku upravnik može da odustane od generisanja izvještaja.
 
 \subsection{Administracija sala}
 U okviru administracije sale moguće je izabrati jednu od dvije aktivnosti, a to su dodavanje nove sale i izmjena podataka o postojećim salama.
@@ -66,8 +77,6 @@ vrši se provjera slobodnih mjesta i ukoliko postoje mjesta koja su zadovoljavaj
 i odabrana mjesta se smatraju zauzetim.
 
 \subsection{Poništavanje rezervacija}
-Ukoliko je isteklo vrijeme za preuzimanje rezervacija, potrebno je odabrati opciju za poništavanje svih rezervacija za 
-koje karte nisu kupljene pri čemu ta mjesta na projekcijama postaju dostupna. 
 Ako neki gledalac želi da poništi svoju rezervaciju onda se iz liste bira rezervacija koja se želi poništiti i nakon potvrde poništavanja
 ta mjesta postaju dostupna.
 
@@ -97,10 +106,8 @@ ostalo što će se nalaziti na prozorima, treba da bude grupisano i poravnato, k
 bi korisnik mogao lakše da se snađe.
 
 Formati izvještaja bi trebali da budu onakvi na kakve su korisnici navikli, znači u
-gornjem lijevom uglu bi trebao da se nalazi logo fakulteta, naziv, adresa, kontakt
-telefon i e-mail adresa, ispod toga, najbolje na sredini, trebalo bi da se nalazi
-naslov izvještaja, pa ispod njega sadržaj, i u donjem lijevom uglu naznačeno
-mjesto za potpis službenika i mjesto za pečat.
+gornjem lijevom uglu bi trebao da se nalazi ime bioskopa. Ispod toga, najbolje na sredini, trebalo bi da se nalazi
+naslov izvještaja, pa ispod njega sadržaj.
 
 \section{Atributi softverskog sistema}
 \begin{itemize}
@@ -114,3 +121,4 @@ zahtjevima kao i druge informacije koje bi mogle biti od koristi.
 \end{itemize}
 
 \section{Ostali zahtjevi}
+Ukoliko se rezervacije ne preuzmu na vrijeme, tj. karte za rezervisana mjesta se ne prodaju 15 minuta prije početka projekcije, neophodno je rezervacije poništiti nakon čega se karte za sva rezervisana mjesta mogu prodati gledaocima koji nemaju rezervaciju.
