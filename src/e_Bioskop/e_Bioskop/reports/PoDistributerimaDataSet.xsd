@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PoDistributerimaDataSet" targetNamespace="http://tempuri.org/PoDistributerimaDataSet.xsd" xmlns:mstns="http://tempuri.org/PoDistributerimaDataSet.xsd" xmlns="http://tempuri.org/PoDistributerimaDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PoDistributerimaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="PoDistributerimaDataSet" msprop:Generator_UserDSName="PoDistributerimaDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Distributer" msprop:Generator_TableClassName="DistributerDataTable" msprop:Generator_TableVarName="tableDistributer" msprop:Generator_TablePropName="Distributer" msprop:Generator_RowDeletingName="DistributerRowDeleting" msprop:Generator_RowChangingName="DistributerRowChanging" msprop:Generator_RowEvHandlerName="DistributerRowChangeEventHandler" msprop:Generator_RowDeletedName="DistributerRowDeleted" msprop:Generator_UserTableName="Distributer" msprop:Generator_RowChangedName="DistributerRowChanged" msprop:Generator_RowEvArgName="DistributerRowChangeEvent" msprop:Generator_RowClassName="DistributerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="naziv" msprop:Generator_ColumnVarNameInTable="columnnaziv" msprop:Generator_ColumnPropNameInRow="naziv" msprop:Generator_ColumnPropNameInTable="nazivColumn" msprop:Generator_UserColumnName="naziv" type="xs:string" minOccurs="0" />
+              <xs:element name="adresa" msprop:Generator_ColumnVarNameInTable="columnadresa" msprop:Generator_ColumnPropNameInRow="adresa" msprop:Generator_ColumnPropNameInTable="adresaColumn" msprop:Generator_UserColumnName="adresa" type="xs:string" minOccurs="0" />
+              <xs:element name="telefon" msprop:Generator_ColumnVarNameInTable="columntelefon" msprop:Generator_ColumnPropNameInRow="telefon" msprop:Generator_ColumnPropNameInTable="telefonColumn" msprop:Generator_UserColumnName="telefon" type="xs:string" minOccurs="0" />
+              <xs:element name="e-mail" msprop:Generator_ColumnVarNameInTable="_columne_mail" msprop:Generator_ColumnPropNameInRow="_e_mail" msprop:Generator_ColumnPropNameInTable="_e_mailColumn" msprop:Generator_UserColumnName="e-mail" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Film" msprop:Generator_TableClassName="FilmDataTable" msprop:Generator_TableVarName="tableFilm" msprop:Generator_TablePropName="Film" msprop:Generator_RowDeletingName="FilmRowDeleting" msprop:Generator_RowChangingName="FilmRowChanging" msprop:Generator_RowEvHandlerName="FilmRowChangeEventHandler" msprop:Generator_RowDeletedName="FilmRowDeleted" msprop:Generator_UserTableName="Film" msprop:Generator_RowChangedName="FilmRowChanged" msprop:Generator_RowEvArgName="FilmRowChangeEvent" msprop:Generator_RowClassName="FilmRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="naziv" msprop:Generator_ColumnVarNameInTable="columnnaziv" msprop:Generator_ColumnPropNameInRow="naziv" msprop:Generator_ColumnPropNameInTable="nazivColumn" msprop:Generator_UserColumnName="naziv" type="xs:string" minOccurs="0" />
+              <xs:element name="brojProjekcija" msprop:Generator_ColumnVarNameInTable="columnbrojProjekcija" msprop:Generator_ColumnPropNameInRow="brojProjekcija" msprop:Generator_ColumnPropNameInTable="brojProjekcijaColumn" msprop:Generator_UserColumnName="brojProjekcija" type="xs:int" minOccurs="0" />
+              <xs:element name="prihod" msprop:Generator_ColumnVarNameInTable="columnprihod" msprop:Generator_ColumnPropNameInRow="prihod" msprop:Generator_ColumnPropNameInTable="prihodColumn" msprop:Generator_UserColumnName="prihod" type="xs:double" minOccurs="0" />
+              <xs:element name="idDistributer" msprop:Generator_ColumnVarNameInTable="columnidDistributer" msprop:Generator_ColumnPropNameInRow="idDistributer" msprop:Generator_ColumnPropNameInTable="idDistributerColumn" msprop:Generator_UserColumnName="idDistributer" type="xs:int" minOccurs="0" />
+              <xs:element name="zanr" msprop:Generator_ColumnVarNameInTable="columnzanr" msprop:Generator_ColumnPropNameInRow="zanr" msprop:Generator_ColumnPropNameInTable="zanrColumn" msprop:Generator_UserColumnName="zanr" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Distributer" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="Film_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Film" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Distributer_Film" msdata:parent="Distributer" msdata:child="Film" msdata:parentkey="id" msdata:childkey="idDistributer" msprop:Generator_UserChildTable="Film" msprop:Generator_ChildPropName="GetFilmRows" msprop:Generator_UserRelationName="Distributer_Film" msprop:Generator_ParentPropName="DistributerRow" msprop:Generator_RelationVarName="relationDistributer_Film" msprop:Generator_UserParentTable="Distributer" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

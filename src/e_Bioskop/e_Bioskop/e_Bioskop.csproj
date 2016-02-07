@@ -11,7 +11,8 @@
     <RootNamespace>e_Bioskop</RootNamespace>
     <AssemblyName>e_Bioskop</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -34,12 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\DbLinq\DbLinq\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -114,6 +121,53 @@
     </Compile>
     <Compile Include="FilmIzborForm.Designer.cs">
       <DependentUpon>FilmIzborForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\PoDistributerimaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoDistributerimaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="reports\PoDistributerimaIzvjestaj.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoDistributerimaIzvjestaj.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\PoFilmovimaDataSet.cs">
+      <DependentUpon>PoFilmovimaDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\PoFilmovimaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoFilmovimaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="reports\PoFilmovimaIzvjestaj.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoFilmovimaIzvjestaj.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\PoZaposlenimaDataSet.cs">
+      <DependentUpon>PoZaposlenimaDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\PoZaposlenimaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoZaposlenimaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="reports\PoZaposlenimaIzvjestaj1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoZaposlenimaIzvjestaj1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\PregledIzvjestajaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports\PregledIzvjestajaForm.Designer.cs">
+      <DependentUpon>PregledIzvjestajaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SalaIzmjeniForm.Designer.cs">
       <DependentUpon>SalaIzmjeniForm.cs</DependentUpon>
@@ -220,6 +274,21 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="reports\PoDistributerimaIzvjestaj.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PoDistributerimaIzvjestaj.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\PoFilmovimaIzvjestaj.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PoFilmovimaIzvjestaj.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\PoZaposlenimaIzvjestaj1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PoZaposlenimaIzvjestaj1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\PregledIzvjestajaForm.resx">
+      <DependentUpon>PregledIzvjestajaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RezervacijePregledForm.resx">
       <DependentUpon>RezervacijePregledForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +307,7 @@
     <EmbeddedResource Include="ZaposleniKreiranjeForm.resx">
       <DependentUpon>ZaposleniKreiranjeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -249,28 +319,75 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\korisnik_dodaj.png" />
+    <None Include="reports\PoDistributerimaDataSet.xsc">
+      <DependentUpon>PoDistributerimaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="reports\PoDistributerimaDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PoDistributerimaDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="reports\PoDistributerimaDataSet.xss">
+      <DependentUpon>PoDistributerimaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="reports\PoFilmovimaDataSet.xsc">
+      <DependentUpon>PoFilmovimaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="reports\PoFilmovimaDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PoFilmovimaDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="reports\PoFilmovimaDataSet.xss">
+      <DependentUpon>PoFilmovimaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="reports\PoZaposlenimaDataSet.xsc">
+      <DependentUpon>PoZaposlenimaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="reports\PoZaposlenimaDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PoZaposlenimaDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="reports\PoZaposlenimaDataSet.xss">
+      <DependentUpon>PoZaposlenimaDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\changeSala.png" />
+    <None Include="Resources\crveno.png" />
+    <None Include="Resources\distributer_dodaj.png" />
+    <None Include="Resources\dodajSala.png" />
+    <None Include="Resources\editSala.png" />
+    <None Include="Resources\filmovi_dodaj.png" />
+    <None Include="Resources\Greska.png" />
+    <None Include="Resources\korisnik.png" />
+    <None Include="Resources\korisnik_dodaj.png" />
+    <None Include="Resources\lista.png" />
+    <None Include="Resources\lozinka.png" />
+    <None Include="Resources\manageSala.png" />
     <None Include="Resources\odjava.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\filmovi_dodaj.png" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\podesavanja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ponisti_kartu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ponisti_rezervaciju.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pregled_rasporeda.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\zeleno.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\crveno.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\korisnik.png" />
-    <None Include="Resources\lozinka.png" />
-    <None Include="Resources\lista.png" />
-    <Content Include="Resources\changeSala.png" />
-    <None Include="Resources\editSala.png" />
-    <Content Include="Resources\manageSala.png" />
-    <Content Include="Resources\ok.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

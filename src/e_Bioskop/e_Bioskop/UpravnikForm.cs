@@ -1,4 +1,5 @@
 ﻿using e_Bioskop.data.dto;
+using e_Bioskop.reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -121,18 +122,18 @@ namespace e_Bioskop
             lblProjekcijeNazivDistributera.Text = trenutnaProjekcija.Film.Distributer.Naziv;
             lblProjekcijeTelefonDistributera.Text = trenutnaProjekcija.Film.Distributer.Telefon;
             lblProjekcijeVrijeme.Text = trenutnaProjekcija.Vrijeme.ToShortDateString() + " u " + trenutnaProjekcija.Vrijeme.ToShortTimeString() + " časova";
-            lblProjekcijeSala.Text = "Sala: " + trenutnaProjekcija.Sala.Naziv;
+            lblProjekcijeSala.Text =trenutnaProjekcija.Sala.Naziv;
             lblProjekcijeAdresaDistributera.Text = trenutnaProjekcija.Film.Distributer.Adresa;
-            lblCijena.Text = trenutnaProjekcija.Cijena.ToString();
+              lblCijena.Text = trenutnaProjekcija.Cijena.ToString();
             DateTime now = DateTime.Now;
             if (now > trenutnaProjekcija.Vrijeme)
             {
-                btnIzmjeniProjekciju.Enabled = false;
-            }
-            else
-            {
-                btnIzmjeniProjekciju.Enabled = true;
-            }
+                 btnIzmjeniProjekciju.Enabled = false;
+             }
+             else
+             {
+                 btnIzmjeniProjekciju.Enabled = true;
+             }
         }
 
         private void btnIzmjeniProjekciju_Click(object sender, EventArgs e)
@@ -164,6 +165,76 @@ namespace e_Bioskop
             if (BioskopUtil.getPrijavljeniZaposleni() != null)
             {
                 Application.Exit();
+            }
+        }
+
+        private void btnGenerisiIzvjestaj_Click(object sender, EventArgs e)
+        {
+            prikaziIzvjestaj();
+        }
+
+        private void prikaziIzvjestaj()
+        {
+            int k = cbIzvjestajTip.SelectedIndex + 1;
+            bool datum = cbIzvjestajDatum.Checked;
+            PregledIzvjestajaForm pif = new PregledIzvjestajaForm(!datum);
+            switch (k)
+            {
+                case 1:
+                    if (datum)
+                    {
+                        pif.OnEmployees(BioskopUtil.getDAOFactory().getZaposleniDAO().getAll(), dtpIzvjestajOd.Value, dtpIzvjestajDo.Value);
+                        pif.ShowDialog();
+                    }
+                    else
+                    {
+                        pif.OnEmployees(BioskopUtil.getDAOFactory().getZaposleniDAO().getAll());
+                        pif.ShowDialog();
+                    }
+                    break;
+                case 2:
+                    if (datum)
+                    {
+                        pif.OnDistributers(BioskopUtil.getDAOFactory().getDistributerDAO().getAll(), dtpIzvjestajOd.Value, dtpIzvjestajDo.Value);
+                        pif.ShowDialog();
+                    }
+                    else
+                    {
+                        pif.OnDistributers(BioskopUtil.getDAOFactory().getDistributerDAO().getAll());
+                        pif.ShowDialog();
+                    }
+                    break;
+                case 3:
+                    if (datum)
+                    {
+                        pif.OnMovies(BioskopUtil.getDAOFactory().getFilmDAO().getAll(), dtpIzvjestajOd.Value, dtpIzvjestajDo.Value);
+                        pif.ShowDialog();
+                    }
+                    else
+                    {
+                        pif.OnMovies(BioskopUtil.getDAOFactory().getFilmDAO().getAll());
+                        pif.ShowDialog();
+                    }
+                    break;
+            }
+
+        }
+
+        private void cbIzvjestajDatum_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbIzvjestajDatum.Checked)
+            {
+                dtpIzvjestajDo.Show();
+                dtpIzvjestajOd.Show();
+                lblIzvjestajOd.Show();
+                lblIzvjestajDo.Show();
+            }
+            else
+            {
+                dtpIzvjestajDo.Hide();
+                dtpIzvjestajOd.Hide();
+                lblIzvjestajDo.Hide();
+                lblIzvjestajOd.Hide();
             }
         }
 

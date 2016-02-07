@@ -139,9 +139,6 @@
   <data name="distributer_dodaj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\distributer_dodaj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ponisti_kartu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ponisti_kartu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="korisnik_dodaj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\korisnik_dodaj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,9 +150,6 @@
   </data>
   <data name="zeleno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zeleno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ponisti_rezervaciju" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ponisti_rezervaciju.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pregled_rasporeda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pregled_rasporeda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,7 +163,16 @@
   <data name="lozinka" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lozinka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ponisti_kartu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ponisti_kartu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="editSala" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editSala.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Greska" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Greska.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ponisti_rezervaciju" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ponisti_rezervaciju.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

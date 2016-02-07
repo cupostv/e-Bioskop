@@ -87,7 +87,14 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.cbDatum = new System.Windows.Forms.TabPage();
+            this.lblIzvjestajDo = new System.Windows.Forms.Label();
+            this.lblIzvjestajOd = new System.Windows.Forms.Label();
+            this.cbIzvjestajDatum = new System.Windows.Forms.CheckBox();
+            this.cbIzvjestajTip = new System.Windows.Forms.ComboBox();
+            this.dtpIzvjestajDo = new System.Windows.Forms.DateTimePicker();
+            this.dtpIzvjestajOd = new System.Windows.Forms.DateTimePicker();
+            this.btnGenerisiIzvjestaj = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.lblCijena = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
@@ -107,6 +114,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.cbDatum.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -173,7 +181,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.cbDatum);
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -495,8 +503,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.lblCijena);
             this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.lblCijena);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.lblProjekcijeVrijeme);
@@ -512,7 +520,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 41);
+            this.label9.Location = new System.Drawing.Point(6, 47);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(31, 13);
             this.label9.TabIndex = 23;
@@ -521,7 +529,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 16);
+            this.label8.Location = new System.Drawing.Point(6, 26);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 13);
             this.label8.TabIndex = 22;
@@ -530,7 +538,7 @@
             // lblProjekcijeVrijeme
             // 
             this.lblProjekcijeVrijeme.AutoSize = true;
-            this.lblProjekcijeVrijeme.Location = new System.Drawing.Point(104, 16);
+            this.lblProjekcijeVrijeme.Location = new System.Drawing.Point(104, 26);
             this.lblProjekcijeVrijeme.Name = "lblProjekcijeVrijeme";
             this.lblProjekcijeVrijeme.Size = new System.Drawing.Size(35, 13);
             this.lblProjekcijeVrijeme.TabIndex = 20;
@@ -539,7 +547,7 @@
             // lblProjekcijeSala
             // 
             this.lblProjekcijeSala.AutoSize = true;
-            this.lblProjekcijeSala.Location = new System.Drawing.Point(104, 41);
+            this.lblProjekcijeSala.Location = new System.Drawing.Point(104, 47);
             this.lblProjekcijeSala.Name = "lblProjekcijeSala";
             this.lblProjekcijeSala.Size = new System.Drawing.Size(35, 13);
             this.lblProjekcijeSala.TabIndex = 21;
@@ -692,31 +700,108 @@
             this.label15.TabIndex = 5;
             this.label15.Text = "Adresa:";
             // 
-            // tabPage3
+            // cbDatum
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(706, 350);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Generisanje izvjestaja";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.cbDatum.Controls.Add(this.lblIzvjestajDo);
+            this.cbDatum.Controls.Add(this.lblIzvjestajOd);
+            this.cbDatum.Controls.Add(this.cbIzvjestajDatum);
+            this.cbDatum.Controls.Add(this.cbIzvjestajTip);
+            this.cbDatum.Controls.Add(this.dtpIzvjestajDo);
+            this.cbDatum.Controls.Add(this.dtpIzvjestajOd);
+            this.cbDatum.Controls.Add(this.btnGenerisiIzvjestaj);
+            this.cbDatum.Location = new System.Drawing.Point(4, 22);
+            this.cbDatum.Name = "cbDatum";
+            this.cbDatum.Size = new System.Drawing.Size(706, 350);
+            this.cbDatum.TabIndex = 2;
+            this.cbDatum.Text = "Generisanje izvjestaja";
+            this.cbDatum.UseVisualStyleBackColor = true;
+            // 
+            // lblIzvjestajDo
+            // 
+            this.lblIzvjestajDo.AutoSize = true;
+            this.lblIzvjestajDo.Location = new System.Drawing.Point(26, 126);
+            this.lblIzvjestajDo.Name = "lblIzvjestajDo";
+            this.lblIzvjestajDo.Size = new System.Drawing.Size(24, 13);
+            this.lblIzvjestajDo.TabIndex = 30;
+            this.lblIzvjestajDo.Text = "Do:";
+            // 
+            // lblIzvjestajOd
+            // 
+            this.lblIzvjestajOd.AutoSize = true;
+            this.lblIzvjestajOd.Location = new System.Drawing.Point(26, 100);
+            this.lblIzvjestajOd.Name = "lblIzvjestajOd";
+            this.lblIzvjestajOd.Size = new System.Drawing.Size(24, 13);
+            this.lblIzvjestajOd.TabIndex = 29;
+            this.lblIzvjestajOd.Text = "Od:";
+            // 
+            // cbIzvjestajDatum
+            // 
+            this.cbIzvjestajDatum.AutoSize = true;
+            this.cbIzvjestajDatum.Checked = true;
+            this.cbIzvjestajDatum.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbIzvjestajDatum.Location = new System.Drawing.Point(26, 71);
+            this.cbIzvjestajDatum.Name = "cbIzvjestajDatum";
+            this.cbIzvjestajDatum.Size = new System.Drawing.Size(153, 17);
+            this.cbIzvjestajDatum.TabIndex = 28;
+            this.cbIzvjestajDatum.Text = "Uključi pretragu po datumu";
+            this.cbIzvjestajDatum.UseVisualStyleBackColor = true;
+            this.cbIzvjestajDatum.CheckedChanged += new System.EventHandler(this.cbIzvjestajDatum_CheckedChanged);
+            // 
+            // cbIzvjestajTip
+            // 
+            this.cbIzvjestajTip.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIzvjestajTip.FormattingEnabled = true;
+            this.cbIzvjestajTip.Items.AddRange(new object[] {
+            "Po zaposlenima",
+            "Po distributerima",
+            "Po filmovima"});
+            this.cbIzvjestajTip.Location = new System.Drawing.Point(26, 26);
+            this.cbIzvjestajTip.Name = "cbIzvjestajTip";
+            this.cbIzvjestajTip.Size = new System.Drawing.Size(331, 21);
+            this.cbIzvjestajTip.TabIndex = 26;
+            // 
+            // dtpIzvjestajDo
+            // 
+            this.dtpIzvjestajDo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpIzvjestajDo.Location = new System.Drawing.Point(157, 119);
+            this.dtpIzvjestajDo.Name = "dtpIzvjestajDo";
+            this.dtpIzvjestajDo.Size = new System.Drawing.Size(200, 20);
+            this.dtpIzvjestajDo.TabIndex = 3;
+            // 
+            // dtpIzvjestajOd
+            // 
+            this.dtpIzvjestajOd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpIzvjestajOd.Location = new System.Drawing.Point(157, 94);
+            this.dtpIzvjestajOd.Name = "dtpIzvjestajOd";
+            this.dtpIzvjestajOd.Size = new System.Drawing.Size(200, 20);
+            this.dtpIzvjestajOd.TabIndex = 2;
+            // 
+            // btnGenerisiIzvjestaj
+            // 
+            this.btnGenerisiIzvjestaj.Location = new System.Drawing.Point(26, 168);
+            this.btnGenerisiIzvjestaj.Name = "btnGenerisiIzvjestaj";
+            this.btnGenerisiIzvjestaj.Size = new System.Drawing.Size(331, 23);
+            this.btnGenerisiIzvjestaj.TabIndex = 0;
+            this.btnGenerisiIzvjestaj.Text = "Generisi izvjestaj";
+            this.btnGenerisiIzvjestaj.UseVisualStyleBackColor = true;
+            this.btnGenerisiIzvjestaj.Click += new System.EventHandler(this.btnGenerisiIzvjestaj_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 64);
+            this.label10.Location = new System.Drawing.Point(6, 68);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 13);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Cijena";
+            this.label10.Size = new System.Drawing.Size(39, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Cijena:";
             // 
             // lblCijena
             // 
             this.lblCijena.AutoSize = true;
-            this.lblCijena.Location = new System.Drawing.Point(104, 64);
+            this.lblCijena.Location = new System.Drawing.Point(104, 68);
             this.lblCijena.Name = "lblCijena";
             this.lblCijena.Size = new System.Drawing.Size(41, 13);
-            this.lblCijena.TabIndex = 25;
+            this.lblCijena.TabIndex = 19;
             this.lblCijena.Text = "label11";
             // 
             // UpravnikForm
@@ -754,6 +839,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.cbDatum.ResumeLayout(false);
+            this.cbDatum.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -809,7 +896,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage cbDatum;
         private System.Windows.Forms.TextBox tbxProjekcijaSearch;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblNarucivanjeTrajanjeFilma;
@@ -820,6 +907,13 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnGenerisiIzvjestaj;
+        private System.Windows.Forms.DateTimePicker dtpIzvjestajDo;
+        private System.Windows.Forms.DateTimePicker dtpIzvjestajOd;
+        private System.Windows.Forms.ComboBox cbIzvjestajTip;
+        private System.Windows.Forms.CheckBox cbIzvjestajDatum;
+        private System.Windows.Forms.Label lblIzvjestajDo;
+        private System.Windows.Forms.Label lblIzvjestajOd;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblCijena;
     }

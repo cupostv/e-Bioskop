@@ -9,7 +9,7 @@ namespace e_Bioskop.data.dao.mysql
 {
     public class MySqlKartaDAO : KartaDAO
     {
-        private string getByProjekcijaQuerry = "select k.idKarta, datumProdaje, brojReda, brojSjedista, k.idZaposleni, korisnickoIme, lozinka, ime, prezime, "
+        private string getByProjekcijaQuerry = "select k.idKarta, cijenaKarta, datumProdaje, brojReda, brojSjedista, k.idZaposleni, korisnickoIme, lozinka, ime, prezime, "
                                        + " datumRodjenja, telefon, e_mail, aktivan, "
                                        + " sk.idStatusKarta, NazivStatusKarta "
                                        + " from karta k "
@@ -19,7 +19,7 @@ namespace e_Bioskop.data.dao.mysql
                                        + " inner join status_karta sk on k.idStatusKarta = sk.idStatusKarta "
                                        + " where p.idProjekcija=?idProjekcija;";
 
-        private string getByZaposleniQuerry = "select k.idKarta, datumProdaje, brojReda, brojSjedista, "
+        private string getByZaposleniQuerry = "select k.idKarta,cijenaKarta, datumProdaje, brojReda, brojSjedista, "
                                        + " sk.idStatusKarta, NazivStatusKarta, p.idProjekcija, idFilm, vrijemeProjekcija, cijenaProjekcija, "
                                        + " sl.idSala, nazivSala, aktivna "
                                        + " from karta k "
@@ -29,7 +29,7 @@ namespace e_Bioskop.data.dao.mysql
                                        + " inner join status_karta sk on k.idStatusKarta = sk.idStatusKarta "
                                        + " where z.idZaposleni=?idZaposleni;";
 
-        private string getByStatusQuerry = "select k.idKarta, datumProdaje, brojReda, brojSjedista, k.idZaposleni, korisnickoIme, lozinka, ime, prezime, "
+        private string getByStatusQuerry = "select k.idKarta,cijenaKarta, datumProdaje, brojReda, brojSjedista, k.idZaposleni, korisnickoIme, lozinka, ime, prezime, "
                                        + " datumRodjenja, telefon, e_mail, aktivan, "
                                        + " p.idProjekcija, idFilm, vrijemeProjekcija, cijenaProjekcija, "
                                        + " sl.idSala, nazivSala, aktivna "
@@ -40,7 +40,7 @@ namespace e_Bioskop.data.dao.mysql
                                        + " inner join status_karta sk on k.idStatusKarta = sk.idStatusKarta "
                                        + " where sk.idStatusKarta=?idStatusKarta;";
 
-        private string getByIdQuerry = "select k.idKarta, brojReda,brojSjedista,datumProdaje, k.idZaposleni, korisnickoIme, lozinka, ime, prezime, "
+        private string getByIdQuerry = "select k.idKarta,cijenaKarta, brojReda,brojSjedista,datumProdaje, k.idZaposleni, korisnickoIme, lozinka, ime, prezime, "
                                        + " datumRodjenja, telefon, e_mail, aktivan, "
                                        + " sk.idStatusKarta, NazivStatusKarta, p.idProjekcija, idFilm, vrijemeProjekcija, cijenaProjekcija, "
                                        + " sl.idSala, nazivSala, aktivna,brojRedova,brojSjedistaURedu "
@@ -52,9 +52,9 @@ namespace e_Bioskop.data.dao.mysql
                                        + " where k.IdKarta=?idKarta;";
 
         private string insertQuerry = "INSERT INTO `e_bioskop`.`karta` (`cijenaKarta`, `datumProdaje`, `idZaposleni`, `idProjekcija`, `idRezervacija`, `idStatusKarta`, `brojReda`, `brojSjedista`) VALUES (?cijenaKarta, ?datumProdaje, ?idZaposleni, ?idProjekcija, ?idRezervacija, ?idStatusKarta, ?brojReda, ?brojSjedista);";
-        private string getByRezervacijaAndProjekcijaQuerry = "select k.idKarta,brojReda,brojSjedista,datumProdaje, k.idZaposleni, korisnickoIme, lozinka, ime, prezime,  datumRodjenja, telefon, e_mail, aktivan,  sk.idStatusKarta, NazivStatusKarta from karta k inner join zaposleni z on k.idZaposleni=z.idZaposleni inner join status_karta sk on k.idStatusKarta=sk.idStatusKarta where idRezervacija=?idRezervacija and idProjekcija=?idProjekcija;";
+        private string getByRezervacijaAndProjekcijaQuerry = "select k.idKarta,brojReda,brojSjedista,datumProdaje,cijenaKarta, k.idZaposleni, korisnickoIme, lozinka, ime, prezime,  datumRodjenja, telefon, e_mail, aktivan,  sk.idStatusKarta, NazivStatusKarta from karta k inner join zaposleni z on k.idZaposleni=z.idZaposleni inner join status_karta sk on k.idStatusKarta=sk.idStatusKarta where idRezervacija=?idRezervacija and idProjekcija=?idProjekcija;";
 
-        private string getByRezervacijaQuerry = "select k.idKarta, k.idProjekcija, brojReda,brojSjedista,datumProdaje, k.idZaposleni, korisnickoIme, lozinka, ime, prezime,  datumRodjenja, telefon, e_mail, aktivan,  sk.idStatusKarta, NazivStatusKarta from karta k inner join zaposleni z on k.idZaposleni=z.idZaposleni inner join status_karta sk on k.idStatusKarta=sk.idStatusKarta inner join Projekcija p on p.idProjekcija = k.idProjekcija where idRezervacija=?idRezervacija;";
+        private string getByRezervacijaQuerry = "select k.idKarta, k.idProjekcija, brojReda,brojSjedista,datumProdaje,cijenaKarta, k.idZaposleni, korisnickoIme, lozinka, ime, prezime,  datumRodjenja, telefon, e_mail, aktivan,  sk.idStatusKarta, NazivStatusKarta from karta k inner join zaposleni z on k.idZaposleni=z.idZaposleni inner join status_karta sk on k.idStatusKarta=sk.idStatusKarta inner join Projekcija p on p.idProjekcija = k.idProjekcija where idRezervacija=?idRezervacija;";
         private string updateQuerry = "UPDATE `e_bioskop`.`karta` SET `cijenaKarta`=?cijena, `datumProdaje`=?datumProdaje, `idZaposleni`=?idZaposleni, `idProjekcija`=?idProjekcija, `idRezervacija`=?idRezervacija, `idStatusKarta`=?idStatusKarta, `brojReda`=?brojReda, `brojSjedista`=?brojSjedista WHERE `idKarta`=?idKarta;";
 
         public List<KartaDTO> getByProjekcija(ProjekcijaDTO projekcija)
@@ -221,6 +221,7 @@ namespace e_Bioskop.data.dao.mysql
             KartaDTO karta = new KartaDTO();
             karta.Id = reader.GetInt32("idKarta");
             karta.DatumProdaje = reader.GetDateTime("datumProdaje");
+            karta.Cijena = reader.GetFloat("cijenaKarta");
             karta.BrojReda = reader.GetInt32("brojReda");
             karta.BrojSjedista = reader.GetInt32("brojSjedista");
             karta.Zaposleni = MySqlZaposleniDAO.readerToZaposleni(reader);
@@ -239,6 +240,7 @@ namespace e_Bioskop.data.dao.mysql
             KartaDTO karta = new KartaDTO();
             karta.Id = reader.GetInt32("idKarta");
             karta.DatumProdaje = reader.GetDateTime("datumProdaje");
+            karta.Cijena = reader.GetFloat("cijenaKarta");
             karta.BrojReda = reader.GetInt32("brojReda");
             karta.BrojSjedista = reader.GetInt32("brojSjedista");
             karta.Zaposleni = MySqlZaposleniDAO.readerToZaposleni(reader);
@@ -253,6 +255,7 @@ namespace e_Bioskop.data.dao.mysql
             KartaDTO karta = new KartaDTO();
             karta.Id = reader.GetInt32("idKarta");
             karta.DatumProdaje = reader.GetDateTime("datumProdaje");
+            karta.Cijena = reader.GetFloat("cijenaKarta");
             karta.BrojReda = reader.GetInt32("brojReda");
             karta.BrojSjedista = reader.GetInt32("brojSjedista");
             karta.Zaposleni = MySqlZaposleniDAO.readerToZaposleni(reader);
@@ -268,6 +271,7 @@ namespace e_Bioskop.data.dao.mysql
             karta.Id = reader.GetInt32("idKarta");
             karta.DatumProdaje = reader.GetDateTime("datumProdaje");
             karta.BrojReda = reader.GetInt32("brojReda");
+            karta.Cijena = reader.GetFloat("cijenaKarta");
             karta.BrojSjedista = reader.GetInt32("brojSjedista");
             karta.Zaposleni = zaposleni;
             SalaDTO sala = MySqlSalaDAO.readerToSalaDTO(reader);
@@ -282,6 +286,7 @@ namespace e_Bioskop.data.dao.mysql
             KartaDTO karta = new KartaDTO();
             karta.Id = reader.GetInt32("idKarta");
             karta.DatumProdaje = reader.GetDateTime("datumProdaje");
+            karta.Cijena = reader.GetFloat("cijenaKarta");
             karta.BrojReda = reader.GetInt32("brojReda");
             karta.BrojSjedista = reader.GetInt32("brojSjedista");
             karta.Zaposleni = MySqlZaposleniDAO.readerToZaposleni(reader);
