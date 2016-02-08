@@ -1,7 +1,10 @@
 \chapter{Specifični zahtjevi}
 \label{poglavlje3}
+
+
 \section{Funkcionalni zahtjevi}
-\subsection{Administracija zaposlenih}
+\subsection{Administrator}
+\subsubsection{Administracija zaposlenih}
 Administracija zaposlenih se odnosi na dvije različite aktivnosti, a to su ažuriranje podataka o 
 zaposlenom i kreiranje naloga. Obje ove aktivnosti može da vrši samo administrator.
 
@@ -13,10 +16,10 @@ U suprotnom se nevalidni podaci moraju ispraviti.
 Da bi se napravio novi nalog moraju se unijeti podaci o novom zaposlenom nakon čega se vrši validacija. Ako su 
 svi podaci validni, nalog je kreiran i vrši se njegova aktivacija.
 
-\subsection{Administracija distributera}
+\subsubsection{Administracija distributera}
 Administracija distributera se odnosi na dvije različite aktivnosti, a to su ažuriranje podataka 
 o distributeru i dodavanje distributera. Obje ove aktivnosti može da vrši samo administrator.
- 
+
 Da bi se izvršilo ažuriranje distibutera potrebno je odabrati željenog distributera iz liste nakon čega se prikazuju  svi
 podaci o distributeru. Nakon izbora opcije za izmjenu, otvara se forma sa 
 podacima i vrše željene promjene. Prilikom potvrde unosa, izvršiće se validacija podataka i u zavisnosti od rezultata 
@@ -25,62 +28,77 @@ podacima i vrše željene promjene. Prilikom potvrde unosa, izvršiće se valida
 Da bi se dodao novi distibuter unose se njegovi podaci nakon čega se vrši validacija. Ako su svi podaci validni, 
 distributer je dodan i svi potrebni podaci sačuvani. U suprotnom se nevalidni podaci moraju ispraviti. 
 
-\subsection{Upravljanje filmovima}
-Upravljanje filmovima obuhvata više različitih aktivnosti. To su izmjena podataka, naručivanje filmova.
 
+\subsubsection{Upravljanje filmovima}
+Upravljanje filmovima obuhvata više različitih aktivnosti. To su izmjena podataka, naručivanje filmova i unos filmova u sistem.
+
+\subsubsection{Izmjena podataka o filmu}
 Da bi se izmjenili podaci o filmu potrebno je isti selektovati u listi svih filmova. Nakon toga se prikazuju podaci o filmu i 
 izborom opcije za izmjenu otvara se forma u kojoj je podatke moguće promijeniti. Poslije izmjena se vrši validacija i, u zavisnosti
  od ishoda validacije, čuvanje podataka ili ispravljanje grešaka načinjenih prilikom unosa. 
  
+
+
+
+
+\subsubsection{Unos filmova u sistem}
+
+Ukoliko se želi dodati novi film, o njemu se unesu podaci, izvrši se validacija i, u zavisnosti od ishoda validacije, čuvanje podataka
+ ili ispravljanje grešaka načinjenih prilikom unosa.
+ 
+\subsubsection{Administracija sala}
+U okviru administracije sale moguće je izabrati jednu od dvije aktivnosti, a to su dodavanje nove sale i izmjena podataka o postojećim salama.
+
+
+Prilikom dodavanja nove sale moraju se unijeti svi podaci o sali (ime, broj redova, broj sjedišta u redu). Takođe je moguće izabrati da li je sala aktivna ili neaktivna, tj. da li se može koristiti za prikazivanje projekcija ili ne.
+
+
+Da bi se izvršila izmjena podataka o salama, potrebno je odbrati za koju salu se mijenjaju podaci i izvršiti željene izmjene, a nakon toga potvrditi izmjene. Prilikom potvrde  vrši se validacija i u zavisnosti od ishoda čuvanje podataka ili vraćanje na formu radi korekcije unesenih vrijednosti.
+
+\subsection{Upravnik}
+\subsubsection{Naručivanje filmova}
+
 Da bi se naručio film potrebno je izabrati željeni film iz liste filmova dostupnih za naručivanje. Nakon toga se prikazuju podaci o 
 izabranom filmu i moguće je naručiti film. Broj filmova u listi se može smanjiti unosom ključnih pojmova pri čemu se prikazuju samo 
 filmovi koji te pojmove sadrže.
 
-\subsection{Unos filmova u sistem}
-Ukoliko se želi dodati novi film, o njemu se unesu podaci, izvrši se validacija i, u zavisnosti od ishoda validacije, čuvanje podataka
- ili ispravljanje grešaka načinjenih prilikom unosa.
-
-\subsection{Generisanje izvještaja}
+\subsubsection{Generisanje izvještaja}
 Generiše izvještaja može da vrši upravnik. U početku upravnik bira vrstu izvještaja koji želi da generiše. Moguće vrste izvještaja su: 
 \begin{itemize}
 \item izvještaj finansijskih prihoda po zaposlenima;
 \item izvještaj finansijskih prihoda po distributerima;
 \item izvještaj finansijskih prihoda po filmovima.
 \end{itemize}
-Korisnik ima mogućnost izbora vremenskog perioda za koji želi da generiše izvještaj.
+Upravnik ima mogućnost izbora vremenskog perioda za koji želi da generiše izvještaj, koji upravnik može štampati, sačuvati kao \textit{pdf},ili neki drugi tip dokumenta.
 
 Nakon unosa podataka (kriterijuma) izvještaja sistem vrši validaciju parametara. U slucaju da podaci nisu validni, korisnik može da ponovi unos. U suprotnom se prikazuje generisani izvještaj.
 
 U svakom koraku upravnik može da odustane od generisanja izvještaja.
 
-\subsection{Administracija sala}
-U okviru administracije sale moguće je izabrati jednu od dvije aktivnosti, a to su dodavanje nove sale i izmjena podataka o postojećim salama.
 
-Prilikom dodavanja nove sale moraju se unijeti svi podaci o sali (ime, broj redova, broj sjedišta u redu). Takođe je moguće izabrati da li je sala aktivna ili neaktivna, tj. da li se može koristiti za prikazivanje projekcija ili ne.
 
-Da bi se izvršila izmjena podataka o salama, potrebno je odbrati za koju salu se mijenjaju podaci i izvršiti željene izmjene, a nakon toga potvrditi izmjene. Prilikom potvrde  vrši se validacija i u zavisnosti od ishoda čuvanje podataka ili vraćanje na formu radi korekcije unesenih vrijednosti.
-
-\subsection{Dodavanje projekcije}
+\subsubsection{Dodavanje projekcije}
 Dodavanje nove projekcije može da izvrši samo upravnik. Pri tome se otvara forma na kojoj je moguće unijeti podatke o novoj 
 projekciji (film, vrijeme, sala i slično). Nakon toga se provjerava da li je odabrana 
 sala zauzeta u odabranom terminu. Ako nije onda se ta projekcija može dodati i karte za nju postaju dostupne u prodaji. U suprotnom 
 se moraju izabrati ili drugi termin u kojem je sala dostupna ili sala koja je dostupna u odabranom terminu.
 
-\subsection{Upravljanje projekcijama}
+\subsubsection{Upravljanje projekcijama}
 Upravljanje projekcijama se odnosi na izmjenu podataka o postojećim projekcijama. Iz liste svih projekcija se bira projekcija 
 za koju se žele promijeniti podaci. Nakon prikaza podataka bira se opcija za izmjenu podataka i otvara forma u kojoj se 
 željeni podaci mogu promijeniti. Prije čuvanja podataka se vrši validacija unesenih podataka.
 
-\subsection{Rezervacija karata}
+\subsection{Radnik}
+\subsubsection{Rezervacija karata}
 Da bi se izvršila rezervacija karata potrebno je odabrati projekciju. Nakon prikaza svih podatka o odabranoj projekciji, 
 vrši se provjera slobodnih mjesta i ukoliko postoje mjesta koja su zadovoljavajuća za gledaoca, karte se rezervišu 
 i odabrana mjesta se smatraju zauzetim.
 
-\subsection{Poništavanje rezervacija}
+\subsubsection{Poništavanje rezervacija}
 Ako neki gledalac želi da poništi svoju rezervaciju onda se iz liste bira rezervacija koja se želi poništiti i nakon potvrde poništavanja
 ta mjesta postaju dostupna.
 
-\subsection{Prodaja karata}
+\subsubsection{Prodaja karata}
 Kod prodaje karata postoje dvije opcije:
 \begin{itemize}
 \item gledalac ima rezervaciju;
@@ -91,7 +109,7 @@ Ukoliko gledalac ima rezervaciju, otvara se prozor sa listom gdje se bira rezerv
 
 Ako rezervacija ne postoji, bira se projekcija za koju se kupuje karta nakon čega se prikazuje izgled sale. Označena su mjesta za koja su karte prodane i rezervisane. Ukoliko se nađu zadovoljavajuća mjesta za gledaoca, ona se selektuju, potvrđuje se prodaja karte, nakon čega se ista i izdaje.
 
-\subsection{Poništavanje karata}
+\subsubsection{Poništavanje karata}
 Nakon izbora opcije za poništavanje karata, potrebno je unijeti broj karte koja se poništava. Nakon toga se potvrđuje poništavanje. Ukoliko takva karta postoji, poništavanje je izvršeno, karta se vraća u prodaju i oslobađaju se mjesta. Ukoliko karta ne postoji, dobija se obavještenje o tome.
 
 \section{Zahtjevi performansi}
